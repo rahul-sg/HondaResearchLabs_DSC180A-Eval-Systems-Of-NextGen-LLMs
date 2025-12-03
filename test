@@ -1,30 +1,14 @@
-from eval_baseline import call_llm, LLMConfig
-import PyPDF2
-#pip installPyPDF2
-import docx
-#pip install python-docx
 from pathlib import Path
-from openai import OpenAI
+import PyPDF2
+import docx
 
-# Initialize your client
-client = OpenAI()
+import json
 
-# -------------------------------------------------------
-# LLM CONFIG STRUCTURE
-# -------------------------------------------------------
-
-class LLMConfig:
-    def __init__(self, model: str):
-        self.model = model
-
-# Your configurations
-GPT_MINI = LLMConfig("gpt-5-mini")
-GPT_NANO = LLMConfig("gpt-5-nano")
-
-
-# -------------------------------------------------------
-# 1. Extract Text From File
-# -------------------------------------------------------
+from eval_baseline import (
+    call_llm,
+    LLMConfig,
+    evaluate_one_summary,
+)
 
 def extract_text_from_pdf(path: Path) -> str:
     text = ""
@@ -56,100 +40,21 @@ def extract_text(path: str) -> str:
     return path.read_text(encoding="utf-8")
 
 
-# -------------------------------------------------------
-# 2. YOUR LLM FUNCTION (plugged in exactly)
-# -------------------------------------------------------
+SUM_CFG = LLMConfig(
+    model="gpt-5-mini"   
+)
 
-def call_llm(system: str, user: str, cfg: LLMConfig) -> str:
-    """
-    gpt-5-nano compatible call:
-    - no temperature
-    - no seed
-    - no max_completion_tokens
-    """
-    model_name = cfg.model if cfg.model else "gpt-5-nano"
-
-    response = client.responses.create(
-        model=model_name,
-        input=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-    )
-
-    return response.output_text
-
-
-# -------------------------------------------------------
-# 3. Summarizer Function
-# -------------------------------------------------------
+JUDGE_CFG = LLMConfig(
+    model="gpt-5-nano"   
+)
 
 def summarize_lecture(text: str) -> str:
     return call_llm(
         system="Summarize the following lecture clearly, accurately, and concisely.",
         user=text,
-        cfg=GPT_MINI  # summarizer model
+        cfg=SUM_CFG,
     )
 
-
-# -------------------------------------------------------
-# 4. Judge Function
-# -------------------------------------------------------
-
-def judge_summary(lecture_text: str, summary_text: str) -> str:
-    prompt = f"""
-You are a grading assistant. Evaluate the student's summary.
-
-LECTURE TEXT:
-{lecture_text}
-
-STUDENT SUMMARY:
-{summary_text}
-
-Return the evaluation in the format:
-
-- **Accuracy (0–10):**
-- **Coverage (what important ideas were missing):**
-- **Hallucinations (anything invented):**
-- **Specific improvements:**
-"""
-    return call_llm(
-        system="Evaluate the quality of the lecture summary.",
-        user=prompt,
-        cfg=GPT_NANO   # judge model
-    )
-
-
-# -------------------------------------------------------
-# 5. MAIN PIPELINE
-# -------------------------------------------------------
-
-def run_pipeline():
-    LECTURE_FILE = "testfile.pdf"
-
-    print("Extracting text...")
-    lecture_text = extract_text(LECTURE_FILE)
-
-    # ---- ITERATION 1: Initial summary ----
-    print("\nInitial summarization...")
-    summary = summarize_lecture(lecture_text)
-
-    for i in range(1, 4):  # 3 iterations
-        print(f"\n--- Iteration {i}: Judging summary ---")
-        evaluation = judge_summary(lecture_text, summary)
-        print(evaluation)
-
-        print(f"\n--- Iteration {i}: Revising summary ---")
-        summary = revise_summary(summary, evaluation)
-        print(summary)
-
-    # Final output
-    print("\n================ FINAL SUMMARY ================\n")
-    print(summary)
-
-    print("\n================ FINAL JUDGEMENT ================\n")
-    final_eval = judge_summary(lecture_text, summary)
-    print(final_eval)
 
 def revise_summary(summary: str, judge_feedback: str) -> str:
     prompt = f"""
@@ -170,8 +75,149 @@ Please return an improved summary that:
     return call_llm(
         system="Revise the student's lecture summary.",
         user=prompt,
-        cfg=GPT_MINI
+        cfg=SUM_CFG,
     )
+
+
+def freeform_judge_feedback(lecture_text: str, summary_text: str) -> str:
+    """
+    Optional: free-form natural language feedback.
+    This is separate from the structured eval_baseline metrics.
+    """
+    prompt = f"""
+You are a grading assistant. Evaluate the student's summary.
+
+LECTURE TEXT:
+{lecture_text}
+
+STUDENT SUMMARY:
+{summary_text}
+
+Return the evaluation in the format:
+
+- Accuracy (0–10):
+- Coverage (what important ideas were missing):
+- Hallucinations (anything invented):
+- Specific improvements:
+"""
+    return call_llm(
+        system="Evaluate the quality of the lecture summary.",
+        user=prompt,
+        cfg=JUDGE_CFG,
+    )
+
+
+def run_pipeline() -> dict:
+    """
+    - Extracts lecture text from LECTURE_FILE
+    - Generates & iteratively refines a summary
+    - Evaluates the final summary using eval_baseline's criteria
+    - Writes all results to results.txt in a nicely labeled format
+    - Returns the full evaluation dict
+    """
+    LECTURE_FILE = "testfile.pdf"  
+
+    print("Extracting text...")
+    lecture_text = extract_text(LECTURE_FILE)
+
+    print("\nInitial summarization...")
+    summary = summarize_lecture(lecture_text)
+
+    for i in range(1, 4):
+        print(f"\n--- Iteration {i}: Judging summary (free-form) ---")
+        feedback = freeform_judge_feedback(lecture_text, summary)
+        print(feedback)
+
+        print(f"\n--- Iteration {i}: Revising summary ---")
+        summary = revise_summary(summary, feedback)
+        print(summary)
+
+    slides = [
+        {
+            "title": "Lecture",
+            "content": lecture_text,
+        }
+    ]
+
+    human_reference = ""
+
+    print("\nRunning eval_baseline evaluation on FINAL summary...")
+    evaluation = evaluate_one_summary(
+        slides=slides,
+        model_summary=summary,
+        human_reference=human_reference,
+        cfg=JUDGE_CFG,
+        target_words=300, 
+    )
+
+    signals = evaluation.get("signals", {})
+    rubric = evaluation.get("rubric", {})
+    agreement = evaluation.get("agreement", {})
+    final_score = evaluation.get("final_score_0to1", None)
+
+    with open("results.txt", "w", encoding="utf-8") as f:
+        f.write("============ FINAL SUMMARY ============\n\n")
+        f.write(summary.strip() + "\n\n")
+
+        f.write("============ SIMPLE SIGNALS (no LLM) ============\n\n")
+        f.write(f"Length error (0 = perfect): {signals.get('length_error')}\n")
+        f.write(f"Section coverage %        : {signals.get('section_coverage_pct')}\n")
+        f.write(f"Glossary recall           : {signals.get('glossary_recall')}\n")
+        f.write(f"Suspected hallucination rate: {signals.get('suspected_hallucination_rate')}\n\n")
+
+        f.write("============ RUBRIC SCORES (LLM-as-judge) ============\n\n")
+        f.write(f"Coverage (1–5)     : {rubric.get('coverage')}\n")
+        f.write(f"Faithfulness (1–5) : {rubric.get('faithfulness')}\n")
+        f.write(f"Organization (1–5) : {rubric.get('organization')}\n")
+        f.write(f"Clarity (1–5)      : {rubric.get('clarity')}\n")
+        f.write(f"Style (1–5)        : {rubric.get('style')}\n")
+        f.write(f"Overall (1–10)     : {rubric.get('overall_1to10')}\n")
+        f.write(f"Std dev (overall)  : {rubric.get('_stdev_overall')}\n\n")
+
+        strengths = rubric.get("two_strengths", [])
+        issues = rubric.get("two_issues", [])
+        evidence = rubric.get("faithfulness_evidence", [])
+
+        f.write("Strengths:\n")
+        for s in strengths:
+            f.write(f"  - {s}\n")
+        f.write("\nIssues:\n")
+        for iss in issues:
+            f.write(f"  - {iss}\n")
+        f.write("\nFaithfulness evidence (from slides):\n")
+        for ev in evidence:
+            f.write(f"  - {ev}\n")
+        f.write("\n")
+
+        f.write("============ AGREEMENT WITH REFERENCE ============\n\n")
+        f.write(f"Agreement (1–5): {agreement.get('agreement_1to5')}\n")
+        f.write(f"Std dev        : {agreement.get('_stdev_agreement')}\n\n")
+
+        missing = agreement.get("missing_key_points", [])
+        added = agreement.get("added_inaccuracies", [])
+
+        f.write("Missing key points:\n")
+        for m in missing:
+            f.write(f"  - {m}\n")
+        f.write("\nAdded inaccuracies:\n")
+        for a in added:
+            f.write(f"  - {a}\n")
+        f.write("\n")
+
+        f.write("============ FINAL COMBINED SCORE ============\n\n")
+        f.write(f"Final score (0–1): {final_score}\n")
+
+    print("\n================ FINAL SUMMARY ================\n")
+    print(summary)
+
+    print("\n================ FINAL EVALUATION (key fields) ================\n")
+    print("Signals:", json.dumps(signals, indent=2))
+    print("Rubric:", json.dumps({k: rubric.get(k) for k in [
+        "coverage","faithfulness","organization","clarity","style","overall_1to10"
+    ]}, indent=2))
+    print("Final score (0–1):", final_score)
+
+    return evaluation
 
 
 if __name__ == "__main__":
