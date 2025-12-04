@@ -49,7 +49,7 @@ source startup.sh
 powershell -ExecutionPolicy Bypass -File startup.ps1
 ```
 
-### Running the Start-Up Does the Following (You don't have to do this if you ran the startup script):
+### Running the Start-Up Script does the following (you don't have to do this if you ran the startup script):
 
 #### Create environment
 ```bash
@@ -61,6 +61,11 @@ conda activate dsc180a-eval
 Create `.env`:
 ```
 OPENAI_API_KEY=your_key_here
+```
+
+### To deactivate conda environment at anytime, run:
+```bash
+conda deactivate
 ```
 
 ## ▶️ Running Evaluation
