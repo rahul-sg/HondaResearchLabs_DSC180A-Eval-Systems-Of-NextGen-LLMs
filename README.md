@@ -1,42 +1,56 @@
-# 📘 **DSC180A – Lecture Summarization Evaluation System**  
-### *LLM-as-Judge baseline with iterative refinement, deterministic signals, and ensemble scoring*
+# 📘 **DSC180A – Lecture Summarization Evaluation System**
+### *A reproducible LLM-as-Judge evaluation framework with iterative refinement*
 
-This repository contains a reproducible evaluation pipeline for lecture summarization using a hybrid **LLM-as-judge** approach. It implements:
+This repository implements a rigorous and extensible evaluation pipeline for lecture summarization. The system combines **LLM-based rubric scoring**, **reference-aware evaluation**, and **deterministic similarity metrics** to assess the quality and faithfulness of generated summaries. It also includes an **iterative refinement loop**, allowing summaries to be improved automatically using LLM feedback.
 
-- Reference-free rubric scoring  
-- Reference-aware agreement scoring  
-- Deterministic faithfulness and hallucination detection signals  
-- Iterative summary refinement  
-- Pairwise comparison between summaries  
-- Ensemble scoring to reduce variance  
-- A fully pluggable OpenAI API backend  
-
-This project follows the methodology outlined in our capstone work and is designed for extensibility and research transparency.
+This project supports research on summarization quality, model comparison, and reliability analysis in academic and industrial settings.
 
 ---
 
-## 🚀 **Features**
+## 🚀 **Core Capabilities**
 
-### ✔ Reference-free evaluation  
-Compares a model summary to lecture slides using an LLM judge.
+### **1. Reference-Free Evaluation (Rubric-Based)**
+A structured 5-dimension rubric evaluates:
+- Coverage  
+- Faithfulness to slides  
+- Organization  
+- Pedagogical clarity  
+- Writing quality  
 
-### ✔ Reference-aware evaluation  
-Measures agreement with a human-written summary.
+### **2. Reference-Aware Evaluation**
+Compares model output with a human-written reference summary using:
+- Agreement scoring  
+- Detection of missing key points  
+- Detection of added inaccuracies  
 
-### ✔ Iterative refinement loop (*S₀ → S₁ → S₂ → S₃*)  
-Summaries are improved using judge feedback.
-
-### ✔ Deterministic non-LLM metrics  
+### **3. Deterministic Faithfulness Signals**
+Non-LLM, fully reproducible metrics:
 - Length deviation  
-- Keyword coverage  
+- Section keyword coverage  
 - Glossary recall  
-- Hallucination rate using TF-IDF sentence retrieval  
+- Hallucination rate via TF-IDF retrieval similarity  
 
-### ✔ Ensemble (multi-seed) judging  
-Reduces variance in LLM outputs.
+### **4. Iterative Summary Refinement**
+An automated refinement procedure:
 
-### ✔ Pluggable architecture  
-All LLM calls are centralized in `call_llm()`.
+```
+S₀ → Judge → S₁ → Judge → S₂ → Judge → S₃
+```
+
+Each iteration rewrites the summary using judge feedback to increase faithfulness and clarity.
+
+### **5. Ensemble Judging**
+Multiple LLM calls with different seeds reduce variance and produce more stable scores.
+
+### **6. Pairwise Comparison**
+Allows head-to-head evaluation of alternative summaries using an LLM judge.
+
+### **7. Pluggable LLM Backend**
+All API access is centralized, enabling easy replacement with:
+- OpenAI models  
+- Anthropic Claude  
+- Azure OpenAI  
+- Local inference backends  
 
 ---
 
@@ -44,33 +58,25 @@ All LLM calls are centralized in `call_llm()`.
 
 ```
 .
-├── eval_baseline.py        # Main evaluation and refinement logic
-├── environment.yml         # Conda environment (recommended for reproducibility)
-├── .env.example            # Template for API keys (safe to commit)
-├── .gitignore              # Excludes virtual environments and secrets
-└── README.md               # This file
+├── eval_baseline.py        # Main evaluation, refinement, and scoring system
+├── environment.yml         # Conda environment file
+├── .env.example            # Template for environment variables
+├── .gitignore              # Excludes secrets, venvs, and caches
+└── README.md               # Project documentation
 ```
 
 ---
 
-## ⚙️ **Installation**
+## ⚙️ **Setup and Installation**
 
-### 1. Create the Conda environment
+### **1. Create the Conda Environment**
 
 ```bash
 conda env create -f environment.yml
 conda activate dsc180a-eval
 ```
 
-Verify Python:
-
-```bash
-python --version   # Should show Python 3.10+
-```
-
----
-
-## 🔑 **Environment Variables**
+### **2. Configure Environment Variables**
 
 Copy the example:
 
@@ -78,19 +84,15 @@ Copy the example:
 cp .env.example .env
 ```
 
-Edit `.env` and insert your key:
+Insert your key in `.env`:
 
 ```
-OPENAI_API_KEY=sk-xxxx...
+OPENAI_API_KEY=sk-...
 ```
-
-The project uses `python-dotenv` to load this file automatically.
 
 ---
 
 ## ▶️ **Running the Evaluation Pipeline**
-
-In the project root:
 
 ```bash
 python eval_baseline.py
@@ -98,19 +100,18 @@ python eval_baseline.py
 
 This will:
 
-1. Load example slides + summary  
+1. Load example slides and summary  
 2. Compute deterministic signals  
-3. Run LLM rubric judge  
-4. Run agreement judge  
-5. Perform iterative refinement  
-6. Output the final refined summary  
-7. Compute a final numeric score  
+3. Run rubric-based LLM scoring  
+4. Run reference-aware agreement scoring  
+5. Perform iterative refinement (if enabled)  
+6. Output the final summary and scalar evaluation score  
 
 ---
 
-## 🧪 **Using Your Own Slides or Summaries**
+## 🧪 **Evaluating Your Own Summaries**
 
-Replace the example block in `eval_baseline.py`:
+Replace the example definitions in `eval_baseline.py`:
 
 ```python
 slides = [...]
@@ -118,7 +119,7 @@ human_ref = "..."
 model_sum = "..."
 ```
 
-Or load them from files:
+or load from files:
 
 ```python
 import json
@@ -128,9 +129,7 @@ model_sum = open("summary.txt").read()
 
 ---
 
-## 🔄 **Enabling / Disabling Iterative Refinement**
-
-In the final evaluation call:
+## 🔄 **Controlling Iterative Refinement**
 
 ```python
 res = evaluate_one_summary(
@@ -138,23 +137,15 @@ res = evaluate_one_summary(
     model_sum,
     human_ref,
     cfg,
-    refine_iters=3   # number of refinement steps
+    refine_iters=3
 )
 ```
 
-Set:
-
-```python
-refine_iters=0
-```
-
-to disable refinement.
+Set `refine_iters=0` to disable refinement.
 
 ---
 
-## 📊 **What the Output Looks Like**
-
-The evaluation returns a structured dictionary:
+## 📊 **Output Format**
 
 ```json
 {
@@ -162,58 +153,20 @@ The evaluation returns a structured dictionary:
   "signals": {...},
   "rubric": {...},
   "agreement": {...},
-  "final_score_0to1": 0.82
+  "final_score_0to1": 0.87
 }
 ```
 
-- **signals** = deterministic metrics  
-- **rubric** = reference-free LLM scoring  
-- **agreement** = alignment with reference summary  
-- **final_score_0to1** = combined scalar score  
-
 ---
 
-## 🧩 **Customizing the LLM Backend**
+## 🔒 **Security Considerations**
 
-All API calls live in **one function**:
-
-```python
-def call_llm(system, user, cfg):
-    ...
-```
-
-You can replace this logic with:
-
-- Anthropic Claude  
-- Azure OpenAI  
-- Local models (llama.cpp / vLLM)  
-- Fine-tuned LLMs  
-
----
-
-## 🔒 **Security Notes**
-
-- `.env` **must not be committed**  
-- Use `.env.example` for others to know what variables are needed  
-- Never hardcode API keys in your Python files  
+- `.env` must not be committed  
+- `.gitignore` excludes secrets, cache directories, and virtual environments  
 
 ---
 
 ## 📜 **License**
 
-This project is for academic use as part of UCSD’s DSC180A capstone course.  
-Forking, modifying, and extending is encouraged for research purposes.
-
----
-
-## 🙋‍♂️ **Need Additional Files?**
-
-I can generate:
-
-- A polished `environment.yml`  
-- A matching `requirements.txt`  
-- A preconfigured project structure  
-- A Jupyter notebook version of the evaluation  
-- A visual architecture diagram of the pipeline  
-
-Just ask: **“Generate the extras.”**
+This project was developed for the UC San Diego DSC180A Capstone.  
+It may be adapted for educational or research purposes with appropriate attribution.
