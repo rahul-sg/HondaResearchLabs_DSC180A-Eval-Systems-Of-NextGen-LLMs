@@ -1,31 +1,35 @@
 # LLM-as-judge baseline for lecture summarization — robust, reproducible, and easy to extend.
+# Patched to:
+#  - Match the DSC 180A methodology (iterative refinement, hybrid evaluation)
+#  - Use JSON for judges with response_format to avoid parsing failures
+#  - Support separate models for judge vs. refiner (gpt-5-chat-latest + gpt-5-mini)
+#  - Use max_completion_tokens and only pass temperature where supported
 
 from __future__ import annotations
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from dataclasses import dataclass
-import json, re, random
+import json, re, random, os
 import numpy as np
-from openai import OpenAI
-import os
+
 from dotenv import load_dotenv
+from openai import OpenAI
 
 # Load .env from the same directory as this script
 env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
 load_dotenv(env_path)
 
-
 # Lightweight NLP (no web). Install scikit-learn for TF-IDF and cosine sim.
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
 # =========================================================
-# 0) Chunking utilities
+# 0) Chunking utilities (matches Section 2.5.2)
 # =========================================================
 
 def chunk_slides(slides: List[Dict], chunk_size: int) -> List[List[Dict]]:
     """
     Split slides (list of dicts) into fixed-size chunks by COUNT.
+    Mostly used for quick tests.
     """
     return [slides[i:i + chunk_size] for i in range(0, len(slides), chunk_size)]
 
@@ -33,7 +37,6 @@ def chunk_slides(slides: List[Dict], chunk_size: int) -> List[List[Dict]]:
 def estimate_tokens(text: str) -> int:
     """
     Very rough token estimate using ~= 4 chars/token heuristic.
-    (Swap with a real tokenizer like tiktoken if you have one.)
     """
     return max(1, int(len(text) / 4))
 
@@ -45,7 +48,8 @@ def chunk_slides_by_tokens(
 ) -> List[List[Dict]]:
     """
     Chunk slides so each chunk stays under ~max_tokens (approx).
-    Safer for LLM context windows than chunking by count.
+    Safer for LLM context windows than chunking by count while
+    preserving coarse slide boundaries.
     """
     chunks: List[List[Dict]] = []
     current, cur_tok = [], 0
@@ -61,10 +65,15 @@ def chunk_slides_by_tokens(
     return chunks
 
 
-def _slides_to_str(slides: List[Dict], max_chunks: int = 3, max_tokens: int = 1500) -> str:
+def _slides_to_str(
+    slides: List[Dict],
+    max_chunks: int = 3,
+    max_tokens: int = 1500
+) -> str:
     """
-    Render slides into a compact text block for the judge, with token-safe chunking.
-    Caps the number of chunks to limit total context size.
+    Render slides into a compact text block for the judge/refiner,
+    with token-safe chunking. Caps the number of chunks to limit
+    total context size (important for long lectures).
     """
     chunks = chunk_slides_by_tokens(slides, max_tokens=max_tokens)
     chunks = chunks[:max_chunks]
@@ -79,7 +88,11 @@ def _slides_to_str(slides: List[Dict], max_chunks: int = 3, max_tokens: int = 15
 # 1) Simple deterministic signals (no LLM required)
 # =========================================================
 
-def _extract_sections(slides: List[Dict], title_key="title", content_key="content") -> List[Tuple[str, str]]:
+def _extract_sections(
+    slides: List[Dict],
+    title_key: str = "title",
+    content_key: str = "content"
+) -> List[Tuple[str, str]]:
     """
     Normalize slides into a list of (title, content) tuples.
     Safely handles missing keys.
@@ -92,9 +105,13 @@ def _extract_sections(slides: List[Dict], title_key="title", content_key="conten
     return out
 
 
-def _top_keywords_per_section(sections: List[Tuple[str, str]], k: int = 5) -> List[List[str]]:
+def _top_keywords_per_section(
+    sections: List[Tuple[str, str]],
+    k: int = 5
+) -> List[List[str]]:
     """
     Get top-k TF-IDF terms per section to proxy the section’s “essence.”
+    Used for Section Coverage Percentage.
     """
     docs = [t + "\n" + c for (t, c) in sections]
     if len(docs) == 0:
@@ -117,7 +134,7 @@ def _top_keywords_per_section(sections: List[Tuple[str, str]], k: int = 5) -> Li
 def _build_glossary(sections: List[Tuple[str, str]]) -> List[str]:
     """
     Crude glossary = title tokens + **bold** + `code` + ALLCAPS tokens.
-    Lowercased for matching.
+    Lowercased for matching. Implements Glossary Recall metric.
     """
     terms = set()
     for (title, content) in sections:
@@ -141,21 +158,27 @@ def _sentence_split(text: str) -> List[str]:
     return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
 
 
-def simple_signals(slides: List[Dict], summary: str, target_words: int = 300) -> Dict[str, float]:
+def simple_signals(
+    slides: List[Dict],
+    summary: str,
+    target_words: int = 300
+) -> Dict[str, float]:
     """
     Compute cheap, reproducible metrics to anchor your LLM judge:
+
       - length_error: deviation from target word count (0 is perfect)
       - section_coverage_pct: % of sections whose top keywords appear in summary
       - glossary_recall: fraction of glossary terms present
-      - suspected_hallucination_rate: % of summary sentences that can't be matched to any slide sentence by TF-IDF cosine
+      - suspected_hallucination_rate: % of summary sentences that can't be matched
+        to any slide sentence by TF-IDF cosine (similarity < 0.25).
     """
     sections = _extract_sections(slides)
 
-    # 1) length control
+    # 1) Length Error
     wc = max(1, len(summary.split()))
     length_error = abs(wc - target_words) / float(target_words)
 
-    # 2) section coverage via top-k keyword hits
+    # 2) Section Coverage Percentage
     topk = _top_keywords_per_section(sections, k=5)
     covered = 0
     summary_lc = summary.lower()
@@ -166,7 +189,7 @@ def simple_signals(slides: List[Dict], summary: str, target_words: int = 300) ->
         covered += 1 if hit else 0
     section_coverage_pct = 0.0 if len(topk) == 0 else covered / len(topk)
 
-    # 3) glossary recall
+    # 3) Glossary Recall
     glossary = _build_glossary(sections)
     if glossary:
         hits = sum(1 for g in glossary if g in summary_lc)
@@ -174,7 +197,7 @@ def simple_signals(slides: List[Dict], summary: str, target_words: int = 300) ->
     else:
         glossary_recall = 0.0
 
-    # 4) hallucination proxy via retrieval similarity
+    # 4) Suspected Hallucination Rate
     slide_sentences = []
     for (_, content) in sections:
         slide_sentences.extend(_sentence_split(content))
@@ -189,7 +212,6 @@ def simple_signals(slides: List[Dict], summary: str, target_words: int = 300) ->
         for s in summary_sentences:
             q = vec.transform([s])
             sims = cosine_similarity(q, slide_mat).ravel()
-            # conservative: if no reasonably similar slide sentence exists, flag
             if (sims >= 0.25).sum() < 1:
                 suspected += 1
         suspected_hallucination_rate = suspected / len(summary_sentences)
@@ -205,35 +227,60 @@ def simple_signals(slides: List[Dict], summary: str, target_words: int = 300) ->
 
 
 # =========================================================
-# 2) Centralized LLM call (wire your provider here)
+# 2) Centralized LLM call (supports JSON mode)
 # =========================================================
 
 @dataclass
 class LLMConfig:
-    provider: str = "openai"         # e.g., "openai", "anthropic", "local"
-    model: str = "gpt-4o-mini"       # change to your model
-    temperature: float = 0.2
+    provider: str = "openai"         # kept for compatibility
+    model: str = "gpt-5-mini"        # default; override per use
+    temperature: Optional[float] = None  # None => don't send temperature
     max_tokens: int = 512
-    seed: int | None = None          # use if your provider supports it
+    seed: Optional[int] = None       # used for ensembles
 
 
-def call_llm(system: str, user: str, cfg: LLMConfig) -> str:
-    from openai import OpenAI
-    
-    # Initialize client using key from .env
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+_client: Optional[OpenAI] = None
 
-    resp = client.chat.completions.create(
-        model=cfg.model,
-        temperature=cfg.temperature,
-        max_tokens=cfg.max_tokens,
-        seed=cfg.seed,
-        messages=[
+def _get_client() -> OpenAI:
+    global _client
+    if _client is None:
+        _client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    return _client
+
+
+def call_llm(system: str, user: str, cfg: LLMConfig, json_mode: bool = False) -> str:
+    """
+    Wrapper around OpenAI chat.completions.
+    - json_mode=True: uses response_format={"type": "json_object"} to force valid JSON.
+    - json_mode=False: returns plain text (used for refinement summaries).
+    """
+    client = _get_client()
+
+    args: Dict[str, Any] = {
+        "model": cfg.model,
+        "max_completion_tokens": cfg.max_tokens,
+        "messages": [
             {"role": "system", "content": system},
-            {"role": "user", "content": user}
-        ]
-    )
+            {"role": "user", "content": user},
+        ],
+    }
+
+    # Only send temperature if explicitly set (some models like gpt-5-mini
+    # do NOT support non-default temperatures).
+    if cfg.temperature is not None:
+        args["temperature"] = cfg.temperature
+
+    # Seed is optional; only set if provided.
+    if cfg.seed is not None:
+        args["seed"] = cfg.seed
+
+    if json_mode:
+        # Forces the model to emit syntactically valid JSON.
+        args["response_format"] = {"type": "json_object"}
+
+    resp = client.chat.completions.create(**args)
     return resp.choices[0].message.content
+
 
 # =========================================================
 # 3) Judge prompts & helpers
@@ -286,7 +333,8 @@ Return ONLY JSON: {"winner": "A"|"B", "reason": "..."}
 def _force_json(text: str) -> Dict[str, Any]:
     """
     Make a best effort to parse the model output as JSON.
-    Extracts the first {...} block if strict parsing fails.
+    With response_format=json_object this should almost never trigger,
+    but we keep it as a safety net.
     """
     try:
         return json.loads(text)
@@ -298,6 +346,7 @@ def _force_json(text: str) -> Dict[str, Any]:
             except Exception:
                 pass
         raise ValueError(f"LLM did not return valid JSON:\n{text}")
+
 
 # =========================================================
 # 3.5) Iterative Summary Refinement
@@ -320,93 +369,78 @@ Rewrite the summary so that:
 - all factual errors are fixed,
 - coverage of core concepts improves,
 - clarity and organization improve,
-- unnecessary sentences are removed.
+- unnecessary or redundant sentences are removed,
+- the summary becomes more information-dense while staying roughly the same length.
 
 IMPORTANT:
-- Keep the summary roughly the same length.
 - Do NOT add hallucinated details not present in the slides.
+- Prefer fusing related ideas into concise, content-rich sentences rather than expanding length.
 
 Return ONLY the improved summary text, nothing else.
 """
 
-def refine_summary_once(slides, summary, feedback, cfg):
-    """One refinement step: use the judge feedback to rewrite the summary."""
+def refine_summary_once(
+    slides: List[Dict],
+    summary: str,
+    feedback: str,
+    cfg_refine: LLMConfig
+) -> str:
+    """
+    One refinement step: use the judge feedback to rewrite the summary.
+    """
     slides_str = _slides_to_str(slides, max_chunks=3, max_tokens=1500)
     user = _REFINE_PROMPT.format(slides=slides_str, summary=summary, feedback=feedback)
-    raw = call_llm("You revise summaries.", user, cfg)
+    raw = call_llm("You revise lecture summaries for students.", user, cfg_refine, json_mode=False)
     return raw.strip()
 
-def iterative_refine_summary(slides, initial_summary, cfg, iters=3):
-    """
-    Implements Figure 1 of the methodology:
-    S0 -> Judge -> S1 -> Judge -> S2 -> Judge -> S3
-    """
-    S = initial_summary
-    for i in range(iters):
-        fb = judge_scores(slides, S, cfg)   # feedback dictionary
-        # convert judge feedback into a readable string for refinement
-        fb_text = json.dumps({
-            "coverage": fb["coverage"],
-            "faithfulness": fb["faithfulness"],
-            "organization": fb["organization"],
-            "clarity": fb["clarity"],
-            "style": fb["style"],
-            "two_strengths": fb["two_strengths"],
-            "two_issues": fb["two_issues"],
-        }, indent=2)
-
-        S = refine_summary_once(slides, S, fb_text, cfg)
-
-    return S
 
 # =========================================================
 # 4) Judges (single-call versions)
 # =========================================================
 
-def judge_scores(slides: List[Dict], summary: str, cfg: LLMConfig) -> Dict[str, Any]:
+def judge_scores(slides: List[Dict], summary: str, cfg_judge: LLMConfig) -> Dict[str, Any]:
     """
     Reference-free judge: compare summary directly against the slides on a rubric.
     Returns integer scores and qualitative strengths/issues.
     """
     slides_str = _slides_to_str(slides, max_chunks=3, max_tokens=1500)
     user_msg = f"[Slides]\n{slides_str}\n\n[Summary]\n{summary}\n\nReturn ONLY JSON."
-    raw = call_llm(_RUBRIC_PROMPT, user_msg, cfg)
+    raw = call_llm(_RUBRIC_PROMPT, user_msg, cfg_judge, json_mode=True)
     data = _force_json(raw)
     data["_meta"] = {
-        "model": cfg.model,
-        "temperature": cfg.temperature,
-        "seed": cfg.seed,
+        "model": cfg_judge.model,
+        "temperature": cfg_judge.temperature,
+        "seed": cfg_judge.seed,
         "system_prompt_hash": hash(_RUBRIC_PROMPT),
         "user_len": len(user_msg),
     }
     return data
 
 
-def judge_agreement(reference: str, summary: str, cfg: LLMConfig) -> Dict[str, Any]:
+def judge_agreement(reference: str, summary: str, cfg_judge: LLMConfig) -> Dict[str, Any]:
     """
     Reference-aware judge: compare summary to a human-written reference.
-    Useful for calibration, not to overfit style.
     """
     user_msg = f"[Reference]\n{reference}\n\n[Model summary]\n{summary}\n\nReturn ONLY JSON."
-    raw = call_llm(_AGREEMENT_PROMPT, user_msg, cfg)
+    raw = call_llm(_AGREEMENT_PROMPT, user_msg, cfg_judge, json_mode=True)
     data = _force_json(raw)
     data["_meta"] = {
-        "model": cfg.model,
-        "temperature": cfg.temperature,
-        "seed": cfg.seed,
+        "model": cfg_judge.model,
+        "temperature": cfg_judge.temperature,
+        "seed": cfg_judge.seed,
         "system_prompt_hash": hash(_AGREEMENT_PROMPT),
         "user_len": len(user_msg),
     }
     return data
 
 
-def pairwise_judge(slides: List[Dict], A: str, B: str, cfg: LLMConfig) -> Dict[str, Any]:
+def pairwise_judge(slides: List[Dict], A: str, B: str, cfg_judge: LLMConfig) -> Dict[str, Any]:
     """
     Head-to-head judge: choose the better of two summaries for the same lecture.
     """
     slides_str = _slides_to_str(slides, max_chunks=3, max_tokens=1500)
     user_msg = f"[Slides]\n{slides_str}\n\n[Summary A]\n{A}\n\n[Summary B]\n{B}\n\nReturn ONLY JSON."
-    raw = call_llm(_PAIRWISE_PROMPT, user_msg, cfg)
+    raw = call_llm(_PAIRWISE_PROMPT, user_msg, cfg_judge, json_mode=True)
     data = _force_json(raw)
 
     # Force the winner to be "A" or "B" if the model free-forms
@@ -421,9 +455,9 @@ def pairwise_judge(slides: List[Dict], A: str, B: str, cfg: LLMConfig) -> Dict[s
             data["reason"] = (data.get("reason") or "") + " (tie-broken randomly)"
 
     data["_meta"] = {
-        "model": cfg.model,
-        "temperature": cfg.temperature,
-        "seed": cfg.seed,
+        "model": cfg_judge.model,
+        "temperature": cfg_judge.temperature,
+        "seed": cfg_judge.seed,
         "system_prompt_hash": hash(_PAIRWISE_PROMPT),
         "user_len": len(user_msg),
     }
@@ -431,73 +465,150 @@ def pairwise_judge(slides: List[Dict], A: str, B: str, cfg: LLMConfig) -> Dict[s
 
 
 # =========================================================
+# 4.5) Iterative refinement loop
+# =========================================================
+
+def iterative_refine_summary(
+    slides: List[Dict],
+    initial_summary: str,
+    cfg_judge: LLMConfig,
+    cfg_refine: LLMConfig,
+    iters: int = 3
+) -> str:
+    """
+    Implements S0 -> Judge -> S1 -> Judge -> S2 -> Judge -> S3.
+    """
+    S = initial_summary
+    for i in range(iters):
+        fb = judge_scores(slides, S, cfg_judge)   # feedback dictionary
+        fb_text = json.dumps({
+            "coverage": fb.get("coverage"),
+            "faithfulness": fb.get("faithfulness"),
+            "organization": fb.get("organization"),
+            "clarity": fb.get("clarity"),
+            "style": fb.get("style"),
+            "two_strengths": fb.get("two_strengths"),
+            "two_issues": fb.get("two_issues"),
+        }, indent=2)
+
+        S = refine_summary_once(slides, S, fb_text, cfg_refine)
+
+    return S
+
+
+# =========================================================
 # 5) Ensemble wrappers (reduce variance)
 # =========================================================
 
-def judge_scores_ensemble(slides, summary, cfg, runs: int = 3) -> Dict[str, Any]:
+def judge_scores_ensemble(
+    slides: List[Dict],
+    summary: str,
+    cfg_judge: LLMConfig,
+    runs: int = 3
+) -> Dict[str, Any]:
     """
     Call the rubric judge multiple times (varying seed), average scalar fields,
-    and carry over example text fields from the first call.
+    and carry qualitative text fields from the first call.
     """
     outs = []
+    base_seed = cfg_judge.seed or 0
     for r in range(runs):
-        cfg_r = LLMConfig(**{**cfg.__dict__, "seed": (cfg.seed or 0) + r})
+        cfg_r = LLMConfig(
+            provider=cfg_judge.provider,
+            model=cfg_judge.model,
+            temperature=cfg_judge.temperature,
+            max_tokens=cfg_judge.max_tokens,
+            seed=base_seed + r,
+        )
         outs.append(judge_scores(slides, summary, cfg_r))
 
-    meanable = ["coverage","faithfulness","organization","clarity","style","overall_1to10"]
-    avg = {k: int(round(np.mean([o.get(k,0) for o in outs]))) for k in meanable}
-    # carry qualitative fields from run 0 for readability
+    meanable = ["coverage", "faithfulness", "organization", "clarity", "style", "overall_1to10"]
+    avg = {k: int(round(np.mean([o.get(k, 0) for o in outs]))) for k in meanable}
     avg["two_strengths"] = outs[0].get("two_strengths", [])
     avg["two_issues"] = outs[0].get("two_issues", [])
     avg["faithfulness_evidence"] = outs[0].get("faithfulness_evidence", [])
-    avg["_stdev_overall"] = float(np.std([o.get("overall_1to10",0) for o in outs], ddof=1))
+    avg["_stdev_overall"] = float(np.std([o.get("overall_1to10", 0) for o in outs], ddof=1))
     return avg
 
 
-def judge_agreement_ensemble(reference, summary, cfg, runs: int = 3) -> Dict[str, Any]:
+def judge_agreement_ensemble(
+    reference: str,
+    summary: str,
+    cfg_judge: LLMConfig,
+    runs: int = 3
+) -> Dict[str, Any]:
     """
     Call the agreement judge multiple times and average the agreement score.
     """
     outs = []
+    base_seed = cfg_judge.seed or 0
     for r in range(runs):
-        cfg_r = LLMConfig(**{**cfg.__dict__, "seed": (cfg.seed or 0) + r})
+        cfg_r = LLMConfig(
+            provider=cfg_judge.provider,
+            model=cfg_judge.model,
+            temperature=cfg_judge.temperature,
+            max_tokens=cfg_judge.max_tokens,
+            seed=base_seed + r,
+        )
         outs.append(judge_agreement(reference, summary, cfg_r))
 
-    avg = {"agreement_1to5": int(round(np.mean([o.get("agreement_1to5",0) for o in outs])))}
+    avg = {"agreement_1to5": int(round(np.mean([o.get("agreement_1to5", 0) for o in outs])))}
     avg["missing_key_points"] = outs[0].get("missing_key_points", [])
     avg["added_inaccuracies"] = outs[0].get("added_inaccuracies", [])
-    avg["_stdev_agreement"] = float(np.std([o.get("agreement_1to5",0) for o in outs], ddof=1))
+    avg["_stdev_agreement"] = float(np.std([o.get("agreement_1to5", 0) for o in outs], ddof=1))
     return avg
 
 
-def pairwise_judge_ensemble(slides, A, B, cfg, runs: int = 5) -> Dict[str, Any]:
+def pairwise_judge_ensemble(
+    slides: List[Dict],
+    A: str,
+    B: str,
+    cfg_judge: LLMConfig,
+    runs: int = 5
+) -> Dict[str, Any]:
     """
     Multiple pairwise votes with A/B order shuffling to reduce position bias.
     Returns winner ("A" or "B"), per-side win counts, and a couple sample reasons.
     """
-    wins = {"A":0, "B":0}
+    wins = {"A": 0, "B": 0}
     reasons = []
+    base_seed = cfg_judge.seed or 0
+
     for r in range(runs):
-        cfg_r = LLMConfig(**{**cfg.__dict__, "seed": (cfg.seed or 0) + r})
+        cfg_r = LLMConfig(
+            provider=cfg_judge.provider,
+            model=cfg_judge.model,
+            temperature=cfg_judge.temperature,
+            max_tokens=cfg_judge.max_tokens,
+            seed=base_seed + r,
+        )
         if r % 2 == 0:
             res = pairwise_judge(slides, A, B, cfg_r)
-            w = res.get("winner","A")
+            w = res.get("winner", "A")
             wins[w] += 1
-            reasons.append(res.get("reason",""))
+            reasons.append(res.get("reason", ""))
         else:
             res = pairwise_judge(slides, B, A, cfg_r)
-            w = res.get("winner","A")           # winner relative to swapped order
+            w = res.get("winner", "A")           # winner relative to swapped order
             w = "A" if w == "B" else "B"        # map back to original A/B names
             wins[w] += 1
-            reasons.append(res.get("reason",""))
+            reasons.append(res.get("reason", ""))
+
     final_winner = "A" if wins["A"] >= wins["B"] else "B"
     return {"winner": final_winner, "wins": wins, "reasons_sample": reasons[:2]}
 
+
 # =========================================================
-# 5.5) Pairwise-Guided Refinement (EXTENSION)
+# 5.5) Pairwise-Guided Refinement (optional extension)
 # =========================================================
 
-def pairwise_guided_refinement(slides, summary_candidates, cfg, rounds=2):
+def pairwise_guided_refinement(
+    slides: List[Dict],
+    summary_candidates: Dict[str, str],
+    cfg_judge: LLMConfig,
+    cfg_refine: LLMConfig,
+    rounds: int = 2
+) -> Dict[str, str]:
     """
     For each round:
         - compare all summaries pairwise
@@ -512,30 +623,31 @@ def pairwise_guided_refinement(slides, summary_candidates, cfg, rounds=2):
 
         # pairwise comparisons
         for i in range(len(names)):
-            for j in range(i+1, len(names)):
+            for j in range(i + 1, len(names)):
                 A, B = names[i], names[j]
-                res = pairwise_judge_ensemble(slides, curr[A], curr[B], cfg, runs=3)
+                res = pairwise_judge_ensemble(slides, curr[A], curr[B], cfg_judge, runs=3)
                 winner = A if res["winner"] == "A" else B
                 scores[winner] += 1
 
         # Keep top 50%
         sorted_names = sorted(scores, key=lambda n: scores[n], reverse=True)
-        keep = sorted_names[:max(1, len(sorted_names)//2)]
+        keep = sorted_names[:max(1, len(sorted_names) // 2)]
 
         # Refine survivors
-        new_set = {}
+        new_set: Dict[str, str] = {}
         for k in keep:
-            fb = judge_scores(slides, curr[k], cfg)
+            fb = judge_scores(slides, curr[k], cfg_judge)
             fb_text = json.dumps(fb, indent=2)
-            refined = refine_summary_once(slides, curr[k], fb_text, cfg)
+            refined = refine_summary_once(slides, curr[k], fb_text, cfg_refine)
             new_set[k] = refined
 
         curr = new_set
 
     return curr
 
+
 # =========================================================
-# 5.6) Reference-Agreement-Guided Refinement
+# 5.6) Reference-Agreement-Guided Refinement (optional)
 # =========================================================
 
 _REFINE_AGREEMENT_PROMPT = """
@@ -565,7 +677,13 @@ Focus on:
 Return ONLY the refined summary text.
 """
 
-def refine_summary_toward_reference(slides, summary, reference, feedback, cfg):
+def refine_summary_toward_reference(
+    slides: List[Dict],
+    summary: str,
+    reference: str,
+    feedback: str,
+    cfg_refine: LLMConfig
+) -> str:
     slides_str = _slides_to_str(slides, max_chunks=3, max_tokens=1500)
     user = _REFINE_AGREEMENT_PROMPT.format(
         slides=slides_str,
@@ -573,20 +691,28 @@ def refine_summary_toward_reference(slides, summary, reference, feedback, cfg):
         reference=reference,
         feedback=feedback
     )
-    raw = call_llm("You refine summaries toward reference targets.", user, cfg)
+    raw = call_llm("You refine summaries toward reference targets.", user, cfg_refine, json_mode=False)
     return raw.strip()
 
 
-def agreement_calibrated_refinement(slides, initial_summary, reference, cfg, iters=2):
+def agreement_calibrated_refinement(
+    slides: List[Dict],
+    initial_summary: str,
+    reference: str,
+    cfg_judge: LLMConfig,
+    cfg_refine: LLMConfig,
+    iters: int = 2
+) -> str:
     """
-    Summary refinement loop supervised partly by human reference.
+    Summary refinement loop supervised partly by a human reference.
     """
     S = initial_summary
     for i in range(iters):
-        fb = judge_agreement(slides=slides, reference=reference, summary=S, cfg=cfg)
+        fb = judge_agreement(reference, S, cfg_judge)
         fb_text = json.dumps(fb, indent=2)
-        S = refine_summary_toward_reference(slides, S, reference, fb_text, cfg)
+        S = refine_summary_toward_reference(slides, S, reference, fb_text, cfg_refine)
     return S
+
 
 # =========================================================
 # 6) Scoring combiner & evaluation entry points
@@ -595,13 +721,13 @@ def agreement_calibrated_refinement(slides, initial_summary, reference, cfg, ite
 def llm_score(
     rubric: Dict[str, Any],
     agree: Dict[str, Any],
-    weights: Dict[str, float] | None = None
+    weights: Optional[Dict[str, float]] = None
 ) -> float:
     """
     Combine rubric (5 dims) and agreement into a scalar in [0,1].
-    Default reweights faithfulness higher (paper-backed).
+    Default reweights faithfulness higher.
     """
-    w = weights or {"coverage":1, "faithfulness":2, "organization":1, "clarity":1, "style":1}
+    w = weights or {"coverage": 1, "faithfulness": 2, "organization": 1, "clarity": 1, "style": 1}
     denom = sum(w.values()) * 5.0
     r = (
         w["coverage"] * int(rubric.get("coverage", 0)) +
@@ -619,18 +745,31 @@ def evaluate_one_summary(
     slides: List[Dict],
     model_summary: str,
     human_reference: str,
-    cfg: LLMConfig,
+    cfg_judge: LLMConfig,
+    cfg_refine: Optional[LLMConfig] = None,
     target_words: int = 300,
     refine_iters: int = 0,
 ) -> Dict[str, Any]:
+    """
+    Full evaluation pipeline:
+
+      1. Optional iterative refinement:
+         S0 -> S1 -> S2 -> S3 via judge feedback + revision.
+      2. Deterministic signals.
+      3. Rubric scores via LLM-as-judge ensemble.
+      4. Agreement scores vs human reference.
+      5. Combined scalar in [0,1].
+    """
+    if cfg_refine is None:
+        cfg_refine = cfg_judge
 
     # Optional: Iterative refinement
     if refine_iters > 0:
-        model_summary = iterative_refine_summary(slides, model_summary, cfg, iters=refine_iters)
+        model_summary = iterative_refine_summary(slides, model_summary, cfg_judge, cfg_refine, iters=refine_iters)
 
     sig = simple_signals(slides, model_summary, target_words=target_words)
-    rubric = judge_scores_ensemble(slides, model_summary, cfg, runs=3)
-    agree  = judge_agreement_ensemble(human_reference, model_summary, cfg, runs=3)
+    rubric = judge_scores_ensemble(slides, model_summary, cfg_judge, runs=3)
+    agree = judge_agreement_ensemble(human_reference, model_summary, cfg_judge, runs=3)
     score = llm_score(rubric, agree)
 
     return {
@@ -645,7 +784,7 @@ def evaluate_one_summary(
 def round_robin_pairwise(
     slides: List[Dict],
     summaries: Dict[str, str],
-    cfg: LLMConfig
+    cfg_judge: LLMConfig
 ) -> Dict[str, Any]:
     """
     Compare all summaries pairwise using the ensemble judge.
@@ -660,7 +799,7 @@ def round_robin_pairwise(
         for j in range(i + 1, len(names)):
             total_pairs += 1
             Aname, Bname = names[i], names[j]
-            res = pairwise_judge_ensemble(slides, summaries[Aname], summaries[Bname], cfg, runs=5)
+            res = pairwise_judge_ensemble(slides, summaries[Aname], summaries[Bname], cfg_judge, runs=5)
             win_name = Aname if res["winner"] == "A" else Bname
             wins[win_name] += 1
             matches.append({
@@ -678,13 +817,12 @@ def round_robin_pairwise(
 # 7) Sanity test (direction of information)
 # =========================================================
 
-def sanity_direction_of_info(slides, summary, cfg) -> Dict[str, Any]:
+def sanity_direction_of_info(slides: List[Dict], summary: str, cfg_judge: LLMConfig) -> Dict[str, Any]:
     """
     Faithfulness should drop when the judge cannot see the slides.
-    Use in quick CI checks to catch prompt regressions.
     """
-    r_full = judge_scores_ensemble(slides, summary, cfg, runs=2)
-    r_blind = judge_scores_ensemble([], summary, cfg, runs=2)
+    r_full = judge_scores_ensemble(slides, summary, cfg_judge, runs=2)
+    r_blind = judge_scores_ensemble([], summary, cfg_judge, runs=2)
     return {
         "faithfulness_full": r_full["faithfulness"],
         "faithfulness_blind": r_blind["faithfulness"],
@@ -699,38 +837,40 @@ def sanity_direction_of_info(slides, summary, cfg) -> Dict[str, Any]:
 if __name__ == "__main__":
     # Example slides and summaries
     slides = [
-        {"title":"Gradient Descent","content":"Update parameters opposite the gradient to minimize loss."},
-        {"title":"Learning Rate","content":"Too high diverges; too low slows convergence; schedules can help."},
-        {"title":"Stopping Criteria","content":"Use validation loss, gradient norm, or max steps."},
+        {"title": "Gradient Descent", "content": "Update parameters opposite the gradient to minimize loss."},
+        {"title": "Learning Rate", "content": "Too high diverges; too low slows convergence; schedules can help."},
+        {"title": "Stopping Criteria", "content": "Use validation loss, gradient norm, or max steps."},
     ]
     human_ref = "Covers update rule, impact of learning rate, and stopping criteria."
     model_sum = "Update parameters using the negative gradient. High LR diverges. Stop by validation or gradient."
 
-    # Configure your model (wire call_llm() first to actually run judges)
-    cfg = LLMConfig(provider="openai", model="gpt-4o-mini", temperature=0.2, max_tokens=512, seed=7)
+    # Judge: gpt-5-chat-latest (JSON, temperature allowed)
+    cfg_judge = LLMConfig(
+        provider="openai",
+        model="gpt-5-chat-latest",
+        temperature=0.0,   # deterministic judge
+        max_tokens=512,
+        seed=7,
+    )
 
-    # Deterministic signals run without an LLM:
+    # Refiner: gpt-5-mini (no custom temperature allowed)
+    cfg_refine = LLMConfig(
+        provider="openai",
+        model="gpt-5-mini",
+        temperature=None,  # don't send temperature
+        max_tokens=512,
+        seed=7,
+    )
+
     print("Signals (no LLM needed):", simple_signals(slides, model_sum, target_words=80))
 
-    # The lines below require a real call_llm implementation:
-    # res = evaluate_one_summary(slides, model_sum, human_ref, cfg)
-    # print("Eval:", res)
-    # rr = round_robin_pairwise(slides, {"A": model_sum, "B": "Another summary..."}, cfg)
-    # print("Pairwise:", rr)
-    # =========================================================
-    # OPTIONAL: Full iterative refinement + evaluation demo
-    # =========================================================
-
-    # 1) Use your existing model summary as S0
-    initial = model_sum  # or call your summarization model here
-
-    # 2) Run full pipeline with 3 refinement iterations
     res = evaluate_one_summary(
         slides,
-        initial,
+        model_sum,
         human_ref,
-        cfg,
-        refine_iters=3   # <-------- THIS ACTIVATES THE ITERATIVE REFINEMENT
+        cfg_judge,
+        cfg_refine,
+        refine_iters=3   # activates the iterative refinement loop
     )
 
     print("\n=== Final Scalar Score (0–1) ===")
@@ -738,4 +878,3 @@ if __name__ == "__main__":
 
     print("\n=== Refined Summary ===")
     print(res["refined_summary"])
-
