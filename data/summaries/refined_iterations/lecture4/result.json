@@ -1,0 +1,36 @@
+{
+  "refined_summary": "This lecture explained how natural selection and genetic inheritance together shape evolutionary change. Evolution was defined as a change in allele frequencies within a population over time, driven by three postulates: organisms compete for existence, individuals vary in traits affecting survival and reproduction, and these variations are heritable. While Darwin struggled to explain how variation persisted under selection, later discoveries in genetics provided the missing mechanism. Artificial selection in domesticated animals and plants, such as dogs and pigeons, demonstrates how targeted breeding produces rapid shifts in traits within just a few generations. In contrast, the evolution of complex features\u2014like the vertebrate eye\u2014illustrates how very small improvements (about 1% each step) can accumulate across roughly a million years, showing both rapid and gradual rates of evolutionary change.\n\nGregor Mendel\u2019s 19th\u2011century experiments with pea plants revealed that inheritance is particulate: traits are controlled by discrete units, or genes, passed intact from each parent, preserving variation. His work, rediscovered around 1900, inspired research linking heredity to cell structures. Walther Flemming identified chromatin and observed mitosis, while Sutton and Boveri demonstrated that genes are carried on chromosomes, forming the Chromosome Theory of Inheritance. Humans have 46 chromosomes (23 homologous pairs), including one pair of sex chromosomes, though numbers vary among species.\n\nMitosis produces identical diploid somatic cells, whereas meiosis generates haploid gametes and introduces variation through mutation and recombination. Mendel\u2019s crosses distinguished genotype (the genetic makeup) from phenotype (observable traits) and showed how dominant alleles mask recessive ones. Predictable patterns in crosses, illustrated with Punnett squares, explain the transmission of traits. Later work on linkage and recombination revealed that genes close together on the same chromosome may not assort independently; crossing over during meiosis can create new allele combinations, and recombination rate measures how frequently such exchanges occur.\n\nThe molecular basis of heredity was established with the 1953 discovery by James Watson and Francis Crick, aided by Rosalind Franklin\u2019s x\u2011ray data, that DNA forms a double helix. DNA has a sugar\u2011phosphate backbone and complementary base pairs: adenine bonds with thymine, and cytosine with guanine. Genes\u2014functional sequences of DNA\u2014are the fundamental units of heredity; humans have about 20,000\u201325,000. Mitochondrial DNA (mtDNA), located in mitochondria, contains 37 genes, is inherited only from mothers without recombination, and remains more conserved than nuclear DNA. Because of this stability, mtDNA helps reconstruct evolutionary relationships and date lineages, including \u201cMitochondrial Eve,\u201d the most recent common matrilineal ancestor of all humans who lived about 100,000\u2013200,000 years ago in East Africa.",
+  "signals": {
+    "length_error": 0.36333333333333334,
+    "section_coverage_pct": 0.8809523809523809,
+    "glossary_recall": 0.6111111111111112,
+    "suspected_hallucination_rate": 0.16666666666666666
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 5,
+    "organization": 5,
+    "clarity": 5,
+    "style": 5,
+    "overall_1to10": 10,
+    "two_strengths": [
+      "Comprehensively addresses all lecture sections from natural selection to DNA applications.",
+      "Accurately integrates conceptual connections between Mendel\u2019s findings and molecular genetics."
+    ],
+    "two_issues": [
+      "Minor omission of specific examples of chromosome count variation (e.g., chimpanzees, butterflies).",
+      "Could briefly mention \u2018molecular clock\u2019 use in species divergence timing."
+    ],
+    "faithfulness_evidence": [
+      "Slide phrase: 'Evolution is the change in allele frequencies that occurs over time within a population.'",
+      "Slide phrase: 'Mitochondrial Eve \u2013 Most recent common matrilineal ancestor of all humans \u2013 100-200kya in East Africa.'"
+    ]
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "final_score_0to1": 1.0,
+  "lecture_title": "lecture4"
+}
