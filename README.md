@@ -180,8 +180,8 @@ lecture_title
 - `data/summaries/refined_iterations/lecture2/` - UCSD LATI 10 (Reading North by South: Latin American Studies and the US Liberation Movements) [Dr. Amy Kennemore] - Week 3 Slides
 - `data/summaries/refined_iterations/lecture4/` - UCSD ANTH 2 (Human Origins) [Maria Carolina Marchetto, PhD] - Week 2 Slides
 - `data/summaries/refined_iterations/lecture5/` - UCSD EDS/SOCI 117 (Language, Culture, and Education) [Gabrielle Jones, Ph.D.] - Week 2 Wednesday Slides
-- `data/summaries/refined_iterations/lecture6/` - UCSD 
-- `data/summaries/refined_iterations/lecture7/` - UCSD
+- `data/summaries/refined_iterations/lecture6/` - UCSD DSC 100 (Introduction to Data Management) [Babak Salimi] - Week 3 Slides
+- `data/summaries/refined_iterations/lecture7/` - UCSD COGS 14A (Intro to Research Methods) [Sarah C. Creel] - Week 5 Slides
 
 #### The LLM-Generated initial summaries for each respective test-set are stored here:
 ```

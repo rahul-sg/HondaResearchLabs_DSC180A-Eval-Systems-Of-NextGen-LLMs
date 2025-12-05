@@ -1,0 +1,124 @@
+============ FINAL SUMMARY ============
+
+Revised concise lecture summary (updated per judge feedback)
+
+Overview
+- Goal (visual design): organize information so users can find, understand, and act on content quickly. Use click testing to validate what users actually attend to and adjust layout accordingly (method: give short tasks, record click maps/heatmaps or timestamps, measure success rate and time-to-find; common outcome: relocate CTAs or key metadata to areas users target).
+- FACETS (tight definition): facets are orthogonal attributes or metadata (filters like price, brand, color, size, rating, date range, content type, tags) surfaced in UI so users narrow and discover results without restructuring pages (e.g., search sidebar filters, faceted product search, media-type chips on a library page). Use facets with clear counts and persistent state so users understand scope and backtrack easily.
+
+Visual design — PARC (clear, non-overlapping one-line definitions)
+- Proximity: group related items spatially so the eye reads them as a unit.
+- Alignment: place elements on common lines/columns to create reading paths and order.
+- Repetition: reuse visual treatments so similar items are recognized as the same type.
+- Contrast: separate hierarchy by size, weight, color, or brightness so important items stand out.
+
+For each: quick why it matters, practical rules, and concise UI example.
+
+1. Proximity
+- Why: grouping reduces scanning time by signaling relationships.
+- Practical rules: cluster closely related controls/content; leave clear space between groups; limit obvious groups per view (~3–5).
+- Before/after (concrete): Before — product card with image at top, title at left, price far right, CTA in footer (scattered). After — image + title + price + CTA grouped together on the same card; metadata (rating, SKU) placed below or slightly apart.
+- UI example: product image, price, and primary CTA adjacent on cards; secondary metadata separated by margin.
+
+2. Alignment
+- Why: alignment creates predictable scanning routes and clarifies hierarchy.
+- Practical rules: pick strong alignment lines (left column, headline baseline, vertical gutters); avoid mixing primary alignments for similar content.
+- Before/after (concrete): Before — form labels centered and inputs left-aligned (visually noisy). After — labels and inputs aligned in a column so eyes track vertically and completion speed improves.
+- UI example: form labels and inputs in a single column; card elements sharing a baseline.
+
+3. Repetition
+- Why: consistent patterns teach users what elements do.
+- Practical rules: reuse colors, typography scales, button shapes, iconography, spacing rules; ensure all primary CTAs share treatment.
+- UI example: same color/shape for primary actions site-wide so users learn where to click.
+
+4. Contrast
+- Why: contrast directs attention and communicates priority.
+- Practical rules: use size, weight, color, and spacing differences; ensure accessible contrast ratios (WCAG AA: 4.5:1 for normal text; 3:1 for large text).
+- UI example: high-contrast primary CTA; muted secondary links.
+
+Accessibility note (brief)
+- Ensure sufficient color contrast, visible keyboard focus states, logical tab order, and ARIA labels/roles for dynamic facets and controls. Use semantic HTML so assistive tech reads groups and headings correctly.
+
+Hands-on activities (Walk on the Wild Side)
+- Step 1 (Proximity): identify related items and regroup them into ~3–5 logical clusters.
+- Step 2 (Alignment): apply strong alignment lines (columns, baselines, gutters) to each cluster.
+- Outcome: capture before/after screenshots and compare time-to-find and clarity (fewer ambiguous headings, consistent spacing).
+
+Web development basics (concise, consistent)
+- Event binding: prefer element.addEventListener('click', handler) over inline handlers.
+- Selectors: document.getElementById('id'), document.querySelector('.class'), document.querySelectorAll('button').
+- Updating content safely:
+  - Use element.textContent = 'new text' for plain text.
+  - Use innerHTML only for trusted markup (risk: XSS).
+  - Toggle styles/classes: element.classList.add('name'), .remove(), .toggle().
+- Variables & scope:
+  - Prefer let/const (block-scoped); avoid var and implicit globals.
+  - const for values that don’t reassign; let for mutable bindings.
+- Hoisting (short): var is hoisted and initialized as undefined; let/const are hoisted but in a temporal dead zone until initialized — don’t access them before declaration.
+
+Quick practical rules (recap)
+- PARC: group related items (Proximity); align to strong lines (Alignment); repeat treatments for predictability (Repetition); use contrast for hierarchy (Contrast and accessible ratios).
+- JS: use let/const; avoid implicit globals; bind events with addEventListener; prefer textContent for text updates; manipulate classes/styles rather than rebuilding DOM where possible.
+
+One-page checklist (for grading or quick review)
+- Proximity: Are related items grouped and separated into clear clusters (~3–5)?
+- Alignment: Are elements aligned to consistent lines/columns? No mixed accidental alignments?
+- Repetition: Are visual patterns (colors, buttons, icons) consistent?
+- Contrast & accessibility: Is primary content obvious? Do colors meet WCAG ratios? Is keyboard focus visible?
+- FACETS: Are facets meaningful (price, brand, size, rating, content type) with counts and clear state?
+- Click testing: Were tasks defined; were click maps/time-to-find/success rate used to inform changes?
+- JS basics: Are let/const used, addEventListener used, textContent preferred, and classes toggled rather than rewriting markup?
+
+Suggested small rubric (10 points)
+- PARC principles & examples: 4 pts
+- Walk on the Wild Side activity & before/after: 2 pts
+- FACETS explanation and examples: 1 pt
+- DOM & JS basics (selectors, events, safe updates): 2 pts
+- Accessibility & hoisting/scoping correctness: 1 pt
+
+Concluding synthesis (brief)
+- Let PARC drive semantic HTML/CSS structure so JS toggles classes or updates text without breaking intended relationships. Validate layout changes with click testing and include accessibility checks (contrast, keyboard/ARIA) so dynamic behavior remains discoverable and usable.
+
+If useful, I can produce: a one-page printable checklist formatted for grading, two banner mockups (bad vs good proximity/alignment), or a small code demo showing recommended DOM updates and event binding.
+
+============ SIMPLE SIGNALS (no LLM) ============
+
+Length error (0 = perfect): 2.046666666666667
+Section coverage %        : 1.0
+Glossary recall           : 0.6666666666666666
+Suspected hallucination rate: 0.9473684210526315
+
+============ RUBRIC SCORES (LLM-as-judge) ============
+
+Coverage (1–5)     : 5
+Faithfulness (1–5) : 4
+Organization (1–5) : 4
+Clarity (1–5)      : 5
+Style (1–5)        : 4
+Overall (1–10)     : 6
+Std dev (overall)  : 3.4641016151377544
+
+Strengths:
+  - Very faithful to the slides' core topics: PARC (Proximity, Alignment, Repetition, Contrast) and FACETS are defined and tied to practical rules and examples (the summary explicitly covers each PARC element and the FACETS concept).
+  - Includes lecture-supported pedagogy: hands-on activities (Walk on the Wild Side), before/after demonstrations, accessibility notes, and a concise recap section.
+
+Issues:
+  - The summary expands on FACETS with phrases like 'orthogonal attributes' and 'counts/persistent state' that are not present in the slide text; this is a slight addition not supported by slides.
+  - Some detail in the summary (e.g., specific facet examples like price/brand/color) goes beyond the slide content shown, risking mismatch if the evaluator expects slide-provided examples.
+
+Faithfulness evidence (from slides):
+  - Facetsthe (overlapping) attributes that characterize a set of entities
+  - Step 1 (Proximity): identify related items and regroup them into ~3–5 logical clusters.
+
+============ AGREEMENT WITH REFERENCE ============
+
+Agreement (1–5): 5
+Std dev        : 0.0
+
+Missing key points:
+
+Added inaccuracies:
+
+============ FINAL COMBINED SCORE ============
+
+Final score (0–1): 0.9333333333333333

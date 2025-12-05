@@ -1,0 +1,38 @@
+{
+  "refined_summary": "This lecture introduces **within-subjects designs** as a counterpart to **between-groups designs**. In between-groups studies, each participant contributes data in only one condition, so individual differences add noise and require larger samples to detect effects. Within-subjects designs, by having each person experience all conditions and be compared to themselves, reduce participant-related variability and yield more powerful and efficient statistical tests.\n\nSeveral forms of within-subjects designs are outlined. **Pretest\u2013posttest** designs measure participants before and after an intervention, **repeated-measures** designs test the same people across multiple conditions, and **longitudinal** designs observe change over time. These formats require fewer participants and lower nuisance variability, but they introduce possible complications. **Demand characteristics** can arise when participants receive all conditions and infer the study\u2019s purpose, while **carryover effects** occur when earlier conditions affect later ones through practice or fatigue. Other threats include **history effects**\u2014outside events occurring during the study, **maturation effects**\u2014changes due to aging or development, and **testing effects**\u2014improvement simply from taking the same test again.\n\nA key concern is the **order effect**, where performance depends on condition sequence. **Counterbalancing** helps distribute order effects evenly across participants. Two main strategies are discussed: **complete** and **incomplete** within-subjects designs. In complete designs, each participant experiences all possible condition orders. Examples include the **ABBA design** for two conditions, which offsets linear practice effects, and **block randomization** for three or more conditions, where every possible order is presented and repeated in random blocks. When conditions are numerous, **incomplete designs** are more practical. These include **random order with rotation**, which cycles the starting condition across participants, and the **Latin-square design**, which ensures each condition appears equally often in every sequence position and follows each other condition equally often.\n\nIn **cognitive science experiments** involving many short trials, such as visual search tasks alternating **easy** and **hard** conditions, researchers may simply intermix trials randomly to cancel order effects. Counterbalancing is still preferred when tasks are long or when random mixing could confuse participants. Finally, some manipulations\u2014like taking a drug, undergoing surgery, or learning a lasting skill\u2014cannot be reversed, setting practical limits on counterbalancing. The lecture concludes by reminding students that the Week\u202f5 quiz is now available and due Friday at\u202f11:59\u202fp.m.",
+  "signals": {
+    "length_error": 0.2,
+    "section_coverage_pct": 0.9,
+    "glossary_recall": 0.4375,
+    "suspected_hallucination_rate": 0.5263157894736842
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 5,
+    "organization": 5,
+    "clarity": 5,
+    "style": 5,
+    "overall_1to10": 10,
+    "two_strengths": [
+      "The summary thoroughly covers every major slide topic, from defining within-subjects designs through counterbalancing limits.",
+      "It accurately explains examples like ABBA designs and Latin-square counterbalancing with precise terminology."
+    ],
+    "two_issues": [
+      "It might briefly separate logistical reminders (quiz due date, office hours) from conceptual content for clearer emphasis.",
+      "Could include more detail about specific examples (e.g., the dyslexia spacing study) to connect design concepts to applications."
+    ],
+    "faithfulness_evidence": [
+      "Slide 3: 'Each participant contributes data in all conditions \u2013 Compare each participant TO THEMSELF in other conditions.'",
+      "Slide 18: 'ABBA design... controls for practice effects\u2014if effects linear/slow' and 'Block randomization (3+ conditions)... Order these 6 blocks randomly'"
+    ]
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": [
+      "Mentions a Week 5 quiz and due date, which is not part of the lecture content."
+    ]
+  },
+  "final_score_0to1": 1.0,
+  "lecture_title": "lecture7"
+}

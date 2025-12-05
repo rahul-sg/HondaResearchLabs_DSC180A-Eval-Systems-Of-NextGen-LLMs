@@ -1,10 +1,10 @@
 {
-  "refined_summary": "The lecture introduces the **financial accounting framework**, describing accounting as the *language of business* that tells a company\u2019s financial story\u2014its performance, risks, and opportunities\u2014through systematic identification, measurement, and recording of economic events. It fulfills two main roles: **recordkeeping**, which captures a firm\u2019s financing, investing, and operating activities; and **communication**, which organizes that information into financial statements for external users.\n\nFinancial information serves multiple audiences, including investors, creditors, suppliers, management, boards of directors, employees, customers, analysts, regulators, and others. These stakeholders rely on accounting reports to assess profitability, credit risk, management effectiveness, and long\u2011term stability. Financial accounting differs from managerial accounting, which supports internal decision making, and from financial statement analysis, which focuses on company valuation.\n\nThe **financial reporting process** summarizes business activities into four primary statements\u2014the **Balance Sheet**, **Income Statement**, **Statement of Stockholders\u2019 Equity**, and **Statement of Cash Flows**\u2014each governed by **Generally Accepted Accounting Principles (GAAP)** to ensure consistency and comparability. The **Securities and Exchange Commission (SEC)** requires periodic statements from public companies and delegates standard\u2011setting to the **Financial Accounting Standards Board (FASB)**; international reporting follows **IFRS** set by the **IASB**. Independent **auditors** evaluate whether statements comply with GAAP and are free of material misstatements, issuing opinions that enhance the reliability of reported information.\n\nThe lecture then applies the framework to the **Balance Sheet**, which shows a company\u2019s financial position at a specific date based on the **accounting equation**  \n**Assets = Liabilities + Stockholders\u2019 Equity.**  \nAssets are resources with future economic benefits (e.g., cash, equipment, land, supplies, patents). Liabilities are obligations to creditors (e.g., payables, notes, taxes), and stockholders\u2019 equity represents owners\u2019 residual claims after debts are settled. Each transaction has a **dual effect**, maintaining balance in the equation.\n\nThrough the **Klein, Inc.** example, students see how this balance operates. Issuing stock and obtaining a bank loan generate the financing needed to begin operations. Purchasing equipment, paying prepaid rent, and buying supplies illustrate investing and operating activities. Each action changes at least two parts of the accounting equation, demonstrating how financing and resource use shape total assets, liabilities, and equity while keeping the balance sheet in equilibrium.",
+  "refined_summary": "Financial accounting is introduced as the language of business\u2014an information system for recording, measuring, and communicating a company\u2019s economic activities. It conveys a firm\u2019s financial story\u2014its performance, opportunities, and risks\u2014in quantitative form so that investors, creditors, suppliers, managers, employees, boards of directors, customers, and others can make informed decisions. The discipline serves two main functions: recordkeeping (capturing and valuing economic events) and communication (providing information to external decision makers). The course distinguishes financial accounting from managerial accounting, which focuses on internal decisions, and from financial statement analysis, which uses existing financial reports for valuation.\n\nThe financial accounting framework organizes a company\u2019s activities into three categories: **financing** (transactions with owners and creditors that provide funding), **investing** (acquiring and disposing of resources needed for operations), and **operating** (the day\u2011to\u2011day activities of producing and selling goods or services). These activities underlie the four primary financial statements\u2014the balance sheet, income statement, statement of stockholders\u2019 equity, and statement of cash flows\u2014that together communicate how resources are obtained and used. Reports are prepared according to **Generally Accepted Accounting Principles (GAAP)** so that accounting information is consistent and comparable. The **Securities and Exchange Commission (SEC)** oversees reporting by publicly traded firms, requires periodic filings such as the annual Form\u202f10\u2011K, quarterly Form\u202f10\u2011Q, and event\u2011driven Form\u202f8\u2011K, and delegates standard\u2011setting authority to the **Financial Accounting Standards Board (FASB)**. Internationally, the **International Accounting Standards Board (IASB)** establishes analogous guidance under IFRS. Independent **auditors**, required for public companies, evaluate whether statements comply with GAAP and are free of material misstatement, issuing opinions that add credibility for decision makers.\n\nThe balance sheet illustrates the core accounting equation\u2014**Assets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity**\u2014which portrays a company\u2019s financial position at a specific date and must always stay in balance. Assets are resources expected to yield future benefits; liabilities are obligations to outsiders; and stockholders\u2019 equity represents owners\u2019 residual claims after debts are settled. Every transaction produces equal dual effects to maintain equilibrium. The Klein,\u202fInc. example demonstrates this process: initial financing through stock issuance and a bank loan increases both assets and claims; investing in equipment or prepaying rent reallocates asset types without changing totals; and purchasing supplies on credit raises both assets and liabilities. Together, these examples show how financing, investing, and operating events shape a firm\u2019s resources and obligations while preserving the accounting equation. Understanding this structure provides the foundation for interpreting all financial statements and evaluating a company\u2019s overall financial health.",
   "signals": {
-    "length_error": 0.15666666666666668,
-    "section_coverage_pct": 0.8297872340425532,
-    "glossary_recall": 0.625,
-    "suspected_hallucination_rate": 0.2
+    "length_error": 0.34,
+    "section_coverage_pct": 0.776595744680851,
+    "glossary_recall": 0.65,
+    "suspected_hallucination_rate": 0.17647058823529413
   },
   "rubric": {
     "coverage": 5,
@@ -14,32 +14,32 @@
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "Captures all major lecture elements including financial reporting standards, auditors, and the detailed Klein, Inc. example.",
-      "Accurately preserves the definitions and relationships in the accounting equation and the dual\u2011effect principle."
+      "Thoroughly covers both course logistics and conceptual material, including GAAP, SEC, and the accounting equation.",
+      "Faithfully restates slide content using accurate terminology such as 'recordkeeping' and 'communication' functions."
     ],
     "two_issues": [
-      "Minor omission of course structure and policies discussed in early 'Syllabus' slides.",
-      "Could use slightly plainer phrasing to improve accessibility for first\u2011week students."
+      "Could briefly mention course grading and participation details from the syllabus slides to be fully comprehensive.",
+      "Does not explicitly reference 'How to succeed' advice (practice, participation), slightly narrowing practical coverage."
     ],
     "faithfulness_evidence": [
-      "Slide 20: 'Language of business... two primary functions: Recordkeeping... Communication'",
-      "Slide 17: 'If Total Assets increase then either Liabilities or Stockholders\u2019 Equity MUST increase by the SAME amount'"
+      "Slide 20: 'Language of business' and 'two primary functions: Recordkeeping ... and Communication.'",
+      "Slide 17 (Chunk 2): 'The Accounting Equation... Each transaction has a dual effect.'"
     ]
   },
   "agreement": {
-    "agreement_1to5": 2,
+    "agreement_1to5": 3,
     "missing_key_points": [
-      "The linkage among the four financial statements and how they form a connected system rather than standalone reports",
-      "Explanation of how net income flows into retained earnings in the Statement of Stockholders\u2019 Equity and connects back to the Balance Sheet",
-      "Description of the Statement of Cash Flows explaining cash changes through operating, investing, and financing activities",
-      "Emphasis on the accounting equation as the backbone of reporting and how changes in revenues, expenses, or dividends affect equity"
+      "Explanation that accounting exists because economic activity is complex and requires structured reporting based on consistent principles and judgment.",
+      "Description of how the four financial statements interconnect, including linkages between income statement, statement of stockholders\u2019 equity, balance sheet, and cash flow statement.",
+      "Emphasis that the cash flow statement explains changes in cash through operating, investing, and financing activities and connects beginning and ending balance sheets.",
+      "Theme that Week 1 focused on conceptual understanding before mechanics."
     ],
     "added_inaccuracies": [
-      "Model adds extensive details about GAAP, SEC, FASB, IASB, IFRS, and auditors, which were not covered in the reference",
-      "Includes distinctions between financial and managerial accounting and references to stakeholders and external users not mentioned in the reference",
-      "Contains a \u2018Klein, Inc.\u2019 example and transaction details absent from the reference lecture"
+      "Inclusion of detailed discussion about GAAP, SEC, FASB, IASB, auditors, and specific SEC filings, which were not mentioned in the reference.",
+      "Mention of distinctions between financial, managerial accounting, and financial statement analysis not covered in the reference.",
+      "Use of a fictional Klein, Inc. example introducing content not referenced in the original summary."
     ]
   },
-  "final_score_0to1": 0.6833333333333333,
+  "final_score_0to1": 0.7833333333333333,
   "lecture_title": "lecture1"
 }
