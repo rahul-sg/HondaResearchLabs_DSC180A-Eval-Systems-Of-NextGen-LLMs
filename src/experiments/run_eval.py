@@ -34,10 +34,10 @@ def main():
 
     # Validate input files
     if not Path(SLIDES_PATH).exists():
-        raise FileNotFoundError(f"❌ Lecture slides not found: {SLIDES_PATH}")
+        raise FileNotFoundError(f" Lecture slides not found: {SLIDES_PATH}")
 
     if not Path(HUMAN_REF_PATH).exists():
-        raise FileNotFoundError(f"❌ Reference summary not found: {HUMAN_REF_PATH}")
+        raise FileNotFoundError(f" Reference summary not found: {HUMAN_REF_PATH}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -47,10 +47,10 @@ def main():
         try:
             file.unlink()
         except Exception:
-            print(f"⚠️ Could not delete: {file}")
+            print(f" Could not delete: {file}")
 
     #load refernce
-    with open(HUMAN_REF_PATH, "r") as f:
+    with open(HUMAN_REF_PATH, "r", encoding="utf-8") as f:
         human_reference = f.read().strip()
 
     #generate summary 0
@@ -59,7 +59,7 @@ def main():
 
     if INITIAL_SUMMARY_PATH.exists() and not regenerate:
         # Try loading existing S0
-        with open(INITIAL_SUMMARY_PATH, "r") as f:
+        with open(INITIAL_SUMMARY_PATH, "r", encoding="utf-8") as f:
             initial_summary = f.read().strip()
 
         if len(initial_summary.split()) < 50:
@@ -88,7 +88,7 @@ def main():
         initial_summary = generate_initial_summary(SLIDES_PATH, cfg_summarizer)
 
         INITIAL_SUMMARY_PATH.parent.mkdir(parents=True, exist_ok=True)
-        with open(INITIAL_SUMMARY_PATH, "w") as f:
+        with open(INITIAL_SUMMARY_PATH, "w", encoding="utf-8") as f:
             f.write(initial_summary)
 
         print(f"[S0] Saved new S0 → {INITIAL_SUMMARY_PATH}")
