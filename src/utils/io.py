@@ -35,7 +35,7 @@ def write_iteration_summary(output_dir: str, iteration: int, text: str):
     os.makedirs(output_dir, exist_ok=True)
     out_path = Path(output_dir) / f"iter_{iteration}.txt"
 
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         f.write(text.strip() + "\n")
 
 # Final summary
@@ -57,5 +57,5 @@ def write_json(path: str, data: Dict[str, Any]):
 
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, default=str)
