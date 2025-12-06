@@ -90,7 +90,7 @@ def refine_once(
         print("Summary length:", len(summary.split()))
         print("=========================\n")
 
-    print("⚠️ Calling REFINER... Summary length:", len(summary.split()))
+    print("Calling REFINER... Summary length:", len(summary.split()))
 
     # Retry loop
     for attempt in range(retry_limit):
@@ -101,7 +101,7 @@ def refine_once(
             json_mode=False
         )
 
-        print("   🔍 RAW LLM RESPONSE (repr):", repr(raw_response))
+        print("RAW LLM RESPONSE (repr):", repr(raw_response))
 
         refined = (raw_response or "").strip()
 

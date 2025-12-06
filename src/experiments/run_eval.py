@@ -23,8 +23,8 @@ def main():
     else:
         force_regen = "no"   # default
 
-    print(f"\n📘 Lecture selected: {lecture_id}")
-    print(f"🔄 Force regenerate S0: {force_regen}")
+    print(f"\nLecture selected: {lecture_id}")
+    print(f"Force regenerate S0: {force_regen}")
 
     #paths
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"
@@ -42,7 +42,7 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Clear previous outputs
-    print(f"🧹 Clearing previous evaluation runs for {lecture_id}...")
+    print(f"Clearing previous evaluation runs for {lecture_id}...")
     for file in OUT_DIR.glob("*"):
         try:
             file.unlink()

@@ -18,7 +18,7 @@ def load_slides(path: str) -> Dict[str, Any]:
         return extract_slides_from_pdf(str(path))
 
     elif path.suffix.lower() == ".json":
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
     else:
@@ -47,7 +47,7 @@ def write_final_summary(output_dir: str, text: str):
     os.makedirs(output_dir, exist_ok=True)
     out_path = Path(output_dir) / "final.txt"
 
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         f.write(text.strip() + "\n")
 
 
