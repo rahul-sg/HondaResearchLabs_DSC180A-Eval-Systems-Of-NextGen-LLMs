@@ -1,36 +1,16 @@
-# src/models/llm_client.py
-
-"""
-Unified LLM client for:
-- Judge calls (JSON-required)
-- Refinement calls (free-form text)
-
-Supports the new OpenAI API format:
-    - max_completion_tokens instead of max_tokens
-    - temperature only allowed for some models
-"""
-
 from dataclasses import dataclass
 from typing import Any, Dict, List
 import json
 import os
 from openai import OpenAI
-
-# ======================================================
-# Load .env from project root (bulletproof absolute path)
-# ======================================================
 from dotenv import load_dotenv
 
-# Find project root: src/models/ → src/ → project root
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 ENV_PATH = os.path.join(ROOT_DIR, ".env")
 
-load_dotenv(ENV_PATH)  # loads OPENAI_API_KEY correctly no matter how script is run
+load_dotenv(ENV_PATH)
 
 
-# ======================================================
-# Configuration Dataclass
-# ======================================================
 
 @dataclass
 class LLMConfig:
@@ -40,9 +20,7 @@ class LLMConfig:
     seed: int | None = None
 
 
-# ======================================================
-# Core LLM Call
-# ======================================================
+
 
 def call_llm(
     system_prompt: str,
@@ -50,18 +28,6 @@ def call_llm(
     cfg: LLMConfig,
     json_mode: bool = False
 ) -> str:
-    """
-    Execute a chat completion with the given model configuration.
-
-    Args:
-        system_prompt: system role message
-        user_prompt: user role message
-        cfg: LLMConfig object
-        json_mode: if True → force JSON output using 'response_format'
-
-    Returns:
-        The model's response text.
-    """
 
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -94,15 +60,8 @@ def call_llm(
     return response.choices[0].message.content
 
 
-# ======================================================
-# Robust JSON parser
-# ======================================================
-
+#Json parse
 def parse_json_or_throw(text: str) -> Dict[str, Any]:
-    """
-    Attempts strict JSON loading.
-    If it fails, searches for the first {...} block.
-    """
     try:
         return json.loads(text)
     except Exception:

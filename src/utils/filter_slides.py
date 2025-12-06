@@ -1,23 +1,8 @@
-# src/utils/filter_slides.py
-
-"""
-Filters out administrative/syllabus slides from lecture PDFs.
-
-Goal B:
-    - Keep ONLY real teaching content
-    - Remove syllabus, instructor info, grading policies, course logistics
-
-This dramatically improves summarization quality.
-"""
-
 from typing import List, Dict
 import re
 
-
+# Check if slide is syllabus
 def is_syllabus_slide(slide: Dict) -> bool:
-    """
-    Decide if a slide is administrative rather than teaching content.
-    """
     text = (slide.get("title", "") + " " + slide.get("content", "")).lower()
 
     # Common syllabus indicators
@@ -52,17 +37,10 @@ def is_syllabus_slide(slide: Dict) -> bool:
         "achieving the objective",
     ]
 
-    # If any keyword appears → it's a syllabus slide
     return any(keyword in text for keyword in syllabus_keywords)
 
-
+# Keep only non-syllabus slides
 def filter_content_slides(slides: List[Dict]) -> List[Dict]:
-    """
-    Remove all administrative slides.
-    Keep *only* those with teaching content.
-    """
-    clean = [s for s in slides if not is_syllabus_slide(s)]
 
-    # If filtering accidentally removes everything (rare),
-    # fallback to original slides.
+    clean = [s for s in slides if not is_syllabus_slide(s)]
     return clean if len(clean) > 0 else slides

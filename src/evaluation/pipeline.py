@@ -1,15 +1,3 @@
-# src/evaluation/pipeline.py
-
-"""
-Evaluation Pipeline (Patched with Goal B)
-
-This version:
-    ✔ Uses full slides for JUDGES (rubric + agreement) — correct!
-    ✔ Uses content-only slides for deterministic signals
-    ✔ Passes full slides to refinement (refinement itself handles filtering)
-    ✔ Eliminates penalties from syllabus/admin slides
-"""
-
 import os
 from typing import Dict, Any
 from pathlib import Path
@@ -27,15 +15,9 @@ from src.models.judge import (
 )
 from src.models.refinement import iterative_refinement
 from src.evaluation.scoring import combine_scores
-
-# NEW IMPORT — required for Goal B
 from src.utils.filter_slides import filter_content_slides
 
-
-# =====================================================================
-# MAIN PIPELINE FUNCTION
-# =====================================================================
-
+#Evaluation pipeline for one lecture
 def evaluate_summary(
     slide_path: str,
     initial_summary: str,
@@ -46,13 +28,8 @@ def evaluate_summary(
     target_words: int = 300,
     refine_iters: int = 3,
 ) -> Dict[str, Any]:
-    """
-    Full evaluation pipeline for a single lecture.
-    """
 
-    # -----------------------------------------------------
-    # 1. Load & parse slides
-    # -----------------------------------------------------
+
     slides_dict = load_slides(slide_path)
     slides_full = slides_dict["slides"]            # raw slides
     slides_content = filter_content_slides(slides_full)  # Goal B applied
@@ -60,14 +37,11 @@ def evaluate_summary(
     # Ensure output directory exists
     Path(out_dir).mkdir(parents=True, exist_ok=True)
 
-    # -----------------------------------------------------
-    # 2. Iterative refinement
-    # -----------------------------------------------------
+
 
     prev_summary = initial_summary
 
     def save_callback(iter_idx: int, summary_text: str):
-        """Save iter_0.txt ... iter_k.txt safely."""
         nonlocal prev_summary
 
         # Prevent blank summaries from propagating
@@ -93,18 +67,13 @@ def evaluate_summary(
     # Save final result
     write_final_summary(out_dir, refined)
 
-    # -----------------------------------------------------
-    # 3. Deterministic signals (Goal B → use content-only slides)
-    # -----------------------------------------------------
+
     signals = compute_signals(
         slides_content,        # not full slides
         refined,
         target_words=target_words
     )
 
-    # -----------------------------------------------------
-    # 4. Rubric judge (full slides)
-    # -----------------------------------------------------
     rubric = judge_rubric_ensemble(
         slides_full,           # judges see full lecture
         refined,
@@ -112,9 +81,7 @@ def evaluate_summary(
         runs=3
     )
 
-    # -----------------------------------------------------
-    # 5. Agreement judge (Goal B → compare only content)
-    # -----------------------------------------------------
+
     agree = judge_agreement_ensemble(
         human_reference,
         refined,
@@ -122,14 +89,11 @@ def evaluate_summary(
         runs=3
     )
 
-    # -----------------------------------------------------
-    # 6. Final score
-    # -----------------------------------------------------
+
+    #final score
     score = combine_scores(rubric, agree)
 
-    # -----------------------------------------------------
-    # 7. Save final structured JSON
-    # -----------------------------------------------------
+    #Save as json
     result = {
         "refined_summary": refined,
         "signals": signals,

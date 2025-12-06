@@ -1,17 +1,3 @@
-# src/models/refinement.py
-
-"""
-Iterative Summary Refinement (Goal B + Option A)
-
-This version includes:
-    ✔ Judge sees the FULL slide deck
-    ✔ Refiner sees ONLY content slides (syllabus removed)
-    ✔ Refiner sees ONLY first N content slides (Option A)
-    ✔ Strong anti-hallucination constraints
-    ✔ Retry guard to prevent blank outputs
-    ✔ Optional debug mode
-"""
-
 from typing import Dict, List, Callable
 import json
 
@@ -21,9 +7,6 @@ from src.utils.chunking import slides_to_text
 from src.utils.filter_slides import filter_content_slides
 
 
-# ============================================================
-# CONFIGURATION
-# ============================================================
 
 # Number of slides allowed for the REFINER model
 REFINER_SLIDE_LIMIT = 9999   # Typically 8–15
@@ -32,10 +15,7 @@ REFINER_SLIDE_LIMIT = 9999   # Typically 8–15
 DEBUG_REFINER = False
 
 
-# ============================================================
-# PROMPT FOR REFINEMENT MODEL
-# ============================================================
-
+#Prompt for refinement model
 REFINE_PROMPT = """
 You are revising a student lecture summary using:
 1) A **subset of the lecture slides** (content slides only)
@@ -69,28 +49,17 @@ Return ONLY the improved summary.
 """
 
 
-# ============================================================
-# HELPER — Limit + filter slide context
-# ============================================================
-
+# Limit slides for refinement model
 def _limit_slides_for_refiner(slides: List[Dict]) -> List[Dict]:
-    """
-    Apply GOAL B filtering:
-      1) remove syllabus/admin slides
-      2) take only the first N real content slides
-    """
-    # Remove administrative slides
+
     content_slides = filter_content_slides(slides)
 
-    # Apply Option A truncation
     return slides
     #return content_slides[:REFINER_SLIDE_LIMIT]
 
 
-# ============================================================
-# ONE-STEP REFINEMENT
-# ============================================================
 
+# One step refinemnet
 def refine_once(
     slides: List[Dict],
     summary: str,
@@ -98,9 +67,6 @@ def refine_once(
     cfg_refine: LLMConfig,
     retry_limit: int = 2
 ) -> str:
-    """
-    Perform one refinement iteration using limited content-only slide context.
-    """
 
     # Filter + truncate slides (Goal B + Option A)
     limited_slides = _limit_slides_for_refiner(slides)
@@ -135,7 +101,6 @@ def refine_once(
             json_mode=False
         )
 
-        # 🔥 DEBUG: see EXACT raw API output BEFORE any stripping
         print("   🔍 RAW LLM RESPONSE (repr):", repr(raw_response))
 
         refined = (raw_response or "").strip()
@@ -148,11 +113,7 @@ def refine_once(
     # Fallback: keep previous summary
     return summary
 
-
-# ============================================================
-# ITERATIVE REFINEMENT LOOP
-# ============================================================
-
+# Iterative refinement process
 def iterative_refinement(
     slides: List[Dict],
     initial_summary: str,
@@ -161,11 +122,6 @@ def iterative_refinement(
     iters: int = 3,
     save_callback: Callable[[int, str], None] | None = None
 ) -> str:
-    """
-    Iterative process using:
-        - full slides for judge
-        - filtered content slides for refiner
-    """
 
     S = initial_summary
 
@@ -175,7 +131,7 @@ def iterative_refinement(
 
     for i in range(1, iters + 1):
 
-        # 1. Judge uses FULL slides (important)
+        # 1. Judge all slides
         feedback = judge_rubric(slides, S, cfg_judge)
 
         # 2. Refiner uses content-only slides

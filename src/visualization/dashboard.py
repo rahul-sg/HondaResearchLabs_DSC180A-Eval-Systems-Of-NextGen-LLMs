@@ -1,5 +1,3 @@
-# src/visualization/dashboard.py
-
 import json
 import matplotlib.pyplot as plt
 from pathlib import Path
@@ -12,10 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 client = OpenAI()
 
-# ============================================================
-# Load iteration summaries
-# ============================================================
-
+# load summaries from iteration directory
 def load_iteration_summaries(iter_dir):
     texts = {}
     for fname in Path(iter_dir).glob("*.txt"):
@@ -25,10 +20,7 @@ def load_iteration_summaries(iter_dir):
     return texts
 
 
-# ============================================================
-# Compute embeddings (OpenAI text-embedding-3-large)
-# ============================================================
-
+# get embedding from OpenAI
 def get_embedding(text):
     if not text.strip():
         return np.zeros(1536)
@@ -53,10 +45,8 @@ def compute_semantic_drift(iter_texts):
     return names, drifts
 
 
-# ============================================================
-# Main dashboard plotting function
-# ============================================================
 
+# plot dashboard
 def plot_dashboard(iter_dir, result_json_path):
     iter_dir = Path(iter_dir)
     result_json_path = Path(result_json_path)
@@ -78,15 +68,10 @@ def plot_dashboard(iter_dir, result_json_path):
     )
     word_counts = [iter_lengths[k] for k in iter_steps]
 
-    # ============================================================
-    # Create 3x2 dashboard
-    # ============================================================
     fig, axes = plt.subplots(3, 2, figsize=(16, 16))
     fig.suptitle("Evaluation Dashboard", fontsize=20, weight="bold")
 
-    # ============================================================
-    # (1) Summary Length Across Iterations
-    # ============================================================
+    #summarize across iterations
     ax = axes[0, 0]
     ax.plot(iter_steps, word_counts, marker='o', linewidth=2)
     ax.set_title("Summary Length Across Refinement Iterations")
@@ -94,9 +79,7 @@ def plot_dashboard(iter_dir, result_json_path):
     ax.set_ylabel("Word Count")
     ax.grid(True)
 
-    # ============================================================
-    # (2) Deterministic Signals
-    # ============================================================
+    #evaluation signals
     ax = axes[0, 1]
     sig_names = ["Coverage", "Glossary Recall", "Hallucination Rate"]
     sig_vals = [
@@ -110,9 +93,7 @@ def plot_dashboard(iter_dir, result_json_path):
     ax.set_title("Deterministic Signals")
     ax.grid(axis="y")
 
-    # ============================================================
-    # (3) Rubric Radar Chart  (fixed)
-    # ============================================================
+    # fixed rubric
     ax = fig.add_subplot(3, 2, 3, polar=True)
 
     categories = ["Coverage", "Faithfulness", "Organization", "Clarity", "Style"]
@@ -134,9 +115,7 @@ def plot_dashboard(iter_dir, result_json_path):
     ax.set_ylim(0, 5)
     ax.set_title("Rubric Radar Chart", pad=20)
 
-    # ============================================================
-    # (4) Agreement Judge
-    # ============================================================
+    # run agreement judge
     ax = axes[1, 1]
     ax.bar(["Final Summary"], [agreement_score], color="#9467bd")
     ax.set_ylim(0, 5)
@@ -144,9 +123,7 @@ def plot_dashboard(iter_dir, result_json_path):
     ax.set_title("Agreement Judge")
     ax.grid(axis="y")
 
-    # ============================================================
-    # (5) Semantic Drift
-    # ============================================================
+    # Check semantic drift
     ax = axes[2, 0]
     names, drifts = compute_semantic_drift(iter_texts)
 
@@ -156,9 +133,7 @@ def plot_dashboard(iter_dir, result_json_path):
     ax.set_xlabel("Iteration")
     ax.grid(True)
 
-    # ============================================================
-    # (6) Judge Disagreement Heatmap
-    # ============================================================
+    # Heatmap of rubric vs agreement
     ax = axes[2, 1]
 
     rubric_vals = np.array([
@@ -184,18 +159,14 @@ def plot_dashboard(iter_dir, result_json_path):
     for (i, j), val in np.ndenumerate(heat_data):
         ax.text(j, i, f"{val:.2f}", ha="center", va="center", color="black")
 
-    # ============================================================
-    # Fix spacing
-    # ============================================================
+
     plt.tight_layout(rect=[0, 0, 1, 0.96])
     plt.subplots_adjust(top=0.92, wspace=0.35, hspace=0.55)
 
     plt.show()
 
 
-# ============================================================
-# CLI ENTRY POINT
-# ============================================================
+# Main entry
 
 def main():
     if len(sys.argv) > 1:

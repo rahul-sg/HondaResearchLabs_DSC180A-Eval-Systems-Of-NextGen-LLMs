@@ -1,24 +1,3 @@
-# src/experiments/sanity_checks.py
-
-"""
-Sanity checks for the evaluation pipeline.
-
-Primary test implemented:
-    Direction-of-Information Test
-
-    This verifies that the faithfulness score:
-        - is HIGHER when the judge sees the slides
-        - is LOWER when the judge is BLIND (slides = [])
-
-If this does NOT hold, something is broken in:
-    - slide parsing
-    - judge prompt
-    - JSON extraction
-    - LLM model configuration
-
-Other optional checks may be added later.
-"""
-
 import os
 from pathlib import Path
 from src.utils.io import load_slides
@@ -26,23 +5,9 @@ from src.models.llm_client import LLMConfig
 from src.models.judge import judge_rubric_ensemble
 
 
-# ================================================================
-# Direction-of-Information Sanity Check
-# ================================================================
 
+#direction of information sanity check
 def direction_of_information_test(slides, summary, cfg_judge):
-    """
-    Compare judge faithfulness scores:
-        - with slides (full context)
-        - without slides (blind judge)
-
-    Returns:
-        {
-            "faithfulness_full": int,
-            "faithfulness_blind": int,
-            "passed": bool
-        }
-    """
 
     # Normal evaluation
     res_full = judge_rubric_ensemble(slides, summary, cfg_judge, runs=2)
@@ -57,29 +22,17 @@ def direction_of_information_test(slides, summary, cfg_judge):
     }
 
 
-# ================================================================
-# MAIN
-# ================================================================
-
 def main():
-
-    # ------------------------------
-    # Choose lecture
-    # ------------------------------
+    #test lecture
     lecture_id = "lecture1"
 
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"
 
-    # ------------------------------
-    # Load slides
-    # ------------------------------
+    #load
     slide_data = load_slides(SLIDES_PATH)
     slides = slide_data["slides"]
 
-    # ------------------------------
-    # Test summary
-    # Replace with any summary you want to test
-    # ------------------------------
+    #example summary
     sample_summary = (
         "Gradient descent updates parameters opposite the gradient to reduce loss. "
         "A learning rate controls step size. Too large and training may diverge; too small and "
@@ -87,16 +40,13 @@ def main():
         "and max steps."
     )
 
-    # ------------------------------
-    # Judge config
-    # ------------------------------
+    #judge
     cfg_judge = LLMConfig(model="gpt-5-chat-latest")
 
-    # ------------------------------
-    # Run sanity check
-    # ------------------------------
+    #run check
     result = direction_of_information_test(slides, sample_summary, cfg_judge)
 
+    #print results
     print("\n===== SANITY CHECK: DIRECTION OF INFORMATION =====")
     print("Faithfulness (with slides): ", result["faithfulness_full"])
     print("Faithfulness (blind):       ", result["faithfulness_blind"])

@@ -1,11 +1,3 @@
-# interactive_dashboard.py
-"""
-Interactive Evaluation Dashboard (Streamlit)
-
-Run with:
-    streamlit run src/visualization/interactive_dashboard.py
-"""
-
 import streamlit as st
 import json
 import numpy as np
@@ -19,19 +11,16 @@ from openai import OpenAI
 load_dotenv()
 client = OpenAI()
 
-# ============================================================
-# Utility Functions
-# ============================================================
 
+# utils
 def load_iteration_summaries(iter_dir):
     texts = {}
     for fname in sorted(Path(iter_dir).glob("*.txt")):
         texts[fname.stem] = fname.read_text().strip()
     return texts
 
-
+# get embedding from OpenAI
 def get_embedding(text):
-    """Compute OpenAI embedding for semantic drift."""
     if not text.strip():
         return np.zeros(1536)
 
@@ -55,10 +44,6 @@ def compute_semantic_drift(iter_texts):
     drift = [1 - sim for sim in sims]
 
     return names, drift
-
-# ============================================================
-# Streamlit Layout
-# ============================================================
 
 st.set_page_config(page_title="Interactive Evaluation Dashboard", layout="wide")
 
@@ -99,10 +84,8 @@ iter_steps = sorted(
     key=lambda x: int(x.split("_")[1]) if x.startswith("iter_") else 999
 )
 
-# ============================================================
-# Row 1 — Summary Length + Deterministic Signals
-# ============================================================
 
+#row 1 Length + Signals
 col1, col2 = st.columns(2)
 
 with col1:
@@ -128,10 +111,8 @@ with col2:
     )
     st.plotly_chart(fig, width="stretch")
 
-# ============================================================
-# Row 2 — Radar + Agreement
-# ============================================================
 
+# row 2 Rubric + Agreement
 col3, col4 = st.columns(2)
 
 with col3:
@@ -169,10 +150,8 @@ with col4:
     )
     st.plotly_chart(fig, width="stretch")
 
-# ============================================================
-# Row 3 — Semantic Drift + Heatmap
-# ============================================================
 
+#row 3 Semantic Drift + Disagreement Heatmap
 col5, col6 = st.columns(2)
 
 with col5:
@@ -188,7 +167,7 @@ with col5:
     st.plotly_chart(fig, width="stretch")
 
 with col6:
-    st.subheader("🔥 Judge Disagreement Heatmap")
+    st.subheader("Judge Disagreement Heatmap")
 
     rubric_vals = np.array([
         rubric["coverage"],
@@ -211,10 +190,8 @@ with col6:
     )
     st.plotly_chart(fig, width="stretch")
 
-# ============================================================
-# Row 4 — Full text viewer
-# ============================================================
 
+# Display iteration summaries
 st.markdown("---")
 st.subheader("📄 View Iteration Summaries")
 

@@ -1,12 +1,3 @@
-# src/utils/io.py
-
-"""
-IO utilities for:
-- Loading PDF or JSON lecture content
-- Writing iterative summaries (iter_0.txt, iter_1.txt, ...)
-- Managing experiment output folders
-"""
-
 import os
 import json
 from typing import Dict, Any
@@ -15,16 +6,9 @@ from pathlib import Path
 from src.utils.pdf_parser import extract_slides_from_pdf
 
 
-# ---------------------------------------------
-# Loading lecture slides (PDF or JSON)
-# ---------------------------------------------
-
+# Loading slides from PDF/JSON
 def load_slides(path: str) -> Dict[str, Any]:
-    """
-    Load lecture slides from:
-        - PDF (auto-parsed)
-        - JSON (must contain {lecture_title, slides: [...]})
-    """
+   
     path = Path(path)
 
     if not path.exists():
@@ -41,15 +25,9 @@ def load_slides(path: str) -> Dict[str, Any]:
         raise ValueError(f"Unsupported slide format: {path.suffix}")
 
 
-# ---------------------------------------------
-# Writing iterative summaries
-# ---------------------------------------------
 
+# Write iterations and save
 def write_iteration_summary(output_dir: str, iteration: int, text: str):
-    """
-    Save the summary for a refinement iteration:
-        iter_0.txt, iter_1.txt, iter_2.txt, ...
-    """
 
     if text is None:
         text = ""
@@ -60,11 +38,8 @@ def write_iteration_summary(output_dir: str, iteration: int, text: str):
     with open(out_path, "w") as f:
         f.write(text.strip() + "\n")
 
-
+# Final summary
 def write_final_summary(output_dir: str, text: str):
-    """
-    Save the final refined summary as final.txt.
-    """
 
     if text is None:
         text = ""
@@ -76,15 +51,9 @@ def write_final_summary(output_dir: str, text: str):
         f.write(text.strip() + "\n")
 
 
-# ---------------------------------------------
-# Saving full evaluation result
-# ---------------------------------------------
 
+# Final Results JSON
 def write_json(path: str, data: Dict[str, Any]):
-    """
-    Serialize evaluation results to JSON.
-    Handles numpy types by coercing via default=str.
-    """
 
     os.makedirs(os.path.dirname(path), exist_ok=True)
 

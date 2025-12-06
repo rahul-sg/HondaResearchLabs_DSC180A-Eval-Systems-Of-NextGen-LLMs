@@ -1,18 +1,3 @@
-# src/experiments/run_eval.py
-
-"""
-Run a full evaluation for a single lecture.
-
-Usage Examples:
-    python -m src.experiments.run_eval lecture1
-    python -m src.experiments.run_eval lecture2 yes   # force regenerate S0
-    python -m src.experiments.run_eval lecture3 no    # reuse existing S0
-
-Defaults:
-    lecture_id = "lecture1"
-    regenerate_s0 = "no"
-"""
-
 import os
 import sys
 from pathlib import Path
@@ -22,22 +7,12 @@ from src.evaluation.pipeline import evaluate_summary
 from src.models.llm_client import LLMConfig
 from src.models.summarizer import generate_initial_summary
 
-# ================================================================
-# Load .env from project root
-# ================================================================
 ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = ROOT / ".env"
 load_dotenv(ENV_PATH)
 
-
-# ================================================================
-# MAIN
-# ================================================================
 def main():
-
-    # ------------------------------------------------------------
-    # Parse CLI arguments
-    # ------------------------------------------------------------
+    #parse args
     if len(sys.argv) > 1:
         lecture_id = sys.argv[1].strip()
     else:
@@ -51,9 +26,7 @@ def main():
     print(f"\n📘 Lecture selected: {lecture_id}")
     print(f"🔄 Force regenerate S0: {force_regen}")
 
-    # ------------------------------------------------------------
-    # Define paths
-    # ------------------------------------------------------------
+    #paths
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"
     HUMAN_REF_PATH = f"data/references/{lecture_id}_reference.txt"
     INITIAL_SUMMARY_PATH = Path(f"data/summaries/model_s0/{lecture_id}.txt")
@@ -68,9 +41,7 @@ def main():
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # ------------------------------------------------------------
-    # Clean evaluation folder
-    # ------------------------------------------------------------
+    # Clear previous outputs
     print(f"🧹 Clearing previous evaluation runs for {lecture_id}...")
     for file in OUT_DIR.glob("*"):
         try:
@@ -78,15 +49,11 @@ def main():
         except Exception:
             print(f"⚠️ Could not delete: {file}")
 
-    # ============================================================
-    # Load human reference
-    # ============================================================
+    #load refernce
     with open(HUMAN_REF_PATH, "r") as f:
         human_reference = f.read().strip()
 
-    # ============================================================
-    # Load / Generate Initial Summary S0
-    # ============================================================
+    #generate summary 0
     regenerate = (force_regen == "yes")
     initial_summary = ""
 
@@ -126,9 +93,7 @@ def main():
 
         print(f"[S0] Saved new S0 → {INITIAL_SUMMARY_PATH}")
 
-    # ============================================================
-    # Judge & Refiner Models
-    # ============================================================
+    # Judge and refine configs
     cfg_judge = LLMConfig(
         model="gpt-5-chat-latest",
         max_completion_tokens=512,
@@ -139,9 +104,7 @@ def main():
         max_completion_tokens=800,
     )
 
-    # ============================================================
-    # Run Evaluation Pipeline
-    # ============================================================
+    #Evaluate
     result = evaluate_summary(
         slide_path=SLIDES_PATH,
         initial_summary=initial_summary,
@@ -153,9 +116,7 @@ def main():
         refine_iters=3,
     )
 
-    # ============================================================
-    # Print Results
-    # ============================================================
+    #print final results
     print("\n===== FINAL EVALUATION RESULT =====")
     print("Score (0–1):", result["final_score_0to1"])
     print("\nRefined Summary:\n", result["refined_summary"])

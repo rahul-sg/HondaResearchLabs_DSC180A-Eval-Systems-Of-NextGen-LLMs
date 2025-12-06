@@ -1,15 +1,3 @@
-# src/models/summarizer.py
-
-"""
-Automatic S0 Summarizer (Content-Only Version — Goal B)
-
-This version:
-    ✔ Removes syllabus/logistics slides
-    ✔ Summarizes ONLY real teaching content
-    ✔ Produces clean 250–350 word summaries
-    ✔ Retries if model output is too short
-"""
-
 from typing import Dict, List
 
 from src.utils.io import load_slides
@@ -18,6 +6,7 @@ from src.utils.filter_slides import filter_content_slides
 from src.models.llm_client import call_llm, LLMConfig
 
 
+# Prompt for summarization model
 SUMMARIZER_PROMPT = """
 You are a lecture summarization assistant trained to produce clear,
 accurate, and academically appropriate summaries.
@@ -38,11 +27,8 @@ IMPORTANT:
 Return ONLY the summary text.
 """
 
-
+# Single call to summarization model
 def _call_summarizer_once(slides_text: str, cfg: LLMConfig) -> str:
-    """
-    Single LLM call for summarization.
-    """
     user_prompt = f"{SUMMARIZER_PROMPT}\n\n[Slides]\n{slides_text}"
 
     summary = call_llm(
@@ -55,32 +41,21 @@ def _call_summarizer_once(slides_text: str, cfg: LLMConfig) -> str:
     return (summary or "").strip()
 
 
+# Initial summary
 def generate_initial_summary(
     pdf_path: str,
     cfg_summarizer: LLMConfig,
     retry_limit: int = 2,
 ) -> str:
-    """
-    Produce the initial model-generated summary (S0) for a lecture.
-
-    Steps:
-        1. Load slides
-        2. Remove syllabus slides (Goal B)
-        3. Convert to text
-        4. Call LLM (retry if needed)
-
-    Returns:
-        ~250–350 word summary string
-    """
 
     # 1. Parse entire slide deck (PDF → structured slides)
     slides_dict = load_slides(pdf_path)
     all_slides: List[Dict] = slides_dict["slides"]
 
-    # 2. Remove administrative/syllabus slides (Goal B)
+    # 2. Remove administrative/syllabus slides
     content_slides = filter_content_slides(all_slides)
 
-    # 3. Convert to compact text
+    # 3. Convert to text
     slides_text = slides_to_text(content_slides)
 
     # 4. Call the LLM with simple retry logic

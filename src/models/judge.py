@@ -1,19 +1,3 @@
-# src/models/judge.py
-
-"""
-LLM Judges:
------------
-1) Rubric Judge (reference-free)
-2) Agreement Judge (reference-aware)
-3) Pairwise Judge (A vs B)
-4) Ensemble wrappers for stability
-
-Notes:
-- Uses gpt-5-chat-latest by default
-- Always calls LLM in JSON mode
-- Compatible with new OpenAI parameters
-"""
-
 from typing import Dict, Any, List
 import json
 import random
@@ -22,10 +6,7 @@ from src.models.llm_client import call_llm, parse_json_or_throw, LLMConfig
 from src.utils.chunking import slides_to_text
 
 
-# ================================================================
-# PROMPTS
-# ================================================================
-
+#prompts
 RUBRIC_PROMPT = """You are a strict teaching assistant. Evaluate a student-facing summary of a lecture.
 
 IMPORTANT:
@@ -86,14 +67,9 @@ Return ONLY JSON:
 """
 
 
-# ================================================================
-# Reference-Free Rubric Judge
-# ================================================================
-
+#Refernce-free Rubric Judge
 def judge_rubric(slides: List[Dict], summary: str, cfg: LLMConfig) -> Dict[str, Any]:
-    """
-    Reference-free judge comparing summary to slide content.
-    """
+
     slide_text = slides_to_text(slides)
     user_msg = f"[Slides]\n{slide_text}\n\n[Summary]\n{summary}\n\nReturn ONLY JSON."
 
@@ -106,14 +82,10 @@ def judge_rubric(slides: List[Dict], summary: str, cfg: LLMConfig) -> Dict[str, 
     return parse_json_or_throw(raw)
 
 
-# ================================================================
-# Agreement Judge (reference-based)
-# ================================================================
 
+#Agreement judge
 def judge_agreement(reference: str, summary: str, cfg: LLMConfig) -> Dict[str, Any]:
-    """
-    Compare summary to a human-written reference.
-    """
+
     user_msg = f"[Reference]\n{reference}\n\n[Model Summary]\n{summary}\nReturn ONLY JSON."
 
     raw = call_llm(
@@ -125,14 +97,10 @@ def judge_agreement(reference: str, summary: str, cfg: LLMConfig) -> Dict[str, A
     return parse_json_or_throw(raw)
 
 
-# ================================================================
-# Pairwise Judge
-# ================================================================
 
+# Pairwise judge (A vs B)
 def judge_pairwise(slides: List[Dict], A: str, B: str, cfg: LLMConfig) -> Dict[str, Any]:
-    """
-    Choose better summary (A or B) for the SAME lecture.
-    """
+
     slide_text = slides_to_text(slides)
     user_msg = (
         f"[Slides]\n{slide_text}\n\n"
@@ -159,14 +127,9 @@ def judge_pairwise(slides: List[Dict], A: str, B: str, cfg: LLMConfig) -> Dict[s
     return data
 
 
-# ================================================================
-# Ensemble Wrappers
-# ================================================================
-
+#Average score of multiple rubric judges
 def judge_rubric_ensemble(slides, summary, cfg: LLMConfig, runs: int = 3) -> Dict[str, Any]:
-    """
-    Average scores across several seeds.
-    """
+
     outs = []
     for r in range(runs):
         cfg_r = LLMConfig(

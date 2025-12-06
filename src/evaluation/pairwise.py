@@ -1,57 +1,17 @@
-# src/evaluation/pairwise.py
-
-"""
-Pairwise comparison utilities.
-
-Implements:
-    - Single A/B pairwise judge call
-    - Ensemble-based A/B judging
-    - Round-robin tournament for N summaries
-
-Used in compare_models.py and other experiments.
-"""
-
 from typing import Dict, Any, List
 import random
 
 from src.models.judge import pairwise_judge_single, pairwise_judge_ensemble
 
 
-# ======================================================================
-# Round-robin tournament
-# ======================================================================
-
+# Perform round-robin pairwise comparison of summaries using ensemble judge
 def round_robin_pairwise(
     slides: List[Dict],
     summaries: Dict[str, str],
     cfg_judge,
     runs: int = 5,
 ) -> Dict[str, Any]:
-    """
-    Compare all summaries pairwise using the ensemble judge.
 
-    Args:
-        slides: parsed slides
-        summaries: dict of {name: summary_text}
-        cfg_judge: LLMConfig for judging
-        runs: ensemble runs per pair
-
-    Returns:
-        {
-            "wins": {name: count},
-            "win_rate": {name: rate},
-            "matches": [
-                {
-                    "A": nameA,
-                    "B": nameB,
-                    "winner": winning_name,
-                    "wins_detail": {"A": x, "B": y},
-                    "reasons_sample": ["...", "..."]
-                },
-                ...
-            ]
-        }
-    """
 
     names = list(summaries.keys())
     wins = {n: 0 for n in names}

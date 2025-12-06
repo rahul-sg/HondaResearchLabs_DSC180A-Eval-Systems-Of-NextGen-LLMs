@@ -1,48 +1,11 @@
-# src/utils/pdf_parser.py
-
-"""
-GENERAL-PURPOSE PDF → Slide Parser
-
-This parser works for ANY slide deck exported to PDF:
-- university lectures
-- corporate presentations
-- conference slides
-
-It extracts:
-{
-    "lecture_title": "...",
-    "slides": [
-        {
-            "title": "...",
-            "content": "cleaned text",
-            "raw_text": "...",
-            "page_number": X
-        }
-    ]
-}
-
-Design goals:
-- Never return empty slides
-- Extract meaningful titles
-- Handle diagram-heavy pages gracefully
-- Avoid assumptions about institution or format
-"""
-
 import fitz  # PyMuPDF
 from typing import Dict, Any, List
 import os
 
 
-# ------------------------------------------------------------
-# Helper: Clean and normalize lines
-# ------------------------------------------------------------
+# clean lines by stripping whitespace and removing empties
 def _clean_lines(lines: List[str]) -> List[str]:
-    """
-    Basic cleaning that works for ANY slide deck:
-    - Strip whitespace
-    - Remove empty lines
-    - Preserve all actual content
-    """
+
     cleaned = []
     for line in lines:
         line = line.strip()
@@ -52,16 +15,9 @@ def _clean_lines(lines: List[str]) -> List[str]:
     return cleaned
 
 
-# ------------------------------------------------------------
-# Title Extraction — General Purpose Heuristic
-# ------------------------------------------------------------
+# Title extraction
 def _extract_title(clean_lines: List[str], page_idx: int) -> str:
-    """
-    General-purpose title extraction:
-      1. Use the first line if it's short (< 12 words)
-      2. Otherwise pick the shortest line as title (common for PPT exports)
-      3. Fallback: Slide {n}
-    """
+
     if not clean_lines:
         return f"Slide {page_idx + 1}"
 
@@ -70,7 +26,7 @@ def _extract_title(clean_lines: List[str], page_idx: int) -> str:
     if len(first.split()) <= 12:
         return first
 
-    # Case 2: pick the shortest non-empty line (common in PDF exports)
+    # Case 2: pick the shortest non-empty line
     shortest = min(clean_lines, key=lambda l: len(l))
     if len(shortest.split()) <= 12:
         return shortest
@@ -79,26 +35,14 @@ def _extract_title(clean_lines: List[str], page_idx: int) -> str:
     return f"Slide {page_idx + 1}"
 
 
-# ------------------------------------------------------------
-# Diagram Detection
-# ------------------------------------------------------------
+# Diagram detection heuristic
 def _detect_diagram(text: str) -> bool:
-    """
-    Heuristic:
-    - Slides with < 15 words likely contain mainly diagrams.
-    """
     words = text.split()
     return len(words) < 15
 
 
-# ------------------------------------------------------------
-# Convert PDF → Slide Objects
-# ------------------------------------------------------------
+# Main PDF to slides extraction
 def extract_slides_from_pdf(pdf_path: str) -> Dict[str, Any]:
-    """
-    Convert each PDF page into a structured slide dict.
-    Works for ANY type of slide deck.
-    """
 
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
