@@ -1,0 +1,40 @@
+{
+  "refined_summary": "This lecture explains how natural selection, genetics, and molecular inheritance together account for evolutionary change. Evolution is defined as a change in allele frequencies within a population over generations, measurable only at the population level. Natural selection acts on individual variation within populations competing for limited resources. Because heritable traits affect survival and reproduction differently, these differences alter allele frequencies over time. Darwin\u2019s unresolved questions about variation and inheritance were later answered by genetics, showing that traits are passed discretely rather than blended. Artificial selection in domesticated animals and plants demonstrates how selective pressures can rapidly shift trait frequencies, providing observable evidence for the power of selection.  \n\nEvolution can proceed slowly or rapidly depending on environmental and selective pressures, as seen in structural adaptations among aquatic organisms. Mendel\u2019s experiments with pea plants revealed the consistent, particulate rules of inheritance\u2014each organism carries two alleles per gene, which combine to form genotypes producing observable phenotypes. Dominant alleles mask recessive ones, though dominance does not necessarily imply greater fitness. Predictive tools such as Punnett squares yield expected genotype (1:2:1) and phenotype (3:1) ratios when heterozygotes are crossed.  \n\nGenes are located on chromosomes composed of DNA and associated proteins. Humans have 46 chromosomes arranged in homologous pairs, and Mendelian segregation follows from their behavior during meiosis, when chromosomes and genes separate into gametes. Meiosis also generates variation through independent assortment and crossing over, while recombination and linkage further shape new allele combinations.  \n\nDNA\u2019s double-helix structure, with complementary base pairing, ensures faithful replication and storage of genetic information. Mutations introduce new variation, forming the molecular basis for evolutionary change. Molecular genetics thus reinforces classical inheritance by revealing DNA as the material mechanism governing heritable traits. Mitochondrial DNA, inherited only from the mother and lacking recombination, is particularly valuable for tracing maternal ancestry. DNA analysis supports practical and evolutionary uses\u2014such as reconstructing phylogenetic relationships, estimating divergence times with molecular clocks, identifying common ancestors, and applying genetic tools in forensics and ancestry testing.  \n\nOverall, the lecture integrates natural selection, Mendelian inheritance, and molecular biology to show that evolution results from genetic change within populations, driven by selection acting on heritable molecular variation.",
+  "signals": {
+    "length_error": 0.18333333333333332,
+    "section_coverage_pct": 0.9032258064516129,
+    "glossary_recall": 0.5516129032258065,
+    "suspected_hallucination_rate": 0.0
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 5,
+    "organization": 5,
+    "clarity": 5,
+    "style": 5,
+    "overall_1to10": 10,
+    "two_strengths": [
+      "Thoroughly covers every section of the lecture, from basic evolutionary principles through DNA applications.",
+      "Accurately integrates natural selection, Mendelian genetics, and molecular evidence without distortion."
+    ],
+    "two_issues": [
+      "Could briefly highlight chromosome theory by name to reflect 'Chromosome Theory of Inheritance'.",
+      "A short concluding sentence explicitly restating all four summary points from the final slide would make it perfectly aligned with the source."
+    ],
+    "faithfulness_evidence": [
+      "'Evolution is defined as a change in allele frequencies within a population'",
+      "'Evolution is genetic change in populations; Natural selection acts on heritable variation; Mendelian genetics explains inheritance; DNA provides the molecular basis for evolution'"
+    ]
+  },
+  "agreement": {
+    "agreement_1to5": 1,
+    "missing_key_points": [
+      "The reference summary 'this is a test' contains no substantive content for comparison, so all factual material in the model summary is extra and not confirmed by the reference."
+    ],
+    "added_inaccuracies": [
+      "All content describing natural selection, genetics, and molecular inheritance is unverified relative to the reference because the reference provides no details."
+    ]
+  },
+  "final_score_0to1": 0.6,
+  "lecture_title": "Unknown Lecture"
+}

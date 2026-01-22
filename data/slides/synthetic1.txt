@@ -1,0 +1,247 @@
+Natural Selection, Genetics, and Inheritance
+
+Lecture 4
+
+Slide 1 — Course Context
+
+Topics Covered
+
+Evolution and natural selection
+
+Genetics as the mechanism of inheritance
+
+DNA structure and function
+
+Sources of genetic variation
+
+Slide 2 — What Is Evolution?
+
+Evolution is defined as a change in allele frequencies within a population
+
+Evolution occurs across generations, not within individual organisms
+
+Genetic change is measurable at the population level
+
+Slide 3 — Core Principles of Natural Selection
+
+Organisms compete for limited resources
+
+Individuals vary in traits affecting survival and reproduction
+
+Traits with a genetic basis can be passed to offspring
+
+Differential reproductive success alters allele frequencies over time
+
+Slide 4 — Darwin’s Unresolved Questions
+
+How is variation maintained if selection favors certain traits?
+
+Does inheritance blend traits together?
+
+How do new traits arise in populations?
+
+What is the biological mechanism of inheritance?
+
+Slide 5 — Artificial Selection as Evidence
+
+Humans selectively breed plants and animals
+
+Trait frequencies can change rapidly across generations
+
+Examples include dog breeds and pigeon varieties
+
+Demonstrates the power of selection acting on heritable variation
+
+Slide 6 — Rates of Evolutionary Change
+
+Evolution can occur over vastly different timescales
+
+Some traits evolve incrementally over millions of years
+
+Others evolve rapidly under strong selective pressure
+
+Example: structural adaptations in aquatic organisms
+
+Slide 7 — Foundations of Genetics
+
+Inheritance follows consistent, predictable patterns
+
+Traits are not blended but transmitted discretely
+
+Experimental breeding revealed underlying rules
+
+Gregor Mendel (1856–1863)
+
+Slide 8 — Mendel’s Experimental Approach
+
+Crossed pea plants with distinct traits
+
+Tracked inheritance across generations
+
+Focused on traits with two observable forms
+
+Identified particulate inheritance
+
+Slide 9 — Genes and Alleles
+
+A gene is a functional segment of DNA
+
+Alleles are alternative versions of the same gene
+
+Individuals carry two alleles per gene
+
+Alleles may be identical or different
+
+Slide 10 — Genotype vs Phenotype
+
+Genotype: the genetic composition (allele pair)
+
+Phenotype: the observable trait
+
+Phenotype depends on allele interactions
+
+Genetic information does not always directly map to appearance
+
+Slide 11 — Dominance Relationships
+
+Dominant alleles mask recessive alleles
+
+Recessive traits appear only when both alleles are recessive
+
+Dominance does not imply greater fitness
+
+Not all traits follow simple dominance patterns
+
+Slide 12 — Crossing Heterozygotes
+
+Crossing Aa × Aa individuals
+
+Gametes form via meiosis
+
+Alleles segregate during gamete formation
+
+Predictable genotype ratios result
+
+Slide 13 — Predicting Inheritance
+
+Tools
+
+Event trees
+
+Punnett squares
+
+Outcomes
+
+1:2:1 genotype ratio
+
+3:1 phenotype ratio (dominant:recessive)
+
+Slide 14 — Chromosomes and DNA
+
+Genetic material is organized into chromosomes
+
+Chromosomes consist of DNA and associated proteins
+
+Humans have 46 chromosomes arranged in homologous pairs
+
+Species differ widely in chromosome number
+
+Slide 15 — Chromosome Theory of Inheritance
+
+Genes are physically located on chromosomes
+
+Chromosomes segregate during cell division
+
+This explains Mendelian inheritance patterns
+
+Established in the early 20th century
+
+Slide 16 — Cell Division Overview
+
+Mitosis: produces identical somatic cells
+
+Meiosis: produces gametes
+
+Meiosis reduces chromosome number by half
+
+Ensures chromosome number stability across generations
+
+Slide 17 — Meiosis and Genetic Diversity
+
+Independent assortment of chromosomes
+
+Crossing over during prophase I
+
+Produces genetically unique gametes
+
+Increases variation in offspring
+
+Slide 18 — Linkage and Recombination
+
+Genes close together may be inherited together
+
+Recombination can separate linked genes
+
+Recombination rate reflects physical distance
+
+Generates novel allele combinations
+
+Slide 19 — DNA Structure
+
+DNA is a double-stranded helix
+
+Sugar-phosphate backbone
+
+Four nucleotide bases: A, T, C, G
+
+Complementary base pairing ensures replication accuracy
+
+Slide 20 — DNA as Genetic Information
+
+Encodes instructions for protein synthesis
+
+Replicates during cell division
+
+Mutations introduce new genetic variation
+
+Basis for evolutionary change
+
+Slide 21 — Mitochondrial DNA
+
+Located in mitochondria
+
+Inherited exclusively from the mother
+
+Does not undergo recombination
+
+Useful for tracing maternal ancestry
+
+Slide 22 — Applications of DNA Analysis
+
+Estimating evolutionary divergence times
+
+Reconstructing phylogenetic relationships
+
+Identifying common ancestors
+
+Forensics and ancestry testing
+
+Slide 23 — Molecular Clocks
+
+Based on neutral genetic mutations
+
+Mutation rates used to estimate time since divergence
+
+Assumes approximate constancy over time
+
+Useful but imperfect tool
+
+Slide 24 — Summary
+
+Evolution is genetic change in populations
+
+Natural selection acts on heritable variation
+
+Mendelian genetics explains inheritance
+
+DNA provides the molecular basis for evolution

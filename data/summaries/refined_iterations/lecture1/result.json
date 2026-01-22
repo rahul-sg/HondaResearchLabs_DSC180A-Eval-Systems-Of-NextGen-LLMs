@@ -1,0 +1,44 @@
+{
+  "refined_summary": "Accounting is introduced as the **language of business**\u2014a system that identifies, measures, and communicates a company\u2019s economic activities to tell its financial story and support decision\u2011making. It reveals successes, challenges, risks, and opportunities, helping stakeholders such as investors, creditors, suppliers, employees, managers, customers, and directors evaluate a firm\u2019s condition and performance. Accounting serves two main roles: **recordkeeping** of economic events in monetary terms and **communication** of results to users through formal reports.\n\nFinancial accounting tracks three categories of activities: **financing** (transactions with owners and lenders), **investing** (acquiring and disposing of productive resources), and **operating** (daily production, marketing, and administration). Information from these activities is summarized in four key **financial statements**: the balance sheet, income statement, statement of stockholders\u2019 equity, and statement of cash flows. Together they provide a picture of financial position and performance that underlies informed business decisions.\n\nFinancial reporting follows **Generally Accepted Accounting Principles (GAAP)** to ensure consistency and comparability. The **Securities and Exchange Commission (SEC)** enforces reporting requirements for public firms and delegates standard\u2011setting authority to the **Financial Accounting Standards Board (FASB)**; internationally, the **International Accounting Standards Board (IASB)** issues **International Financial Reporting Standards (IFRS)**. Independent **auditors**, required for public companies, enhance credibility by evaluating whether statements comply with GAAP and are free of material misstatement, issuing one of four opinions: unqualified, unqualified with explanatory emphasis, qualified, or (rarely) adverse. Public companies communicate results mainly through **10\u2011K** annual reports, **10\u2011Q** quarterly filings, and **8\u2011K** current reports announcing significant events.\n\nThe main statement introduced is the **balance sheet**, which reports a company\u2019s financial position at a specific point in time and must satisfy the **accounting equation: Assets = Liabilities + Stockholders\u2019 Equity**.  \n- **Assets** are resources expected to yield future benefits, such as cash, equipment, land, supplies, or patents.  \n- **Liabilities** represent obligations\u2014amounts owed to creditors like notes or accounts payable.  \n- **Stockholders\u2019 equity** reflects owners\u2019 residual claims on resources after liabilities, appearing mainly as common stock or retained earnings.  \n\nEvery transaction has a **dual effect** that keeps the equation balanced. Lecture examples trace how a new business finances operations by issuing stock and obtaining loans, invests in equipment and prepaid rent, and buys supplies on credit. These actions show how financing and investing activities create resources while operations change their form without altering total assets. The resulting balance sheet organizes assets and liabilities by liquidity or maturity and confirms the equality of total resources and total claims. Collectively, these concepts establish how accounting systematically records, summarizes, and communicates information for sound economic decisions.",
+  "signals": {
+    "length_error": 0.38666666666666666,
+    "section_coverage_pct": 0.9361702127659575,
+    "glossary_recall": 0.675,
+    "suspected_hallucination_rate": 0.2631578947368421
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 5,
+    "organization": 5,
+    "clarity": 5,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "Covers all major elements from course overview through balance sheet examples.",
+      "Paraphrases key slide content accurately, preserving technical definitions and structure."
+    ],
+    "two_issues": [
+      "Could mention course logistics (grading, participation) from slides 12\u201317 for slightly fuller context.",
+      "Does not reference exam policies though included on 'Syllabus' slides (e.g., grade replacement rule)."
+    ],
+    "faithfulness_evidence": [
+      "Slide 20: 'Language of business\u2026 provide information to decision makers (external parties)'",
+      "Slide 17: 'The Accounting Equation \u2013 Must always be balanced\u2026 Each transaction has a dual effect'"
+    ]
+  },
+  "agreement": {
+    "agreement_1to5": 3,
+    "missing_key_points": [
+      "Explanation that accounting exists due to complexity of economic activity requiring structured reporting based on judgment and consistent principles",
+      "Descriptions of how the four financial statements connect to each other, including how net income flows into equity and cash flows explain changes in cash",
+      "Coverage of the Income Statement, Statement of Stockholders\u2019 Equity, and Statement of Cash Flows beyond the balance sheet",
+      "Emphasis on the linked system among financial statements and articulation of the accounting equation as their backbone"
+    ],
+    "added_inaccuracies": [
+      "Introduction of external regulatory and reporting details such as SEC, FASB, IFRS, auditors, and filing types (10\u2011K, 10\u2011Q, 8\u2011K) that were not part of the reference material",
+      "Extended discussion of financing, investing, and operating categories presented as overarching accounting activities rather than as sections of the statement of cash flows mentioned in the reference"
+    ]
+  },
+  "final_score_0to1": 0.7833333333333333,
+  "lecture_title": "lecture1"
+}
