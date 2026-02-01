@@ -1,7 +1,7 @@
 from typing import Dict, Any, List
 import random
 
-from src.models.judge import pairwise_judge_single, pairwise_judge_ensemble
+from src.models.judge import pairwise_judge_ensemble
 
 
 # Perform round-robin pairwise comparison of summaries using ensemble judge
