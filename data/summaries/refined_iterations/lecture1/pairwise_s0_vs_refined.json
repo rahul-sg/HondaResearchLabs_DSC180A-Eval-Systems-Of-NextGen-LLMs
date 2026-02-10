@@ -1,0 +1,25 @@
+{
+  "wins": {
+    "gpt5_S0": 0,
+    "gpt5_refined": 1
+  },
+  "win_rate": {
+    "gpt5_S0": 0.0,
+    "gpt5_refined": 1.0
+  },
+  "matches": [
+    {
+      "A": "gpt5_S0",
+      "B": "gpt5_refined",
+      "winner": "gpt5_refined",
+      "wins_detail": {
+        "A": 0,
+        "B": 5
+      },
+      "reasons_sample": [
+        "Summary B covers all major lecture components with clear organization and smooth flow. It integrates key details such as SEC filings (10-K, 10-Q, 8-K) and the relationship between GAAP, FASB, and the SEC, while also explaining the accounting equation through applied examples. It uses concise, student-friendly language and clearly connects conceptual functions, users, standards, and balance sheet structure. Summary A is accurate but omits some reporting details and is less cohesive in linking topics. Therefore, Summary B is better suited for student understanding and completeness.",
+        "Summary B is more comprehensive and better structured for student learning. It integrates all major lecture topics\u2014from the purpose and functions of accounting to regulatory bodies, audit types, financial statement filings, and the detailed application of the accounting equation\u2014without omitting key connections. The organization mirrors the lecture flow and clearly explains how each concept builds upon the previous one, making it more pedagogically effective and complete than Summary A."
+      ]
+    }
+  ]
+}

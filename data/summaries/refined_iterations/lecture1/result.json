@@ -1,10 +1,11 @@
 {
-  "refined_summary": "This lecture introduces the foundational framework and purpose of financial accounting, presenting it as the **language of business**\u2014a means of telling a company\u2019s financial story, including its successes, challenges, and risks, through measurable economic events. Accounting performs two main functions: **recordkeeping**, which identifies, measures, and records transactions in monetary terms, and **communication**, which summarizes and reports this information to external decision makers through financial statements.\n\nA wide range of **users** rely on accounting information. Investors, creditors, suppliers, management, boards of directors, employees, customers, and others\u2014such as analysts, regulators, and competitors\u2014use financial data to evaluate performance, creditworthiness, and the reliability of an enterprise. Financial accounting captures three categories of business activity: **financing** (transactions with investors and creditors for funds), **investing** (acquiring and disposing of productive resources like equipment or inventory), and **operating** (day\u2011to\u2011day production, marketing, and sales). Results of these activities are communicated through four key **financial statements**: the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**.\n\nPreparation and presentation of these reports follow **Generally Accepted Accounting Principles (GAAP)**, which ensure consistency and comparability in reporting. The **Securities and Exchange Commission (SEC)** requires public companies to issue periodic statements and delegates standard\u2011setting authority to the **Financial Accounting Standards Board (FASB)**. Internationally, the **International Accounting Standards Board (IASB)** issues **International Financial Reporting Standards (IFRS)**. Independent **auditors** provide an external evaluation of whether a company\u2019s financial statements comply with GAAP and are free of material misstatement. Their opinions\u2014unqualified, unqualified with explanation, qualified, or adverse\u2014lend credibility to financial information used by decision makers.\n\nThe latter part of the lecture focuses on the **balance sheet**, which reports a firm\u2019s financial position at a specific date, showing how its **assets** (resources providing future economic benefit) are funded by **liabilities** (obligations to creditors) and **stockholders\u2019 equity** (owners\u2019 residual claims). These categories are always in equilibrium under the **accounting equation: Assets = Liabilities + Stockholders\u2019 Equity**. Because each transaction has a **dual effect**, increases or decreases on one side must be balanced by changes on the other.\n\nIllustrative examples trace how common transactions\u2014issuing stock to investors, obtaining bank loans, acquiring equipment, prepaying rent, and purchasing supplies on credit\u2014affect total assets, liabilities, and equity while maintaining overall balance. By analyzing these transactions, students learn how financing, investing, and operating activities interconnect and how the balance sheet captures an organization\u2019s financial structure at any point in time.",
+  "refined_summary": "The lecture introduces **financial accounting** as the process of recording, measuring, and communicating a company\u2019s economic activities. Described as the *language of business*, accounting conveys a company\u2019s financial story\u2014its performance, opportunities, and risks\u2014in monetary terms. It serves two key functions: **recordkeeping**, which identifies and records economic events, and **communication**, which provides financial information to external and internal decision\u2011makers.\n\nA wide range of users rely on accounting information: investors, creditors, suppliers, managers, boards of directors, employees, customers, and others such as regulators and analysts. Financial accounting focuses on three major types of business activities\u2014**financing** (transactions with owners and lenders), **investing** (acquiring and disposing of productive resources), and **operating** (the daily production and sale of goods and services). These activities generate the data summarized in four interrelated **financial statements**: the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**, supplemented by disclosure notes. Public companies communicate this information through required filings: the **10\u2011K** (annual, audited), **10\u2011Q** (quarterly, unaudited), and **8\u2011K** (reports of major events).\n\nFinancial reporting follows **Generally Accepted Accounting Principles (GAAP)**, which ensure that information is comparable across firms. The **Securities and Exchange Commission (SEC)** oversees reporting for public companies and delegates standard\u2011setting authority to the **Financial Accounting Standards Board (FASB)**. Internationally, the **International Accounting Standards Board (IASB)** issues **International Financial Reporting Standards (IFRS)**. Independent **auditors**, required for publicly traded companies, evaluate whether statements comply with GAAP and are free of material misstatements. Their opinions\u2014unqualified, unqualified with explanatory paragraph, qualified, or adverse\u2014enhance the credibility of financial reports.\n\nThe lecture concludes with the **balance sheet**, which presents a company\u2019s financial position at a specific date. It reports **assets** (resources with future benefit), **liabilities** (obligations to creditors), and **stockholders\u2019 equity** (owners\u2019 residual interests). These elements must satisfy the **accounting equation**, *Assets = Liabilities + Stockholders\u2019 Equity*, meaning every transaction has a dual effect that keeps the statement balanced. Step\u2011by\u2011step examples using a start\u2011up company illustrate how issuing stock, borrowing from a bank, purchasing equipment, prepaying rent, and buying supplies on account all alter resources and claims while maintaining equality. Through these examples, students see how business transactions are systematically captured to depict a firm\u2019s overall financial condition.",
   "signals": {
-    "length_error": 0.30666666666666664,
-    "section_coverage_pct": 0.8404255319148937,
-    "glossary_recall": 0.65,
-    "suspected_hallucination_rate": 0.125
+    "length_error": 0.19333333333333333,
+    "section_coverage_pct": 0.8191489361702128,
+    "glossary_recall": 0.675,
+    "suspected_hallucination_rate": 0.17647058823529413,
+    "meteor": 0.2908901626175817
   },
   "rubric": {
     "coverage": 5,
@@ -14,30 +15,33 @@
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "Covers all major slide clusters including users, GAAP/FASB/IASB, and balance sheet examples",
-      "Accurately captures the dual effect and accounting equation emphasis from the lecture"
+      "Comprehensively covers the lecture\u2019s main points from course overview to detailed balance sheet examples.",
+      "Accurately reflects slide terminology such as 'language of business' and 'Assets = Liabilities + Stockholders\u2019 Equity'."
     ],
     "two_issues": [
-      "Very dense and academic phrasing could be simplified for easier student comprehension",
-      "Does not briefly mention course logistics or assessments found in early slides (e.g., grading, quizzes)"
+      "Could briefly mention classroom logistics or grading components to fully reflect the introductory portion of the lecture.",
+      "Style is polished but somewhat dense; shorter sentences or subheadings could make it more student friendly."
     ],
     "faithfulness_evidence": [
-      "'A company\u2019s financial story \u2013 successes, failures, opportunities, challenges, risks, and uncertainties'",
-      "'If Total Assets increase then either Liabilities or Stockholders\u2019 Equity MUST increase by the SAME amount'"
+      "Slide 20: 'Language of business\u2026 identify, measure, and record economic events in value terms'",
+      "Slide 17 (Chunk 2): 'Must always be balanced\u2026 Each transaction has a dual effect'"
     ]
   },
   "agreement": {
-    "agreement_1to5": 3,
+    "agreement_1to5": 2,
     "missing_key_points": [
-      "The reference emphasizes how the four financial statements are interconnected, with net income linking from the income statement to stockholders\u2019 equity and changes in cash explained by the statement of cash flows.",
-      "Explanation of what each financial statement communicates\u2014performance, financial position, and cash flows\u2014and their cohesive role in representing a company\u2019s financial story.",
-      "The conceptual foundation that accounting exists to manage complexity through structured reporting and professional judgment."
+      "Explanation that accounting exists because economic activity is complex and requires structured reporting based on judgment and consistent principles",
+      "Discussion of how the four financial statements are interconnected, particularly how net income links to retained earnings and affects the balance sheet",
+      "Description of how the statement of cash flows explains cash changes through operating, investing, and financing activities",
+      "Emphasis on the accounting equation\u2019s role in linking revenues, expenses, dividends, and equity across statements",
+      "Focus on conceptual understanding of how the statements together convey performance, position, and cash activity"
     ],
     "added_inaccuracies": [
-      "The model introduces content about GAAP, SEC, FASB, IASB, auditors, and audit opinions, which are not present in the reference description of Week 1.",
-      "It highlights user groups and transaction categorization (financing, investing, operating) as a focus of the lecture, which are not mentioned in the reference account."
+      "Inclusion of SEC, FASB, IASB, GAAP, IFRS, auditors, and report filing details (10\u2011K, 10\u2011Q, 8\u2011K) not mentioned in the reference",
+      "Addition of step\u2011by\u2011step start\u2011up transaction examples not part of the reference content",
+      "Introduction of the idea that financial accounting conveys opportunities, risks, and a company\u2019s financial story, which was not covered in the reference lecture"
     ]
   },
-  "final_score_0to1": 0.7833333333333333,
+  "final_score_0to1": 0.6048446991901831,
   "lecture_title": "lecture1"
 }

@@ -17,7 +17,18 @@ from src.models.refinement import iterative_refinement
 from src.evaluation.scoring import combine_scores
 from src.utils.filter_slides import filter_content_slides
 
-#Evaluation pipeline for one lecture
+# ---- NEW IMPORTS FOR METEOR ----
+from nltk.translate.meteor_score import meteor_score
+from nltk.tokenize import word_tokenize
+import nltk
+
+# Ensure required NLTK resources are available
+nltk.download('wordnet', quiet=True)
+nltk.download('omw-1.4', quiet=True)
+nltk.download('punkt', quiet=True)
+
+
+# Evaluation pipeline for one lecture
 def evaluate_summary(
     slide_path: str,
     initial_summary: str,
@@ -29,15 +40,12 @@ def evaluate_summary(
     refine_iters: int = 3,
 ) -> Dict[str, Any]:
 
-
     slides_dict = load_slides(slide_path)
     slides_full = slides_dict["slides"]            # raw slides
     slides_content = filter_content_slides(slides_full)  # Goal B applied
 
     # Ensure output directory exists
     Path(out_dir).mkdir(parents=True, exist_ok=True)
-
-
 
     prev_summary = initial_summary
 
@@ -53,7 +61,7 @@ def evaluate_summary(
 
     # refinement internally handles filtering — we pass full slides
     refined = iterative_refinement(
-        slides=slides_full,           
+        slides=slides_full,
         initial_summary=initial_summary,
         cfg_judge=cfg_judge,
         cfg_refine=cfg_refine,
@@ -67,12 +75,20 @@ def evaluate_summary(
     # Save final result
     write_final_summary(out_dir, refined)
 
+    # ---- METEOR METRIC COMPUTATION (TOKENIZED) ----
+    tokenized_ref = word_tokenize(human_reference)
+    tokenized_hyp = word_tokenize(refined)
+
+    meteor = meteor_score([tokenized_ref], tokenized_hyp)
 
     signals = compute_signals(
         slides_content,        # not full slides
         refined,
         target_words=target_words
     )
+
+    # ---- Add METEOR to signals ----
+    signals["meteor"] = meteor
 
     rubric = judge_rubric_ensemble(
         slides_full,           # judges see full lecture
@@ -81,7 +97,6 @@ def evaluate_summary(
         runs=3
     )
 
-
     agree = judge_agreement_ensemble(
         human_reference,
         refined,
@@ -89,17 +104,19 @@ def evaluate_summary(
         runs=3
     )
 
+    # ---- Final score (hybrid LLM + METEOR) ----
+    base_score = combine_scores(rubric, agree)
 
-    #final score
-    score = combine_scores(rubric, agree)
+    # Blend METEOR with LLM-based score
+    final_score = 0.8 * base_score + 0.2 * meteor
 
-    #Save as json
+    # Save as json
     result = {
         "refined_summary": refined,
         "signals": signals,
         "rubric": rubric,
         "agreement": agree,
-        "final_score_0to1": score,
+        "final_score_0to1": final_score,
         "lecture_title": slides_dict.get("lecture_title", "Unknown Lecture"),
     }
 

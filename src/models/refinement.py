@@ -101,7 +101,10 @@ def refine_once(
             json_mode=False
         )
 
-        print("RAW LLM RESPONSE (repr):", repr(raw_response))
+        try:
+            print("RAW LLM RESPONSE (repr):", repr(raw_response))
+        except UnicodeEncodeError:
+            print("RAW LLM RESPONSE: [Unicode content that cannot be displayed]")
 
         refined = (raw_response or "").strip()
 
