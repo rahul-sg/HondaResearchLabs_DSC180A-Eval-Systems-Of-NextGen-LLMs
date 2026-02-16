@@ -1,0 +1,43 @@
+{
+  "refined_summary": "The lecture introduces **financial accounting** as the *language of business*\u2014a system for recording and communicating a company\u2019s economic activities and financial condition. Accounting conveys a firm\u2019s story of performance, challenges, and opportunities so that users can make informed decisions. It performs two main functions: **recordkeeping**, which identifies, measures, and records business events in monetary terms, and **communication**, which provides relevant information to a wide range of **decision makers** including investors, creditors, managers, employees, customers, boards of directors, and regulators.  \n\nFinancial accounting captures three key types of activities:  \n- **Financing activities**\u2014transactions with owners and lenders that raise or repay capital.  \n- **Investing activities**\u2014the acquisition and disposal of resources needed to operate, such as buildings, equipment, or inventory.  \n- **Operating activities**\u2014day\u2011to\u2011day transactions tied to producing and selling goods or services.  \n\nThe results of these activities appear in four primary **financial statements**: the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**. These reports work together to show how a company obtains and uses resources over time.  \n\nAll financial reporting follows **Generally Accepted Accounting Principles (GAAP)**, which promote consistency and comparability. The **Securities and Exchange Commission (SEC)** oversees standards for publicly traded firms and delegates standard setting to the **Financial Accounting Standards Board (FASB)**. Global practices are guided by the **International Accounting Standards Board (IASB)** under **IFRS**. Independent **auditors** review financial statements to determine whether they comply with GAAP and are free of material misstatements, issuing opinions that add credibility for external users.  \n\nA focal point of the lecture is the **balance sheet**, which presents a company\u2019s financial position at a specific date. It reports:  \n- **Assets**\u2014resources owned that provide future economic benefit (e.g., cash, equipment, land).  \n- **Liabilities**\u2014obligations owed to others (e.g., notes payable, salaries payable).  \n- **Stockholders\u2019 equity**\u2014owners\u2019 residual interest after liabilities.  \n\nThese categories are governed by the **accounting equation: Assets = Liabilities + Stockholders\u2019 Equity**, which must remain balanced in every transaction. Examples using *Klein, Inc.* demonstrate this logic: issuing stock or obtaining a bank loan increases both cash and claims on the firm; purchasing equipment or paying prepaid rent shifts amounts among asset accounts; and buying supplies on credit raises assets and liabilities equally. Every event affects at least two accounts but keeps the overall equation intact.  \n\nCollectively, these concepts outline the **financial accounting framework**\u2014a structured approach to measuring, recording, and communicating business activities. Understanding how transactions flow through this system enables more accurate interpretation of financial statements and more informed business decisions.",
+  "signals": {
+    "length_error": 0.36,
+    "section_coverage_pct": 0.8617021276595744,
+    "glossary_recall": 0.675,
+    "suspected_hallucination_rate": 0.19047619047619047
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 5,
+    "organization": 5,
+    "clarity": 5,
+    "style": 5,
+    "overall_1to10": 10,
+    "two_strengths": [
+      "Captures all major lecture points from principles through the accounting equation and Klein, Inc. examples.",
+      "Explains the roles of GAAP, SEC, FASB, and auditors accurately and clearly."
+    ],
+    "two_issues": [
+      "Could have briefly noted course logistics or learning objectives mentioned on early slides.",
+      "Style is slightly formal; could use more concise phrasing for non\u2011core details."
+    ],
+    "faithfulness_evidence": [
+      "\"Two primary functions: Recordkeeping... and Communication \uf0e8 Provide information to decision makers\"",
+      "\"Assets = Liabilities + Stockholders\u2019 Equity\""
+    ]
+  },
+  "agreement": {
+    "agreement_1to5": 3,
+    "missing_key_points": [
+      "The linkages among the four financial statements were not described, such as how net income connects to retained earnings and cash flows tie to balance sheet changes.",
+      "The purpose of Week 1 was to present the conceptual foundation before learning detailed mechanics, which the model did not mention.",
+      "The description of how each statement individually reports performance, financial position, and cash activity is missing."
+    ],
+    "added_inaccuracies": [
+      "The summary adds extensive discussion of GAAP, SEC, FASB, IFRS, and auditing, which were not covered in the reference.",
+      "The detailed categorization of financing, investing, and operating activities as core accounting activities rather than as elements of the statement of cash flows introduces material not present in the reference."
+    ]
+  },
+  "final_score_0to1": 0.8,
+  "lecture_title": "lecture1"
+}
