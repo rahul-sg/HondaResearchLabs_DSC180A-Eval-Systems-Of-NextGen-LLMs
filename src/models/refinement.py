@@ -5,6 +5,7 @@ from src.models.llm_client import call_llm, LLMConfig
 from src.models.judge import judge_rubric
 from src.utils.chunking import slides_to_text
 from src.utils.filter_slides import filter_content_slides
+from src.evaluation.pairwise import round_robin_pairwise
 
 
 
@@ -101,7 +102,10 @@ def refine_once(
             json_mode=False
         )
 
-        print("RAW LLM RESPONSE (repr):", repr(raw_response))
+        try:
+            print("RAW LLM RESPONSE (repr):", repr(raw_response))
+        except UnicodeEncodeError:
+            print("RAW LLM RESPONSE: [Unicode content that cannot be displayed]")
 
         refined = (raw_response or "").strip()
 
@@ -123,11 +127,13 @@ def iterative_refinement(
     save_callback: Callable[[int, str], None] | None = None
 ) -> str:
 
-    S = initial_summary
+    initial = initial_summary
 
     # Save initial summary
     if save_callback:
-        save_callback(0, S)
+        save_callback(0, initial)
+
+    S = initial
 
     for i in range(1, iters + 1):
 
@@ -135,7 +141,16 @@ def iterative_refinement(
         feedback = judge_rubric(slides, S, cfg_judge)
 
         # 2. Refiner uses content-only slides
-        S = refine_once(slides, S, feedback, cfg_refine)
+        pairwise1 = S
+        pairwise2 = refine_once(slides, S, feedback, cfg_refine)
+
+        S = round_robin_pairwise(
+            slides=slides,
+            summaries={"prev": pairwise1, "refined": pairwise2},
+            cfg_judge=cfg_judge,
+            runs=3
+        )["result_summary"]
+
 
         # 3. Save intermediate outputs
         if save_callback:

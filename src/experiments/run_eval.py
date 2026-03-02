@@ -2,10 +2,14 @@ import os
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
+import json
 
 from src.evaluation.pipeline import evaluate_summary
 from src.models.llm_client import LLMConfig
 from src.models.summarizer import generate_initial_summary
+from src.evaluation.pairwise import round_robin_pairwise
+from src.utils.io import load_slides
+
 
 ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = ROOT / ".env"
@@ -116,10 +120,36 @@ def main():
         refine_iters=3,
     )
 
+    print("\nRunning pairwise comparison (GPT-5 S0 vs Refined)...")
+
+    slides = load_slides(SLIDES_PATH)["slides"]
+
+    pairwise_results = round_robin_pairwise(
+        slides=slides,
+        summaries={
+            "gpt5_S0": initial_summary,
+            "gpt5_refined": result["refined_summary"],
+        },
+        cfg_judge=cfg_judge,
+        runs=5,   # ensemble for stability
+    )
+
+    pairwise_out = OUT_DIR / "pairwise_s0_vs_refined.json"
+    with open(pairwise_out, "w", encoding="utf-8") as f:
+        json.dump(pairwise_results, f, indent=2)
+
+    print("Pairwise wins:", pairwise_results["wins"])
+    print("Pairwise win rates:", pairwise_results["win_rate"])
+    print(f"Pairwise results saved to: {pairwise_out}")
+
+
     #print final results
     print("\n===== FINAL EVALUATION RESULT =====")
     print("Score (0–1):", result["final_score_0to1"])
-    print("\nRefined Summary:\n", result["refined_summary"])
+    try:
+        print("\nRefined Summary:\n", result["refined_summary"])
+    except UnicodeEncodeError:
+        print("\nRefined Summary: [Unicode content that cannot be displayed]")
     print("\nSignals:", result["signals"])
     print("\nRubric:", result["rubric"])
     print("\nAgreement:", result["agreement"])

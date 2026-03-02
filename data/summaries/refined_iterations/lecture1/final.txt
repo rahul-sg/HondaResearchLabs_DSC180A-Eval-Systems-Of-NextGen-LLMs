@@ -1,19 +1,20 @@
-The lecture introduces **financial accounting** as the *language of business*—a system for recording and communicating a company’s economic activities and financial condition. Accounting conveys a firm’s story of performance, challenges, and opportunities so that users can make informed decisions. It performs two main functions: **recordkeeping**, which identifies, measures, and records business events in monetary terms, and **communication**, which provides relevant information to a wide range of **decision makers** including investors, creditors, managers, employees, customers, boards of directors, and regulators.  
+The first *Principles of Accounting* lecture introduces accounting as the **language of business**, describing how it records and communicates a company’s financial story—its performance, resources, and obligations—to support sound decisions. Accounting serves two main purposes: **recordkeeping**, which identifies, measures, and records transactions in monetary terms, and **communication**, which reports this information through financial statements.
 
-Financial accounting captures three key types of activities:  
-- **Financing activities**—transactions with owners and lenders that raise or repay capital.  
-- **Investing activities**—the acquisition and disposal of resources needed to operate, such as buildings, equipment, or inventory.  
-- **Operating activities**—day‑to‑day transactions tied to producing and selling goods or services.  
+The lecture reviews the wide range of **users** who rely on accounting data: **investors**, **creditors**, **suppliers**, **management**, **boards of directors**, **employees**, **customers**, and others such as **analysts, regulators, and competitors**. Each uses financial information to assess profitability, credit risk, organizational health, or strategic opportunities.
 
-The results of these activities appear in four primary **financial statements**: the **balance sheet**, **income statement**, **statement of stockholders’ equity**, and **statement of cash flows**. These reports work together to show how a company obtains and uses resources over time.  
+Financial accounting measures three categories of business activity:  
+- **Financing** – obtaining resources from and repaying investors and creditors,  
+- **Investing** – acquiring and disposing of assets needed for production and sales, and  
+- **Operating** – day‑to‑day business functions like production, marketing, and administration.  
 
-All financial reporting follows **Generally Accepted Accounting Principles (GAAP)**, which promote consistency and comparability. The **Securities and Exchange Commission (SEC)** oversees standards for publicly traded firms and delegates standard setting to the **Financial Accounting Standards Board (FASB)**. Global practices are guided by the **International Accounting Standards Board (IASB)** under **IFRS**. Independent **auditors** review financial statements to determine whether they comply with GAAP and are free of material misstatements, issuing opinions that add credibility for external users.  
+These activities feed into the **financial reporting process**, which summarizes economic events in accordance with **Generally Accepted Accounting Principles (GAAP)**. The **Securities and Exchange Commission (SEC)** oversees standard setting for public companies and delegates that role to the **Financial Accounting Standards Board (FASB)**. Internationally, the **International Accounting Standards Board (IASB)** issues **International Financial Reporting Standards (IFRS)** for global comparability.
 
-A focal point of the lecture is the **balance sheet**, which presents a company’s financial position at a specific date. It reports:  
-- **Assets**—resources owned that provide future economic benefit (e.g., cash, equipment, land).  
-- **Liabilities**—obligations owed to others (e.g., notes payable, salaries payable).  
-- **Stockholders’ equity**—owners’ residual interest after liabilities.  
+Companies communicate results through four key **financial statements**—the **balance sheet**, **income statement**, **statement of stockholders’ equity**, and **statement of cash flows**—along with footnotes and disclosures. Public firms file annual (**10‑K**), quarterly (**10‑Q**), and current (**8‑K**) reports to share this information.  
 
-These categories are governed by the **accounting equation: Assets = Liabilities + Stockholders’ Equity**, which must remain balanced in every transaction. Examples using *Klein, Inc.* demonstrate this logic: issuing stock or obtaining a bank loan increases both cash and claims on the firm; purchasing equipment or paying prepaid rent shifts amounts among asset accounts; and buying supplies on credit raises assets and liabilities equally. Every event affects at least two accounts but keeps the overall equation intact.  
+Independent **auditors** examine whether statements comply with GAAP and are free from material misstatement, providing credibility for decision makers. Their opinions can be unqualified, unqualified with explanatory note, qualified, or adverse.
 
-Collectively, these concepts outline the **financial accounting framework**—a structured approach to measuring, recording, and communicating business activities. Understanding how transactions flow through this system enables more accurate interpretation of financial statements and more informed business decisions.
+The lecture focuses on the **balance sheet**, which presents a company’s **financial position** at a specific date, showing resources (**assets**) and claims to those resources (**liabilities** and **stockholders’ equity**) under the **accounting equation**:  
+**Assets = Liabilities + Stockholders’ Equity.**  
+Assets provide future benefit (e.g., cash, land, equipment, supplies); liabilities represent obligations (e.g., payables, loans); and stockholders’ equity is the owners’ residual interest after liabilities are settled. Every transaction has a dual effect that keeps this equation in balance.
+
+Step‑by‑step examples—issuing stock, borrowing from a bank, purchasing equipment, prepaying rent, and buying supplies on credit—demonstrate how **financing**, **investing**, and **operating** activities change assets, liabilities, and equity while maintaining equilibrium. The completed balance sheet then summarizes these relationships as a snapshot of the company’s resources and their financing sources, establishing the foundation for understanding how accounting information supports effective business analysis and decision making.

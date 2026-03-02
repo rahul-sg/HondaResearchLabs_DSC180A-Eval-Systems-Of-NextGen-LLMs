@@ -1,7 +1,7 @@
 from typing import Dict, Any, List
 import random
 
-from src.models.judge import pairwise_judge_single, pairwise_judge_ensemble
+from src.models.judge import pairwise_judge_ensemble
 
 
 # Perform round-robin pairwise comparison of summaries using ensemble judge
@@ -57,8 +57,19 @@ def round_robin_pairwise(
         for name in names
     }
 
+    overall_winner = max(wins, key=wins.get)
+    overall_text = summaries[overall_winner]
+    print(f"Overall winner: {overall_text[:60]}")
+    output = f"Overall winner: {overall_text}"
+
+    with open("output.txt", "a", encoding="utf-8") as f:
+        f.write(output)
+
+
     return {
         "wins": wins,
         "win_rate": win_rate,
-        "matches": matches
+        "matches": matches,
+        "result_summary": overall_text,
+        "overall_winner": overall_winner
     }

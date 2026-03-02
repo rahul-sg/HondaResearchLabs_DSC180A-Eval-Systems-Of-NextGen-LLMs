@@ -171,7 +171,7 @@ def judge_agreement_ensemble(reference, summary, cfg: LLMConfig, runs: int = 3) 
     }
 
 
-def judge_pairwise_ensemble(slides, A, B, cfg: LLMConfig, runs: int = 5) -> Dict[str, Any]:
+def pairwise_judge_ensemble(slides, A, B, cfg: LLMConfig, runs: int = 5) -> Dict[str, Any]:
     wins = {"A": 0, "B": 0}
     reasons = []
 
