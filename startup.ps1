@@ -1,14 +1,14 @@
 <#
 ==============================================================================
- DSC180A Final Project – Windows Environment Setup Script
+ DSC180A Final Project - Windows Environment Setup Script
 ==============================================================================
 
 This script:
-  • Ensures Conda is installed and available
-  • Creates or recreates the dsc180a-eval Conda environment
-  • Installs dependencies from environment.yml
-  • Creates a .env file if missing
-  • Prints usage instructions
+  - Ensures Conda is installed and available
+  - Creates or recreates the dsc180a-eval Conda environment
+  - Installs dependencies from environment.yml
+  - Creates a .env file if missing
+  - Prints usage instructions
 
 Usage:
   PowerShell (Run as normal):
@@ -18,7 +18,7 @@ Usage:
 #>
 
 Write-Host "=============================================="
-Write-Host "   DSC180A FINAL PROJECT — WINDOWS SETUP"
+Write-Host "   DSC180A FINAL PROJECT - WINDOWS SETUP"
 Write-Host "=============================================="
 
 # ------------------------------------------------------------
@@ -59,7 +59,7 @@ Write-Host "----------------------------------------------"
 # ------------------------------------------------------------
 # Remove existing environment?
 # ------------------------------------------------------------
-$existingEnv = conda env list | Select-String $envName
+$existingEnv = conda env list | Select-String "^\s*$envName\s"
 $recreate = $false
 
 if ($existingEnv) {
@@ -85,7 +85,8 @@ else {
 if ($recreate) {
     Write-Host "`nCreating environment from environment.yml..."
     conda env create -f $envFile
-} else {
+}
+else {
     Write-Host "Skipping creation; using existing '$envName'."
 }
 
@@ -113,13 +114,15 @@ if (-not (Test-Path $dotenv)) {
     Write-Host "Creating .env file (empty placeholder)"
     Write-Host "----------------------------------------------"
 
-@"
+    $envText = @"
 # OpenAI API Key
 OPENAI_API_KEY=
 
 # Optional: logging level
 LOG_LEVEL=INFO
-"@ | Out-File -Encoding utf8 .env
+"@
+
+    $envText | Out-File -Encoding utf8 $dotenv
 
     Write-Host "OK: .env created. Please edit it and add your OpenAI API key."
 }
