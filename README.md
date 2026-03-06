@@ -251,13 +251,13 @@ signals
 rubric
 agreement
 comprehensive_scoring
-hybrid_scoring
+C = 0.6 \cdot \text{domain rubric} + 0.2 \cdot \text{nlp agreement} + 0.2 \cdot \text{meteor}
 refinement_metadata
 final_score_0to1
 lecture_title
 ```
 
-Notable metadata fields include stopping reason, iteration history, lever history, and quality trajectory.
+M = (0.6 \cdot \text{base} + 0.2 \cdot \text{meteor} + 0.2 \cdot \text{coverage}) - 0.1 \cdot 2^{\text{hallucination}}
 
 ## Dashboards
 
@@ -266,7 +266,7 @@ Run after generating evaluation outputs.
 ### Static dashboard
 
 ```bash
-python -m src.visualization.dashboard lecture1
+S_{\text{final}} = S(1 - 0.15h)
 ```
 
 By default, this now renders:
