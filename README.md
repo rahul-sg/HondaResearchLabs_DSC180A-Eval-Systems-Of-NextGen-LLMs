@@ -67,7 +67,9 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │   ├── references/                    # Human-written reference summaries
 │   ├── slides/                        # Lecture PDFs
 │   └── summaries/
+│       ├── bare_bones_experiment/     # Judge-only experiment outputs
 │       ├── model_s0/                  # Initial LLM summaries
+│       ├── pairwise_experiment/       # Pairwise ablation outputs
 │       └── refined_iterations/
 │           └── lectureX/
 │               ├── iter_0.txt ... iter_n.txt
@@ -75,7 +77,8 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │               ├── result.json
 │               └── pairwise_s0_vs_refined.json
 ├── example_run/
-│   └── lecture1/                      # Sample run artifacts for demo use
+│   └── lecture1..lecture7/            # Sample run artifacts for demo use
+├── dev_notes/                         # Development notes and archived test scripts
 ├── src/
 │   ├── evaluation/
 │   │   ├── NormalSchema.py
@@ -83,17 +86,24 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │   │   ├── pipeline.py
 │   │   └── scoring.py
 │   ├── experiments/
-│   │   └── run_eval.py
+│   │   ├── bare_bones_judge_experiment.py
+│   │   ├── compare_models.py
+│   │   ├── pairwise_experiment.py
+│   │   ├── refine_demo.py
+│   │   ├── run_eval.py
+│   │   └── sanity_checks.py
 │   ├── models/
 │   │   ├── judge.py
-│   │   ├── refinement.py
 │   │   ├── lever_based_refinement.py
+│   │   ├── llm_client.py
+│   │   ├── refinement.py
 │   │   └── summarizer.py
 │   ├── utils/
 │   └── visualization/
 ├── papers/
 │   ├── Q1/
 │   └── Q2/
+├── .env.example
 ├── environment.yml
 ├── requirements.txt
 ├── startup.sh
