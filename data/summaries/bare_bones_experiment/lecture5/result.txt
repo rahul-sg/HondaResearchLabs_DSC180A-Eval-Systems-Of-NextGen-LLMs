@@ -1,0 +1,6 @@
+BARE-BONES JUDGE RESULT: lecture5
+S0 final score: 0.9000
+S0 word count: 306
+Refined final score: 0.9167
+Refined word count: 395
+Delta (refined - s0): +0.0167

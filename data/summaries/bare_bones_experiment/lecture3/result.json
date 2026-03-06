@@ -1,0 +1,68 @@
+{
+  "lecture_id": "lecture3",
+  "s0": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "The summary accurately identifies the lecture\u2019s overarching framework\u2014the Modernity/Coloniality/Decoloniality (MCD) project\u2014and correctly situates Quijano\u2019s 'coloniality of power' within it, reflecting Slide 4\u2019s division between modernity, coloniality, and decoloniality.",
+        "It effectively connects theoretical ideas to the applied material, such as *Roma* and Rebecca Earle\u2019s 'Indianeque nationalism' (Slides 2.2 and 2.13), demonstrating an awareness of how the lecture illustrated the persistence of colonial hierarchies in representation."
+      ],
+      "two_issues": [
+        "The summary omits or compresses key lecture distinctions between Eurocentrism as both a knowledge system and an historical process (Slides 2.3 and 2.5); this weakens the nuance of Quijano\u2019s challenge to 'linear theories of history' and obscures how Eurocentrism structures modernity conceptually, not just economically.",
+        "The summary introduces interpretive emphasis\u2014such as describing decolonial thinking as 'valorizing heterogeneous, localized perspectives'\u2014without explicit textual support from the slides, which only mentioned heterogeneity and discontinuity in relation to epistemic crisis (Slide 2.7). This risks slight overextension beyond documented content."
+      ],
+      "faithfulness_evidence": [
+        "\"Two historical processes: constitution of differences between conquerors ('West') and conquered ('Rest'), and constitution of new structures of labor control...\" (Slide 11)",
+        "\"Consequently, it is time to learn to free ourselves from the Eurocentric mirror where our image is always... distorted.\" (Slide 2.19)"
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": [
+        "Includes an example (the film *Roma*) not mentioned in the reference lecture."
+      ]
+    },
+    "final_score_0to1": 0.9333333333333333,
+    "word_count": 288
+  },
+  "refined": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "Captures the lecture\u2019s core triad\u2014coloniality of power, Eurocentrism, and national identity\u2014showing how Quijano\u2019s analysis links race, labor, and knowledge as mutually constitutive structures.",
+        "Effectively integrates comparative references (e.g., Hall\u2019s 'West and the Rest,\u2019 Roma case study) to demonstrate conceptual continuity between lecture content and applied cultural examples."
+      ],
+      "two_issues": [
+        "The summary condenses the 'Modernity/Coloniality/Decoloniality' framework smoothly but omits explicit mention of the political-economy angle highlighted on Slide 13 ('Capitalist systems for organizing labor'), which would clarify how labor exploitation undergirds Eurocentrism.",
+        "It under-represents the lecture\u2019s emphasis on heterogeneity and discontinuity (Slide\u202f2\u20137: 'Crisis of European perspective'), flattening the complexity of decolonial alternatives into a generalized 'recognition of plural modernities' rather than emphasizing Aymara notions or situated agency."
+      ],
+      "faithfulness_evidence": [
+        "Slide\u202f8: 'Coloniality and Modernity were co\u2011constituted... great march of progress and white supremacy.'",
+        "Slide\u202f19: 'Consequently, it is time to learn to free ourselves from the Eurocentric mirror... finally, to cease being what we are not.'"
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": [
+        "Mentions Stuart Hall\u2019s 'West and the Rest' and the film *Roma (2018)*, which are not referenced in the original lecture."
+      ]
+    },
+    "final_score_0to1": 0.9333333333333333,
+    "word_count": 376
+  },
+  "delta_refined_minus_s0": 0.0
+}

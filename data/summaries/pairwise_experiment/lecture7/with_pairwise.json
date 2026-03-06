@@ -1,0 +1,148 @@
+{
+  "refined_summary": "The lecture examined **within-subjects designs** as a complement to between-groups methods, emphasizing how they reduce participant-related variability. In a between-groups design, each person contributes data to only one condition, so individual differences add random noise that can mask effects and require larger samples. A within-subjects design instead has every participant complete all conditions and be compared to themselves, removing much of that noise and improving statistical power using fewer participants.\n\nThe lecture emphasized, however, that this efficiency is not a universal advantage but a function of careful experimental design. Within-subjects approaches are often valuable but must be matched appropriately to the research question and task.\n\nSeveral forms were described. A **pretest\u2013posttest design** tests each participant before and after an intervention. A **repeated-measures design** involves two or more conditions within the same session (e.g., stimulus coherence at 10%, 20%, 30%). A **longitudinal design** tracks change across time points\u2014highly informative but slow to complete. Together, these designs highlight how comparing participants to themselves can strengthen inference when conditions are brief and well controlled.\n\nPotential threats to validity include **demand characteristics**, where participants might infer the purpose when exposed to all conditions, and **carryover effects**, when one condition influences subsequent performance. Carryover includes **fatigue effects** (decline from tiredness) and **practice effects** (improvement through familiarity). Other temporal confounds noted were the **history effect** (outside events like exams or festivals), **maturation effect** (natural developmental or biological change), and **testing effect** (score changes from repeated exposure or strategy). Each can blur interpretation of a treatment\u2019s impact.\n\nExamples such as children judging accented speech and reading studies with differently spaced text prompted students to decide whether these setups were within- or between-subjects and whether the order of conditions was complete or incomplete\u2014illustrating design logic rather than reporting results.\n\nThe lecture then explored **order effects**, where outcome depends on sequence, and introduced **counterbalancing** as a remedy. In **complete counterbalancing**, participants experience every possible order (e.g., **ABBA** patterns for two conditions or **block randomization** for more). **Incomplete counterbalancing** gives each participant all conditions but not all orders, using methods like **random order with rotation** or **Latin-square designs**, which distribute order positions evenly. The session closed by noting that some manipulations\u2014such as taking a drug or performing a surgery\u2014cannot be \u201cundone,\u201d limiting when counterbalancing is feasible.  \n\n**(395 words)**",
+  "signals": {
+    "length_error": 0.08,
+    "section_coverage_pct": 0.95,
+    "glossary_recall": 0.3541666666666667,
+    "suspected_hallucination_rate": 0.65,
+    "meteor": 0.4355050550426457
+  },
+  "rubric": {
+    "coverage": 4,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary accurately identifies the lecture\u2019s main thesis\u2014that within-subjects designs reduce participant-related variability compared to between-groups designs\u2014and clearly explains the logic of comparing participants to themselves.",
+      "It appropriately distinguishes different design types (pretest\u2013posttest, repeated-measures, longitudinal) and links them to examples such as 'children judging accented speech' and 'reading studies with differently spaced text,' reflecting the lecture\u2019s pedagogical focus."
+    ],
+    "two_issues": [
+      "The summary slightly overgeneralizes by calling within-subjects advantages 'a function of careful experimental design' without citing evidence from the slides that explicitly frame the issue this way; the slides focus more concretely on noise reduction and order effects rather than conceptual balance.",
+      "Counterbalancing details, while mostly correct, could more explicitly mention the limitations of complete counterbalancing due to factorial growth ('what if 4 conditions? 5? 6?'), a point stressed on Slide 18, as well as the conditions under which intermixing may substitute for counterbalancing (Slide 2 of Chunk 2)."
+    ],
+    "faithfulness_evidence": [
+      "Slide 3: 'Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise.'",
+      "Slide 18\u201320: 'ABBA design ... Block randomization ... Random order with rotation ... Latin-square design.'"
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.7871010110085291,
+    "layer_scores": {
+      "domain_rubric": 0.8333333333333334,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.4355050550426457
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7871010110085291,
+    "manual_weighted_score": 0.6701841914291791,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7520259651347241,
+    "hallucination_rate": 0.65,
+    "hallucination_damping_factor": 0.9025,
+    "scorer_disagreement_delta": 0.11691681957935007
+  },
+  "final_score_0to1": 0.6787034335340885,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture7",
+  "refinement_metadata": {
+    "iterations_completed": 6,
+    "final_avg_score": 4.4,
+    "final_word_count": 378,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0618 < 0.0200, recall_improvement -0.0625 < 0.0200, score_gain -0.0066 < 0.0150",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.7,
+        "organization": 4.3,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.2
+      }
+    ],
+    "quality_history": [
+      0.7193895383585703,
+      0.6934741022872489,
+      0.6980320424042209,
+      0.7265172060830436,
+      0.7297284058432683,
+      0.7199330102612845
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.5,
+      "clarity": 4.3,
+      "style": 4.2
+    },
+    "final_agreement": 0.4355050550426457,
+    "final_quality_score": 0.7199330102612845
+  }
+}

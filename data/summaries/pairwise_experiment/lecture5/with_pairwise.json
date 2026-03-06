@@ -1,0 +1,132 @@
+{
+  "refined_summary": "The lecture examined how race and culture are **socially constructed** systems that organize inequality, shape identity, and influence schooling. It began with Sonia\u202fNieto\u2019s concept of **\u201cconstructing others,\u201d** which describes how society classifies people according to visible and invisible traits, then attaches meanings and policies that benefit some groups while disadvantaging others. Students were asked to reflect on whether teachers or counselors had ever labeled them and how these labels affected their sense of intelligence, motivation, and self\u2011concept\u2014introducing how classification operates through everyday educational experiences. A slide on **\u201cSilence, Fear, Denial\u201d** noted that fear often prevents open talk about race or cultural difference, but genuine understanding requires courage to examine how one\u2019s socialization and upbringing have shaped assumptions.  \n\nThe lecture emphasized that race has **no biological basis** but arises from historical, political, and economic circumstances that make racial categories appear natural. Legal and policy frameworks have been central to this construction. Ian\u202fHaney\u202fL\u00f3pez explained **law as coercion**, through which legal rules physically and socially produced racial categories via immigration, naturalization, and marriage restrictions. He also described **law as ideology**, showing how legal norms persuade people to see racial hierarchies as natural. Court cases involving Armenians, Japanese, Mexicans, and interracial marriage illustrated how citizenship and whiteness were legally defined and contested. The **U.S. Census** and evolving racial terms demonstrated that both language and identity change as social conditions shift. James\u202fBaldwin\u2019s remark that whiteness emerged through generations of coercion underscored that \u201cwhite\u201d identity was historically produced, not inherent.  \n\nTurning to **culture**, Nieto defined it as the continually changing values, traditions, relationships, and worldviews that people create and share. Culture is learned, not genetic; it is hybrid, multifaceted, and cannot be reduced to surface symbols such as food or holidays. Cultural formation involves many mediating factors\u2014family, peers, class, religion, geography, media, and schooling\u2014and individuals actively select from these influences.  \n\nThe discussion of **school culture** highlighted that schools have their own norms shaped by buildings, routines, grouping practices, and access to resources. Common U.S. schooling assumptions\u2014that ability differs, is fixed, and measurable\u2014create hierarchies reflected in ideas about who is \u201csmart\u201d or \u201cbad\u201d and affect how students engage and see their futures.  \n\nOverall, the lecture connected the social construction of race and culture with the structures and beliefs embedded in education, inviting reflection on how institutional practices define identity and opportunity.  \n\n**(Word count:\u202f~395)**",
+  "signals": {
+    "length_error": 0.11714285714285715,
+    "section_coverage_pct": 1.0,
+    "glossary_recall": 0.5342465753424658,
+    "suspected_hallucination_rate": 0.65,
+    "meteor": 0.4238513802837182
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 4,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary captures the lecture\u2019s central argument that race and culture are socially constructed systems shaping inequality and self-understanding, well aligned with slides on Sonia\u202fNieto and Ian\u202fHaney\u202fL\u00f3pez.",
+      "It clearly connects the legal construction of race (e.g., naturalization, marriage laws) to broader educational implications, indicating awareness of how the lecture linked material from earlier to later slides."
+    ],
+    "two_issues": [
+      "The summary glosses over some conceptual distinctions drawn on the slides\u2014for instance, it merges Nieto\u2019s separate discussions of 'constructing others' and 'culture' without clarifying how the latter expands the former; a brief definition from Slide\u202f5 ('culture is not inherited through genes...') would have improved conceptual precision.",
+      "While the account mentions school culture well, it omits the slide\u2019s detailed point that U.S. schooling assumes a fixed hierarchy of skills and abilities (Slide\u202f11), a missed opportunity to show how those assumptions reproduce social stratification."
+    ],
+    "faithfulness_evidence": [
+      "\"Law as coercion = 'legal rules have shaped physical appearances...through literal exclusion and through interference with marital choices'\" supports that the student\u2019s summary correctly linked L\u00f3pez\u2019s idea of law shaping racial categories.",
+      "\"Culture is not inherited through genes. Culture is learned; it is a human creation\" shows where the summary\u2019s discussion of learned, dynamic culture comes directly from the slide content, confirming fidelity."
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.7847702760567437,
+    "layer_scores": {
+      "domain_rubric": 0.8333333333333334,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.4238513802837182
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7847702760567437,
+    "manual_weighted_score": 0.6778534564773935,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7526952301829385,
+    "hallucination_rate": 0.65,
+    "hallucination_damping_factor": 0.9025,
+    "scorer_disagreement_delta": 0.10691681957935018
+  },
+  "final_score_0to1": 0.679307445240102,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture5",
+  "refinement_metadata": {
+    "iterations_completed": 4,
+    "final_avg_score": 4.4799999999999995,
+    "final_word_count": 391,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1382 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain 0.0086 < 0.0150",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.0,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.2,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.2
+      }
+    ],
+    "quality_history": [
+      0.7140979693207116,
+      0.7409879489888365,
+      0.7239724290176749,
+      0.7495652688226028
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.7,
+      "clarity": 4.5,
+      "style": 4.2
+    },
+    "final_agreement": 0.4238513802837182,
+    "final_quality_score": 0.7495652688226028
+  }
+}

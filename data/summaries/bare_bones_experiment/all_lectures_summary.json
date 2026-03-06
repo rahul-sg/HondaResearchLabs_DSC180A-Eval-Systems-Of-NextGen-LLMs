@@ -1,0 +1,496 @@
+{
+  "num_lectures": 7,
+  "avg_s0_score": 0.8809523809523812,
+  "num_refined_available": 7,
+  "avg_refined_score": 0.8857142857142859,
+  "avg_delta_refined_minus_s0": 0.004761904761904761,
+  "per_lecture": [
+    {
+      "lecture_id": "lecture1",
+      "s0": {
+        "rubric": {
+          "coverage": 4,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 8,
+          "two_strengths": [
+            "The summary accurately captures the lecture\u2019s emphasis that accounting serves as 'the language of business' and explains both its recordkeeping and communication roles.",
+            "It correctly conveys the linkage between business activities (financing, investing, operating) and the four main financial statements, as presented in slides such as 'Accounting Functions' and 'Financial Statements \u2013 (Communication)'."
+          ],
+          "two_issues": [
+            "The summary omits key course logistics and context from the first-week slides\u2014such as grading structure, course objectives, and expectations ('Understanding how financial statements are created... to make business decisions')\u2014which are essential for a full understanding of the business learning goals.",
+            "It introduces a claim about classification of assets and liabilities by liquidity and maturity, but the slides do not explicitly state those criteria; this addition weakens faithfulness to the source content."
+          ],
+          "faithfulness_evidence": [
+            "Slide 20: 'Accounting \u2013 Language of business... Two primary functions: Recordkeeping... Communication.'",
+            "Slide 17: 'The Accounting Equation... If Total Assets increase then either Liabilities or Stockholders\u2019 Equity MUST increase by the SAME amount.'"
+          ],
+          "detected_domain": "business"
+        },
+        "agreement": {
+          "agreement_1to5": 3,
+          "missing_key_points": [
+            "Interconnection among the four financial statements and how net income links income statement, equity statement, and balance sheet",
+            "Role of the statement of stockholders\u2019 equity in updating retained earnings with income and dividends",
+            "Function of the statement of cash flows explaining cash changes through operating, investing, and financing activities",
+            "Theme that financial statements form a connected system rather than standalone reports"
+          ],
+          "added_inaccuracies": [
+            "Inclusion of GAAP, FASB, SEC, IFRS, IASB, and auditor opinions not mentioned in the reference",
+            "Added emphasis on financing, investing, and operating activities as measurement categories rather than as parts of the cash flow statement per reference",
+            "Discussion of users of accounting information and detailed transaction examples not covered in the reference"
+          ]
+        },
+        "final_score_0to1": 0.7166666666666667,
+        "word_count": 319
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 5,
+          "organization": 4,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "Effectively captures the dual nature of accounting as both recordkeeping and communication, aligning with slide 20's emphasis that accounting is the 'language of business' and a 'financial story.'",
+            "Clearly summarizes the Klein, Inc. balance sheet example to illustrate the accounting equation and dual effects, which directly reflects Slides 1\u201314 of Chunk 3."
+          ],
+          "two_issues": [
+            "The summary omits course structure and expectations (grading, exams, participation) even though Slides 12\u201316 discuss 'Syllabus' and 'How to Succeed in this Class'; since this was part of the lecture, its absence reduces completeness.",
+            "Although GAAP, FASB, and SEC are accurately mentioned, the summary does not note the relationship that 'SEC delegates the responsibility for setting accounting standards to FASB' (Slide 6), which slightly weakens precision on regulatory hierarchy."
+          ],
+          "faithfulness_evidence": [
+            "Slide 20: 'Language of business ... identify, measure, and record economic events in value terms'; this supports the summary\u2019s description of accounting as both measurement and communication.",
+            "Slide 17 (Chunk 2): 'The Accounting Equation ... each transaction has a dual effect'; faithfully echoed when the summary states that 'every transaction affects at least two accounts but the equation always remains balanced.'"
+          ],
+          "detected_domain": "business"
+        },
+        "agreement": {
+          "agreement_1to5": 2,
+          "missing_key_points": [
+            "Explanation that accounting exists because economic activity is complex and requires consistent, judgment\u2011based reporting.",
+            "Detailed linkage among the four financial statements showing how income flows to equity and affects the balance sheet.",
+            "Description of how the statement of cash flows reconciles beginning and ending cash through operating, investing, and financing activities.",
+            "Emphasis that the financial statements form an interconnected system rather than standalone reports."
+          ],
+          "added_inaccuracies": [
+            "Introduction of GAAP, FASB, SEC, IFRS, auditors, and reporting forms (10\u2011K, 10\u2011Q) not mentioned in the reference.",
+            "Inclusion of multiple stakeholder audiences and the Klein, Inc. transaction example absent from the reference."
+          ]
+        },
+        "final_score_0to1": 0.65,
+        "word_count": 347
+      },
+      "delta_refined_minus_s0": -0.06666666666666665
+    },
+    {
+      "lecture_id": "lecture2",
+      "s0": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 5,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary provides a coherent explanation of how the four core financial statements link together, accurately reflecting the slides\u2019 emphasis that 'Financial statements do not exist in isolation: link between B/S, I/S, CF/S and Statement of Shareholders\u2019 Equity!'.",
+            "It clearly captures the logic and examples of double-entry accounting, showing correct recognition that 'Every transaction must have at least one debit and at least one credit' and explaining how these preserve the accounting equation."
+          ],
+          "two_issues": [
+            "The summary omits specific mention of the numeric transactional sequences used in slides (e.g., how ending balances such as cash $131,400 and trade payable $7,000 are derived), which were key for illustrating the practical application of double-entry logic.",
+            "It does not explicitly mention the transition to journal entries and ledger postings as separate process steps highlighted in 'The accounting process so far: Analyze \u2192 Record \u2192 Post,' which weakens alignment to the lecture\u2019s applied instruction sequence."
+          ],
+          "faithfulness_evidence": [
+            "Slide 9: 'Financial statements do not exist in isolation: link between B/S, I/S, CF/S and Statement of Shareholders\u2019 Equity!'",
+            "Slide 11 (Chunk 3): 'Every journal entry must have at least one debit and at least one credit... Debits = credits maintains the balance sheet equation, A = L + SE.'"
+          ],
+          "detected_domain": "business"
+        },
+        "agreement": {
+          "agreement_1to5": 4,
+          "missing_key_points": [
+            "The model adds a large section introducing and describing the four financial statements, which was not part of the reference lecture summary.",
+            "The reference explicitly emphasizes that double-entry arises from the 'give and take' nature of each economic event, which is less clearly articulated in the model."
+          ],
+          "added_inaccuracies": [
+            "The model wrongly implies that the lecture focused on teaching financial statements and their interrelation; the reference only mentions expanding the accounting equation and recording processes, not detailed coverage of all statements.",
+            "The model introduces the mnemonic 'D E A L O R,' which is not mentioned in the reference material."
+          ]
+        },
+        "final_score_0to1": 0.8500000000000001,
+        "word_count": 300
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary accurately captures the linkage between financial statements by noting that net income increases retained earnings, which aligns directly with slides 11\u201313 ('Net Income = \u2191SE', 'Revenues = \u2191SE', 'Expenses = \u2193SE').",
+            "It clearly explains the flow from journal entries to T\u2011accounts and the accounting cycle steps ('analyze, record, post'), consistent with Slide 10 in Chunk 3: 'Analyze the transaction; Record the debits and credits; Post journal entries to ledger'."
+          ],
+          "two_issues": [
+            "The summary omits explicit reference to the 'Super T\u2011account' and the detailed debit/credit relationships summarized visually in Slide 11 (Chunk\u202f2), which showed contrasting effects on revenues, expenses, and dividends\u2014important for full coverage of how account types interrelate.",
+            "Although generally faithful, the statement 'debits increase assets, expenses, and dividends' could be strengthened by explicitly connecting these categories back to the mnemonic DEALOR introduced in Slide\u202f12, to show the rule\u2019s pedagogical grounding rather than inferred understanding."
+          ],
+          "faithfulness_evidence": [
+            "Slide\u202f15\u202f(Chunk\u202f1): 'Every economic event has two sides, a give and a take... accounting equation must always be balanced.'",
+            "Slide\u202f11\u202f(Chunk\u202f3): 'Debits = credits maintains the balance sheet equation, A\u202f=\u202fL\u202f+\u202fSE.'"
+          ],
+          "detected_domain": "business"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9333333333333333,
+        "word_count": 388
+      },
+      "delta_refined_minus_s0": 0.08333333333333326
+    },
+    {
+      "lecture_id": "lecture3",
+      "s0": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary accurately identifies the lecture\u2019s overarching framework\u2014the Modernity/Coloniality/Decoloniality (MCD) project\u2014and correctly situates Quijano\u2019s 'coloniality of power' within it, reflecting Slide 4\u2019s division between modernity, coloniality, and decoloniality.",
+            "It effectively connects theoretical ideas to the applied material, such as *Roma* and Rebecca Earle\u2019s 'Indianeque nationalism' (Slides 2.2 and 2.13), demonstrating an awareness of how the lecture illustrated the persistence of colonial hierarchies in representation."
+          ],
+          "two_issues": [
+            "The summary omits or compresses key lecture distinctions between Eurocentrism as both a knowledge system and an historical process (Slides 2.3 and 2.5); this weakens the nuance of Quijano\u2019s challenge to 'linear theories of history' and obscures how Eurocentrism structures modernity conceptually, not just economically.",
+            "The summary introduces interpretive emphasis\u2014such as describing decolonial thinking as 'valorizing heterogeneous, localized perspectives'\u2014without explicit textual support from the slides, which only mentioned heterogeneity and discontinuity in relation to epistemic crisis (Slide 2.7). This risks slight overextension beyond documented content."
+          ],
+          "faithfulness_evidence": [
+            "\"Two historical processes: constitution of differences between conquerors ('West') and conquered ('Rest'), and constitution of new structures of labor control...\" (Slide 11)",
+            "\"Consequently, it is time to learn to free ourselves from the Eurocentric mirror where our image is always... distorted.\" (Slide 2.19)"
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": [
+            "Includes an example (the film *Roma*) not mentioned in the reference lecture."
+          ]
+        },
+        "final_score_0to1": 0.9333333333333333,
+        "word_count": 288
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "Captures the lecture\u2019s core triad\u2014coloniality of power, Eurocentrism, and national identity\u2014showing how Quijano\u2019s analysis links race, labor, and knowledge as mutually constitutive structures.",
+            "Effectively integrates comparative references (e.g., Hall\u2019s 'West and the Rest,\u2019 Roma case study) to demonstrate conceptual continuity between lecture content and applied cultural examples."
+          ],
+          "two_issues": [
+            "The summary condenses the 'Modernity/Coloniality/Decoloniality' framework smoothly but omits explicit mention of the political-economy angle highlighted on Slide 13 ('Capitalist systems for organizing labor'), which would clarify how labor exploitation undergirds Eurocentrism.",
+            "It under-represents the lecture\u2019s emphasis on heterogeneity and discontinuity (Slide\u202f2\u20137: 'Crisis of European perspective'), flattening the complexity of decolonial alternatives into a generalized 'recognition of plural modernities' rather than emphasizing Aymara notions or situated agency."
+          ],
+          "faithfulness_evidence": [
+            "Slide\u202f8: 'Coloniality and Modernity were co\u2011constituted... great march of progress and white supremacy.'",
+            "Slide\u202f19: 'Consequently, it is time to learn to free ourselves from the Eurocentric mirror... finally, to cease being what we are not.'"
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": [
+            "Mentions Stuart Hall\u2019s 'West and the Rest' and the film *Roma (2018)*, which are not referenced in the original lecture."
+          ]
+        },
+        "final_score_0to1": 0.9333333333333333,
+        "word_count": 376
+      },
+      "delta_refined_minus_s0": 0.0
+    },
+    {
+      "lecture_id": "lecture4",
+      "s0": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 4,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "Effectively integrates Darwin\u2019s postulates with Mendel\u2019s particulate theory, reflecting the lecture\u2019s stated transition from natural selection to genetic mechanisms.",
+            "Accurately conveys the core conceptual sequence outlined on the slides\u2014from Darwin\u2019s difficulties to the discovery of DNA and its use in evolutionary studies like Mitochondrial Eve."
+          ],
+          "two_issues": [
+            "The summary omits explicit reference to the lecture\u2019s emphasis on chromosome structure and division as the key to understanding inheritance (Slide 13: 'Understanding chromosomes was key to understanding inheritance, which in turn is key in understanding evolution').",
+            "Although largely accurate, the final section slightly overgeneralizes the presentation of Watson and Crick\u2019s discovery\u2014there is no indication in the slides that ethical or gender issues around credit for Franklin were discussed, so implying interpretive emphasis risks invention beyond the material."
+          ],
+          "faithfulness_evidence": [
+            "Slide 2: 'Evolution is the change in allele frequencies that occurs over time within a population' supports the summary\u2019s initial definition of evolution.",
+            "Slide 34: 'Understanding structure helps understand function\u2026 timing of evolutionary events by comparing DNA of different organisms' confirms the summary\u2019s linkage between DNA structure and evolutionary inference."
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [
+            "Variation in evolutionary rates with examples such as eye evolution and rapid shifts in minnows",
+            "Use of DNA as a molecular clock to estimate evolutionary divergence",
+            "Explicit mention of human chromosome number (46)",
+            "Quantification of total human genes (around 20,000\u201325,000)"
+          ],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9166666666666667,
+        "word_count": 306
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 4,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 8,
+          "two_strengths": [
+            "The summary effectively traces the conceptual development from Darwin\u2019s postulates through Mendelian inheritance to modern genetics, aligning with the slide sequence (\u2018Postulates of Natural Selection\u2019, \u2018Mendel\u2019s Experimental Results\u2019, \u2018DNA \u2013 A History\u2019).",
+            "It accurately describes key mechanisms such as meiosis, recombination, and mitochondrial inheritance using terminology consistent with the slides (\u2018halves the number of chromosomes\u2019, \u2018mtDNA is found in the mitochondria\u2019)."
+          ],
+          "two_issues": [
+            "The summary occasionally adds interpretive phrasing not explicitly present on the slides, such as claiming the variation in \u2018rates of evolution\u2019 is \u2018dramatic\u2019; the slides list examples but do not frame them as rate contrasts with evaluative emphasis.",
+            "While the chronological organization is clear, the summary compresses linkage and recombination details\u2014e.g., the slide specifying that \u2018segregation may not be independent if loci are physically near\u2019 is only partially represented, missing that conceptual nuance about physical proximity."
+          ],
+          "faithfulness_evidence": [
+            "Slide 2 defines evolution as \u2018the change in allele frequencies that occurs over time within a population,\u2019 accurately reflected in the summary\u2019s opening definition.",
+            "Slide 28 notes that \u2018crossing-over\u2019 produces new combinations of genes not present in parents; the summary repeats this but omits the conditional about gene proximity, showing partial accuracy."
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9166666666666667,
+        "word_count": 365
+      },
+      "delta_refined_minus_s0": 0.0
+    },
+    {
+      "lecture_id": "lecture5",
+      "s0": {
+        "rubric": {
+          "coverage": 4,
+          "faithfulness": 4,
+          "organization": 4,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 8,
+          "two_strengths": [
+            "The summary accurately identifies the lecture\u2019s organizing theme\u2014the social construction of race and culture\u2014and correctly links it to law, language, and schooling, capturing continuity across both halves of the lecture.",
+            "It effectively integrates key slide-based evidence, such as the AAA project 'RACE: Are We So Different?' and Ian Haney L\u00f3pez\u2019s discussion of law as coercion and ideology, to show how race is institutionalized."
+          ],
+          "two_issues": [
+            "The summary omits some pedagogical and reflective aspects of the lecture, such as the early slides\u2019 emphasis on self-labelling and courage against silence or denial ('The answer is courage \u2013 courage to confront how societal views influence us'). These were central to the lecture\u2019s call for personal reflection.",
+            "It slightly overgeneralizes the section on law\u2014treating it primarily as reinforcing race\u2014without distinguishing L\u00f3pez\u2019s contrast between 'law as coercion' and 'law as ideology' articulated on slides 10 and 2\u20112, thus flattening a key conceptual nuance."
+          ],
+          "faithfulness_evidence": [
+            "Slide 5: 'Widely accepted...race is not biologically determined. Socially constructed nature of racial categories...Race becomes \u201ccommon sense.\u201d'",
+            "Slide 10: 'Law influences what we look like, the meanings ascribed to our looks, and the material reality that confirms the meanings of our appearance.'"
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [
+            "Naturalization and citizenship requirements such as language, civic knowledge, and 'good moral character' were not mentioned.",
+            "The specific historical example of Irish and Italian immigrants becoming classified as white over time was omitted."
+          ],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9,
+        "word_count": 306
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 4,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary effectively connects the lecture\u2019s three main arcs\u2014racial construction, language and culture, and school culture\u2014demonstrating a coherent through-line about social construction across domains.",
+            "It accurately captures key conceptual distinctions from the slides, such as Haney L\u00f3pez\u2019s contrast between 'law as coercion' and 'law as ideology,' and Nieto\u2019s view of culture as dynamic, learned, and hybrid."
+          ],
+          "two_issues": [
+            "The summary omits some nuance from the slides concerning specific historical legal cases and policies\u2014for instance, it merges the 1909 Armenian and 1922 Japanese cases but neglects to mention how the rulings revealed contradictions in defining 'whiteness.'",
+            "While generally faithful, it lightly paraphrases Baldwin\u2019s quotation ('whiteness required generations and coercion') instead of maintaining the precise wording and context; this small shift lessens its analytical depth and faithfulness."
+          ],
+          "faithfulness_evidence": [
+            "Slide 10: \u201cLaw influences what we look like, the meanings ascribed to our looks, and the material reality that confirms the meanings of our appearance\u201d \u2013 accurately reflected in the summary\u2019s discussion of law shaping physical appearance and racial meaning.",
+            "Slide 5: \u201cRace becomes \u2018common sense.\u2019\u201d \u2013 effectively echoed in the summary\u2019s phrase that racial categories are made to 'seem natural or \u201ccommon sense.\u201d'"
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": [
+            "Mentions 'Small et al.' framework which is not in the reference summary"
+          ]
+        },
+        "final_score_0to1": 0.9166666666666667,
+        "word_count": 395
+      },
+      "delta_refined_minus_s0": 0.01666666666666672
+    },
+    {
+      "lecture_id": "lecture6",
+      "s0": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary accurately distinguishes types of subqueries (in SELECT, FROM, and WHERE) and connects them to existential and universal quantifiers, echoing phrases like 'Existential quantifiers are straightforward!' and 'Universal quantifiers pose a challenge.'",
+            "It correctly captures the conceptual link between monotonicity and unnesting, reflecting slides stating 'If a query is monotonic, it implies that a nested query can be unnested.'"
+          ],
+          "two_issues": [
+            "While it notes that 'outer joins affect equivalence,' it does not explicitly mention the slide\u2019s example comparing INNER vs LEFT OUTER JOIN in Slide 10 ('But are these equivalent?'), which was central to understanding when subquery unnesting changes semantics.",
+            "The summary omits the theorem wording on monotone queries ('If Q is a SELECT-FROM-WHERE query that does not have subqueries, and no aggregates, then it is monotone'), reducing precision in the formal characterization."
+          ],
+          "faithfulness_evidence": [
+            "Slide 17 states 'The SQL constructs that we have covered thus far do not have the capability to handle universal quantifiers,' directly supporting the summary\u2019s mention of SQL\u2019s limit handling universal quantifiers.",
+            "Slides 33\u201334 explain 'If a query is monotonic, it implies that a nested query can be unnested,' which aligns with the summary\u2019s claim connecting monotonicity to subquery optimization."
+          ],
+          "detected_domain": "math"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9333333333333333,
+        "word_count": 290
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 4,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary correctly identifies the lecture\u2019s three structural parts\u2014subqueries in SELECT, FROM, and WHERE\u2014and faithfully links them to logical quantifiers and monotonicity, as shown by phrases like 'Subquery unnesting' and 'Universal quantifiers pose a challenge.'",
+            "It accurately explains the monotonicity theorem from slide\u202f33 ('If Q is a SELECT\u2011FROM\u2011WHERE query that does not have subqueries, and no aggregates, then it is monotone') and connects that to unnesting feasibility discussed in slide\u202f34."
+          ],
+          "two_issues": [
+            "While the summary notes that not all subquery unnestings are semantically equivalent, it omits the explicit example from slide\u202f10 comparing inner and left outer joins, which would strengthen the explanation of the edge case.",
+            "The coverage of the FROM\u2011clause subqueries simplifies the slide\u2019s explicit demonstration of CTE syntax ('WITH myTable AS (...)') and does not mention that the lecture explicitly distinguishes correlated vs. non\u2011correlated cases ('Not a correlated subquery')."
+          ],
+          "faithfulness_evidence": [
+            "Slide\u202f10 text: 'SELECT m.name, AVG(salary)... LEFT OUTER JOIN ActedIn a...'; supports the summary\u2019s claim that different join types alter semantics.",
+            "Slide\u202f34 statement: 'If a query is non\u2011monotone, it implies that a nested query can NOT be unnested'; matches the summary\u2019s discussion of monotone versus non\u2011monotone implications."
+          ],
+          "detected_domain": "math"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9166666666666667,
+        "word_count": 376
+      },
+      "delta_refined_minus_s0": -0.016666666666666607
+    },
+    {
+      "lecture_id": "lecture7",
+      "s0": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 4,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary clearly articulates the central contrast between between-groups and within-subjects designs, accurately capturing the lecture\u2019s framing that 'each participant contributes data in all conditions' (Slide 3).",
+            "It correctly summarizes the major types of within-subjects designs and explains order and carryover effects, including examples such as fatigue and practice effects from Slides 8\u201311."
+          ],
+          "two_issues": [
+            "The summary omits the instructor\u2019s emphasis from Slide 3 on efficiency \u2014 specifically, that the same number of data points per condition can be collected with fewer participants (e.g., 'To get 20 data points per condition, need 20 ppts').",
+            "Although counterbalancing methods are explained well, the summary slightly overstates the causal definiteness of intermixing as 'eliminating' order effects, whereas the slides only state it 'basically cancels out order effects' (Chunk 2 \u2022 Slide 2), a nuanced difference that weakens faithfulness."
+          ],
+          "faithfulness_evidence": [
+            "Slide 3: 'Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise.'",
+            "Chunk 2 \u2022 Slide 2: 'Intermixing basically cancels out order effects.'"
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [
+            "Examples involving children\u2019s speech perception and dyslexia research illustrating order effects are not mentioned."
+          ],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9166666666666667,
+        "word_count": 286
+      },
+      "refined": {
+        "rubric": {
+          "coverage": 5,
+          "faithfulness": 4,
+          "organization": 5,
+          "clarity": 4,
+          "style": 4,
+          "overall_1to10": 9,
+          "two_strengths": [
+            "The summary clearly captures the lecture's central argument that within-subjects designs reduce nuisance variability by comparing each participant to themselves, as stated on Slide 3 (\u2018Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise\u2019).",
+            "It effectively synthesizes the lecture\u2019s discussion of order effects and counterbalancing, accurately referencing ABBA, block randomization, and Latin-square designs."
+          ],
+          "two_issues": [
+            "The summary slightly overinterprets the \u2018accent comprehension\u2019 slide by implying it was presented as an empirical demonstration of within\u2011subjects logic; the slide (Slide 13) only posed a question without specifying design, so this example is partially speculative.",
+            "While the summary mentions cognitive science and random intermixing correctly, it compresses the nuanced distinction between when to intermix versus counterbalance (Slide 2, Chunk 2) \u2014 namely, that intermixing is preferable when trials are numerous and short, not just to \u2018cancel order effects\u2019 generally."
+          ],
+          "faithfulness_evidence": [
+            "\u2018Each participant contributes data in all conditions \u2013 Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise\u2019 (Slide 3).",
+            "\u2018Order effects and counterbalancing \u2013 Problem: order effects happen in within-subjects designs... One solution: counterbalance the order of the conditions\u2019 (Slide 16)."
+          ],
+          "detected_domain": "humanities"
+        },
+        "agreement": {
+          "agreement_1to5": 5,
+          "missing_key_points": [],
+          "added_inaccuracies": []
+        },
+        "final_score_0to1": 0.9333333333333333,
+        "word_count": 381
+      },
+      "delta_refined_minus_s0": 0.016666666666666607
+    }
+  ]
+}

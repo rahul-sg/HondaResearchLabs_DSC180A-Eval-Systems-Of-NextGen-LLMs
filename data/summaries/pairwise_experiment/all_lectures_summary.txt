@@ -1,0 +1,17 @@
+PAIRWISE ABLATION SUMMARY (ALL LECTURES)
+Lectures evaluated: 7
+Avg WITH pairwise score:    0.6894
+Avg WITHOUT pairwise score: 0.6817
+Avg delta (WITH - WITHOUT): +0.0077
+WITH better: 4
+WITHOUT better: 3
+Ties: 0
+
+Per-lecture results:
+- lecture1: with=0.5830, without=0.5887, delta=-0.0058, iters(with/without)=5/4
+- lecture2: with=0.7106, without=0.7639, delta=-0.0533, iters(with/without)=5/6
+- lecture3: with=0.6985, without=0.6500, delta=+0.0485, iters(with/without)=7/4
+- lecture4: with=0.7612, without=0.7303, delta=+0.0310, iters(with/without)=6/4
+- lecture5: with=0.6793, without=0.6560, delta=+0.0233, iters(with/without)=4/5
+- lecture6: with=0.7148, without=0.7012, delta=+0.0136, iters(with/without)=7/4
+- lecture7: with=0.6787, without=0.6819, delta=-0.0032, iters(with/without)=6/9

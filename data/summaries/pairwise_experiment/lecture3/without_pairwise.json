@@ -1,0 +1,132 @@
+{
+  "refined_summary": "The lecture examines **An\u00edbal\u202fQuijano\u2019s** concept of the **coloniality of power** within the broader **Modernity/Coloniality/Decoloniality (MCD)** framework to show how colonial relations of domination continue through race, labor, knowledge, and identity in Latin America. Quijano\u2014a Peruvian sociologist whose work bridges dependency theory, political economy, and decolonial thought\u2014argues that modernity and coloniality are **co\u2011constituted**, not separate stages of \u201cprogress.\u201d The MCD project also includes **coloniality of knowledge**, emphasizing that Western epistemology has privileged particular categories of thought while obscuring Indigenous and other non\u2011Western ways of knowing. **Decoloniality**, therefore, calls for centering suppressed epistemologies, languages, and cosmologies rather than merely revising Western narratives.  \n\nSlides\u202f11\u201313 outline how coloniality developed through (1) the **construction of difference** between conquerors (\u201cWest\u201d) and conquered (\u201cRest\u201d), and (2) the **creation of racialized labor systems** such as slavery, the encomienda, and the mita. These arrangements intertwined racial hierarchy with economic control, turning race into a \u201cmental category of modernity.\u201d Slide\u202f1 of Chunk\u202f2 extends this by linking the constitution of race with the emergence of the global capitalist order, where Eurocentrism normalized privilege and dependency.  \n\n**Eurocentrism** (Chunk\u202f2\u202fSlides\u202f3\u20135) describes how Europe produced itself as the measure of civilization. Enlightenment dualisms\u2014\u201cdeveloped/underdeveloped,\u201d \u201cFirst/Third\u202fWorld\u201d\u2014naturalized the idea of a universal Western path of advancement. Drawing on **Stuart\u202fHall\u2019s \u201cWest and the Rest\u201d**, the lecture highlights how such knowledge systems shape representation and legitimize global inequalities.  \n\nThe **heterogeneity and discontinuity** slide (Chunk\u202f2\u202fSlide\u202f7) disrupts linear notions of history. Indigenous temporalities, such as Aymara ideas of *pachakuti*, emphasize cycles, complexity, and agency in social transformation. Politics and history are thus contingent and plural rather than uniform evolutions toward Western modernity\u2014linking directly to decolonial thinking.  \n\nLater sections apply these frameworks to questions of **national identity**. **Rebecca\u202fEarle\u2019s** analysis of *Indianesque\u202fnationalism* shows how early republics celebrated symbolic Indigenous pasts while marginalizing living Indigenous and Afro\u2011descendant peoples. Myths of **mestizaje** further disguised racial hierarchies under claims of harmony. Cultural examples like *Roma* and the *Throughline* podcast invite students to locate contemporary echoes of coloniality.  \n\nPortfolio activities ask students to engage these questions through textual analysis and thematic connections, culminating in Quijano\u2019s **call for decoloniality** (Slide\u202f19): to \u201cfree ourselves from the Eurocentric mirror\u201d and affirm plural, non\u2011Western ways of being and knowing.  \n\n*(\u2248395\u202fwords)*",
+  "signals": {
+    "length_error": 0.06857142857142857,
+    "section_coverage_pct": 0.7857142857142857,
+    "glossary_recall": 0.5056179775280899,
+    "suspected_hallucination_rate": 0.8235294117647058,
+    "meteor": 0.37753510196952844
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary captures the lecture\u2019s structure clearly\u2014from Quijano\u2019s theoretical genealogy, through key analytic terms (coloniality of power, Eurocentrism, heterogeneity), to their application in Latin American national identity debates.",
+      "The explanation of the MCD project\u2019s co-constitutive logic between modernity and coloniality is faithful to Slide\u202f8\u2019s note that both were 'co\u2011constituted' and not separate historical stages."
+    ],
+    "two_issues": [
+      "The summary slightly overgeneralizes Quijano\u2019s 'coloniality of knowledge' term\u2014it appears mainly as a subtheme of 'coloniality' on Slide\u202f4, not a separate analytical pillar; this paraphrase risks implying a triadic schema the slides do not support.",
+      "While the student references Aymara *pachakuti* and decolonial pluralism well, they omit specific linkage to the 'Crisis of European perspective of knowledge' phrase from Slide\u202f7, which would anchor the conceptual transition more precisely."
+    ],
+    "faithfulness_evidence": [
+      "Slide\u202f8: 'Coloniality and Modernity were \u201cco\u2011constituted\u201d\u2026 with linear great march of \u201cprogress\u201d and white supremacy.'",
+      "Slide\u202f19: '\u2026free ourselves from the Eurocentric mirror\u2026 cease being what we are not.'"
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.7955070203939056,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.37753510196952844
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7955070203939056,
+    "manual_weighted_score": 0.6156768603180304,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.741557972371143,
+    "hallucination_rate": 0.8235294117647058,
+    "hallucination_damping_factor": 0.8764705882352941,
+    "scorer_disagreement_delta": 0.17983016007587527
+  },
+  "final_score_0to1": 0.6499537522547076,
+  "pairwise_selection_enabled": false,
+  "lecture_title": "lecture3",
+  "refinement_metadata": {
+    "iterations_completed": 4,
+    "final_avg_score": 4.4,
+    "final_word_count": 374,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1569 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain -0.0227 < 0.0150",
+    "pairwise_selection_enabled": false,
+    "lever_history": [
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.2,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.4,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.2
+      }
+    ],
+    "quality_history": [
+      0.6759343350784153,
+      0.6950464075571468,
+      0.6691593085932472,
+      0.6723786130618243
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.5,
+      "faithfulness": 4.4,
+      "organization": 4.6,
+      "clarity": 4.3,
+      "style": 4.2
+    },
+    "final_agreement": 0.37753510196952844,
+    "final_quality_score": 0.6723786130618243
+  }
+}

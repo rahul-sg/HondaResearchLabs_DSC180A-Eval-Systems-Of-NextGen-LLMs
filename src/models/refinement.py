@@ -142,7 +142,8 @@ def iterative_refinement(
     cfg_judge: LLMConfig,
     cfg_refine: LLMConfig,
     iters: int = 3,
-    save_callback: Callable[[int, str], None] | None = None
+    save_callback: Callable[[int, str], None] | None = None,
+    use_pairwise: bool = True,
 ) -> str:
 
     initial = initial_summary
@@ -162,12 +163,15 @@ def iterative_refinement(
         pairwise1 = S
         pairwise2 = refine_once(slides, S, feedback, cfg_refine)
 
-        S = round_robin_pairwise(
-            slides=slides,
-            summaries={"prev": pairwise1, "refined": pairwise2},
-            cfg_judge=cfg_judge,
-            runs=3
-        )["result_summary"]
+        if use_pairwise:
+            S = round_robin_pairwise(
+                slides=slides,
+                summaries={"prev": pairwise1, "refined": pairwise2},
+                cfg_judge=cfg_judge,
+                runs=3
+            )["result_summary"]
+        else:
+            S = pairwise2
 
 
         # 3. Save intermediate outputs
@@ -255,6 +259,7 @@ def iterative_refinement_lever_based(
     min_iterations: int = 4,
     human_reference: str | None = None,
     min_agreement: float = 0.7,
+    use_pairwise: bool = True,
 ) -> Tuple[str, Dict]:
     """
     Iterative refinement with lever-based guidance and domain-agnostic stopping.
@@ -396,15 +401,18 @@ def iterative_refinement_lever_based(
         )
         
         # 4. Pairwise comparison to select best
-        print(f"[Iter {iteration}] Running pairwise comparison...")
-        pairwise_result = round_robin_pairwise(
-            slides=slides,
-            summaries={"current": current_summary, "refined": refined_candidate},
-            cfg_judge=cfg_judge,
-            runs=3,
-        )
-        
-        current_summary = pairwise_result["result_summary"]
+        if use_pairwise:
+            print(f"[Iter {iteration}] Running pairwise comparison...")
+            pairwise_result = round_robin_pairwise(
+                slides=slides,
+                summaries={"current": current_summary, "refined": refined_candidate},
+                cfg_judge=cfg_judge,
+                runs=3,
+            )
+            current_summary = pairwise_result["result_summary"]
+        else:
+            print(f"[Iter {iteration}] Pairwise disabled; accepting refined candidate directly...")
+            current_summary = refined_candidate
         
         # 5. Save intermediate output
         if save_callback:
@@ -416,6 +424,7 @@ def iterative_refinement_lever_based(
         "final_avg_score": sum(rubric.values()) / len(rubric) if rubric else 0,
         "final_word_count": len(current_summary.split()),
         "stopping_reason": stopping_reason,
+        "pairwise_selection_enabled": use_pairwise,
         "lever_history": all_lever_history,
         "quality_history": all_quality_history,
         "target_words": target_words,

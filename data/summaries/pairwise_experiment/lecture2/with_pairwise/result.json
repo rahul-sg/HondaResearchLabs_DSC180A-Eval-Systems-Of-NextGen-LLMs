@@ -1,0 +1,140 @@
+{
+  "refined_summary": "This lecture reinforces core accounting principles by connecting financial statements to the double\u2011entry recording system. It begins with the idea that economic activity is complex and requires judgment as well as systematic recording. Accounting serves as a means of communicating how businesses create and use resources through four interrelated financial statements: the balance sheet (a snapshot at specific dates) and three period\u2011based reports\u2014the income statement, statement of stockholders\u2019 equity, and statement of cash flows. Together, they show how results across time explain changes between two balance\u2011sheet dates. Revenues and net income increase stockholders\u2019 equity, while expenses and net losses reduce it; these flows link the income statement to retained earnings, and retained earnings connect successive balance sheets.\n\nThe **accounting equation**\u2014*Assets\u202f=\u202fLiabilities\u202f+\u202fShareholders\u2019\u202fEquity*\u2014is expanded to reveal the composition of equity: contributed capital plus retained earnings. Retained earnings progress over time through  \n*Beginning balance\u202f+\u202fRevenues\u202f\u2013\u202fExpenses\u202f\u2013\u202fDividends\u202f=\u202fEnding balance.*  \nThis form clarifies how income generation and dividend distributions reshape equity while preserving the equation\u2019s balance.\n\nIn the **double\u2011entry framework**, every transaction has two sides\u2014a \u201cgive\u201d and a \u201ctake.\u201d Each event affects at least two accounts (assets, liabilities, or equity) and must keep total debits equal to total credits. Debits increase assets, expenses, and dividends, whereas credits increase liabilities, contributed capital, and revenues. The mnemonic **DEALOR** summarizes normal balances: Dividends, Expenses, and Assets are Debit; Liabilities, Owners\u2019\u202fEquity, and Revenues are Credit. No negative numbers are used, and *Debits\u202f=\u202fCredits* sustains *A\u202f=\u202fL\u202f+\u202fSE.*\n\nIllustrative entries follow this rule: receiving a bank loan raises both cash and notes payable; purchasing equipment or inventory reclassifies assets or creates payables; paying suppliers or insurance decreases cash and records either liability reduction or prepaid expense; and issuing shares increases both cash and common stock. These examples show that total accounts remain balanced after each event.\n\nThe lecture then formalizes these steps:  \n1. **Analyze** each transaction.  \n2. **Record** it as a journal entry listing debits first, credits indented.  \n3. **Post** journal entries to the ledger (T\u2011accounts) to determine account totals and ending balances.  \n\nEnding balances at period\u2011end become beginning balances for the next cycle. This closed loop of analysis, journalizing, and posting ensures accurate measurement and the enduring equality of *Assets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity.*\n\n(Word count:\u202f396)",
+  "signals": {
+    "length_error": 0.09142857142857143,
+    "section_coverage_pct": 0.8947368421052632,
+    "glossary_recall": 0.7380952380952381,
+    "suspected_hallucination_rate": 0.35,
+    "meteor": 0.39763415557751863
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 4,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary accurately explains the linkage among the four major financial statements, reflecting slides stating that 'Financial statements do not exist in isolation: link between B/S, I/S, CF/S and Statement of Shareholders\u2019 Equity'.",
+      "It correctly represents the logic of double-entry mechanics and the DEALOR mnemonic, consistent with the slides that specify 'Dividends, Expenses, Assets = Debit; Liabilities, Owners\u2019 Equity, Revenues = Credit'."
+    ],
+    "two_issues": [
+      "The summary asserts that accounting communicates 'how businesses create and use resources'\u2014a phrase that slightly extrapolates the slides, which emphasize judgment and representation of economic activity rather than explicitly describing value creation processes.",
+      "Although it logically integrates the examples of transactions, it omits explicit reference to the accounting cycle\u2019s next stages (e.g., preparation of financial statements after posting), which could mislead students about course sequencing beyond posting."
+    ],
+    "faithfulness_evidence": [
+      "Slide\u202f9: 'Financial statements do not exist in isolation: link between B/S, I/S, CF/S and Statement of Shareholders\u2019\u202fEquity!'",
+      "Slide\u202f12 of Chunk\u202f2: 'Dividends\u202fExpenses\u202fAssets\u202fLiabilities\u202fOwners\u2019\u202fEquity\u202fRevenue\u202fD\u202fE\u202fA\u202fL\u202fO\u202fR\u202fCredit\u202fDebit\u202fCredit\u202fDebit'"
+    ],
+    "detected_domain": "business"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.7795268311155037,
+    "layer_scores": {
+      "domain_rubric": 0.8333333333333334,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.39763415557751863
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "business",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7795268311155037,
+    "manual_weighted_score": 0.6810181368046302,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7499742228222416,
+    "hallucination_rate": 0.35,
+    "hallucination_damping_factor": 0.9475,
+    "scorer_disagreement_delta": 0.0985086943108735
+  },
+  "final_score_0to1": 0.7106005761240739,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture2",
+  "refinement_metadata": {
+    "iterations_completed": 5,
+    "final_avg_score": 4.44,
+    "final_word_count": 382,
+    "stopping_reason": "pass: strict thresholds met and quality high - signals: length_error 0.091 <= 0.12 AND coverage 0.898 >= 0.88 AND recall 0.688 >= 0.62 AND hallucination 0.350 < 0.48 (strict phase, iter 5) | quality 0.750 >= 0.740",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.3,
+        "clarity": 4.1,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.4,
+        "clarity": 4.3,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.5,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.5,
+        "style": 4.6
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.4
+      }
+    ],
+    "quality_history": [
+      0.7379310650908738,
+      0.7363544422354789,
+      0.747872013180902,
+      0.7930891453991067,
+      0.750408486041262
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.5,
+      "clarity": 4.3,
+      "style": 4.4
+    },
+    "final_agreement": 0.39763415557751863,
+    "final_quality_score": 0.750408486041262
+  }
+}

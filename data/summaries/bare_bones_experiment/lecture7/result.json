@@ -1,0 +1,66 @@
+{
+  "lecture_id": "lecture7",
+  "s0": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "The summary clearly articulates the central contrast between between-groups and within-subjects designs, accurately capturing the lecture\u2019s framing that 'each participant contributes data in all conditions' (Slide 3).",
+        "It correctly summarizes the major types of within-subjects designs and explains order and carryover effects, including examples such as fatigue and practice effects from Slides 8\u201311."
+      ],
+      "two_issues": [
+        "The summary omits the instructor\u2019s emphasis from Slide 3 on efficiency \u2014 specifically, that the same number of data points per condition can be collected with fewer participants (e.g., 'To get 20 data points per condition, need 20 ppts').",
+        "Although counterbalancing methods are explained well, the summary slightly overstates the causal definiteness of intermixing as 'eliminating' order effects, whereas the slides only state it 'basically cancels out order effects' (Chunk 2 \u2022 Slide 2), a nuanced difference that weakens faithfulness."
+      ],
+      "faithfulness_evidence": [
+        "Slide 3: 'Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise.'",
+        "Chunk 2 \u2022 Slide 2: 'Intermixing basically cancels out order effects.'"
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [
+        "Examples involving children\u2019s speech perception and dyslexia research illustrating order effects are not mentioned."
+      ],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9166666666666667,
+    "word_count": 286
+  },
+  "refined": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "The summary clearly captures the lecture's central argument that within-subjects designs reduce nuisance variability by comparing each participant to themselves, as stated on Slide 3 (\u2018Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise\u2019).",
+        "It effectively synthesizes the lecture\u2019s discussion of order effects and counterbalancing, accurately referencing ABBA, block randomization, and Latin-square designs."
+      ],
+      "two_issues": [
+        "The summary slightly overinterprets the \u2018accent comprehension\u2019 slide by implying it was presented as an empirical demonstration of within\u2011subjects logic; the slide (Slide 13) only posed a question without specifying design, so this example is partially speculative.",
+        "While the summary mentions cognitive science and random intermixing correctly, it compresses the nuanced distinction between when to intermix versus counterbalance (Slide 2, Chunk 2) \u2014 namely, that intermixing is preferable when trials are numerous and short, not just to \u2018cancel order effects\u2019 generally."
+      ],
+      "faithfulness_evidence": [
+        "\u2018Each participant contributes data in all conditions \u2013 Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise\u2019 (Slide 3).",
+        "\u2018Order effects and counterbalancing \u2013 Problem: order effects happen in within-subjects designs... One solution: counterbalance the order of the conditions\u2019 (Slide 16)."
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9333333333333333,
+    "word_count": 381
+  },
+  "delta_refined_minus_s0": 0.016666666666666607
+}

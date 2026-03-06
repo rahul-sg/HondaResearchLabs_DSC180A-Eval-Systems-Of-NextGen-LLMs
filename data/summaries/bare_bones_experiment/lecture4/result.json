@@ -1,0 +1,69 @@
+{
+  "lecture_id": "lecture4",
+  "s0": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "Effectively integrates Darwin\u2019s postulates with Mendel\u2019s particulate theory, reflecting the lecture\u2019s stated transition from natural selection to genetic mechanisms.",
+        "Accurately conveys the core conceptual sequence outlined on the slides\u2014from Darwin\u2019s difficulties to the discovery of DNA and its use in evolutionary studies like Mitochondrial Eve."
+      ],
+      "two_issues": [
+        "The summary omits explicit reference to the lecture\u2019s emphasis on chromosome structure and division as the key to understanding inheritance (Slide 13: 'Understanding chromosomes was key to understanding inheritance, which in turn is key in understanding evolution').",
+        "Although largely accurate, the final section slightly overgeneralizes the presentation of Watson and Crick\u2019s discovery\u2014there is no indication in the slides that ethical or gender issues around credit for Franklin were discussed, so implying interpretive emphasis risks invention beyond the material."
+      ],
+      "faithfulness_evidence": [
+        "Slide 2: 'Evolution is the change in allele frequencies that occurs over time within a population' supports the summary\u2019s initial definition of evolution.",
+        "Slide 34: 'Understanding structure helps understand function\u2026 timing of evolutionary events by comparing DNA of different organisms' confirms the summary\u2019s linkage between DNA structure and evolutionary inference."
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [
+        "Variation in evolutionary rates with examples such as eye evolution and rapid shifts in minnows",
+        "Use of DNA as a molecular clock to estimate evolutionary divergence",
+        "Explicit mention of human chromosome number (46)",
+        "Quantification of total human genes (around 20,000\u201325,000)"
+      ],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9166666666666667,
+    "word_count": 306
+  },
+  "refined": {
+    "rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 8,
+      "two_strengths": [
+        "The summary effectively traces the conceptual development from Darwin\u2019s postulates through Mendelian inheritance to modern genetics, aligning with the slide sequence (\u2018Postulates of Natural Selection\u2019, \u2018Mendel\u2019s Experimental Results\u2019, \u2018DNA \u2013 A History\u2019).",
+        "It accurately describes key mechanisms such as meiosis, recombination, and mitochondrial inheritance using terminology consistent with the slides (\u2018halves the number of chromosomes\u2019, \u2018mtDNA is found in the mitochondria\u2019)."
+      ],
+      "two_issues": [
+        "The summary occasionally adds interpretive phrasing not explicitly present on the slides, such as claiming the variation in \u2018rates of evolution\u2019 is \u2018dramatic\u2019; the slides list examples but do not frame them as rate contrasts with evaluative emphasis.",
+        "While the chronological organization is clear, the summary compresses linkage and recombination details\u2014e.g., the slide specifying that \u2018segregation may not be independent if loci are physically near\u2019 is only partially represented, missing that conceptual nuance about physical proximity."
+      ],
+      "faithfulness_evidence": [
+        "Slide 2 defines evolution as \u2018the change in allele frequencies that occurs over time within a population,\u2019 accurately reflected in the summary\u2019s opening definition.",
+        "Slide 28 notes that \u2018crossing-over\u2019 produces new combinations of genes not present in parents; the summary repeats this but omits the conditional about gene proximity, showing partial accuracy."
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9166666666666667,
+    "word_count": 365
+  },
+  "delta_refined_minus_s0": 0.0
+}

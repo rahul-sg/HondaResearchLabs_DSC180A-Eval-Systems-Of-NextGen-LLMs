@@ -47,6 +47,7 @@ def evaluate_summary(
     max_iterations: int = 12,
     min_iterations: int = 4,
     min_agreement: float = 0.7,
+    use_pairwise_selection: bool = True,
 ) -> Dict[str, Any]:
     """
     Evaluate and refine a summary with optional lever-based iterative refinement.
@@ -67,6 +68,8 @@ def evaluate_summary(
         min_iterations: Minimum number of iterations to run (default 2)
         min_agreement: Meteor-based agreement threshold (0..1) used as alternative to
                        length check (default 0.7)
+        use_pairwise_selection: Whether to use pairwise judge selection at each
+                       refinement step (default True)
     
     Returns:
         Dict with refined_summary, signals, rubric, agreement, final_score, etc.
@@ -107,6 +110,7 @@ def evaluate_summary(
             min_iterations=min_iterations,
             human_reference=human_reference,
             min_agreement=min_agreement,
+            use_pairwise=use_pairwise_selection,
         )
         print(f"[PIPELINE] Lever-based refinement complete. {refinement_metadata['stopping_reason']}")
     else:
@@ -118,10 +122,12 @@ def evaluate_summary(
             cfg_refine=cfg_refine,
             iters=3,
             save_callback=save_callback,
+            use_pairwise=use_pairwise_selection,
         )
         refinement_metadata = {
             "iterations_completed": 3,
             "stopping_reason": "Fixed 3 iterations (legacy mode)",
+            "pairwise_selection_enabled": use_pairwise_selection,
         }
 
     if not refined.strip():
@@ -203,6 +209,7 @@ def evaluate_summary(
             "scorer_disagreement_delta": scorer_disagreement,
         },
         "final_score_0to1": final_score,
+        "pairwise_selection_enabled": use_pairwise_selection,
         "lecture_title": slides_dict.get("lecture_title", "Unknown Lecture"),
         "refinement_metadata": refinement_metadata,  # Add refinement details
     }

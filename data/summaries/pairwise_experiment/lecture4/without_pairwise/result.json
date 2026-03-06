@@ -1,0 +1,136 @@
+{
+  "refined_summary": "This lecture traced how discoveries in genetics and molecular biology clarified the mechanisms underlying evolution by natural selection and connected early theories to modern applications. Evolution was defined as the change in allele frequencies within a population over time, consistent with Darwin\u2019s postulates: organisms face a struggle for existence, vary in traits affecting survival and reproduction, and pass those variations on to offspring. Darwin\u2019s central difficulty lay in explaining how variation was maintained and how new variants arose\u2014questions that spurred later genetic research rather than being fully resolved. Artificial selection in domesticated species illustrated how pronounced changes can occur over just a few generations, as seen in dogs and pigeons, while natural rates of evolutionary change vary: minnows evolved placenta\u2011like structures rapidly, whereas the eye evolved through about 1,800 small steps over roughly one\u202fmillion years.\n\nMendel\u2019s nineteenth\u2011century experiments with pea plants showed that inheritance involves discrete \u201cparticles,\u201d now recognized as genes, preserving variation instead of blending it. The rediscovery of his work around 1900 prompted study of the cellular basis of heredity. Walther\u202fFlemming identified chromatin and mitosis, and Sutton and\u202fBoveri demonstrated that hereditary material resides in chromosomes, forming the Chromosome Theory of Inheritance. Humans possess\u202f46 chromosomes arranged in\u202f23 homologous pairs, one pair being the sex chromosomes. Recognizing how chromosomes behave in cell division became key to understanding inheritance and, by extension, evolution.\n\nMitosis produces identical diploid somatic cells, while meiosis generates haploid gametes, restoring the full chromosome set upon fertilization. Genetic variation arises through mutation, recombination, and independent assortment. Mendel\u2019s crosses linked genotypes (allele combinations) to phenotypes (observable traits) and demonstrated dominant and recessive inheritance. Crossing\u2011over during meiosis can reshuffle linked genes, producing new combinations measured by the recombination rate.\n\nIn\u202f1953,\u202fWatson and\u202fCrick, drawing on Rosalind\u202fFranklin\u2019s x\u2011ray data, described the double\u2011helix structure of DNA. Understanding structure revealed how replication occurs and how genetic code directs protein formation. DNA\u2019s sugar\u2011phosphate backbone and paired bases (A\u2013T,\u202fC\u2013G) form genes\u2014the functional units of heredity. Maternally inherited mitochondrial DNA, which encodes\u202f37\u202fgenes, is used to trace lineage, identifying \u201cMitochondrial\u202fEve,\u201d the most recent matrilineal ancestor who lived about\u202f100,000\u2013200,000\u202fyears ago in Africa. The lecture concluded with modern applications such as using molecular clocks and personal\u2011genomics tools like *23\u202f&\u202fMe* to estimate evolutionary divergence and explore genetic ancestry.  \n\n(373\u202fwords)",
+  "signals": {
+    "length_error": 0.10285714285714286,
+    "section_coverage_pct": 0.8571428571428571,
+    "glossary_recall": 0.5185185185185185,
+    "suspected_hallucination_rate": 0.3157894736842105,
+    "meteor": 0.48761063831235163
+  },
+  "rubric": {
+    "coverage": 4,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary successfully captures the lecture\u2019s overarching narrative linking Darwin\u2019s unresolved questions about variation to Mendelian and molecular genetics, faithfully reflecting the slide progression from natural selection through DNA and modern genomics.",
+      "Terms such as 'alleles,' 'chromosomes,' and 'recombination rate' are used correctly and aligned with the lecture\u2019s definitions, demonstrating conceptual precision and domain awareness."
+    ],
+    "two_issues": [
+      "The summary compresses some nuanced transitions, such as the distinction between independent assortment and crossing-over on slides 26\u201329; it treats them together without clearly stating that linkage may disrupt independent segregation, which the slides emphasize.",
+      "While accurate, the discussion of Mitochondrial Eve slightly amplifies claims ('identifying' her as existing 100\u2013200 kya) beyond the slides\u2019 phrasing ('estimate age' and 'most recent common matrilineal ancestor'), reducing strict faithfulness."
+    ],
+    "faithfulness_evidence": [
+      "Slide 2 defines evolution as 'the change in allele frequencies that occurs over time within a population,' which the summary reproduces nearly verbatim\u2014an indication of accurate representation of key definitions.",
+      "Slide 28 emphasizes that 'Segregation may not be independent if the loci are physically near one another'; this cautionary nuance is underplayed in the summary, supporting a minor deduction in faithfulness."
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": [
+      "The model adds specific quantitative details about eye evolution (1,800 steps, one million years) not present in the reference.",
+      "It introduces modern applications like personal\u2011genomics tools (e.g., 23\u202f&\u202fMe) not mentioned in the reference.",
+      "Specifies that mitochondrial DNA encodes 37 genes and dates Mitochondrial\u202fEve to 100,000\u2013200,000\u202fyears ago\u2014details not provided in the reference."
+    ]
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.7975221276624703,
+    "layer_scores": {
+      "domain_rubric": 0.8333333333333334,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.48761063831235163
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7975221276624703,
+    "manual_weighted_score": 0.6944814401446394,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.766609921407121,
+    "hallucination_rate": 0.3157894736842105,
+    "hallucination_damping_factor": 0.9526315789473684,
+    "scorer_disagreement_delta": 0.10304068751783091
+  },
+  "final_score_0to1": 0.7302968198667837,
+  "pairwise_selection_enabled": false,
+  "lecture_title": "lecture4",
+  "refinement_metadata": {
+    "iterations_completed": 4,
+    "final_avg_score": 4.339999999999999,
+    "final_word_count": 386,
+    "stopping_reason": "pass: high quality plateau - quality 0.754 >= 0.740; quality span 0.0091 <= 0.0200",
+    "pairwise_selection_enabled": false,
+    "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.1
+      }
+    ],
+    "quality_history": [
+      0.7367083714929373,
+      0.7577277384106242,
+      0.7486251484191174,
+      0.7535786393186498
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.5,
+      "faithfulness": 4.2,
+      "organization": 4.6,
+      "clarity": 4.3,
+      "style": 4.1
+    },
+    "final_agreement": 0.48761063831235163,
+    "final_quality_score": 0.7535786393186498
+  }
+}

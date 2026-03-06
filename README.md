@@ -269,13 +269,27 @@ Run after generating evaluation outputs.
 python -m src.visualization.dashboard lecture1
 ```
 
+By default, this now renders:
+- a single-lecture dashboard (current pipeline metrics), and
+- a cohort insights view sourced from `example_run/`.
+
+Optional flags:
+
+```bash
+# Disable cohort insights panel
+python -m src.visualization.dashboard lecture1 --no-cohort
+
+# Enable semantic drift embedding plot (slower, API cost)
+python -m src.visualization.dashboard lecture1 --drift
+```
+
 ### Interactive Streamlit dashboard
 
 ```bash
 streamlit run src/visualization/interactive_dashboard.py
 ```
 
-Includes summary trends, rubric visuals, signal diagnostics, agreement metrics, and full-text iteration views.
+Includes summary trends, rubric visuals, score-component diagnostics, stop-state diagnostics, cohort insights (`example_run`), and full-text iteration views.
 
 ## Provided Dataset Coverage
 

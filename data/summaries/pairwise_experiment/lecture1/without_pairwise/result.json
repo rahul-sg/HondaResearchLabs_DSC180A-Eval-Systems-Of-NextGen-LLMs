@@ -1,0 +1,142 @@
+{
+  "refined_summary": "The opening lecture of *Principles of Accounting* introduces the scope and framework of financial accounting and how it supports informed business decisions. The course begins with the purpose of accounting\u2014recording business transactions, generating financial statements, and interpreting those statements to assess a company\u2019s performance and condition.\n\nAccounting is described as the **language of business**, communicating a company\u2019s economic story\u2014its successes, risks, and opportunities. It fulfills two main functions: **recordkeeping**, which identifies, measures, and records economic events in monetary terms, and **communication**, which conveys this information to external users through financial reports. Key users of accounting information include investors evaluating management performance, creditors assessing repayment capacity, suppliers determining credit terms, managers and boards overseeing operations, and broader stakeholders such as employees, customers, regulators, and analysts.\n\nFinancial accounting measures three categories of business activities. **Financing activities** involve transactions with investors and creditors that supply capital. **Investing activities** cover acquiring and disposing of resources needed for operations, such as equipment or inventory. **Operating activities** encompass day\u2011to\u2011day processes\u2014production, marketing, and sales. These activities culminate in four central financial statements: the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**, each capturing different aspects of a company\u2019s financial position and performance.\n\nThe reporting process operates under **Generally Accepted Accounting Principles (GAAP)**, established by the **Financial Accounting Standards Board (FASB)** under authority delegated by the **Securities and Exchange Commission (SEC)**. Public firms release audited annual reports (10\u2011K), unaudited quarterly reports (10\u2011Q), and event\u2011specific updates (8\u2011K). Internationally, the **IASB** issues **IFRS** standards. Independent **auditors** enhance reliability by assessing whether financial statements comply with GAAP and are free of material misstatements. Their opinions may be *unqualified*, *unqualified with explanatory or emphasis paragraph*, *qualified*, or *adverse*\u2014each communicating a different level of assurance.\n\nThe session concludes with the **balance sheet** and the **accounting equation**\u2014*Assets = Liabilities + Stockholders\u2019 Equity*\u2014demonstrated through the *Klein, Inc.* example. Transactions such as issuing stock, obtaining loans, purchasing equipment, paying rent in advance, or buying supplies on credit reveal that every financial event has a dual effect, preserving the equation\u2019s balance and illustrating how accounting records represent the firm\u2019s financial position at any point in time.  \n\n*(~380 words)*",
+  "signals": {
+    "length_error": 0.017142857142857144,
+    "section_coverage_pct": 0.8191489361702128,
+    "glossary_recall": 0.65,
+    "suspected_hallucination_rate": 0.1111111111111111,
+    "meteor": 0.32477431361697184
+  },
+  "rubric": {
+    "coverage": 4,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary faithfully captures the key learning objectives and progression from accounting purpose to financial statements, aligning with slide content such as 'Understanding how financial statements are created \u2192 to read, understand, and use financial statements'.",
+      "It clearly distinguishes between financing, investing, and operating activities and connects these to the four major financial statements, matching the structure from slides 2\u20133."
+    ],
+    "two_issues": [
+      "The summary omits course logistics (grading, participation, and study strategy) despite slides 12\u201317 emphasizing these as part of 'How to succeed in this class'. In a business\u2011school context, course management is operationally relevant and should not be disregarded.",
+      "The discussion of GAAP and FASB is accurate but slightly overstated in authority: the slides make clear that the SEC holds the ultimate power and 'delegates responsibility' rather than FASB operating 'under authority delegated'\u2014the phrasing should reflect that subtle governance nuance."
+    ],
+    "faithfulness_evidence": [
+      "Slide 20: 'Language of business \u2013 A company\u2019s financial story\u2026 Two primary functions: Recordkeeping\u2026 Communication\u2026'",
+      "Slide 6 (Financial Reporting Standards): 'SEC\u2026 delegates the responsibility for setting accounting standards \u2192 FASB; Independent private sector body.'"
+    ],
+    "detected_domain": "business"
+  },
+  "agreement": {
+    "agreement_1to5": 2,
+    "missing_key_points": [
+      "Explanation that accounting exists due to complexity of economic activity and need for structured reporting based on judgment and consistent principles",
+      "Detailed coverage of how the four financial statements link together as an integrated system rather than stand\u2011alone reports",
+      "Description of the flow from income statement to stockholders\u2019 equity to balance sheet via retained earnings",
+      "Explanation of how the statement of cash flows connects beginning and ending cash balances through operating, investing, and financing activities",
+      "Emphasis on the accounting equation as the backbone of all reporting and its relationship to changes in revenues, expenses, and dividends"
+    ],
+    "added_inaccuracies": [
+      "Adds focus on external users, regulators, auditors, SEC, FASB, IFRS, and audit opinions not mentioned in the reference",
+      "Introduces classification of business activities (financing, investing, operating) as measurement categories, which misrepresents their original role as parts of the cash flow statement in the reference",
+      "Includes example transactions (Klein, Inc.) not present in the reference"
+    ]
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.6449548627233944,
+    "layer_scores": {
+      "domain_rubric": 0.8333333333333334,
+      "nlp_agreement": 0.4,
+      "semantic_similarity": 0.32477431361697184
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "business",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.6449548627233944,
+    "manual_weighted_score": 0.49077867606820635,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.5987020067268379,
+    "hallucination_rate": 0.1111111111111111,
+    "hallucination_damping_factor": 0.9833333333333333,
+    "scorer_disagreement_delta": 0.15417618665518806
+  },
+  "final_score_0to1": 0.5887236399480573,
+  "pairwise_selection_enabled": false,
+  "lecture_title": "lecture1",
+  "refinement_metadata": {
+    "iterations_completed": 4,
+    "final_avg_score": 4.5200000000000005,
+    "final_word_count": 356,
+    "stopping_reason": "pass: high quality plateau - quality 0.764 >= 0.740; quality span 0.0168 <= 0.0200",
+    "pairwise_selection_enabled": false,
+    "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.6
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.4
+      }
+    ],
+    "quality_history": [
+      0.7386500642723764,
+      0.7472601865517016,
+      0.754966460101267,
+      0.7640411450162335
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.7,
+      "clarity": 4.5,
+      "style": 4.4
+    },
+    "final_agreement": 0.32477431361697184,
+    "final_quality_score": 0.7640411450162335
+  }
+}

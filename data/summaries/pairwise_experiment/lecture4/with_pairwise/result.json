@@ -1,0 +1,148 @@
+{
+  "refined_summary": "This lecture traced the development of evolutionary theory from Darwin\u2019s ideas on natural selection to the genetic and molecular mechanisms that explain how evolution occurs. Evolution was defined as a change in allele frequencies within a population over time. Darwin proposed that organisms struggle for existence, individuals vary in traits that affect survival and reproduction, and this variation is heritable. However, he could not explain how variation was inherited or maintained\u2014raising questions about blending inheritance and the origin of new traits. Artificial selection in domesticated species, such as dogs and pigeons, illustrated how targeted selection can produce major changes within a few generations. Examples like rapidly evolving minnows and the gradual evolution of complex organs such as eyes showed that evolution can proceed both quickly and incrementally.  \n\nGregor Mendel\u2019s experiments with pea plants (1856\u20131863) demonstrated that inheritance operates through discrete hereditary \u201cparticles,\u201d now known as genes, which are passed intact from each parent rather than blending. His work explained how variation persists across generations. Subsequent discoveries by Walther Flemming, Walter Sutton, and Theodor Boveri connected these hereditary units to chromosomes, forming the Chromosome Theory of Inheritance. Understanding this relationship between genes and chromosomes clarified how cell division\u2014through mitosis and meiosis\u2014transmits genetic material. Mitosis produces identical diploid cells, while meiosis yields haploid gametes, ensuring chromosome stability across generations and introducing variation through mutation and recombination.  \n\nMendel distinguished between genotype\u2014the allele combination\u2014and phenotype\u2014the observable expression. Dominant alleles mask recessive ones, and predictable offspring outcomes can be shown with Punnett squares. During meiosis, crossing over allows genes on different chromosomes to assort independently; however, genes that lie close together on the same chromosome are less likely to do so. Recombination, measured by its frequency (r), produces new genetic combinations that contribute to diversity within populations.  \n\nBy the mid\u201120th century, the discovery of DNA\u2019s double\u2011helix structure by James Watson and Francis Crick, using Rosalind Franklin\u2019s x\u2011ray images, revealed how genetic information is stored and replicated. Genes, specific functional segments of DNA, number about 20,000\u201325,000 in humans. Mitochondrial DNA, inherited only from mothers, supports evolutionary studies such as tracing \u201cMitochondrial Eve,\u201d the most recent matrilineal ancestor living in East Africa roughly 100,000\u2013200,000 years ago. Understanding DNA\u2019s structure not only clarifies how genetic information functions but also enables comparisons across species to estimate the timing and causes of evolutionary events.  \n\n(Word count: 398)",
+  "signals": {
+    "length_error": 0.10571428571428572,
+    "section_coverage_pct": 0.7619047619047619,
+    "glossary_recall": 0.6481481481481481,
+    "suspected_hallucination_rate": 0.2,
+    "meteor": 0.5077011492205408
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary accurately follows the lecture\u2019s chronological structure from Darwin\u2019s theory through Mendelian genetics to molecular biology, showing how each stage deepened the understanding of inheritance and evolution.",
+      "It correctly identifies transition points in the argument, such as how 'Darwin\u2019s Difficulties Explaining Variation' leads into Mendel\u2019s solutions and then into chromosomal and DNA evidence."
+    ],
+    "two_issues": [
+      "The summary elides the lecture\u2019s specific emphasis on the experimental basis of inheritance\u2014phrases like 'Bred garden pea plants (1856\u20131863)' and details on 'Crossbreeding Experiments' are condensed without indicating their methodological role in establishing heritability.",
+      "It slightly overgeneralizes the DNA section: the slide 'DNA History \u2013 Understanding structure helps understand function\u2026 timing of evolutionary events by comparing DNA' connects to comparative evolutionary analysis, which the summary renders mainly as 'clarifies how genetic information functions,' thereby losing the explicit slide link between structural discovery and evolutionary inference."
+    ],
+    "faithfulness_evidence": [
+      "Slide 2 defines evolution as 'the change in allele frequencies that occurs over time within a population,' which the summary reproduces verbatim and contextualizes correctly.",
+      "Slide 34 states 'Understanding structure helps understand function\u2026 timing of evolutionary events by comparing DNA of different organisms,' yet the summary reduces this to a more general phrase, omitting the direct comparison emphasis."
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.8215402298441081,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.5077011492205408
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.8215402298441081,
+    "manual_weighted_score": 0.699051346725357,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7847935649084827,
+    "hallucination_rate": 0.2,
+    "hallucination_damping_factor": 0.97,
+    "scorer_disagreement_delta": 0.12248888311875117
+  },
+  "final_score_0to1": 0.7612497579612282,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture4",
+  "refinement_metadata": {
+    "iterations_completed": 6,
+    "final_avg_score": 4.459999999999999,
+    "final_word_count": 387,
+    "stopping_reason": "pass: high quality plateau - quality 0.772 >= 0.740; quality span 0.0060 <= 0.0200",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.2,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.4,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.7,
+        "clarity": 4.4,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.2
+      }
+    ],
+    "quality_history": [
+      0.7367083714929373,
+      0.7496622485671215,
+      0.7434070549678484,
+      0.7711689001537347,
+      0.7659433415491832,
+      0.7719562047669666
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.3,
+      "organization": 4.7,
+      "clarity": 4.5,
+      "style": 4.2
+    },
+    "final_agreement": 0.5077011492205408,
+    "final_quality_score": 0.7719562047669666
+  }
+}

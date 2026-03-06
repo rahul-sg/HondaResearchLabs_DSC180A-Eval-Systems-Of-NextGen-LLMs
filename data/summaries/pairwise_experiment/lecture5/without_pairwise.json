@@ -1,0 +1,140 @@
+{
+  "refined_summary": "The lecture examined how race and culture are socially constructed systems that shape identity, law, and educational practice, while urging students to reflect on how labeling and silence reinforce these constructions. It opened with Sonia\u202fNieto\u2019s insight that societies categorize people according to visible and invisible traits\u2014race, ethnicity, gender, social class, religion, or culture\u2014then attach exaggerated meanings that privilege some groups and disadvantage others. Reflection questions invited students to consider whether they had been labeled by educators and how those labels affected their self-perception, illustrating how social classification becomes personal experience. The theme of **Silence, Fear, and Denial** underscored that fear of discussing race and cultural difference is widespread but must be met with courage to examine how social views and one\u2019s upbringing shape beliefs.\n\nThe lecture clarified that race has no biological basis but is historically and politically produced. The *RACE:\u202fAre\u202fWe\u202fSo\u202fDifferent?* project provided scientific evidence debunking racial myths. Legal scholar Ian\u202fHaney\u202fL\u00f3pez explained that the law constructs racial meanings. **Law as coercion** refers to how legal rules have physically and materially shaped the racial order\u2014through immigration restrictions, exclusion from citizenship, and bans on interracial marriage\u2014that defined who could belong. **Law as ideology** describes how legal systems persuade people that racial divisions are natural, operating even through seemingly neutral fields such as criminal justice, school discipline, and media narratives about safety or economic security. Legal cases involving Armenians, Japanese, Mexicans, and the history of naturalization showed how courts and policies continuously redefined who counted as \u201cwhite\u201d or eligible for rights. James\u202fBaldwin\u2019s observation that \u201cno one was white before coming to America\u201d and shifting U.S. Census categories demonstrated how official definitions institutionalized the social construction of race and whiteness.\n\nThe second half centered on **culture**. Nieto defined culture as the evolving values, traditions, relationships, and worldviews created and transformed by human groups\u2014learned rather than inherited, dynamic rather than fixed. Individuals construct multifaceted, hybrid identities, selecting elements from various influences such as family, peers, class, religion, language, and media. Schools themselves carry a distinct culture, evident in their routines, hierarchies, and assumptions that ability is fixed and measurable. Prompts about what it means to be \u201csmart\u201d or a \u201cbad\u201d student revealed underlying cultural beliefs guiding schooling. The lecture concluded that examining how race and culture are constructed is essential for understanding how social structures and educational norms shape opportunity and identity.  \n\n**(Word count:\u202f392)**",
+  "signals": {
+    "length_error": 0.13714285714285715,
+    "section_coverage_pct": 0.7058823529411765,
+    "glossary_recall": 0.5068493150684932,
+    "suspected_hallucination_rate": 0.5789473684210527,
+    "meteor": 0.41449925297047485
+  },
+  "rubric": {
+    "coverage": 4,
+    "faithfulness": 4,
+    "organization": 4,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary accurately captures the lecture\u2019s dual focus on the social construction of race and culture, integrating key figures and terms such as Sonia\u202fNieto\u2019s definitions and Ian\u202fHaney\u202fL\u00f3pez\u2019s distinction between 'law as coercion' and 'law as ideology.'",
+      "It provides a coherent narrative that explains how historical, legal, and educational structures interact to produce racial and cultural categories."
+    ],
+    "two_issues": [
+      "While it covers the major ideas well, the summary downplays the slide emphasis on *student self-reflection* (Slide\u202f3\u2019s questions about labeling) and treats it as a minor illustration rather than a deliberate pedagogical move central to the lecture\u2019s design.",
+      "The summary generalizes 'Law as ideology' without explicitly citing the supporting examples from the slides (e.g., 'criminal law examples... school discipline examples' on Chunk\u202f2,\u202fSlide\u202f2), which weakens its faithfulness to the lecture's concrete evidence."
+    ],
+    "faithfulness_evidence": [
+      "Slide\u202f5: 'Race is not biologically determined... political struggles have led to redefining categories,' which the summary appropriately translates into 'race has no biological basis but is historically and politically produced.'",
+      "Chunk\u202f2\u202fSlide\u202f6: 'Culture is dynamic and always changing,' reflected accurately in the summary\u2019s phrasing 'learned rather than inherited, dynamic rather than fixed.'"
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.7628998505940949,
+    "layer_scores": {
+      "domain_rubric": 0.8,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.41449925297047485
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7628998505940949,
+    "manual_weighted_score": 0.6147004250168818,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.718440022920931,
+    "hallucination_rate": 0.5789473684210527,
+    "hallucination_damping_factor": 0.9131578947368421,
+    "scorer_disagreement_delta": 0.1481994255772131
+  },
+  "final_score_0to1": 0.6560491788251659,
+  "pairwise_selection_enabled": false,
+  "lecture_title": "lecture5",
+  "refinement_metadata": {
+    "iterations_completed": 5,
+    "final_avg_score": 4.220000000000001,
+    "final_word_count": 398,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0526 < 0.0200, recall_improvement 0.0133 < 0.0200, score_gain -0.0613 < 0.0150",
+    "pairwise_selection_enabled": false,
+    "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.1,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.7,
+        "clarity": 4.4,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.2,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.3,
+        "clarity": 4.0,
+        "style": 4.1
+      }
+    ],
+    "quality_history": [
+      0.7075054693207116,
+      0.7480385984101502,
+      0.7434539681383329,
+      0.772788498235208,
+      0.6821787386339638
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.5,
+      "faithfulness": 4.2,
+      "organization": 4.3,
+      "clarity": 4.0,
+      "style": 4.1
+    },
+    "final_agreement": 0.41449925297047485,
+    "final_quality_score": 0.6821787386339638
+  }
+}

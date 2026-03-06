@@ -1,0 +1,15 @@
+BARE-BONES JUDGE SUMMARY (ALL LECTURES)
+Lectures evaluated: 7
+Avg S0 score: 0.8810
+Refined available: 7
+Avg refined score: 0.8857
+Avg delta (refined - s0): +0.0048
+
+Per-lecture results:
+- lecture1: s0=0.7167, refined=0.6500, delta=-0.0667
+- lecture2: s0=0.8500, refined=0.9333, delta=+0.0833
+- lecture3: s0=0.9333, refined=0.9333, delta=+0.0000
+- lecture4: s0=0.9167, refined=0.9167, delta=+0.0000
+- lecture5: s0=0.9000, refined=0.9167, delta=+0.0167
+- lecture6: s0=0.9333, refined=0.9167, delta=-0.0167
+- lecture7: s0=0.9167, refined=0.9333, delta=+0.0167

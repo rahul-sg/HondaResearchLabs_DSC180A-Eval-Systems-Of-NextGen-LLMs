@@ -1,0 +1,64 @@
+{
+  "lecture_id": "lecture6",
+  "s0": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "The summary accurately distinguishes types of subqueries (in SELECT, FROM, and WHERE) and connects them to existential and universal quantifiers, echoing phrases like 'Existential quantifiers are straightforward!' and 'Universal quantifiers pose a challenge.'",
+        "It correctly captures the conceptual link between monotonicity and unnesting, reflecting slides stating 'If a query is monotonic, it implies that a nested query can be unnested.'"
+      ],
+      "two_issues": [
+        "While it notes that 'outer joins affect equivalence,' it does not explicitly mention the slide\u2019s example comparing INNER vs LEFT OUTER JOIN in Slide 10 ('But are these equivalent?'), which was central to understanding when subquery unnesting changes semantics.",
+        "The summary omits the theorem wording on monotone queries ('If Q is a SELECT-FROM-WHERE query that does not have subqueries, and no aggregates, then it is monotone'), reducing precision in the formal characterization."
+      ],
+      "faithfulness_evidence": [
+        "Slide 17 states 'The SQL constructs that we have covered thus far do not have the capability to handle universal quantifiers,' directly supporting the summary\u2019s mention of SQL\u2019s limit handling universal quantifiers.",
+        "Slides 33\u201334 explain 'If a query is monotonic, it implies that a nested query can be unnested,' which aligns with the summary\u2019s claim connecting monotonicity to subquery optimization."
+      ],
+      "detected_domain": "math"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9333333333333333,
+    "word_count": 290
+  },
+  "refined": {
+    "rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "The summary correctly identifies the lecture\u2019s three structural parts\u2014subqueries in SELECT, FROM, and WHERE\u2014and faithfully links them to logical quantifiers and monotonicity, as shown by phrases like 'Subquery unnesting' and 'Universal quantifiers pose a challenge.'",
+        "It accurately explains the monotonicity theorem from slide\u202f33 ('If Q is a SELECT\u2011FROM\u2011WHERE query that does not have subqueries, and no aggregates, then it is monotone') and connects that to unnesting feasibility discussed in slide\u202f34."
+      ],
+      "two_issues": [
+        "While the summary notes that not all subquery unnestings are semantically equivalent, it omits the explicit example from slide\u202f10 comparing inner and left outer joins, which would strengthen the explanation of the edge case.",
+        "The coverage of the FROM\u2011clause subqueries simplifies the slide\u2019s explicit demonstration of CTE syntax ('WITH myTable AS (...)') and does not mention that the lecture explicitly distinguishes correlated vs. non\u2011correlated cases ('Not a correlated subquery')."
+      ],
+      "faithfulness_evidence": [
+        "Slide\u202f10 text: 'SELECT m.name, AVG(salary)... LEFT OUTER JOIN ActedIn a...'; supports the summary\u2019s claim that different join types alter semantics.",
+        "Slide\u202f34 statement: 'If a query is non\u2011monotone, it implies that a nested query can NOT be unnested'; matches the summary\u2019s discussion of monotone versus non\u2011monotone implications."
+      ],
+      "detected_domain": "math"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9166666666666667,
+    "word_count": 376
+  },
+  "delta_refined_minus_s0": -0.016666666666666607
+}

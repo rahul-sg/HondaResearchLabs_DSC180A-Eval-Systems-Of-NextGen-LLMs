@@ -92,7 +92,19 @@ if ($recreate) {
 Write-Host "✔ Environment created successfully."
 
 # ------------------------------------------------------------
-# .env creation
+# Activate environment
+# ------------------------------------------------------------
+Write-Host "`n----------------------------------------------"
+Write-Host "Activating environment: $envName"
+Write-Host "----------------------------------------------"
+
+# Attempt to activate (will only persist if script is dot-sourced)
+conda activate $envName
+
+Write-Host "✔ Environment activated."
+
+# ------------------------------------------------------------
+# Create .env if missing
 # ------------------------------------------------------------
 $dotenv = ".env"
 
@@ -105,7 +117,7 @@ if (-not (Test-Path $dotenv)) {
 # OpenAI API Key
 OPENAI_API_KEY=
 
-# Logging level
+# Optional: logging level
 LOG_LEVEL=INFO
 "@ | Out-File -Encoding utf8 .env
 
@@ -116,13 +128,19 @@ else {
 }
 
 # ------------------------------------------------------------
-# Completion message
+# Final instructions
 # ------------------------------------------------------------
-Write-Host "`n======================================================"
+Write-Host ""
+Write-Host "======================================================"
 Write-Host " Setup Complete! "
 Write-Host "======================================================"
 Write-Host ""
-Write-Host "To activate the environment in PowerShell, run:"
+Write-Host "IMPORTANT:"
+Write-Host "For the activation to persist in your current session, run:"
+Write-Host "    . .\startup.ps1"
+Write-Host "(Note the dot and space before the path - this 'dot-sources' the script)"
+Write-Host ""
+Write-Host "To activate the environment in later sessions:"
 Write-Host "    conda activate $envName"
 Write-Host ""
 Write-Host "To run an evaluation:"
@@ -130,7 +148,7 @@ Write-Host "    python -m src.experiments.run_eval lecture1"
 Write-Host "    python -m src.experiments.run_eval lecture2 yes   # force regenerate S0"
 Write-Host ""
 Write-Host "To launch the interactive dashboard:"
-Write-Host "    streamlit run src/visualization/interactive_dashboard.py"
+Write-Host "    streamlit run src\visualization\interactive_dashboard.py"
 Write-Host ""
 Write-Host "======================================================"
 Write-Host "You're all set! 🚀"

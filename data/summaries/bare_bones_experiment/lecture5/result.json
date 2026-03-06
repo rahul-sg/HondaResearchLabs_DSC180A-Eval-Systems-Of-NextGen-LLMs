@@ -1,0 +1,69 @@
+{
+  "lecture_id": "lecture5",
+  "s0": {
+    "rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 8,
+      "two_strengths": [
+        "The summary accurately identifies the lecture\u2019s organizing theme\u2014the social construction of race and culture\u2014and correctly links it to law, language, and schooling, capturing continuity across both halves of the lecture.",
+        "It effectively integrates key slide-based evidence, such as the AAA project 'RACE: Are We So Different?' and Ian Haney L\u00f3pez\u2019s discussion of law as coercion and ideology, to show how race is institutionalized."
+      ],
+      "two_issues": [
+        "The summary omits some pedagogical and reflective aspects of the lecture, such as the early slides\u2019 emphasis on self-labelling and courage against silence or denial ('The answer is courage \u2013 courage to confront how societal views influence us'). These were central to the lecture\u2019s call for personal reflection.",
+        "It slightly overgeneralizes the section on law\u2014treating it primarily as reinforcing race\u2014without distinguishing L\u00f3pez\u2019s contrast between 'law as coercion' and 'law as ideology' articulated on slides 10 and 2\u20112, thus flattening a key conceptual nuance."
+      ],
+      "faithfulness_evidence": [
+        "Slide 5: 'Widely accepted...race is not biologically determined. Socially constructed nature of racial categories...Race becomes \u201ccommon sense.\u201d'",
+        "Slide 10: 'Law influences what we look like, the meanings ascribed to our looks, and the material reality that confirms the meanings of our appearance.'"
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [
+        "Naturalization and citizenship requirements such as language, civic knowledge, and 'good moral character' were not mentioned.",
+        "The specific historical example of Irish and Italian immigrants becoming classified as white over time was omitted."
+      ],
+      "added_inaccuracies": []
+    },
+    "final_score_0to1": 0.9,
+    "word_count": 306
+  },
+  "refined": {
+    "rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "The summary effectively connects the lecture\u2019s three main arcs\u2014racial construction, language and culture, and school culture\u2014demonstrating a coherent through-line about social construction across domains.",
+        "It accurately captures key conceptual distinctions from the slides, such as Haney L\u00f3pez\u2019s contrast between 'law as coercion' and 'law as ideology,' and Nieto\u2019s view of culture as dynamic, learned, and hybrid."
+      ],
+      "two_issues": [
+        "The summary omits some nuance from the slides concerning specific historical legal cases and policies\u2014for instance, it merges the 1909 Armenian and 1922 Japanese cases but neglects to mention how the rulings revealed contradictions in defining 'whiteness.'",
+        "While generally faithful, it lightly paraphrases Baldwin\u2019s quotation ('whiteness required generations and coercion') instead of maintaining the precise wording and context; this small shift lessens its analytical depth and faithfulness."
+      ],
+      "faithfulness_evidence": [
+        "Slide 10: \u201cLaw influences what we look like, the meanings ascribed to our looks, and the material reality that confirms the meanings of our appearance\u201d \u2013 accurately reflected in the summary\u2019s discussion of law shaping physical appearance and racial meaning.",
+        "Slide 5: \u201cRace becomes \u2018common sense.\u2019\u201d \u2013 effectively echoed in the summary\u2019s phrase that racial categories are made to 'seem natural or \u201ccommon sense.\u201d'"
+      ],
+      "detected_domain": "humanities"
+    },
+    "agreement": {
+      "agreement_1to5": 5,
+      "missing_key_points": [],
+      "added_inaccuracies": [
+        "Mentions 'Small et al.' framework which is not in the reference summary"
+      ]
+    },
+    "final_score_0to1": 0.9166666666666667,
+    "word_count": 395
+  },
+  "delta_refined_minus_s0": 0.01666666666666672
+}

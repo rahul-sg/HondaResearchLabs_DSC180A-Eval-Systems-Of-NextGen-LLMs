@@ -1,0 +1,149 @@
+{
+  "refined_summary": "Week\u202f1 of *Principles of Accounting* introduces the foundation of financial accounting\u2014the process of identifying, measuring, recording, and communicating business activities through standardized reports. Accounting is described as the **language of business**, telling a company\u2019s financial story of successes, challenges, and risks. It serves two core functions: **recordkeeping**, which converts economic events into measurable financial data, and **communication**, which shares this information with decision\u202fmakers such as investors, creditors, and others.\n\nThe lecture outlines the major **users of financial information**\u2014investors, creditors, suppliers, management, boards of directors, employees, customers, and additional stakeholders like analysts or regulators. Each relies on accounting reports to assess performance, the company\u2019s financial position, and its reliability in meeting obligations or sustaining operations.\n\nFinancial accounting summarizes three categories of **business activities**:  \n1. **Financing activities**\u2014transactions with owners and lenders such as issuing stock or securing loans;  \n2. **Investing activities**\u2014acquiring or disposing of resources needed to produce and sell products;  \n3. **Operating activities**\u2014day\u2011to\u2011day actions for producing and marketing goods or services.  \n\nThese activities flow into the four principal **financial statements**\u2014the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**\u2014which communicate results to external parties. Public companies issue these reports periodically through **Form\u202f10\u2011K** (annual, audited), **Form\u202f10\u2011Q** (quarterly, unaudited), and **Form\u202f8\u2011K** (significant current events).\n\nFinancial reporting follows **Generally Accepted Accounting Principles\u202f(GAAP)** to ensure consistent, comparable information. The **Securities and Exchange Commission\u202f(SEC)** mandates public disclosure and delegates standard\u202fformation to the **Financial Accounting Standards Board\u202f(FASB)**; globally, the **International Accounting Standards Board\u202f(IASB)** issues **IFRS**. Independent **auditors** provide assurance that statements comply with GAAP and are fairly presented, issuing unqualified, explanatory, qualified, or adverse opinions.\n\nThe lecture concludes with the **balance sheet** and the **accounting equation**: **Assets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity**. Assets represent resources providing future benefit, liabilities are creditor obligations, and equity is the owners\u2019 residual claim. Through the *Klein,\u202fInc.* example, students trace how each transaction\u2014issuing $1\u202fmillion in stock, borrowing $500\u202fthousand from a bank, purchasing $240\u202fthousand of equipment, prepaying $180\u202fthousand in rent, and buying $14\u202fthousand of supplies on account\u2014affects the equation while keeping it balanced. Each entry demonstrates the dual\u2011effect principle: every transaction changes at least two accounts but total assets always equal the sum of liabilities and equity.\n\n*(Approx.\u202f397\u202fwords)*",
+  "signals": {
+    "length_error": 0.07714285714285714,
+    "section_coverage_pct": 0.851063829787234,
+    "glossary_recall": 0.625,
+    "suspected_hallucination_rate": 0.3,
+    "meteor": 0.3114495748987937
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary captures the lecture\u2019s complete conceptual sequence\u2014from the definition of accounting as the 'language of business' to the detailed Klein,\u202fInc. balance sheet example\u2014demonstrating solid coverage of Week\u202f1 material.",
+      "Terminology and sequencing align closely with the slides' structure on GAAP, SEC/FASB/IASB roles, and the linkage among financing, investing, and operating activities."
+    ],
+    "two_issues": [
+      "It omits explicit mention of certain course-structure and expectation elements shown on early slides, such as grading policy, homework procedures, and ethics emphasis ('How to succeed in this class')\u2014these are relevant to student-facing takeaways from a business lecture.",
+      "While accurate, the summary could more directly tie the accounting framework to its decision-making purpose emphasized in Slide\u202f3 ('Understanding accounting information to make business decisions') by clarifying how financial statements inform managerial and investor choices."
+    ],
+    "faithfulness_evidence": [
+      "Slide\u202f20: 'Accounting \u2013 Language of business\u2026 identify, measure, and record economic events in value terms' supports inclusion of the definition and dual role of recordkeeping and communication.",
+      "Slide\u202f17: 'Must always be balanced... each transaction has a dual effect' confirms faithful reporting of the Klein,\u202fInc. example and the accounting equation explanation."
+    ],
+    "detected_domain": "business"
+  },
+  "agreement": {
+    "agreement_1to5": 2,
+    "missing_key_points": [
+      "Explanation of why accounting exists\u2014to manage complexity and communicate structured economic information.",
+      "Detailed discussion of how the four financial statements interconnect and how net income links to retained earnings and equity.",
+      "Emphasis on the cash flow statement explaining changes in cash through operating, investing, and financing activities.",
+      "Theme that the financial statements form an integrated system rather than separate reports."
+    ],
+    "added_inaccuracies": [
+      "Introduction of external reporting details such as SEC filings (10\u2011K, 10\u2011Q, 8\u2011K) not mentioned in the reference.",
+      "Inclusion of GAAP, FASB, IFRS, IASB, and auditor opinions content absent from the reference, implying a broader coverage than described.",
+      "Presentation of detailed transactional examples (Klein, Inc.) not found in the reference, suggesting focus on mechanics rather than conceptual linkage."
+    ]
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.6622899149797589,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 0.4,
+      "semantic_similarity": 0.3114495748987937
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "business",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.6622899149797589,
+    "manual_weighted_score": 0.4893882396027139,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.6104194123666453,
+    "hallucination_rate": 0.3,
+    "hallucination_damping_factor": 0.955,
+    "scorer_disagreement_delta": 0.17290167537704498
+  },
+  "final_score_0to1": 0.5829505388101462,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture1",
+  "refinement_metadata": {
+    "iterations_completed": 5,
+    "final_avg_score": 4.4399999999999995,
+    "final_word_count": 377,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0595 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain 0.0023 < 0.0150",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.3,
+        "faithfulness": 4.0,
+        "organization": 4.5,
+        "clarity": 4.2,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.5,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.2,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.5,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.4,
+        "style": 4.3
+      }
+    ],
+    "quality_history": [
+      0.7220439104262226,
+      0.7325890621129334,
+      0.7274604120173909,
+      0.732879482247637,
+      0.7297643344301536
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.5,
+      "clarity": 4.4,
+      "style": 4.3
+    },
+    "final_agreement": 0.3114495748987937,
+    "final_quality_score": 0.7297643344301536
+  }
+}

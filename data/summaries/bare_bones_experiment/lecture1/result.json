@@ -1,0 +1,81 @@
+{
+  "lecture_id": "lecture1",
+  "s0": {
+    "rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 8,
+      "two_strengths": [
+        "The summary accurately captures the lecture\u2019s emphasis that accounting serves as 'the language of business' and explains both its recordkeeping and communication roles.",
+        "It correctly conveys the linkage between business activities (financing, investing, operating) and the four main financial statements, as presented in slides such as 'Accounting Functions' and 'Financial Statements \u2013 (Communication)'."
+      ],
+      "two_issues": [
+        "The summary omits key course logistics and context from the first-week slides\u2014such as grading structure, course objectives, and expectations ('Understanding how financial statements are created... to make business decisions')\u2014which are essential for a full understanding of the business learning goals.",
+        "It introduces a claim about classification of assets and liabilities by liquidity and maturity, but the slides do not explicitly state those criteria; this addition weakens faithfulness to the source content."
+      ],
+      "faithfulness_evidence": [
+        "Slide 20: 'Accounting \u2013 Language of business... Two primary functions: Recordkeeping... Communication.'",
+        "Slide 17: 'The Accounting Equation... If Total Assets increase then either Liabilities or Stockholders\u2019 Equity MUST increase by the SAME amount.'"
+      ],
+      "detected_domain": "business"
+    },
+    "agreement": {
+      "agreement_1to5": 3,
+      "missing_key_points": [
+        "Interconnection among the four financial statements and how net income links income statement, equity statement, and balance sheet",
+        "Role of the statement of stockholders\u2019 equity in updating retained earnings with income and dividends",
+        "Function of the statement of cash flows explaining cash changes through operating, investing, and financing activities",
+        "Theme that financial statements form a connected system rather than standalone reports"
+      ],
+      "added_inaccuracies": [
+        "Inclusion of GAAP, FASB, SEC, IFRS, IASB, and auditor opinions not mentioned in the reference",
+        "Added emphasis on financing, investing, and operating activities as measurement categories rather than as parts of the cash flow statement per reference",
+        "Discussion of users of accounting information and detailed transaction examples not covered in the reference"
+      ]
+    },
+    "final_score_0to1": 0.7166666666666667,
+    "word_count": 319
+  },
+  "refined": {
+    "rubric": {
+      "coverage": 5,
+      "faithfulness": 5,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4,
+      "overall_1to10": 9,
+      "two_strengths": [
+        "Effectively captures the dual nature of accounting as both recordkeeping and communication, aligning with slide 20's emphasis that accounting is the 'language of business' and a 'financial story.'",
+        "Clearly summarizes the Klein, Inc. balance sheet example to illustrate the accounting equation and dual effects, which directly reflects Slides 1\u201314 of Chunk 3."
+      ],
+      "two_issues": [
+        "The summary omits course structure and expectations (grading, exams, participation) even though Slides 12\u201316 discuss 'Syllabus' and 'How to Succeed in this Class'; since this was part of the lecture, its absence reduces completeness.",
+        "Although GAAP, FASB, and SEC are accurately mentioned, the summary does not note the relationship that 'SEC delegates the responsibility for setting accounting standards to FASB' (Slide 6), which slightly weakens precision on regulatory hierarchy."
+      ],
+      "faithfulness_evidence": [
+        "Slide 20: 'Language of business ... identify, measure, and record economic events in value terms'; this supports the summary\u2019s description of accounting as both measurement and communication.",
+        "Slide 17 (Chunk 2): 'The Accounting Equation ... each transaction has a dual effect'; faithfully echoed when the summary states that 'every transaction affects at least two accounts but the equation always remains balanced.'"
+      ],
+      "detected_domain": "business"
+    },
+    "agreement": {
+      "agreement_1to5": 2,
+      "missing_key_points": [
+        "Explanation that accounting exists because economic activity is complex and requires consistent, judgment\u2011based reporting.",
+        "Detailed linkage among the four financial statements showing how income flows to equity and affects the balance sheet.",
+        "Description of how the statement of cash flows reconciles beginning and ending cash through operating, investing, and financing activities.",
+        "Emphasis that the financial statements form an interconnected system rather than standalone reports."
+      ],
+      "added_inaccuracies": [
+        "Introduction of GAAP, FASB, SEC, IFRS, auditors, and reporting forms (10\u2011K, 10\u2011Q) not mentioned in the reference.",
+        "Inclusion of multiple stakeholder audiences and the Klein, Inc. transaction example absent from the reference."
+      ]
+    },
+    "final_score_0to1": 0.65,
+    "word_count": 347
+  },
+  "delta_refined_minus_s0": -0.06666666666666665
+}

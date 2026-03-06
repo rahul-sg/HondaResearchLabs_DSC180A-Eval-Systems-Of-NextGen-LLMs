@@ -1,0 +1,172 @@
+{
+  "refined_summary": "This lecture focused on **within\u2011subjects designs**, contrasting them with **between\u2011groups designs** to illustrate how researchers can reduce nuisance variability and increase statistical power. In a between\u2011groups design, each participant contributes data to only one condition, so individual differences add noise that can obscure effects and require larger samples. In a within\u2011subjects design, each participant experiences all conditions and is compared to themselves across them, removing much participant\u2011related variability and allowing more precise results with fewer participants.\n\nThe lecture covered three main within\u2011subjects formats. A **pretest\u2013posttest design** measures participants before and after an intervention, a **repeated\u2011measures design** includes two or more levels of an independent variable (e.g., 10%, 20%, 30%, 40% coherence), and a **longitudinal design** tracks change across multiple time points. These formats share efficiency and sensitivity benefits but bring distinctive complications.\n\nSeveral examples illustrated these principles. In research on **accent comprehension** among 4\u2011 and 7\u2011year\u2011olds and the **spaced\u2011text dyslexia study**, the slides prompted students to consider whether conditions were tested within or between participants and how order balancing affects interpretation.\n\nPotential problems include **demand characteristics** and **carryover effects**, such as fatigue or practice, when earlier conditions influence later ones. Other **concerns**\u2014**history**, **maturation**, and **testing effects**\u2014arise when external events, normal development, or test familiarity alter performance. Collectively, these lead to **order effects**, which can make one condition appear better simply because it was encountered first or second.\n\nTo manage order effects, the lecture introduced **counterbalancing**. In **complete designs**, participants experience all possible condition orders, such as an **ABBA sequence** for two conditions or **block randomization** for three or more. However, the number of possible orders grows factorially, so full counterbalancing is feasible only when tasks are very short. **Incomplete designs** balance order exposure without testing every arrangement\u2014through **random order with rotation** (participant count must match number of conditions) or a **Latin\u2011square design**, ensuring each condition appears equally often in each position. In cognitive studies with very many trials, randomly intermixing conditions can help cancel order effects.\n\nThe lecture concluded by noting practical limitations: some manipulations cannot be reversed\u2014people cannot un\u2011take a drug, unlearn a skill, or unsee a stimulus\u2014so within\u2011subjects designs are powerful but not always possible.  \n*(381 words)*",
+  "signals": {
+    "length_error": 0.025714285714285714,
+    "section_coverage_pct": 1.0,
+    "glossary_recall": 0.375,
+    "suspected_hallucination_rate": 0.7222222222222222,
+    "meteor": 0.41114628302399436
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary accurately conveys the lecture\u2019s main argument that within-subjects designs reduce nuisance variability and increase statistical power, citing the benefit that 'each participant... is compared to themselves across conditions.'",
+      "It appropriately includes the major classifications (pretest\u2013posttest, repeated-measures, longitudinal) and identifies key methodological countermeasures such as complete and incomplete counterbalancing."
+    ],
+    "two_issues": [
+      "The summary largely omits explicit mention of how the lecture situates \u2018order effects\u2019 as a conceptual bridge to counterbalancing\u2014Slide 12\u2019s question (\u2018What\u2019s wrong with this picture?\u2019) signals an interpretive turning point not clearly linked in the student summary.",
+      "Although faithful, the summary generalizes the 'cognitive studies with very many trials' (Slide 2) point without noting the conditional reasoning ('Counterbalance if it will be confusing to participants'), thereby flattening the methodological nuance emphasized in the slides."
+    ],
+    "faithfulness_evidence": [
+      "Slide 3: 'Within-subjects design \u2013 Each participant contributes data in all conditions \u2013 Compare each participant TO THEMSELF.'",
+      "Slide 8: 'If you do Condition A first, it might affect how you do on Condition B \u2013 Fatigue effect\u2026 Practice effect\u2026'"
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.8022292566047988,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.41114628302399436
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.8022292566047988,
+    "manual_weighted_score": 0.6772571377377383,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7647376209446806,
+    "hallucination_rate": 0.7222222222222222,
+    "hallucination_damping_factor": 0.8916666666666667,
+    "scorer_disagreement_delta": 0.1249721188670605
+  },
+  "final_score_0to1": 0.6818910453423402,
+  "pairwise_selection_enabled": false,
+  "lecture_title": "lecture7",
+  "refinement_metadata": {
+    "iterations_completed": 9,
+    "final_avg_score": 4.5,
+    "final_word_count": 359,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1722 < 0.0200, recall_improvement -0.0417 < 0.0200, score_gain -0.0069 < 0.0150",
+    "pairwise_selection_enabled": false,
+    "lever_history": [
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.3,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.5,
+        "organization": 4.7,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      }
+    ],
+    "quality_history": [
+      0.7149707148291586,
+      0.7112174462964417,
+      0.6990835462868353,
+      0.7415180742611229,
+      0.7080995122285427,
+      0.7201622295506604,
+      0.7245737789066757,
+      0.7182881912884155,
+      0.7176471740958008
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.7,
+      "clarity": 4.5,
+      "style": 4.3
+    },
+    "final_agreement": 0.41114628302399436,
+    "final_quality_score": 0.7176471740958008
+  }
+}

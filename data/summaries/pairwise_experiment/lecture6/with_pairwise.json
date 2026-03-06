@@ -1,0 +1,156 @@
+{
+  "refined_summary": "This lecture focused on **nested SQL queries**, explaining how **subqueries** operate within the **SELECT**, **FROM**, and **WHERE** clauses, when they can be **unnested**, and how they relate to logical **quantifiers** and **query monotonicity**. Building on prior SQL concepts\u2014projections, selections, joins, grouping, and updates\u2014it defined a subquery as a query embedded within another and noted the guiding rule: *avoid nested queries when possible*, though some cases require them.\n\nIn the **SELECT clause**, subqueries were shown to generate computed values such as each actor\u2019s movie genre, the average salary of actors in high\u2011rating movies, or the number of actors per film. These correlated subqueries may be replaced with equivalent join or `GROUP\u202fBY` queries through **subquery unnesting**. Slide\u202f10 highlighted an important nuance: not all rewritings are equivalent. When outer joins introduce **NULL** values, differences can appear\u2014for instance, a `LEFT\u202fOUTER\u202fJOIN` may include unmatched movies that a strictly correlated subquery would omit.\n\nFor the **FROM clause**, subqueries served as **derived tables** or **common table expressions (CTEs)**. The example filtered movies by rating\u202f>\u202f8 and then\u202f<\u202f9 using both an inline subquery (`SELECT\u202f*\u202fFROM\u202fMovie\u202fWHERE\u202frating\u202f>\u202f8`) and its CTE form named `myTable`. This illustrated **subquery refactoring**, a non\u2011correlated approach that clarifies query logic and yields the same result as combining both conditions in one statement.\n\nSubqueries in the **WHERE clause** linked SQL to logical **quantifiers**. Using `EXISTS` or\u202f`IN` implements **existential quantifiers**, checking whether at least one matching record exists; these can usually be replaced by equivalent joins. **Universal quantifiers** (\u201cfor all\u201d) required reasoning through **two\u2011step logic**:  \n1. Identify all actors who appeared in at least one non\u2011Action movie (the inner query returning actor names).  \n2. Select those **not in** that set\u2014actors who acted **only in Action movies**.  \nOther universal\u2011style examples used comparisons like `<\u202fALL` or\u202f`NOT\u202fEXISTS`, such as finding movies where all actors earned more than\u202f$100\u202fK.\n\nThe lecture concluded by connecting quantifiers to **query monotonicity**. A query is *monotone* if adding tuples to input relations cannot remove outputs. The theorem stated that any plain **SELECT\u2011FROM\u2011WHERE query** without subqueries or aggregates is monotone. Monotone queries can be safely **unnested**, whereas queries involving negation, aggregates, or universal quantifiers are **non\u2011monotone**, since added data can invalidate previous results\u2014making subquery unnesting generally impossible.  \n\n(Word count:\u202f398)",
+  "signals": {
+    "length_error": 0.08857142857142856,
+    "section_coverage_pct": 0.9696969696969697,
+    "glossary_recall": 0.6129032258064516,
+    "suspected_hallucination_rate": 0.5238095238095238,
+    "meteor": 0.44364850882582807
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary correctly distinguishes subqueries by clause and captures their connection to existential and universal quantifiers, as reflected in Slide\u202f13 ('Using EXISTS: Existential quantifiers') and Slide\u202f24 ('Universal quantifiers').",
+      "It faithfully conveys the relationship between query monotonicity and unnesting, matching Slide\u202f34 ('If a query is monotonic, it implies that a nested query can be unnested.')."
+    ],
+    "two_issues": [
+      "The summary under\u2011specifies the exact equivalence conditions in subquery unnesting; Slide\u202f10 explicitly questions equivalence via outer joins ('But are these equivalent?') and implies nuanced differences that deserve more emphasis.",
+      "It omits explicit mention of the definition of monotonicity as stated on Slide\u202f27 ('A query\u202fQ\u202fis monotone if: whenever we add tuples...'), and more detailed reasoning behind monotone vs\u202fnon\u2011monotone classification would strengthen faithfulness."
+    ],
+    "faithfulness_evidence": [
+      "Slide\u202f10: 'But are these equivalent?' \u2014 demonstrates the lecture\u2019s caution about unnesting equivalence, partly simplified in the summary.",
+      "Slide\u202f27: 'Definition: A query\u202fQ\u202fis monotone if:\u202f\u2013\u202fWhenever we add tuples\u2026 the answer will not lose any output tuple' \u2014 this precise logical formulation was paraphrased but not explicitly cited."
+    ],
+    "detected_domain": "math"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.8087297017651656,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.44364850882582807
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "math",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.8087297017651656,
+    "manual_weighted_score": 0.6988944259600577,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7757791190236332,
+    "hallucination_rate": 0.5238095238095238,
+    "hallucination_damping_factor": 0.9214285714285715,
+    "scorer_disagreement_delta": 0.10983527580510788
+  },
+  "final_score_0to1": 0.7148250453860621,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture6",
+  "refinement_metadata": {
+    "iterations_completed": 7,
+    "final_avg_score": 4.46,
+    "final_word_count": 381,
+    "stopping_reason": "pass: high quality plateau - quality 0.754 >= 0.740; quality span 0.0126 <= 0.0200",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.0,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.5,
+        "organization": 4.7,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.4,
+        "clarity": 4.6,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.3,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.4,
+        "organization": 4.6,
+        "clarity": 4.5,
+        "style": 4.3
+      }
+    ],
+    "quality_history": [
+      0.6888816862470045,
+      0.7292445984354834,
+      0.7281841113163483,
+      0.7220811721485779,
+      0.7424036822728961,
+      0.7410275982335738,
+      0.75360795247063
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.5,
+      "faithfulness": 4.4,
+      "organization": 4.6,
+      "clarity": 4.5,
+      "style": 4.3
+    },
+    "final_agreement": 0.44364850882582807,
+    "final_quality_score": 0.75360795247063
+  }
+}

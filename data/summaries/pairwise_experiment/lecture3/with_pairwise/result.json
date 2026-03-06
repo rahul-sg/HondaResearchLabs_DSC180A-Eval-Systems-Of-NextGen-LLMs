@@ -1,0 +1,158 @@
+{
+  "refined_summary": "This lecture examines An\u00edbal\u202fQuijano\u2019s concept of the **coloniality of power** and its continuing influence on modernity, capitalism, and national identity in Latin\u202fAmerica. A Peruvian sociologist, Quijano moved from dependency theory\u2019s political\u2011economic focus in the 1960s\u201370s to cultural and epistemological analyses that helped shape the **Modernity/Coloniality/Decoloniality (MCD)** project. MCD scholars argue that modernity and coloniality were *co\u2011constituted*: Western modernity arose through colonial domination rather than apart from it. Coloniality names the ongoing racial, economic, and epistemic hierarchies establishing Western superiority, while decoloniality seeks to center non\u2011Western languages, cosmologies, and knowledges as valid and transformative.\n\n**Point\u202f1: Coloniality of\u202fPower.**  \nQuijano identifies two interrelated historical processes in the making of \u201cAmerica.\u201d First, the *constitution of difference* separated conquerors (\u201cWest\u201d) from conquered peoples (\u201cRest\u201d). Second, new *structures of labor control* organized the exploitation of American resources, producing a **new model of global power**. Systems such as slavery, *encomienda*, and *mita* tied racial classification to labor status, embedding white European dominance in the emerging capitalist world economy. \u201cRace\u201d thus became a mental category of modernity that rationalized social hierarchy and persists in today\u2019s global inequalities.\n\n**Point\u202f2: Eurocentrism.**  \nEurocentrism naturalized Western dominance by presenting European experience as universal and arranging history in binary stages\u2014\u201cunderdeveloped/developed,\u201d \u201cThird\u202fWorld/First\u202fWorld.\u201d This worldview sustained economic dependency and cultural hierarchies after formal colonialism. The film *Roma* (2018) exemplifies how colonial logics survive: through the eyes of a Mixtec domestic worker, the film exposes Mexico\u2019s racialized class order and the Eurocentric gaze that shapes public reception. Quijano challenges Europe\u2019s self\u2011portrayal as exclusive protagonist of world progress and calls for recognizing knowledge produced from other historical locations.\n\n**Point\u202f3: Historical Experience and\u202fNational Identity.**  \nPost\u2011independence elites constructed \u201cIndianesque nationalism\u201d that idealized an ancient Indigenous past yet marginalized living Indigenous peoples. Later *mestizaje* ideologies celebrated racial mixture while still privileging whiteness. Slides on **Homogeneity/Continuity and\u202fHeterogeneity/Discontinuity** underscored the emerging \u201ccrisis of the European perspective of knowledge,\u201d opening space for plural, nonlinear understandings of history\u2014echoing Aymara notions of *pachakuti* (cyclical transformation). Such perspectives challenge linear, Eurocentric progress narratives and affirm local agency in shaping social change.\n\nThe lecture concludes with Quijano\u2019s call for **decoloniality**: to free ourselves from the Eurocentric mirror, acknowledge heterogeneous modernities, and recover suppressed epistemologies to dismantle the enduring matrix of colonial power.  \n\n(Word\u202fcount:\u202f395)",
+  "signals": {
+    "length_error": 0.08,
+    "section_coverage_pct": 0.7857142857142857,
+    "glossary_recall": 0.550561797752809,
+    "suspected_hallucination_rate": 0.5294117647058824,
+    "meteor": 0.4143552137039872
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary accurately conveys the lecture\u2019s central thesis that modernity and coloniality were 'co\u2011constituted' and applies this to Quijano\u2019s three key points on power, Eurocentrism, and national identity.",
+      "It clearly connects theoretical claims to discussed examples such as the film 'Roma' and to concepts like 'Homogeneity/Continuity and\u202fHeterogeneity/Discontinuity', showing awareness of the lecture\u2019s comparative intellectual context."
+    ],
+    "two_issues": [
+      "The summary slightly compresses the 'Key Themes' slide by omitting explicit mention of gender and sexuality and of the link to dependency theory as noted on 'Slide\u202f8', limiting the comprehensiveness of coverage.",
+      "While generally faithful, it paraphrases Quijano\u2019s decolonial imperative in a more poetic register than the slides\u2019 quotation ('time to cease being what we are not'), which dilutes the lecture\u2019s pointed critique of Eurocentrism\u2019s epistemic dominance."
+    ],
+    "faithfulness_evidence": [
+      "Slide\u202f8: 'Coloniality and Modernity were \u201cco\u2011constituted\u201d\u2026 yet this history is silenced or ignored...'; the summary preserves this conceptual framing accurately.",
+      "Slide\u202f19: 'It is time... to free ourselves from the Eurocentric mirror...'; the summary echoes this call for epistemic liberation though rephrased more broadly."
+    ],
+    "detected_domain": "humanities"
+  },
+  "agreement": {
+    "agreement_1to5": 5,
+    "missing_key_points": [],
+    "added_inaccuracies": [
+      "Includes example of the film Roma (2018), which is not mentioned in the reference summary."
+    ]
+  },
+  "comprehensive_scoring": {
+    "final_score": 0.8028710427407975,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.4143552137039872
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "humanities",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.8028710427407975,
+    "manual_weighted_score": 0.6556798421806589,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7587136825727558,
+    "hallucination_rate": 0.5294117647058824,
+    "hallucination_damping_factor": 0.9205882352941177,
+    "scorer_disagreement_delta": 0.14719120056013857
+  },
+  "final_score_0to1": 0.6984628901331547,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture3",
+  "refinement_metadata": {
+    "iterations_completed": 7,
+    "final_avg_score": 4.4,
+    "final_word_count": 378,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0168 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain -0.0107 < 0.0150",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.3,
+        "clarity": 4.1,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.4,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.3,
+        "clarity": 4.2,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.2,
+        "style": 4.4
+      }
+    ],
+    "quality_history": [
+      0.6673816078056881,
+      0.6638603765763338,
+      0.6801694097743585,
+      0.6984360963237546,
+      0.7113326903938502,
+      0.6918897297003885,
+      0.700642670876859
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.3,
+      "organization": 4.5,
+      "clarity": 4.2,
+      "style": 4.4
+    },
+    "final_agreement": 0.4143552137039872,
+    "final_quality_score": 0.700642670876859
+  }
+}
