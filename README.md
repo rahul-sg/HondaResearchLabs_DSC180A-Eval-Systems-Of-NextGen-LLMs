@@ -202,13 +202,13 @@ This avoids both premature stopping and endless loops.
 Comprehensive layered score:
 
 $$
-C = 0.6 \cdot \text{domain\_rubric} + 0.2 \cdot \text{nlp\_agreement} + 0.2 \cdot \text{meteor}
+C = 0.6 \cdot domain_{rubric} + 0.2 \cdot nlp_{agreement} + 0.2 \cdot meteor
 $$
 
 Manual weighted score (explicit baseline):
 
 $$
-M = (0.6\cdot\text{base} + 0.2\cdot\text{meteor} + 0.2\cdot\text{coverage}) - 0.1\cdot2^{\text{hallucination}}
+M = (0.6 \cdot base + 0.2 \cdot meteor + 0.2 \cdot coverage) - 0.1 \cdot 2^{hallucination}
 $$
 
 Balanced hybrid final score:
