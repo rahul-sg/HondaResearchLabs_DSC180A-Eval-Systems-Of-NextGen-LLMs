@@ -45,14 +45,17 @@ example_run/lecture1/
 
 This project uses packages listed in `environment.yml` and `requirements.txt`, including:
 
-- Python 3.10
-- openai (>=1.3.0)
-- python-dotenv
-- pymupdf
-- nltk
-- streamlit
-- plotly
-- numpy / scipy / scikit-learn / matplotlib
+- Python 3.10.20
+- openai 2.26.0
+- python-dotenv 1.2.2
+- pymupdf 1.27.1
+- nltk 3.9.3
+- streamlit 1.55.0
+- plotly 6.6.0
+- numpy 2.2.6
+- scipy 1.15.2
+- scikit-learn 1.7.2
+- matplotlib 3.10.8
 
 > **NLTK resources:** On first run, the pipeline auto-downloads `punkt`, `punkt_tab`, `omw-1.4`, and `wordnet`. Ensure internet access for the initial execution.
 
