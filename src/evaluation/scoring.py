@@ -3,7 +3,7 @@ from typing import Dict, Any
 # Combine rubric and agreement scores into final scalar score
 def combine_scores(
     rubric: Dict[str, Any],
-    agreement: Dict[str, Any],
+    agreement: Dict[str, Any] | None = None,
     weights: Dict[str, float] | None = None
 ) -> float:
 
@@ -28,11 +28,15 @@ def combine_scores(
         weights["style"]         * rubric.get("style", 0)
     ) / denom
 
-    # Agreement score in [0,1]
+    # Optional agreement score in [0,1]
+    # If agreement is not provided, return rubric-only score (reference-free mode).
+    if agreement is None:
+        return float(weighted_rubric)
+
     agree = agreement.get("agreement_1to5", 0)
     agree_normalized = max(0, min(5, agree)) / 5.0
 
-    # Final combination = average
+    # Final combination = average of rubric and agreement (legacy reference-aware mode)
     final_score = float(0.5 * weighted_rubric + 0.5 * agree_normalized)
 
     return final_score
@@ -41,8 +45,8 @@ def combine_scores(
 # Enhanced multi-layered evaluation combining domain-aware rubric, NLP metrics, and METEOR
 def compute_comprehensive_score(
     rubric_result: Dict[str, Any],
-    agreement_result: Dict[str, Any],
-    meteor_score: float,
+    agreement_result: Dict[str, Any] | None = None,
+    meteor_score: float | None = None,
     rubric_weights: Dict[str, float] | None = None,
     layer_weights: Dict[str, float] | None = None
 ) -> Dict[str, Any]:
@@ -66,12 +70,23 @@ def compute_comprehensive_score(
         }
 
     if layer_weights is None:
-        # Weights for the three evaluation layers
-        layer_weights = {
-            "domain_rubric": 0.6,    # Domain-aware rubric (most important)
-            "nlp_agreement": 0.2,    # NLP agreement metrics
-            "semantic_similarity": 0.2  # METEOR semantic similarity
-        }
+        has_agreement = agreement_result is not None
+        has_meteor = meteor_score is not None
+
+        if has_agreement and has_meteor:
+            # Legacy/reference-aware mode
+            layer_weights = {
+                "domain_rubric": 0.6,
+                "nlp_agreement": 0.2,
+                "semantic_similarity": 0.2,
+            }
+        else:
+            # Default/reference-free mode
+            layer_weights = {
+                "domain_rubric": 1.0,
+                "nlp_agreement": 0.0,
+                "semantic_similarity": 0.0,
+            }
 
     # Layer 1: Domain-aware rubric score (weighted average of dimensions)
     denom = sum(rubric_weights.values()) * 5  # Max possible score
@@ -81,10 +96,12 @@ def compute_comprehensive_score(
     ) / denom
 
     # Layer 2: NLP agreement score (normalized to 0-1)
-    agreement_score = max(0, min(5, agreement_result.get("agreement_1to5", 0))) / 5.0
+    agreement_score = 0.0
+    if agreement_result is not None:
+        agreement_score = max(0, min(5, agreement_result.get("agreement_1to5", 0))) / 5.0
 
     # Layer 3: METEOR semantic similarity (already 0-1)
-    semantic_score = meteor_score
+    semantic_score = float(meteor_score) if meteor_score is not None else 0.0
 
     # Final weighted combination
     final_score = (
@@ -96,6 +113,7 @@ def compute_comprehensive_score(
     # Return comprehensive results
     return {
         "final_score": final_score,
+        "mode": "reference_aware" if (agreement_result is not None and meteor_score is not None) else "reference_free",
         "layer_scores": {
             "domain_rubric": rubric_score,
             "nlp_agreement": agreement_score,

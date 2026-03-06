@@ -61,7 +61,7 @@ def main():
     print(f"\nLecture selected: {lecture_id}")
     print(f"Force regenerate S0: {force_regen}")
     print(f"Lever-based refinement: {use_lever_based}")
-    print(f"Stopping params -> min_avg_score: {min_avg_score}, min_change_threshold: {min_change_threshold}, max_iters: {max_iterations}, min_iters: {min_iterations}, min_agreement: {min_agreement}")
+    print(f"Stopping params -> min_avg_score: {min_avg_score}, min_change_threshold: {min_change_threshold}, max_iters: {max_iterations}, min_iters: {min_iterations}, min_agreement(legacy): {min_agreement}")
 
     #paths
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"
@@ -73,8 +73,10 @@ def main():
     if not Path(SLIDES_PATH).exists():
         raise FileNotFoundError(f" Lecture slides not found: {SLIDES_PATH}")
 
-    if not Path(HUMAN_REF_PATH).exists():
-        raise FileNotFoundError(f" Reference summary not found: {HUMAN_REF_PATH}")
+    if Path(HUMAN_REF_PATH).exists():
+        print(f"Reference file found (legacy diagnostics optional): {HUMAN_REF_PATH}")
+    else:
+        print(f"No reference file found for {lecture_id}; running in reference-free mode.")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -86,9 +88,11 @@ def main():
         except Exception:
             print(f" Could not delete: {file}")
 
-    #load refernce
-    with open(HUMAN_REF_PATH, "r", encoding="utf-8") as f:
-        human_reference = f.read().strip()
+    # load optional reference (legacy only)
+    human_reference = None
+    if Path(HUMAN_REF_PATH).exists():
+        with open(HUMAN_REF_PATH, "r", encoding="utf-8") as f:
+            human_reference = f.read().strip()
 
     #generate summary 0
     regenerate = (force_regen == "yes")
@@ -190,9 +194,14 @@ def main():
         comp = result["comprehensive_scoring"]
         print("\n--- COMPREHENSIVE SCORING BREAKDOWN ---")
         print(f"Domain Detected: {comp.get('detected_domain', 'unknown').upper()}")
+        mode = comp.get("mode", "unknown")
+        print(f"Scoring Mode: {mode}")
         print(f"Domain-Aware Rubric Score: {comp['layer_scores']['domain_rubric']:.3f}")
-        print(f"NLP Agreement Score: {comp['layer_scores']['nlp_agreement']:.3f}")
-        print(f"Semantic Similarity (METEOR): {comp['layer_scores']['semantic_similarity']:.3f}")
+        if mode == "reference_aware":
+            print(f"NLP Agreement Score: {comp['layer_scores']['nlp_agreement']:.3f}")
+            print(f"Semantic Similarity (METEOR): {comp['layer_scores']['semantic_similarity']:.3f}")
+        else:
+            print("Reference metrics: disabled (agreement/METEOR not used)")
         print(f"Layer Weights: Domain {comp['layer_weights']['domain_rubric']:.1f}, NLP {comp['layer_weights']['nlp_agreement']:.1f}, Semantic {comp['layer_weights']['semantic_similarity']:.1f}")
         print("Rubric Dimensions:", comp["rubric_breakdown"])
 
@@ -202,7 +211,7 @@ def main():
         print("\nRefined Summary: [Unicode content that cannot be displayed]")
     print("\nSignals:", result["signals"])
     print("\nDetailed Rubric:", result["rubric"])
-    print("\nAgreement Analysis:", result["agreement"])
+    print("\nAgreement Analysis:", result.get("agreement", {"used": False}))
 
     # Print refinement metadata
     if "refinement_metadata" in result:
@@ -211,8 +220,6 @@ def main():
         print(f"Iterations completed: {metadata.get('iterations_completed')}")
         print(f"Final avg rubric score: {metadata.get('final_avg_score', 'N/A'):.2f}/5")
         print(f"Final word count: {metadata.get('final_word_count', 'N/A')}")
-        if 'final_agreement' in metadata:
-            print(f"Final agreement (meteor): {metadata.get('final_agreement'):.3f}")
         print(f"Stopping reason: {metadata.get('stopping_reason', 'N/A')}")
 
     print("\nOutputs saved to:", OUT_DIR)

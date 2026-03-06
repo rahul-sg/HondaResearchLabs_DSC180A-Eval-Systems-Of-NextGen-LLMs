@@ -46,7 +46,6 @@ def _load_or_generate_s0(lecture_id: str, force_regen: bool) -> str:
 def _run_one(
     lecture_id: str,
     initial_summary: str,
-    human_reference: str,
     out_dir: Path,
     use_pairwise_selection: bool,
 ) -> dict:
@@ -58,7 +57,7 @@ def _run_one(
     return evaluate_summary(
         slide_path=str(ROOT / "data" / "slides" / f"{lecture_id}.pdf"),
         initial_summary=initial_summary,
-        human_reference=human_reference,
+        human_reference=None,
         cfg_judge=cfg_judge,
         cfg_refine=cfg_refine,
         out_dir=str(out_dir),
@@ -84,14 +83,10 @@ def _extract_metrics(result: Dict) -> Dict:
 
 def _run_lecture_ablation(lecture_id: str, force_regen: bool) -> Dict:
     slide_path = ROOT / "data" / "slides" / f"{lecture_id}.pdf"
-    ref_path = ROOT / "data" / "references" / f"{lecture_id}_reference.txt"
 
     if not slide_path.exists():
         raise FileNotFoundError(f"Slides not found: {slide_path}")
-    if not ref_path.exists():
-        raise FileNotFoundError(f"Reference not found: {ref_path}")
 
-    human_reference = ref_path.read_text(encoding="utf-8").strip()
     initial_summary = _load_or_generate_s0(lecture_id, force_regen)
 
     out_root = ROOT / "data" / "summaries" / "pairwise_experiment" / lecture_id
@@ -102,7 +97,6 @@ def _run_lecture_ablation(lecture_id: str, force_regen: bool) -> Dict:
     with_result = _run_one(
         lecture_id=lecture_id,
         initial_summary=initial_summary,
-        human_reference=human_reference,
         out_dir=with_dir,
         use_pairwise_selection=True,
     )
@@ -111,7 +105,6 @@ def _run_lecture_ablation(lecture_id: str, force_regen: bool) -> Dict:
     without_result = _run_one(
         lecture_id=lecture_id,
         initial_summary=initial_summary,
-        human_reference=human_reference,
         out_dir=without_dir,
         use_pairwise_selection=False,
     )

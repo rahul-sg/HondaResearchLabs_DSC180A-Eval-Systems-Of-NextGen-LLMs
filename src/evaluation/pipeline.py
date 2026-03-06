@@ -11,7 +11,6 @@ from src.utils.io import (
 from src.utils.signals import compute_signals
 from src.models.judge import (
     judge_rubric_ensemble,
-    judge_agreement_ensemble,
 )
 from src.models.refinement import (
     iterative_refinement,
@@ -20,23 +19,12 @@ from src.models.refinement import (
 from src.evaluation.scoring import combine_scores, compute_comprehensive_score
 from src.utils.filter_slides import filter_content_slides
 
-# ---- NEW IMPORTS FOR METEOR ----
-from nltk.translate.meteor_score import meteor_score
-from nltk.tokenize import word_tokenize
-import nltk
-
-# Ensure required NLTK resources are available
-nltk.download('wordnet', quiet=True)
-nltk.download('omw-1.4', quiet=True)
-nltk.download('punkt', quiet=True)
-nltk.download('punkt_tab', quiet=True)  # needed for word_tokenize on some platforms
-
 
 # Evaluation pipeline for one lecture
 def evaluate_summary(
     slide_path: str,
     initial_summary: str,
-    human_reference: str,
+    human_reference: str | None,
     cfg_judge,
     cfg_refine,
     out_dir: str,
@@ -55,7 +43,7 @@ def evaluate_summary(
     Args:
         slide_path: Path to lecture slides PDF
         initial_summary: Starting summary text
-        human_reference: Reference summary for comparison
+        human_reference: Optional legacy reference summary (unused by default reference-free mode)
         cfg_judge: LLM config for judge
         cfg_refine: LLM config for refiner
         out_dir: Output directory for results
@@ -66,8 +54,7 @@ def evaluate_summary(
         min_change_threshold: Stopping criterion - convergence threshold (default 0.03)
         max_iterations: Safety limit on iterations (default 10)
         min_iterations: Minimum number of iterations to run (default 2)
-        min_agreement: Meteor-based agreement threshold (0..1) used as alternative to
-                       length check (default 0.7)
+        min_agreement: Legacy/compat parameter retained for CLI compatibility
         use_pairwise_selection: Whether to use pairwise judge selection at each
                        refinement step (default True)
     
@@ -108,7 +95,6 @@ def evaluate_summary(
             min_change_threshold=min_change_threshold,
             max_iterations=max_iterations,
             min_iterations=min_iterations,
-            human_reference=human_reference,
             min_agreement=min_agreement,
             use_pairwise=use_pairwise_selection,
         )
@@ -136,20 +122,11 @@ def evaluate_summary(
     # Save final result
     write_final_summary(out_dir, refined)
 
-    # ---- METEOR METRIC COMPUTATION (TOKENIZED) ----
-    tokenized_ref = word_tokenize(human_reference)
-    tokenized_hyp = word_tokenize(refined)
-
-    meteor = meteor_score([tokenized_ref], tokenized_hyp)
-
     signals = compute_signals(
         slides_content,        # not full slides
         refined,
         target_words=target_words
     )
-
-    # ---- Add METEOR to signals ----
-    signals["meteor"] = meteor
 
     rubric = judge_rubric_ensemble(
         slides_full,           # judges see full lecture
@@ -159,26 +136,27 @@ def evaluate_summary(
         use_domain_aware=True  # Enable domain-aware evaluation
     )
 
-    agree = judge_agreement_ensemble(
-        human_reference,
-        refined,
-        cfg_judge,
-        runs=3
-    )
+    # Reference-free default: agreement/METEOR disabled in main scoring path.
+    # Preserve schema compatibility with a lightweight placeholder object.
+    agree = {
+        "used": False,
+        "agreement_1to5": 0,
+        "missing_key_points": [],
+        "added_inaccuracies": [],
+    }
 
     # ---- COMPREHENSIVE MULTI-LAYERED SCORING ----
-    # Combine domain-aware rubric, NLP agreement, and METEOR semantic similarity
+    # Reference-free comprehensive scoring (domain-aware rubric only)
     comprehensive_result = compute_comprehensive_score(
         rubric_result=rubric,
-        agreement_result=agree,
-        meteor_score=meteor
+        agreement_result=None,
+        meteor_score=None,
     )
 
     # ---- MANUAL WEIGHTED SCORING (explicit baseline) ----
-    base_score = combine_scores(rubric, agree)
+    base_score = combine_scores(rubric, agreement=None)
     manual_weighted_score = (
-        (0.6 * base_score
-         + 0.2 * meteor
+        (0.8 * base_score
          + 0.2 * signals["section_coverage_pct"])
         - 0.1 * (2 ** signals["suspected_hallucination_rate"])
     )
@@ -198,6 +176,7 @@ def evaluate_summary(
         "signals": signals,
         "rubric": rubric,
         "agreement": agree,
+        "reference_metrics_used": False,
         "comprehensive_scoring": comprehensive_result,  # Detailed scoring breakdown
         "hybrid_scoring": {
             "comprehensive_score": comprehensive_score,

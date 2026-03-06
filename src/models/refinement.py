@@ -14,17 +14,6 @@ from src.models.lever_based_refinement import (
     create_lever_guided_refine_prompt,
 )
 
-# NLTK imports for meteor and tokenization
-from nltk.translate.meteor_score import meteor_score
-from nltk.tokenize import word_tokenize
-import nltk
-
-# Ensure required NLTK resources are available
-nltk.download('wordnet', quiet=True)
-nltk.download('omw-1.4', quiet=True)
-nltk.download('punkt', quiet=True)
-nltk.download('punkt_tab', quiet=True)
-
 
 
 # Number of slides allowed for the REFINER model
@@ -257,7 +246,6 @@ def iterative_refinement_lever_based(
     min_change_threshold: float = 0.03,
     max_iterations: int = 12,
     min_iterations: int = 4,
-    human_reference: str | None = None,
     min_agreement: float = 0.7,
     use_pairwise: bool = True,
 ) -> Tuple[str, Dict]:
@@ -279,8 +267,7 @@ def iterative_refinement_lever_based(
         min_change_threshold: Minimum change magnitude before stopping (default 0.03)
         max_iterations: Safety limit on iterations (default 12)
         min_iterations: Must run at least this many iterations (default 4)
-        human_reference: Optional human summary used to compute agreement/meteor each iter
-        min_agreement: Meteor score threshold (0..1) for quality+agreement stop
+        min_agreement: Legacy/compat parameter retained for controller configuration
     
     Returns:
         (final_summary, refinement_metadata)
@@ -291,7 +278,7 @@ def iterative_refinement_lever_based(
         - stopping_reason
         - lever_history
         - final_rubric
-        - final_agreement
+        - final_quality_score
     """
 
     # Initialize controller (pass agreement threshold too)
@@ -340,12 +327,8 @@ def iterative_refinement_lever_based(
         avg_score = sum(rubric.values()) / len(rubric) if rubric else 0
         change_magnitude = compute_change_magnitude(prev_summary, current_summary)
         
-        # compute agreement/meteor score if reference provided
+        # Reference-free default: no human-reference agreement metric
         agreement = 0.0
-        if human_reference:
-            tokenized_ref = word_tokenize(human_reference)
-            tokenized_curr = word_tokenize(current_summary)
-            agreement = meteor_score([tokenized_ref], tokenized_curr)
 
         # Compute signals for signal-based and trend-aware stopping criteria
         signals = compute_signals(slides, current_summary, target_words=target_words)
@@ -354,7 +337,7 @@ def iterative_refinement_lever_based(
         rubric_norm = max(0.0, min(5.0, avg_score)) / 5.0
         coverage = signals.get("section_coverage_pct", 0.0)
         hallucination = signals.get("suspected_hallucination_rate", 1.0)
-        blended_quality = 0.6 * rubric_norm + 0.2 * agreement + 0.2 * coverage
+        blended_quality = 0.8 * rubric_norm + 0.2 * coverage
         quality_score = blended_quality * (1 - 0.15 * hallucination)
 
         all_signals_history.append(signals)
@@ -429,7 +412,6 @@ def iterative_refinement_lever_based(
         "quality_history": all_quality_history,
         "target_words": target_words,
         "final_rubric": rubric,
-        "final_agreement": agreement,
         "final_quality_score": all_quality_history[-1] if all_quality_history else 0.0,
     }
 

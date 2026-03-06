@@ -30,23 +30,23 @@ echo "=============================================="
 # ------------------------------------------------------------
 if ! command -v conda &> /dev/null
 then
-    echo "❌ Conda is not installed or not on PATH."
+    echo "ERROR: Conda is not installed or not on PATH."
     echo "   Please install Miniconda or Anaconda first:"
     echo "   https://docs.conda.io/en/latest/miniconda.html"
     exit 1
 fi
 
-echo "✔ Conda found."
+echo "OK: Conda found."
 
 # ------------------------------------------------------------
 # Confirm environment.yml exists
 # ------------------------------------------------------------
 if [ ! -f "$ENV_FILE" ]; then
-    echo "❌ ERROR: $ENV_FILE not found in the project root."
+    echo "ERROR: $ENV_FILE not found in the project root."
     exit 1
 fi
 
-echo "✔ Found environment.yml"
+echo "OK: Found environment.yml"
 
 # ------------------------------------------------------------
 # Re-create environment
@@ -58,7 +58,7 @@ echo "----------------------------------------------"
 # Remove old env if it exists
 recreate_env=false
 if conda env list | grep -q "$PROJECT_NAME"; then
-    echo "⚠ Environment '$PROJECT_NAME' already exists."
+    echo "WARNING: Environment '$PROJECT_NAME' already exists."
     read -p "   Delete and recreate it? (y/n): " yn
     case $yn in
         [Yy]* ) 
@@ -75,13 +75,13 @@ else
 fi
 
 if [ "$recreate_env" = true ]; then
-    echo "🌱 Creating (or updating) environment..."
+    echo "Creating (or updating) environment..."
     conda env create -f "$ENV_FILE"
 else
-    echo "🌱 Skipping environment creation; using existing '$PROJECT_NAME'."
+    echo "Skipping environment creation; using existing '$PROJECT_NAME'."
 fi
 
-echo "✔ Environment created successfully."
+echo "OK: Environment created successfully."
 
 # ------------------------------------------------------------
 # Activate environment
@@ -95,7 +95,7 @@ eval "$(conda shell.bash hook)"
 
 conda activate "$PROJECT_NAME"
 
-echo "✔ Environment activated."
+echo "OK: Environment activated."
 
 # ------------------------------------------------------------
 # Create .env if missing
@@ -113,9 +113,9 @@ OPENAI_API_KEY=
 LOG_LEVEL=INFO
 EOF
 
-    echo "✔ .env created. Please edit it and add your OpenAI API key."
+    echo "OK: .env created. Please edit it and add your OpenAI API key."
 else
-    echo "✔ .env already exists – no changes made."
+    echo "OK: .env already exists - no changes made."
 fi
 
 # ------------------------------------------------------------
@@ -141,5 +141,5 @@ echo "To launch the interactive dashboard:"
 echo \"    streamlit run src/visualization/interactive_dashboard.py\"
 echo ""
 echo "======================================================"
-echo "You're all set. 🚀"
+echo "You're all set."
 echo "======================================================"

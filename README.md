@@ -173,12 +173,12 @@ Parameters:
 - `min_change_threshold`: optional float, default `0.03`
 - `max_iterations`: optional int, default `12`
 - `min_iterations`: optional int, default `4`
-- `min_agreement`: optional float, default `0.7`
+- `min_agreement`: optional float, default `0.7` (**legacy/compat parameter**)
 
 Outputs are written to:
 
 ```
-data/summaries/refined_iterations/lecture1/
+data/summaries/refined_iterations/lectureN/
     iter_0.txt
     iter_1.txt
     ...
@@ -206,22 +206,21 @@ This avoids both premature stopping and endless loops.
 
 ### 3) Evaluation Layers
 - **Domain-aware rubric** (coverage, faithfulness, organization, clarity, style)
-- **Agreement analysis** against reference summary
-- **METEOR** semantic similarity
 - **Deterministic signals** (`length_error`, `section_coverage_pct`, `glossary_recall`, `suspected_hallucination_rate`)
+- **Pairwise preference** during refinement candidate selection
 
 ### 4) Final Scoring
 
 Comprehensive layered score:
 
 $$
-C = 0.6 \cdot domain_{rubric} + 0.2 \cdot nlp_{agreement} + 0.2 \cdot meteor
+C = domain_{rubric}
 $$
 
 Manual weighted score (explicit baseline):
 
 $$
-M = (0.6 \cdot base + 0.2 \cdot meteor + 0.2 \cdot coverage) - 0.1 \cdot 2^{hallucination}
+M = (0.8 \cdot base + 0.2 \cdot coverage) - 0.1 \cdot 2^{hallucination}
 $$
 
 Balanced hybrid final score:
@@ -264,13 +263,13 @@ signals
 rubric
 agreement
 comprehensive_scoring
-C = 0.6 \cdot \text{domain rubric} + 0.2 \cdot \text{nlp agreement} + 0.2 \cdot \text{meteor}
+hybrid_scoring
 refinement_metadata
 final_score_0to1
 lecture_title
 ```
 
-M = (0.6 \cdot \text{base} + 0.2 \cdot \text{meteor} + 0.2 \cdot \text{coverage}) - 0.1 \cdot 2^{\text{hallucination}}
+Notable metadata fields include stopping reason, iteration history, lever history, and quality trajectory.
 
 ## Dashboards
 
@@ -279,7 +278,7 @@ Run after generating evaluation outputs.
 ### Static dashboard
 
 ```bash
-S_{\text{final}} = S(1 - 0.15h)
+python -m src.visualization.dashboard lecture1
 ```
 
 By default, this now renders:
@@ -294,6 +293,9 @@ python -m src.visualization.dashboard lecture1 --no-cohort
 
 # Enable semantic drift embedding plot (slower, API cost)
 python -m src.visualization.dashboard lecture1 --drift
+
+# Render merged single figure (default uses split windows)
+python -m src.visualization.dashboard lecture1 --merged
 ```
 
 ### Interactive Streamlit dashboard
@@ -317,13 +319,13 @@ The repository includes multiple lecture/reference pairs across domains (busines
 
 We have provided basic test results within the following domains:
 
-- `data/summaries/refined_iterations/lecture1/` - UCSD MGT 45 (Financial & Managerial Accounting) [Dr. Andreya Pérez Silva] - Week 1 Slides
-- `data/summaries/refined_iterations/lecture2/` - UCSD MGT 45 (Financial & Managerial Accounting) [Dr. Andreya Pérez Silva] - Week 2 Slides
-- `data/summaries/refined_iterations/lecture3/` - UCSD LATI 10 (Reading North by South: Latin American Studies and the US Liberation Movements) [Dr. Amy Kennemore] - Week 3 Slides
-- `data/summaries/refined_iterations/lecture4/` - UCSD ANTH 2 (Human Origins) [Maria Carolina Marchetto, PhD] - Week 2 Slides
-- `data/summaries/refined_iterations/lecture5/` - UCSD EDS/SOCI 117 (Language, Culture, and Education) [Gabrielle Jones, Ph.D.] - Week 2 Wednesday Slides
-- `data/summaries/refined_iterations/lecture6/` - UCSD DSC 100 (Introduction to Data Management) [Babak Salimi] - Week 3 Slides
-- `data/summaries/refined_iterations/lecture7/` - UCSD COGS 14A (Intro to Research Methods) [Sarah C. Creel] - Week 5 Slides
+- `data/summaries/refined_iterations/lecture1/` - UCSD MGT 45 (Financial & Managerial Accounting) [Dr. Andreya Pérez Silva, aperezsilva@ucsd.edu] - Week 1 Slides
+- `data/summaries/refined_iterations/lecture2/` - UCSD MGT 45 (Financial & Managerial Accounting) [Dr. Andreya Pérez Silva, aperezsilva@ucsd.edu] - Week 2 Slides
+- `data/summaries/refined_iterations/lecture3/` - UCSD LATI 10 (Reading North by South: Latin American Studies and the US Liberation Movements) [Dr. Amy Kennemore, akennemo@ucsd.edu] - Week 3 Slides
+- `data/summaries/refined_iterations/lecture4/` - UCSD ANTH 2 (Human Origins) [Maria Carolina Marchetto, PhD, mcmarchetto@ucsd.edu] - Week 2 Slides
+- `data/summaries/refined_iterations/lecture5/` - UCSD EDS/SOCI 117 (Language, Culture, and Education) [Gabrielle Jones, Ph.D., gajones@ucsd.edu] - Week 2 Wednesday Slides
+- `data/summaries/refined_iterations/lecture6/` - UCSD DSC 100 (Introduction to Data Management) [Babak Salimi, bsalimi@ucsd.edu] - Week 3 Slides
+- `data/summaries/refined_iterations/lecture7/` - UCSD COGS 14A (Intro to Research Methods) [Sarah C. Creel, screel@ucsd.edu] - Week 5 Slides
 
 The LLM-generated initial summaries for each test set are stored here:
 
@@ -349,16 +351,14 @@ data/references/lecture6_reference.txt
 data/references/lecture7_reference.txt
 ```
 
-Note on pipeline evolution: the project originally emphasized human-reference-based comparison more heavily. The current hybrid pipeline has evolved to rely on multi-signal and model-judge evaluation, so references are no longer the sole requirement for assessing quality. Reference files are still included for compatibility, benchmarking continuity, and additional diagnostics (for example, agreement and METEOR when enabled).
+Note on pipeline evolution: the initial/legacy workflow emphasized human-reference-driven evaluation. The current default pipeline is reference-free and uses multi-signal + model-judge evaluation (deterministic signals, rubric judging, pairwise preference, and hybrid scoring). Human reference files are retained only for continuity and optional legacy diagnostics.
 
 ## Adding Your Own Lecture
 
 To evaluate a new lecture end-to-end with the current CLI pipeline:
 
 1. Add your slide deck as `data/slides/lectureN.pdf` (for the next available `N`).
-2. Add a reference summary as `data/references/lectureN_reference.txt`.
-    - The hybrid pipeline does not rely only on reference matching, but the current `run_eval` workflow still uses references for agreement/METEOR and richer diagnostics.
-    - A concise, high-quality reference (roughly 250–300 words) is sufficient.
+2. (Optional, legacy) Add a reference summary as `data/references/lectureN_reference.txt` if you want benchmark continuity.
 3. Run the evaluation:
 
 ```bash
@@ -377,22 +377,21 @@ data/summaries/refined_iterations/lectureN/
 example_run/lectureN/
 ```
 
-for presentation or grading demos.
+The `example_run` artifacts are provided as presentation/demo examples.
 
 ## Future Directions
 
-- Improve domain routing precision and confidence calibration
-- Expand multimodal handling for charts/figures/equations
-- Add stronger uncertainty-aware evaluation reports
-- Scale to larger lecture corpora and cross-institution studies
-- Support human-in-the-loop editing workflows
+- Improve scorer calibration and disagreement-based confidence reporting
+- Expand multimodal handling for charts, figures, and equations
+- Add longitudinal/cohort analytics across larger lecture corpora
+- Support human-in-the-loop editing and reviewer-facing diagnostics
 
 ## Authors
 
-- Rahul Sengupta
-- Akshay Medidi
-- Zeyu (Edward) Qi
-- Zachary Thomason
+- Rahul Sengupta ([LinkedIn](https://www.linkedin.com/in/rahul-sg/))
+- Akshay Medidi ([LinkedIn](https://www.linkedin.com/in/akshay-medidi-934a81202/))
+- Zeyu (Edward) Qi ([LinkedIn](https://www.linkedin.com/in/qi-zeyu/))
+- Zachary Thomason ([LinkedIn](https://www.linkedin.com/in/zachary-thomason/))
 
 ## Mentors
 
@@ -404,4 +403,9 @@ for presentation or grading demos.
 This project was developed for the UC San Diego DSC180 Capstone (2025–2026 academic year).
 
 **Evaluation Strategies for Next-Generation AI Systems**  
-*Industry Partner - Honda Research Labs*
+*Industry Partners - Honda Research Labs and 99P Labs*
+
+<p>
+    <img src="assets/99p-logo.png" alt="99P Labs Logo" width="120" style="vertical-align: middle;" />
+    <img src="assets/hdsi-white.png" alt="HDSI Logo" width="240" style="vertical-align: middle; margin-left: 12px;" />
+</p>

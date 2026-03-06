@@ -24,16 +24,16 @@ Write-Host "=============================================="
 # ------------------------------------------------------------
 # Check if conda is available
 # ------------------------------------------------------------
-Write-Host "`n🔍 Checking Conda installation..."
+Write-Host "`nChecking Conda installation..."
 
 if (-not (Get-Command conda -ErrorAction SilentlyContinue)) {
-    Write-Host "❌ Conda is not installed or not on PATH."
+    Write-Host "ERROR: Conda is not installed or not on PATH."
     Write-Host "   Please install Miniconda or Anaconda first:"
     Write-Host "   https://docs.conda.io/en/latest/miniconda.html"
     exit 1
 }
 
-Write-Host "✔ Conda found."
+Write-Host "OK: Conda found."
 
 # ------------------------------------------------------------
 # Check environment.yml exists
@@ -41,11 +41,11 @@ Write-Host "✔ Conda found."
 $envFile = "environment.yml"
 
 if (-not (Test-Path $envFile)) {
-    Write-Host "❌ ERROR: environment.yml not found in project root."
+    Write-Host "ERROR: environment.yml not found in project root."
     exit 1
 }
 
-Write-Host "✔ Found environment.yml"
+Write-Host "OK: Found environment.yml"
 
 # ------------------------------------------------------------
 # Set environment name
@@ -63,7 +63,7 @@ $existingEnv = conda env list | Select-String $envName
 $recreate = $false
 
 if ($existingEnv) {
-    Write-Host "⚠ Environment '$envName' already exists."
+    Write-Host "WARNING: Environment '$envName' already exists."
     $resp = Read-Host "   Delete and recreate it? (y/n)"
 
     if ($resp -eq "y") {
@@ -83,13 +83,13 @@ else {
 # Create environment if needed
 # ------------------------------------------------------------
 if ($recreate) {
-    Write-Host "`n🌱 Creating environment from environment.yml..."
+    Write-Host "`nCreating environment from environment.yml..."
     conda env create -f $envFile
 } else {
-    Write-Host "🌱 Skipping creation; using existing '$envName'."
+    Write-Host "Skipping creation; using existing '$envName'."
 }
 
-Write-Host "✔ Environment created successfully."
+Write-Host "OK: Environment created successfully."
 
 # ------------------------------------------------------------
 # Activate environment
@@ -101,7 +101,7 @@ Write-Host "----------------------------------------------"
 # Attempt to activate (will only persist if script is dot-sourced)
 conda activate $envName
 
-Write-Host "✔ Environment activated."
+Write-Host "OK: Environment activated."
 
 # ------------------------------------------------------------
 # Create .env if missing
@@ -121,10 +121,10 @@ OPENAI_API_KEY=
 LOG_LEVEL=INFO
 "@ | Out-File -Encoding utf8 .env
 
-    Write-Host "✔ .env created. Please edit it and add your OpenAI API key."
+    Write-Host "OK: .env created. Please edit it and add your OpenAI API key."
 }
 else {
-    Write-Host "✔ .env already exists — no changes made."
+    Write-Host "OK: .env already exists - no changes made."
 }
 
 # ------------------------------------------------------------
@@ -151,5 +151,5 @@ Write-Host "To launch the interactive dashboard:"
 Write-Host "    streamlit run src\visualization\interactive_dashboard.py"
 Write-Host ""
 Write-Host "======================================================"
-Write-Host "You're all set! 🚀"
+Write-Host "You're all set!"
 Write-Host "======================================================"
