@@ -13,8 +13,11 @@ from src.models.judge import (
     judge_rubric_ensemble,
     judge_agreement_ensemble,
 )
-from src.models.refinement import iterative_refinement
-from src.evaluation.scoring import combine_scores
+from src.models.refinement import (
+    iterative_refinement,
+    iterative_refinement_lever_based,
+)
+from src.evaluation.scoring import combine_scores, compute_comprehensive_score
 from src.utils.filter_slides import filter_content_slides
 
 # ---- NEW IMPORTS FOR METEOR ----
@@ -26,6 +29,7 @@ import nltk
 nltk.download('wordnet', quiet=True)
 nltk.download('omw-1.4', quiet=True)
 nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)  # needed for word_tokenize on some platforms
 
 
 # Evaluation pipeline for one lecture
@@ -36,9 +40,37 @@ def evaluate_summary(
     cfg_judge,
     cfg_refine,
     out_dir: str,
-    target_words: int = 300,
-    refine_iters: int = 3,
+    target_words: int = 350,
+    use_lever_based: bool = True,
+    min_avg_score: float = 4.5,
+    min_change_threshold: float = 0.03,
+    max_iterations: int = 12,
+    min_iterations: int = 4,
+    min_agreement: float = 0.7,
 ) -> Dict[str, Any]:
+    """
+    Evaluate and refine a summary with optional lever-based iterative refinement.
+    
+    Args:
+        slide_path: Path to lecture slides PDF
+        initial_summary: Starting summary text
+        human_reference: Reference summary for comparison
+        cfg_judge: LLM config for judge
+        cfg_refine: LLM config for refiner
+        out_dir: Output directory for results
+        target_words: Target summary length (default 350)
+        use_lever_based: If True, use intelligent lever-based refinement;
+                        if False, use fixed 3-iteration refinement (default True)
+        min_avg_score: Stopping criterion - avg rubric score (default 4.5/5)
+        min_change_threshold: Stopping criterion - convergence threshold (default 0.03)
+        max_iterations: Safety limit on iterations (default 10)
+        min_iterations: Minimum number of iterations to run (default 2)
+        min_agreement: Meteor-based agreement threshold (0..1) used as alternative to
+                       length check (default 0.7)
+    
+    Returns:
+        Dict with refined_summary, signals, rubric, agreement, final_score, etc.
+    """
 
     slides_dict = load_slides(slide_path)
     slides_full = slides_dict["slides"]            # raw slides
@@ -59,15 +91,38 @@ def evaluate_summary(
         write_iteration_summary(out_dir, iter_idx, summary_text)
         prev_summary = summary_text
 
-    # refinement internally handles filtering — we pass full slides
-    refined = iterative_refinement(
-        slides=slides_full,
-        initial_summary=initial_summary,
-        cfg_judge=cfg_judge,
-        cfg_refine=cfg_refine,
-        iters=refine_iters,
-        save_callback=save_callback,
-    )
+    # ---- CHOOSE REFINEMENT STRATEGY ----
+    if use_lever_based:
+        print("\n[PIPELINE] Using LEVER-BASED iterative refinement...")
+        refined, refinement_metadata = iterative_refinement_lever_based(
+            slides=slides_full,
+            initial_summary=initial_summary,
+            cfg_judge=cfg_judge,
+            cfg_refine=cfg_refine,
+            save_callback=save_callback,
+            target_words=target_words,
+            min_avg_score=min_avg_score,
+            min_change_threshold=min_change_threshold,
+            max_iterations=max_iterations,
+            min_iterations=min_iterations,
+            human_reference=human_reference,
+            min_agreement=min_agreement,
+        )
+        print(f"[PIPELINE] Lever-based refinement complete. {refinement_metadata['stopping_reason']}")
+    else:
+        print("\n[PIPELINE] Using FIXED 3-iteration refinement (legacy)...")
+        refined = iterative_refinement(
+            slides=slides_full,
+            initial_summary=initial_summary,
+            cfg_judge=cfg_judge,
+            cfg_refine=cfg_refine,
+            iters=3,
+            save_callback=save_callback,
+        )
+        refinement_metadata = {
+            "iterations_completed": 3,
+            "stopping_reason": "Fixed 3 iterations (legacy mode)",
+        }
 
     if not refined.strip():
         refined = prev_summary
@@ -94,7 +149,8 @@ def evaluate_summary(
         slides_full,           # judges see full lecture
         refined,
         cfg_judge,
-        runs=3
+        runs=3,
+        use_domain_aware=True  # Enable domain-aware evaluation
     )
 
     agree = judge_agreement_ensemble(
@@ -104,11 +160,31 @@ def evaluate_summary(
         runs=3
     )
 
-    # ---- Final score (hybrid LLM + METEOR) ----
-    base_score = combine_scores(rubric, agree)
+    # ---- COMPREHENSIVE MULTI-LAYERED SCORING ----
+    # Combine domain-aware rubric, NLP agreement, and METEOR semantic similarity
+    comprehensive_result = compute_comprehensive_score(
+        rubric_result=rubric,
+        agreement_result=agree,
+        meteor_score=meteor
+    )
 
-    # Blend METEOR with LLM-based score
-    final_score = 0.8 * base_score + 0.2 * meteor
+    # ---- MANUAL WEIGHTED SCORING (explicit baseline) ----
+    base_score = combine_scores(rubric, agree)
+    manual_weighted_score = (
+        (0.6 * base_score
+         + 0.2 * meteor
+         + 0.2 * signals["section_coverage_pct"])
+        - 0.1 * (2 ** signals["suspected_hallucination_rate"])
+    )
+
+    # ---- BALANCED HYBRID FINAL SCORING (recommended) ----
+    # S = 0.7*C + 0.3*M
+    # S_final = S * (1 - 0.15*H)
+    comprehensive_score = comprehensive_result["final_score"]
+    blended_score = 0.7 * comprehensive_score + 0.3 * manual_weighted_score
+    hallucination_damping = (1 - 0.15 * signals["suspected_hallucination_rate"])
+    final_score = blended_score * hallucination_damping
+    scorer_disagreement = abs(comprehensive_score - manual_weighted_score)
 
     # Save as json
     result = {
@@ -116,10 +192,22 @@ def evaluate_summary(
         "signals": signals,
         "rubric": rubric,
         "agreement": agree,
+        "comprehensive_scoring": comprehensive_result,  # Detailed scoring breakdown
+        "hybrid_scoring": {
+            "comprehensive_score": comprehensive_score,
+            "manual_weighted_score": manual_weighted_score,
+            "blend_weights": {"comprehensive": 0.7, "manual": 0.3},
+            "blended_score_pre_damping": blended_score,
+            "hallucination_rate": signals["suspected_hallucination_rate"],
+            "hallucination_damping_factor": hallucination_damping,
+            "scorer_disagreement_delta": scorer_disagreement,
+        },
         "final_score_0to1": final_score,
         "lecture_title": slides_dict.get("lecture_title", "Unknown Lecture"),
+        "refinement_metadata": refinement_metadata,  # Add refinement details
     }
 
     write_json(os.path.join(out_dir, "result.json"), result)
 
     return result
+

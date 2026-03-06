@@ -1,0 +1,27 @@
+{
+  "wins": {
+    "gpt5_S0": 1,
+    "gpt5_refined": 0
+  },
+  "win_rate": {
+    "gpt5_S0": 1.0,
+    "gpt5_refined": 0.0
+  },
+  "matches": [
+    {
+      "A": "gpt5_S0",
+      "B": "gpt5_refined",
+      "winner": "gpt5_S0",
+      "wins_detail": {
+        "A": 5,
+        "B": 0
+      },
+      "reasons_sample": [
+        "Summaries A and B are nearly identical, but since B repeats A verbatim, A is the better choice by default. It provides a complete, coherent, and accurate overview of the lecture\u2019s key points on the social construction of race and culture, effectively linking theoretical ideas to schooling and identity.",
+        "Summaries A and B are nearly identical in content and structure, but Summary A includes slightly clearer transitions and emphasis on how the lecture connected theoretical ideas to students\u2019 lived experiences. This makes it marginally more informative and useful for student understanding."
+      ]
+    }
+  ],
+  "result_summary": "This lecture explored how race and culture are socially constructed ideas that influence personal identity, law, and schooling. It began by inviting reflection on how labeling by teachers or institutions affects self-concept, and emphasized the courage required to discuss race and cultural difference honestly. The slides reiterated that race has no biological basis; instead, it is a social construct shaped by historical, political, and economic forces. Projects like the American Anthropological Association\u2019s *RACE: Are We So Different?* challenge myths of racial difference through scientific evidence.  \n\nLaw plays a central role in defining and reinforcing racial categories. Ian Haney L\u00f3pez\u2019s work shows how court cases and legal restrictions on marriage and immigration socially constructed racial meanings and even influenced who could legally belong to certain races. Examples included legal debates over the racial classification of Armenians, Japanese, and Mexicans, and the persistence of bans on interracial marriage until 1967. James Baldwin\u2019s observation that \u201cno one was white before coming to America\u201d highlighted how \u201cwhiteness\u201d was created through coercion, access to privilege, and exclusion. Changes in U.S. Census categories further reflected shifting definitions of race and identity, while evolving labels (e.g., Hispanic, Black, Asian American) illustrated how language tracks social and political change.\n\nThe second half examined culture through Sonia Nieto\u2019s definition of it as dynamic, complex, and continuously evolving through human interaction rather than genetic inheritance. Culture encompasses values, relationships, beliefs, and practices created and transformed by groups. It is multifaceted\u2014shaped by factors like family, peers, class, geography, and media\u2014and every person participates in multiple cultural systems. Schools themselves possess distinct cultures, conveyed through routines, organization, expectations, and beliefs about intelligence and ability. These institutional cultures shape students\u2019 experiences, influencing how they view learning, belonging, and future possibilities. Overall, the lecture connected the social construction of race and culture to the lived realities of education and identity.",
+  "overall_winner": "gpt5_S0"
+}

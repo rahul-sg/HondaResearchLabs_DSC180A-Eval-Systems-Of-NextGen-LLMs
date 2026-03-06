@@ -1,0 +1,27 @@
+{
+  "wins": {
+    "gpt5_S0": 0,
+    "gpt5_refined": 1
+  },
+  "win_rate": {
+    "gpt5_S0": 0.0,
+    "gpt5_refined": 1.0
+  },
+  "matches": [
+    {
+      "A": "gpt5_S0",
+      "B": "gpt5_refined",
+      "winner": "gpt5_refined",
+      "wins_detail": {
+        "A": 0,
+        "B": 5
+      },
+      "reasons_sample": [
+        "Summary B is clearer and more structured for students. It concisely presents the relationships among the financial statements, explicitly explains how the expanded accounting equation links performance to equity, and clearly maps each concept to the step-by-step accounting process. It also contextualizes the rules of debits and credits with the DEALOR mnemonic and illustrates their application using examples. While Summary A is accurate, it is more verbose and less organized around the learning flow of the lecture, making Summary B the more instructive and student\u2011friendly option.",
+        "Summary B is more detailed, logically organized, and follows the lecture\u2019s flow from the linkage of financial statements through the expanded accounting equation to the mechanics of double-entry bookkeeping. It uses precise accounting terminology, includes explicit examples that mirror those in the lecture, and clearly explains how transactions translate into journal entries and T\u2011accounts. While A is accurate and coherent, B better emphasizes conceptual connections, procedural steps, and the rationale behind the accounting process, making it more instructive for students."
+      ]
+    }
+  ],
+  "result_summary": "This lecture develops a deeper understanding of how financial statements connect through the accounting equation and how double-entry bookkeeping ensures those connections remain balanced over time. It begins by emphasizing that accounting interprets complex economic activity and communicates it through four interrelated financial statements: the balance sheet, income statement, statement of stockholders\u2019 equity, and statement of cash flows. The balance sheet shows a company\u2019s position at the beginning and end of a period, while the other statements explain the changes between those points. Revenues and expenses determine net income; net income affects retained earnings; and retained earnings change stockholders\u2019 equity, linking performance over time to financial position.\n\nThe lecture revisits and expands the accounting equation from\u202fAssets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity\u202finto\u202fAssets\u202f=\u202fLiabilities\u202f+\u202fContributed\u202fCapital\u202f+\u202fRetained\u202fEarnings\u202f(Beginning\u202fof\u202fPeriod\u202f+\u202fRevenues\u202f\u2013\u202fExpenses\u202f\u2013\u202fDividends).\u202fThis expanded version ties operational results to equity and clarifies how balances carry forward between periods. It also provides the basis for recording each economic event as an equal set of debits and credits.\n\nDouble-entry accounting is introduced as a framework in which every transaction has two sides\u2014a give and a take\u2014that must keep the equation balanced. Debits (left side) increase assets, expenses, and dividends, while credits (right side) increase liabilities, contributed capital, and revenues. No negative numbers are used; each transaction must include at least one debit and one credit, with debits equaling credits. The DEALOR mnemonic (Dividends, Expenses, Assets = Debit; Liabilities, Owners\u2019 Equity, Revenues = Credit) helps recall normal balances.\n\nStep-by-step examples illustrate this process: borrowing\u202f$100,000\u202ffrom a bank, purchasing equipment and inventory, paying part of the amount owed, prepaying insurance, and issuing stock. The resulting journal entries are translated into T\u2011accounts that accumulate increases and decreases to compute ending balances. Slides demonstrate how formulas such as\u202fBeginning\u202fBalance\u202f+\u202fIncreases\u202f\u2013\u202fDecreases\u202f=\u202fEnding\u202fBalance\u202fgenerate the figures appearing on the balance sheet, which then become beginning balances in the next period.\n\nFinally, the lecture summarizes the accounting cycle to this stage: analyze transactions, record them as journal entries (listing debits first, credits indented), post them to the ledger, and verify that\u202fDebits\u202f=\u202fCredits\u202fmaintains\u202fAssets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity. This structure ensures accuracy and continuity across reporting periods.  \n\n**Word count:\u202f397**",
+  "overall_winner": "gpt5_refined"
+}

@@ -1,36 +1,132 @@
 {
-  "refined_summary": "This week\u2019s lecture extended the foundation of financial accounting by linking the financial statements and introducing double\u2011entry recording. It opened with brief updates, then emphasized that accounting interprets complex economic activity and communicates it through structured financial statements.  \n\nThe four fundamental reports\u2014the balance sheet, income statement, statement of stockholders\u2019 equity, and statement of cash flows\u2014work together to describe a firm\u2019s position and performance. The balance sheet captures assets, liabilities, and equity at a specific date, while the other statements summarize changes over the fiscal period. Those changes explain how conditions move from one balance\u2011sheet date to the next. Revenues raise and expenses lower retained earnings; therefore, net income increases stockholders\u2019 equity, and a net loss decreases it.  \n\nThe lecture then expanded the accounting equation\u2014Assets\u202f=\u202fLiabilities\u202f+\u202fShareholders\u2019\u202fEquity\u2014by showing equity as contributed capital plus retained earnings. Retained earnings evolve from beginning balance + net income \u2013 dividends, or more specifically + revenues \u2013 expenses \u2013 dividends. This equation also frames account updates: beginning balance + increases \u2013 decreases = ending balance, ensuring each period\u2019s ending balances become the next period\u2019s beginning balances.  \n\nThe core section explained double\u2011entry mechanics. Every transaction has a dual effect recorded as equal debits and credits, keeping A\u202f=\u202fL\u202f+\u202fSE in balance. Debits increase assets and decrease liabilities or equity; credits have the opposite effect, and no negative numbers are used. The lecture illustrated these rules through a sequence of transactions\u2014borrowing from a bank, buying equipment and inventory, paying suppliers, purchasing prepaid insurance, and issuing stock\u2014showing how each affects accounts and maintains equality.  \n\nVisual tools reinforced the system. The \u201csuper\u202fT\u2011account\u201d organized all major accounts (assets, liabilities, contributed capital, retained earnings, revenues, expenses, and dividends) and showed their normal debit or credit sides. The mnemonic **DEALOR** summarized these patterns: Dividends, Expenses, and Assets carry debit balances, while Liabilities, Owner\u2019s Equity, and Revenues carry credit balances.  \n\nFinally, the lecture outlined the accounting process: (1) analyze each economic event, (2) record the debits and credits as journal entries, and (3) post them to T\u2011accounts to determine ending balances. Ensuring that total debits equal total credits both preserves the accounting equation and forms the basis for accurate financial statement preparation across periods.",
+  "refined_summary": "This lecture develops a deeper understanding of how financial statements connect through the accounting equation and how double-entry bookkeeping ensures those connections remain balanced over time. It begins by emphasizing that accounting interprets complex economic activity and communicates it through four interrelated financial statements: the balance sheet, income statement, statement of stockholders\u2019 equity, and statement of cash flows. The balance sheet shows a company\u2019s position at the beginning and end of a period, while the other statements explain the changes between those points. Revenues and expenses determine net income; net income affects retained earnings; and retained earnings change stockholders\u2019 equity, linking performance over time to financial position.\n\nThe lecture revisits and expands the accounting equation from\u202fAssets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity\u202finto\u202fAssets\u202f=\u202fLiabilities\u202f+\u202fContributed\u202fCapital\u202f+\u202fRetained\u202fEarnings\u202f(Beginning\u202fof\u202fPeriod\u202f+\u202fRevenues\u202f\u2013\u202fExpenses\u202f\u2013\u202fDividends).\u202fThis expanded version ties operational results to equity and clarifies how balances carry forward between periods. It also provides the basis for recording each economic event as an equal set of debits and credits.\n\nDouble-entry accounting is introduced as a framework in which every transaction has two sides\u2014a give and a take\u2014that must keep the equation balanced. Debits (left side) increase assets, expenses, and dividends, while credits (right side) increase liabilities, contributed capital, and revenues. No negative numbers are used; each transaction must include at least one debit and one credit, with debits equaling credits. The DEALOR mnemonic (Dividends, Expenses, Assets = Debit; Liabilities, Owners\u2019 Equity, Revenues = Credit) helps recall normal balances.\n\nStep-by-step examples illustrate this process: borrowing\u202f$100,000\u202ffrom a bank, purchasing equipment and inventory, paying part of the amount owed, prepaying insurance, and issuing stock. The resulting journal entries are translated into T\u2011accounts that accumulate increases and decreases to compute ending balances. Slides demonstrate how formulas such as\u202fBeginning\u202fBalance\u202f+\u202fIncreases\u202f\u2013\u202fDecreases\u202f=\u202fEnding\u202fBalance\u202fgenerate the figures appearing on the balance sheet, which then become beginning balances in the next period.\n\nFinally, the lecture summarizes the accounting cycle to this stage: analyze transactions, record them as journal entries (listing debits first, credits indented), post them to the ledger, and verify that\u202fDebits\u202f=\u202fCredits\u202fmaintains\u202fAssets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity. This structure ensures accuracy and continuity across reporting periods.  \n\n**Word count:\u202f397**",
   "signals": {
-    "length_error": 0.22,
-    "section_coverage_pct": 0.8596491228070176,
-    "glossary_recall": 0.5952380952380952,
-    "suspected_hallucination_rate": 0.16666666666666666
+    "length_error": 0.08571428571428572,
+    "section_coverage_pct": 0.9649122807017544,
+    "glossary_recall": 0.6666666666666666,
+    "suspected_hallucination_rate": 0.29411764705882354,
+    "meteor": 0.4826660964657048
   },
   "rubric": {
     "coverage": 5,
-    "faithfulness": 5,
+    "faithfulness": 4,
     "organization": 5,
-    "clarity": 5,
+    "clarity": 4,
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "The summary accurately explains how the financial statements link together and how net income affects stockholders\u2019 equity.",
-      "It clearly captures the rules and logic of double-entry accounting, including debit/credit mechanics and transaction effects."
+      "Integrates the linkage between all four financial statements and explicitly describes the flow from revenues and expenses to net income and retained earnings, consistent with slides showing 'Revenues = \u2191SE; Expenses = \u2193SE' and 'Net income = \u2191SE'.",
+      "Accurately captures the stepwise process of double-entry accounting from transaction analysis through journal entries and posting, in line with slides stating 'Analyze the transaction \u2192 Record the debits and credits \u2192 Post journal entries to ledger'."
     ],
     "two_issues": [
-      "The summary could highlight specific slide phrases such as 'Every transaction must have at least one debit and one credit' more explicitly to reinforce evidence of faithfulness.",
-      "Some minor stylistic repetition could be reduced to make the flow more concise."
+      "While conceptually faithful, the summary generalizes the examples and does not cite specific numeric transactions (e.g., '$100,000 loan', '$60,000 equipment') as used extensively in slides 20\u201328; including one quantified example would strengthen alignment with the material\u2019s applied focus.",
+      "It omits the instructional emphasis that 'financial statements are communication tools' (Slide 6 and 7), thereby slightly underrepresenting the business purpose behind the mechanics."
     ],
     "faithfulness_evidence": [
-      "Slide 19: 'Debits must equal credits for all transactions.'",
-      "Slide 11: 'Net Income = \u2191SE; Net Loss = \u2193SE'"
-    ]
+      "Slide 15: 'Every economic event has two sides, a give and a take; record both sides of economic events as a transaction' supports the summary\u2019s statement that double-entry ensures 'every transaction has two sides\u2014a give and a take.'",
+      "Slide 17: 'A debit increases assets and decreases liabilities and SE; a credit decreases assets and increases liabilities and SE' confirms the summary\u2019s explanation of debit and credit effects."
+    ],
+    "detected_domain": "business"
   },
   "agreement": {
-    "agreement_1to5": 5,
+    "agreement_1to5": 4,
     "missing_key_points": [],
-    "added_inaccuracies": []
+    "added_inaccuracies": [
+      "Introduces the four financial statements explicitly and discusses their interrelationships, which was not covered in the reference summary."
+    ]
   },
-  "final_score_0to1": 0.9833333333333334,
-  "lecture_title": "lecture2"
+  "comprehensive_scoring": {
+    "final_score": 0.776533219293141,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 0.8,
+      "semantic_similarity": 0.4826660964657048
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "business",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.776533219293141,
+    "manual_weighted_score": 0.6669021911074988,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7436439108374483,
+    "hallucination_rate": 0.29411764705882354,
+    "hallucination_damping_factor": 0.9558823529411765,
+    "scorer_disagreement_delta": 0.10963102818564219
+  },
+  "final_score_0to1": 0.7108360912416786,
+  "lecture_title": "lecture2",
+  "refinement_metadata": {
+    "iterations_completed": 4,
+    "final_avg_score": 4.459999999999999,
+    "final_word_count": 380,
+    "stopping_reason": "pass: strict thresholds met and quality high - signals: length_error 0.086 <= 0.12 AND coverage 0.983 >= 0.88 AND recall 0.625 >= 0.62 AND hallucination 0.294 < 0.48 (strict phase, iter 4) | quality 0.792 >= 0.740",
+    "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.3,
+        "clarity": 4.1,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.4,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
+        "clarity": 4.4,
+        "style": 4.5
+      }
+    ],
+    "quality_history": [
+      0.7402830650908738,
+      0.7877730177853497,
+      0.7757400039853428,
+      0.7917988275147546
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.3,
+      "organization": 4.5,
+      "clarity": 4.4,
+      "style": 4.5
+    },
+    "final_agreement": 0.4826660964657048,
+    "final_quality_score": 0.7917988275147546
+  }
 }

@@ -357,3 +357,200 @@
     }
   }
 }
+
+
+# Python helper functions
+import json
+
+def get_domain_schema(domain: str) -> dict:
+    """Return the evaluation schema for a specific academic domain.
+
+    Currently the schemas are hard‑coded in this function. In future we
+    could load them from an external JSON file if desired.
+    """
+
+    # The full schema is defined below; keep in sync with the JSON-like
+    # structure present earlier in this module.  This replaces the previous
+    # attempt to load `__file__` as JSON, which was causing a decode error.
+    full_schema = {
+      "domains": {
+        "math": {
+          "dimensions": {
+            "coverage": {
+              "definition": "Includes the key assumptions/conditions and scope under which the main results or methods apply.",
+              "score_anchors": {
+                "1": "Assumptions/conditions are missing or wrong; treats conditional results as universal.",
+                "3": "Some assumptions/conditions included but important ones are missing or vague.",
+                "5": "Key assumptions/conditions and applicability are clearly stated and match the slides."
+              }
+            },
+            "faithfulness": {
+              "definition": "Definitions, theorems, claims, and conclusions are stated correctly (including constraints) with no slide-unsupported inventions.",
+              "score_anchors": {
+                "1": "Major definitions/results are incorrect or fabricated; frequent unsupported claims.",
+                "3": "Mostly correct but with missing conditions or minor inaccuracies; few unsupported claims.",
+                "5": "Accurate statements of central definitions/results with essential conditions; no unsupported claims."
+              }
+            },
+            "organization": {
+              "definition": "Presents the reasoning flow (proof/derivation steps) in a coherent order that matches the lecture structure.",
+              "score_anchors": {
+                "1": "Disorganized or scrambled; reasoning chain is incoherent or contradicts slides.",
+                "3": "Some logical flow, but gaps or mildly muddled sequencing of key steps.",
+                "5": "Clear, slide-consistent structure: main result → key steps → conclusion."
+              }
+            },
+            "clarity": {
+              "definition": "Explains methods/procedures in a usable way (inputs → steps → outputs) and makes the takeaway easy to follow.",
+              "score_anchors": {
+                "1": "Procedure is unusable/unclear or incorrect; hard to follow.",
+                "3": "Understandable but missing important steps/details or has ambiguity.",
+                "5": "Procedure is clear, correct, and easy to apply based on the slides."
+              }
+            },
+            "style": {
+              "definition": "Uses precise notation/terminology and appropriately notes limitations/edge cases (without overclaiming).",
+              "score_anchors": {
+                "1": "Notation/terms are sloppy or wrong; overconfident claims with no limits.",
+                "3": "Mostly readable with minor precision issues; mentions limits superficially or inconsistently.",
+                "5": "Precise notation/terminology and appropriate limits/edge cases are clearly communicated."
+              }
+            }
+          }
+        },
+        "humanities": {
+          "dimensions": {
+            "coverage": {
+              "definition": "Captures the lecture's central thesis/question and the main line of what it is arguing (not just a topic list).",
+              "score_anchors": {
+                "1": "No thesis or the thesis is wrong; mostly a list of topics.",
+                "3": "Thesis is present but generic or partially misaligned; misses key parts of the main argument.",
+                "5": "Thesis/question is explicit, accurate, and captures the core argumentative focus of the lecture."
+              }
+            },
+            "faithfulness": {
+              "definition": "Represents key concepts and distinctions accurately (terms used as the lecture uses them), without distortion or invention.",
+              "score_anchors": {
+                "1": "Key concepts are misdefined/flattened; major distinctions lost or reversed.",
+                "3": "Most concepts are correct but some nuance/distinctions are blurred or underexplained.",
+                "5": "Concepts and distinctions are accurate and preserve the lecture's intended meanings."
+              }
+            },
+            "organization": {
+              "definition": "Shows how the lecture builds its argument (claim → reasoning → support) in a coherent progression.",
+              "score_anchors": {
+                "1": "Disjointed; no clear reasoning chain; argument flow is missing or fabricated.",
+                "3": "Some structure, but linkage between claims and reasoning is incomplete or uneven.",
+                "5": "Clear argumentative flow that matches how the lecture develops and supports its thesis."
+              }
+            },
+            "clarity": {
+              "definition": "Connects claims to lecture-discussed examples/texts/artifacts (as shown on slides) and avoids fabricated quotes or references.",
+              "score_anchors": {
+                "1": "Examples are missing or invented; fabricated quotes/references appear.",
+                "3": "Some real examples included, but linkage is weak or incomplete; may be vague about support.",
+                "5": "Examples are slide-grounded and clearly tied to the claims they support; no invention."
+              }
+            },
+            "style": {
+              "definition": "Communicates nuance: acknowledges tensions/counterpoints/ambiguities and explains stakes/implications emphasized in the lecture.",
+              "score_anchors": {
+                "1": "Overly certain, ignores debate, or invents implications not present in the lecture.",
+                "3": "Mentions tension/stakes but generally or without clear connection to the lecture's framing.",
+                "5": "Accurately captures key tensions and meaningful implications grounded in the lecture."
+              }
+            }
+          }
+        },
+        "natural_sciences": {
+          "dimensions": {
+            "coverage": {
+              "definition": "Covers the core system/process and the key mechanisms (how/why) emphasized in the lecture.",
+              "score_anchors": {
+                "1": "Misses or misstates the main mechanism; major core content absent.",
+                "3": "Includes the main mechanism but misses important steps/variables or is shallow.",
+                "5": "Captures the main mechanism with the key steps/variables emphasized on slides."
+              }
+            },
+            "faithfulness": {
+              "definition": "Accurately represents the scientific content, relationships, and evidence without distortion or fabrication.",
+              "score_anchors": {
+                "1": "Major scientific inaccuracies or fabrications; relationships between concepts are wrong.",
+                "3": "Mostly accurate but with some distortions or missing relationships between key concepts.",
+                "5": "Accurate representation of scientific content and relationships as presented in the lecture."
+              }
+            },
+            "organization": {
+              "definition": "Presents the scientific reasoning (hypothesis → evidence → conclusion) in a logical sequence that matches the lecture.",
+              "score_anchors": {
+                "1": "Disorganized; scientific reasoning chain is incoherent or contradicts the lecture.",
+                "3": "Some logical flow, but gaps in the scientific reasoning or sequencing issues.",
+                "5": "Clear scientific reasoning flow that matches the lecture's hypothesis-evidence-conclusion structure."
+              }
+            },
+            "clarity": {
+              "definition": "Explains scientific concepts/procedures with clear connections to evidence and avoids oversimplification or confusion.",
+              "score_anchors": {
+                "1": "Scientific concepts are oversimplified to the point of inaccuracy or are confusing.",
+                "3": "Understandable but some concepts are oversimplified or connections to evidence are unclear.",
+                "5": "Clear explanation of scientific concepts with appropriate complexity and strong evidence connections."
+              }
+            },
+            "style": {
+              "definition": "Uses appropriate scientific terminology and acknowledges uncertainties/limitations of the science discussed.",
+              "score_anchors": {
+                "1": "Scientific terminology misused; ignores uncertainties or presents science as absolute fact.",
+                "3": "Mostly appropriate terminology but may overstate certainty or miss some limitations.",
+                "5": "Appropriate scientific terminology and balanced discussion of uncertainties/limitations."
+              }
+            }
+          }
+        },
+        "business": {
+          "dimensions": {
+            "coverage": {
+              "definition": "Covers the core business concepts, frameworks, and practical applications emphasized in the lecture.",
+              "score_anchors": {
+                "1": "Misses core business concepts/frameworks; major content absent or wrong.",
+                "3": "Includes main concepts but misses important frameworks/applications or is superficial.",
+                "5": "Captures core business concepts, frameworks, and applications as emphasized on slides."
+              }
+            },
+            "faithfulness": {
+              "definition": "Accurately represents business concepts, relationships, and implications without distortion or fabrication.",
+              "score_anchors": {
+                "1": "Major business concept inaccuracies or fabrications; relationships between concepts are wrong.",
+                "3": "Mostly accurate but with some distortions or missing relationships between key business concepts.",
+                "5": "Accurate representation of business concepts and relationships as presented in the lecture."
+              }
+            },
+            "organization": {
+              "definition": "Presents business reasoning (problem → analysis → solution/recommendation) in a logical sequence that matches the lecture.",
+              "score_anchors": {
+                "1": "Disorganized; business reasoning chain is incoherent or contradicts the lecture.",
+                "3": "Some logical flow, but gaps in business reasoning or sequencing issues.",
+                "5": "Clear business reasoning flow that matches the lecture's problem-analysis-solution structure."
+              }
+            },
+            "clarity": {
+              "definition": "Explains business concepts/applications with clear connections to real-world implications and avoids oversimplification.",
+              "score_anchors": {
+                "1": "Business concepts oversimplified to inaccuracy or confusing; no real-world connections.",
+                "3": "Understandable but some concepts oversimplified or real-world implications unclear.",
+                "5": "Clear business explanations with appropriate complexity and strong real-world connections."
+              }
+            },
+            "style": {
+              "definition": "Uses appropriate business terminology and acknowledges practical constraints/limitations of business strategies.",
+              "score_anchors": {
+                "1": "Business terminology misused; ignores practical constraints or presents strategies as universally applicable.",
+                "3": "Mostly appropriate terminology but may overstate effectiveness or miss practical limitations.",
+                "5": "Appropriate business terminology and realistic discussion of constraints/limitations."
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return full_schema["domains"].get(domain, full_schema["domains"]["humanities"])

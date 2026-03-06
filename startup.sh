@@ -56,6 +56,7 @@ echo "Creating conda environment: $PROJECT_NAME"
 echo "----------------------------------------------"
 
 # Remove old env if it exists
+recreate_env=false
 if conda env list | grep -q "$PROJECT_NAME"; then
     echo "⚠ Environment '$PROJECT_NAME' already exists."
     read -p "   Delete and recreate it? (y/n): " yn
@@ -63,15 +64,22 @@ if conda env list | grep -q "$PROJECT_NAME"; then
         [Yy]* ) 
             echo "   Removing old environment..."
             conda env remove -n "$PROJECT_NAME" --yes
+            recreate_env=true
             ;;
         * ) 
             echo "   Keeping existing environment."
             ;;
     esac
+else
+    recreate_env=true
 fi
 
-echo "🌱 Creating (or updating) environment..."
-conda env create -f "$ENV_FILE"
+if [ "$recreate_env" = true ]; then
+    echo "🌱 Creating (or updating) environment..."
+    conda env create -f "$ENV_FILE"
+else
+    echo "🌱 Skipping environment creation; using existing '$PROJECT_NAME'."
+fi
 
 echo "✔ Environment created successfully."
 

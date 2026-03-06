@@ -53,13 +53,14 @@ Write-Host "✔ Found environment.yml"
 $envName = "dsc180a-eval"
 
 Write-Host "`n----------------------------------------------"
-Write-Host "Creating Conda environment: $envName"
+Write-Host "Conda environment: $envName"
 Write-Host "----------------------------------------------"
 
 # ------------------------------------------------------------
 # Remove existing environment?
 # ------------------------------------------------------------
 $existingEnv = conda env list | Select-String $envName
+$recreate = $false
 
 if ($existingEnv) {
     Write-Host "⚠ Environment '$envName' already exists."
@@ -68,17 +69,25 @@ if ($existingEnv) {
     if ($resp -eq "y") {
         Write-Host "   Removing old environment..."
         conda env remove -n $envName --yes
+        $recreate = $true
     }
     else {
         Write-Host "   Keeping existing environment."
     }
 }
+else {
+    $recreate = $true
+}
 
 # ------------------------------------------------------------
-# Create environment
+# Create environment if needed
 # ------------------------------------------------------------
-Write-Host "`n🌱 Creating environment from environment.yml..."
-conda env create -f $envFile
+if ($recreate) {
+    Write-Host "`n🌱 Creating environment from environment.yml..."
+    conda env create -f $envFile
+} else {
+    Write-Host "🌱 Skipping creation; using existing '$envName'."
+}
 
 Write-Host "✔ Environment created successfully."
 

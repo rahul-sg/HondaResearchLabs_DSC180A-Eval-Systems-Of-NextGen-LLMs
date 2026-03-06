@@ -1,0 +1,27 @@
+{
+  "wins": {
+    "gpt5_S0": 0,
+    "gpt5_refined": 1
+  },
+  "win_rate": {
+    "gpt5_S0": 0.0,
+    "gpt5_refined": 1.0
+  },
+  "matches": [
+    {
+      "A": "gpt5_S0",
+      "B": "gpt5_refined",
+      "winner": "gpt5_refined",
+      "wins_detail": {
+        "A": 0,
+        "B": 5
+      },
+      "reasons_sample": [
+        "Summary B provides a more detailed and precise exposition of the lecture, correctly distinguishing correlated and non-correlated subqueries, explaining the effect of outer joins on equivalence, and clearly connecting quantifiers to unnesting and monotonicity. It reflects more of the nuanced examples shown in the slides and highlights key SQL semantics, making it more useful for students seeking conceptual clarity. Summary A is accurate but less specific and omits important distinctions about when unnesting changes query meaning.",
+        "Summary\u202fB is more precise and organized for students. It explicitly connects each SQL feature (SELECT, FROM, WHERE subqueries) to specific examples, clearly explains correlated versus non\u2011correlated subqueries, and discusses subtle issues such as LEFT\u202fOUTER\u202fJOIN equivalence. It also gives stronger technical definitions for existential and universal quantifiers and ties them directly to SQL constructs. The closing explanation of monotone versus non\u2011monotone queries is accurate and pedagogically clear. Summary\u202fA is comprehensive but more generic and less tied to lecture details, offering weaker linkage between concepts and examples."
+      ]
+    }
+  ],
+  "result_summary": "This lecture expanded on **nested SQL queries (subqueries)**\u2014queries embedded within others\u2014and analyzed when they can or cannot be **unnested** into equivalent join forms. Building on prior SQL concepts (projections, selections, joins, aggregates, grouping, and updates), the lecture emphasized that subqueries can appear in the **SELECT**, **FROM**, or **WHERE** clause and may return either single values or full relations. Though nested queries help express conditions that rely on computed tables, the **rule of thumb** is to avoid them when an equivalent join or grouped query can achieve the same result.\n\nIn the **SELECT clause**, examples showed *correlated subqueries* used to retrieve information such as movie genres, actor counts, or average salaries. These were compared to equivalent join-based expressions through **subquery unnesting**, which often improves efficiency. However, Slide\u202f10 demonstrated that equivalence breaks under **LEFT\u202fOUTER\u202fJOIN** semantics, since outer joins preserve unmatched rows, altering query meaning.\n\nSubqueries in the **FROM clause** served as **derived tables** or **inline views**. The lecture illustrated refactoring a query into steps\u2014first filtering movies with rating\u202f>\u202f8 and then those\u202f<\u202f9\u2014using either subquery aliasing or a **common table expression (CTE)**. These are **non\u2011correlated subqueries**, and while the example could be unnested equivalently, this property depends on the specific case rather than being universally safe.\n\nIn the **WHERE clause**, subqueries expressed **quantifiers**. **EXISTS** and **IN** implement **existential quantifiers**, true when matching tuples exist, and are equivalent to join forms. **Universal quantifiers** (\u201cfor all\u201d) are more complex. The lecture constructed such logic stepwise\u2014for example, finding actors who acted *only in Action movies* by excluding those who appeared in any non\u2011Action movie. Similarly, queries retrieving movies where **all actors earned\u202f>\u202f$100K** showed use of `<\u202fALL` (not supported in SQLite) and an equivalent **NOT\u202fEXISTS** version expressing the same condition.\n\nThe final section introduced **monotone vs. non\u2011monotone** queries. Using nested\u2011loop semantics, simple **SELECT\u2011FROM\u2011WHERE** queries without aggregates are **monotone**: adding tuples cannot remove existing results, so their subqueries can be safely unnested. In contrast, queries involving **negation**, **universal quantifiers**, or **aggregates** are **non\u2011monotone**, meaning unnesting would change their output. These properties explain why existential subqueries behave predictably under joins, while universal or negated ones resist unnesting.\n\n*(Word count:\u202f398)*",
+  "overall_winner": "gpt5_refined"
+}

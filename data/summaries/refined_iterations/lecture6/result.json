@@ -1,36 +1,130 @@
 {
-  "refined_summary": "This lecture examined **nested SQL queries (subqueries)**\u2014their types, uses, and links to logical quantifiers and query monotonicity. Building on prior SQL topics (projections, selections, joins, grouping, and aggregates), it defined a *subquery* as a query embedded within another. Subqueries can appear in **SELECT**, **FROM**, or **WHERE** clauses and may return either a single value or a relation. The key guideline was to **avoid nested queries when possible**, because they are often less efficient and can usually be replaced through **subquery unnesting**, transforming them into equivalent join or grouping forms.\n\n**Subqueries in the SELECT clause** demonstrated correlated subqueries that compute derived attributes\u2014for example, retrieving a movie\u2019s genre or the average actor salary. However, these expressions can often be unnested into joins. The slides compared such pairs of queries, highlighting that while they often yield identical results, differences may arise depending on conditions like outer joins or filters.\n\n**Subqueries in the FROM clause** showed how subqueries or *common table expressions (CTEs)* can define intermediate relations to simplify multi-step filtering, as in computing ratings between two thresholds. This *subquery refactoring* aids readability but can still be flattened through **unnesting** into a single SELECT\u2013FROM\u2013WHERE statement.\n\n**Subqueries in the WHERE clause** introduced logical **quantifiers**.  \n\u2013 **Existential quantifiers** (*EXISTS*, *IN*) test whether some tuple satisfies a condition (e.g., an actor appearing in any Sci\u2011Fi movie). These correspond to \u201cthere exists\u201d logic and can typically be converted into equivalent join queries.  \n\u2013 **Universal quantifiers** (\u201cfor all\u201d) are more complex because SQL lacks direct syntax. The slides illustrated deriving them indirectly\u2014such as finding actors who acted **only** in Action movies or movies whose actors all earn over \\$100K. These can be expressed using *NOT IN*, *NOT EXISTS*, or *> ALL* (though the latter is unsupported in SQLite). Such patterns show that universal quantifiers require multi-step reasoning and cannot always be easily unnested.\n\nThe lecture concluded with the concept of **query monotonicity**. A query is *monotone* if adding tuples to input tables never removes results. Standard `SELECT\u2013FROM\u2013WHERE` queries without aggregates, negation, or subqueries are monotone, meaning their **unnesting** preserves semantics. Queries involving universal quantifiers, negation, or aggregates are **non\u2011monotone**, so their nested structures cannot be safely unnested. Understanding which forms are monotone explains why some nested queries can be optimized while others must remain nested.",
+  "refined_summary": "This lecture expanded on **nested SQL queries (subqueries)**\u2014queries embedded within others\u2014and analyzed when they can or cannot be **unnested** into equivalent join forms. Building on prior SQL concepts (projections, selections, joins, aggregates, grouping, and updates), the lecture emphasized that subqueries can appear in the **SELECT**, **FROM**, or **WHERE** clause and may return either single values or full relations. Though nested queries help express conditions that rely on computed tables, the **rule of thumb** is to avoid them when an equivalent join or grouped query can achieve the same result.\n\nIn the **SELECT clause**, examples showed *correlated subqueries* used to retrieve information such as movie genres, actor counts, or average salaries. These were compared to equivalent join-based expressions through **subquery unnesting**, which often improves efficiency. However, Slide\u202f10 demonstrated that equivalence breaks under **LEFT\u202fOUTER\u202fJOIN** semantics, since outer joins preserve unmatched rows, altering query meaning.\n\nSubqueries in the **FROM clause** served as **derived tables** or **inline views**. The lecture illustrated refactoring a query into steps\u2014first filtering movies with rating\u202f>\u202f8 and then those\u202f<\u202f9\u2014using either subquery aliasing or a **common table expression (CTE)**. These are **non\u2011correlated subqueries**, and while the example could be unnested equivalently, this property depends on the specific case rather than being universally safe.\n\nIn the **WHERE clause**, subqueries expressed **quantifiers**. **EXISTS** and **IN** implement **existential quantifiers**, true when matching tuples exist, and are equivalent to join forms. **Universal quantifiers** (\u201cfor all\u201d) are more complex. The lecture constructed such logic stepwise\u2014for example, finding actors who acted *only in Action movies* by excluding those who appeared in any non\u2011Action movie. Similarly, queries retrieving movies where **all actors earned\u202f>\u202f$100K** showed use of `<\u202fALL` (not supported in SQLite) and an equivalent **NOT\u202fEXISTS** version expressing the same condition.\n\nThe final section introduced **monotone vs. non\u2011monotone** queries. Using nested\u2011loop semantics, simple **SELECT\u2011FROM\u2011WHERE** queries without aggregates are **monotone**: adding tuples cannot remove existing results, so their subqueries can be safely unnested. In contrast, queries involving **negation**, **universal quantifiers**, or **aggregates** are **non\u2011monotone**, meaning unnesting would change their output. These properties explain why existential subqueries behave predictably under joins, while universal or negated ones resist unnesting.\n\n*(Word count:\u202f398)*",
   "signals": {
-    "length_error": 0.25333333333333335,
-    "section_coverage_pct": 0.9090909090909091,
-    "glossary_recall": 0.5483870967741935,
-    "suspected_hallucination_rate": 0.6666666666666666
+    "length_error": 0.03142857142857143,
+    "section_coverage_pct": 1.0,
+    "glossary_recall": 0.6451612903225806,
+    "suspected_hallucination_rate": 0.6,
+    "meteor": 0.39897413208802196
   },
   "rubric": {
     "coverage": 5,
-    "faithfulness": 5,
+    "faithfulness": 4,
     "organization": 5,
-    "clarity": 5,
+    "clarity": 4,
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "Covers all three main types of subqueries (SELECT, FROM, WHERE) and the final link to monotonicity.",
-      "Explains faithfully how existential and universal quantifiers relate to SQL constructs like EXISTS, IN, NOT EXISTS, and > ALL."
+      "The summary captures all three main contexts for subqueries\u2014SELECT, FROM, and WHERE\u2014matching slide organization and noting examples such as average salary and actor count subqueries from slides 7\u20139.",
+      "It correctly explains the theoretical connection between monotonicity and unnesting shown later in the lecture (slides 33\u201334)."
     ],
     "two_issues": [
-      "Could briefly mention that the slides explicitly distinguished correlated vs. uncorrelated subqueries.",
-      "Style is somewhat dense and academic, which may be harder for beginners to digest."
+      "It slightly overgeneralizes by saying 'this property depends on the specific case rather than being universally safe' for FROM-clause subqueries, while slides 11\u201312 clearly showed those examples *are* safely unnested, not left as uncertain cases.",
+      "The summary omits explicit mention that slide\u202f17\u201318 emphasized SQL\u2019s lack of native support for universal quantifiers, which is an important limitation discussed before constructing the NOT\u202fIN workaround."
     ],
     "faithfulness_evidence": [
-      "\"Rule of thumb: avoid nested queries when possible \u2013 But sometimes it\u2019s impossible, as we will see\"",
-      "\"If a query is non-monotone, it implies that a nested query can NOT be unnested\""
-    ]
+      "Slide\u202f3: 'Rule of thumb: avoid nested queries when possible\u202f\u2013\u202fBut sometimes it\u2019s impossible, as we will see' supports the summary\u2019s note about avoiding nested queries.",
+      "Slide\u202f34: 'If a query is non\u2011monotone, it implies that a nested query can NOT be unnested' aligns with the closing discussion in the summary."
+    ],
+    "detected_domain": "math"
   },
   "agreement": {
     "agreement_1to5": 5,
     "missing_key_points": [],
     "added_inaccuracies": []
   },
-  "final_score_0to1": 0.9833333333333334,
-  "lecture_title": "lecture6"
+  "comprehensive_scoring": {
+    "final_score": 0.7997948264176044,
+    "layer_scores": {
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 1.0,
+      "semantic_similarity": 0.39897413208802196
+    },
+    "layer_weights": {
+      "domain_rubric": 0.6,
+      "nlp_agreement": 0.2,
+      "semantic_similarity": 0.2
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "math",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.7997948264176044,
+    "manual_weighted_score": 0.6882231697665645,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.7663233294222924,
+    "hallucination_rate": 0.6,
+    "hallucination_damping_factor": 0.91,
+    "scorer_disagreement_delta": 0.11157165665103985
+  },
+  "final_score_0to1": 0.6973542297742861,
+  "lecture_title": "lecture6",
+  "refinement_metadata": {
+    "iterations_completed": 4,
+    "final_avg_score": 4.5200000000000005,
+    "final_word_count": 361,
+    "stopping_reason": "pass: high quality plateau - quality 0.748 >= 0.740; quality span 0.0045 <= 0.0200",
+    "lever_history": [
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.3,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.2,
+        "organization": 4.7,
+        "clarity": 4.3,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.6
+      }
+    ],
+    "quality_history": [
+      0.6994416862470045,
+      0.7436604386164576,
+      0.7455453465206157,
+      0.7481972920400201
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.5,
+      "faithfulness": 4.3,
+      "organization": 4.7,
+      "clarity": 4.5,
+      "style": 4.6
+    },
+    "final_agreement": 0.39897413208802196,
+    "final_quality_score": 0.7481972920400201
+  }
 }

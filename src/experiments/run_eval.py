@@ -27,8 +27,41 @@ def main():
     else:
         force_regen = "no"   # default
 
+    if len(sys.argv) > 3:
+        use_lever_based = sys.argv[3].strip().lower() != "no"
+    else:
+        use_lever_based = True  # default: use lever-based refinement
+
+    # optional stopping parameters: avg_score, change_thresh, max_iters, min_iters
+    if len(sys.argv) > 4:
+        min_avg_score = float(sys.argv[4])
+    else:
+        min_avg_score = 4.0
+
+    if len(sys.argv) > 5:
+        min_change_threshold = float(sys.argv[5])
+    else:
+        min_change_threshold = 0.03
+
+    if len(sys.argv) > 6:
+        max_iterations = int(sys.argv[6])
+    else:
+        max_iterations = 12
+
+    if len(sys.argv) > 7:
+        min_iterations = int(sys.argv[7])
+    else:
+        min_iterations = 4
+
+    if len(sys.argv) > 8:
+        min_agreement = float(sys.argv[8])
+    else:
+        min_agreement = 0.7
+
     print(f"\nLecture selected: {lecture_id}")
     print(f"Force regenerate S0: {force_regen}")
+    print(f"Lever-based refinement: {use_lever_based}")
+    print(f"Stopping params -> min_avg_score: {min_avg_score}, min_change_threshold: {min_change_threshold}, max_iters: {max_iterations}, min_iters: {min_iterations}, min_agreement: {min_agreement}")
 
     #paths
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"
@@ -108,7 +141,7 @@ def main():
         max_completion_tokens=800,
     )
 
-    #Evaluate
+    #Evaluate with lever-based or legacy refinement
     result = evaluate_summary(
         slide_path=SLIDES_PATH,
         initial_summary=initial_summary,
@@ -116,8 +149,13 @@ def main():
         cfg_judge=cfg_judge,
         cfg_refine=cfg_refine,
         out_dir=str(OUT_DIR),
-        target_words=300,
-        refine_iters=3,
+        target_words=350,
+        use_lever_based=use_lever_based,
+        min_avg_score=min_avg_score,  # Stop when avg rubric reaches threshold
+        min_change_threshold=min_change_threshold,  # convergence threshold
+        max_iterations=max_iterations,  # Safety limit
+        min_iterations=min_iterations,
+        min_agreement=min_agreement,
     )
 
     print("\nRunning pairwise comparison (GPT-5 S0 vs Refined)...")
@@ -145,16 +183,41 @@ def main():
 
     #print final results
     print("\n===== FINAL EVALUATION RESULT =====")
-    print("Score (0–1):", result["final_score_0to1"])
+    print("Final Score (0–1):", result["final_score_0to1"])
+
+    # Show comprehensive scoring breakdown
+    if "comprehensive_scoring" in result:
+        comp = result["comprehensive_scoring"]
+        print("\n--- COMPREHENSIVE SCORING BREAKDOWN ---")
+        print(f"Domain Detected: {comp.get('detected_domain', 'unknown').upper()}")
+        print(f"Domain-Aware Rubric Score: {comp['layer_scores']['domain_rubric']:.3f}")
+        print(f"NLP Agreement Score: {comp['layer_scores']['nlp_agreement']:.3f}")
+        print(f"Semantic Similarity (METEOR): {comp['layer_scores']['semantic_similarity']:.3f}")
+        print(f"Layer Weights: Domain {comp['layer_weights']['domain_rubric']:.1f}, NLP {comp['layer_weights']['nlp_agreement']:.1f}, Semantic {comp['layer_weights']['semantic_similarity']:.1f}")
+        print("Rubric Dimensions:", comp["rubric_breakdown"])
+
     try:
         print("\nRefined Summary:\n", result["refined_summary"])
     except UnicodeEncodeError:
         print("\nRefined Summary: [Unicode content that cannot be displayed]")
     print("\nSignals:", result["signals"])
-    print("\nRubric:", result["rubric"])
-    print("\nAgreement:", result["agreement"])
+    print("\nDetailed Rubric:", result["rubric"])
+    print("\nAgreement Analysis:", result["agreement"])
+
+    # Print refinement metadata
+    if "refinement_metadata" in result:
+        metadata = result["refinement_metadata"]
+        print("\n===== REFINEMENT METADATA =====")
+        print(f"Iterations completed: {metadata.get('iterations_completed')}")
+        print(f"Final avg rubric score: {metadata.get('final_avg_score', 'N/A'):.2f}/5")
+        print(f"Final word count: {metadata.get('final_word_count', 'N/A')}")
+        if 'final_agreement' in metadata:
+            print(f"Final agreement (meteor): {metadata.get('final_agreement'):.3f}")
+        print(f"Stopping reason: {metadata.get('stopping_reason', 'N/A')}")
+
     print("\nOutputs saved to:", OUT_DIR)
 
 
 if __name__ == "__main__":
     main()
+
