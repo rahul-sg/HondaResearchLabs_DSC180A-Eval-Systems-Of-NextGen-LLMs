@@ -135,7 +135,7 @@ source startup.sh
 
 **Windows (PowerShell)**
 ```powershell
-powershell -ExecutionPolicy Bypass -File startup.ps1
+. .\startup.ps1
 ```
 
 ### Option B: Manual Setup
