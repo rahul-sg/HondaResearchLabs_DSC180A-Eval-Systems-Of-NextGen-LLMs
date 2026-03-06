@@ -26,6 +26,8 @@ echo "OPENAI_API_KEY=your_key_here" > .env
 python -m src.experiments.run_eval lecture1
 ```
 
+No human reference file is required for the default pipeline mode.
+
 Then review generated artifacts in:
 
 ```
@@ -63,8 +65,11 @@ This project uses packages listed in `environment.yml` and `requirements.txt`, i
 
 ```
 HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
+├── assets/
+│   ├── 99p-logo.png
+│   └── hdsi-white.png
 ├── data/
-│   ├── references/                    # Human-written reference summaries
+│   ├── references/                    # Optional legacy benchmark references
 │   ├── slides/                        # Lecture PDFs
 │   └── summaries/
 │       ├── bare_bones_experiment/     # Judge-only experiment outputs
@@ -77,7 +82,10 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │               ├── result.json
 │               └── pairwise_s0_vs_refined.json
 ├── example_run/
-│   └── lecture1..lecture7/            # Sample run artifacts for demo use
+│   ├── lecture1/
+│   ├── lecture2/
+│   ├── ...
+│   └── lecture7/                      # Sample run artifacts for demo use
 ├── dev_notes/                         # Development notes and archived test scripts
 ├── src/
 │   ├── evaluation/
@@ -113,7 +121,7 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 
 ## Paper
 
-Our Quarter 1 Report/Paper and Quarter 2 Project Proposal are listed under the `papers/Q1/` and `papers/Q2/` folders.
+Our Quarter 1 report and Quarter 2 proposal are listed under `papers/Q1/` and `papers/Q2/`.
 
 ## Environment Setup
 
@@ -174,6 +182,8 @@ Parameters:
 - `max_iterations`: optional int, default `12`
 - `min_iterations`: optional int, default `4`
 - `min_agreement`: optional float, default `0.7` (**legacy/compat parameter**)
+
+`run_eval` works without `data/references/lectureN_reference.txt` in default reference-free mode.
 
 Outputs are written to:
 
@@ -268,6 +278,8 @@ refinement_metadata
 final_score_0to1
 lecture_title
 ```
+
+`agreement` is retained for compatibility and is marked unused in reference-free mode.
 
 Notable metadata fields include stopping reason, iteration history, lever history, and quality trajectory.
 
