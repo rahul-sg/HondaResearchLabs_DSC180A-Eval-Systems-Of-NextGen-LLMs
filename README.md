@@ -418,6 +418,6 @@ This project was developed for the UC San Diego DSC180 Capstone (2025–2026 aca
 *Industry Partners - Honda Research Labs and 99P Labs*
 
 <p>
-    <img src="assets/99p-logo.png" alt="99P Labs Logo" width="130" />
+    <img src="assets/99p-logo.png" alt="99P Labs Logo" width="180" />
     <img src="assets/hdsi-white.png" alt="HDSI Logo" width="240" style="margin-left: 24px; margin-top: -14px;" />
 </p>
