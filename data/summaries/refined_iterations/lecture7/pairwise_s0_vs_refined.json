@@ -1,0 +1,27 @@
+{
+  "wins": {
+    "gpt5_S0": 0,
+    "gpt5_refined": 1
+  },
+  "win_rate": {
+    "gpt5_S0": 0.0,
+    "gpt5_refined": 1.0
+  },
+  "matches": [
+    {
+      "A": "gpt5_S0",
+      "B": "gpt5_refined",
+      "winner": "gpt5_refined",
+      "wins_detail": {
+        "A": 0,
+        "B": 5
+      },
+      "reasons_sample": [
+        "Summary B is more effective for students because it integrates conceptual explanations with concrete examples (e.g., accent and dyslexia studies) from the lecture, clarifies how validity threats relate to design decisions, and connects counterbalancing strategies directly to practical use cases. It preserves all major points while maintaining readability and context, making it better for learning and recall. Summary A, though accurate and well-organized, reads more like a generic textbook summary and omits some applied illustrations shown in the slides.",
+        "Summary B is superior because it is clearer, slightly more concise, and includes concrete examples from the lecture (such as the accent comprehension and dyslexia studies) that help students connect abstract concepts to real research. It also explains potential confounds and counterbalancing methods in detail while maintaining readability and structure. Summary A is accurate but more dense and less engaging for learners who would benefit from illustrative context."
+      ]
+    }
+  ],
+  "result_summary": "This lecture introduced **within-subjects designs** as a counterpart to **between-groups designs**. In a between-groups setup, each participant appears in only one condition, so individual differences add nuisance variability that can obscure real effects. A within-subjects design instead measures the same person across all conditions, comparing each participant to their own baseline. Holding participants constant reduces person-related noise, yielding a more powerful test with fewer participants\u2014for example, twenty people can yield twenty data points per condition rather than forty in a between-groups study.\n\nThe lecture described several forms of within-subjects designs: **pretest\u2013posttest designs**, which include pre- and post-measures around an intervention; **repeated-measures designs**, comparing performance across multiple conditions (such as different motion coherence levels); and **longitudinal designs**, following participants over time. These approaches efficiently reduce variability, but they also create specific threats to validity that must be managed.\n\nThe instructor noted that such challenges are not \u201ccatches,\u201d but normal design considerations that require control procedures. **Demand characteristics** arise when participants experience all conditions and infer the study\u2019s purpose. **Carryover effects** occur when exposure to one condition influences later ones, through **fatigue**, **practice**, or broader contextual influences. Additional threats include **history effects** (outside events like exams or world news affecting results), **maturation** (developmental or biological change), and **testing effects** (repeated exposure improving performance). To address these, researchers can include control groups, vary condition order, or use alternate test forms.\n\nEmpirical illustrations grounded these principles. The **accent comprehension study** compared how 4\u2011 and 7\u2011year\u2011olds understood speech in their own accent\u2014a comparison that could test within-person performance under different auditory conditions. The **dyslexia study** tested whether children read better with extra letter spacing, using either a within- or between-subjects structure depending on whether each child saw both text types and orderings.\n\nBecause the sequence of conditions can bias results, **order effects** must be handled through **counterbalancing**. **Complete counterbalancing** includes the ABBA design for two conditions or block randomization for three or more. **Incomplete counterbalancing**\u2014such as random order with rotation or **Latin-square designs**\u2014ensures each condition appears equally often in each position. In cognitive science, researchers may instead **randomly intermix** trials to cancel order effects. Some manipulations, however, cannot be undone, such as drug administration or training. Overall, within-subjects designs offer efficiency and statistical power when issues of order and carryover are properly controlled.  \n\n**(Word count: 398)**",
+  "overall_winner": "gpt5_refined"
+}

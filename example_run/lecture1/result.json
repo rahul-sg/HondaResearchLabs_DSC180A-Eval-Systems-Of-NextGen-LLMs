@@ -1,11 +1,11 @@
 {
-  "refined_summary": "The first week of **Principles of Accounting** establishes the foundational purpose and framework of **financial accounting**, described as the *language of business* that conveys a company\u2019s financial story\u2014its performance, opportunities, and risks\u2014through structured reports. Accounting fulfills two core functions: **recordkeeping**, which involves identifying, measuring, and recording economic events in monetary terms, and **communication**, which provides information to external decision makers through standardized financial statements.\n\nThe lecture introduces the diverse **users of financial information**\u2014including investors, creditors, suppliers, management, boards of directors, employees, customers, and others such as analysts, regulators, and competitors\u2014each relying on accounting data to assess performance, creditworthiness, strategic direction, and overall stability.\n\nFinancial accounting captures three primary business activities: **financing** (transactions with investors and creditors such as issuing stock or obtaining loans), **investing** (acquiring or disposing of resources like buildings, land, and equipment), and **operating** (day-to-day production, promotion, and sales). The outcomes of these activities are summarized in the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**. Together, these statements communicate a company\u2019s financial position, results, and cash flows.\n\nThe **financial reporting process** begins with economic events that are analyzed, recorded, summarized, and reported according to **Generally Accepted Accounting Principles (GAAP)**\u2014the rules governing what, when, and how transactions are reported. The **Securities and Exchange Commission (SEC)** oversees accounting and reporting for publicly traded firms and delegates standard\u2011setting authority to the **Financial Accounting Standards Board (FASB)**, an independent organization. The **International Accounting Standards Board (IASB)** issues similar global standards known as *International Financial Reporting Standards (IFRS)*. **Auditors**, acting as independent evaluators, verify compliance with GAAP and issue one of four opinions\u2014unqualified, unqualified with emphasis, qualified, or adverse\u2014thereby enhancing credibility for decision makers.\n\nA central focus is the **balance sheet**, which reports a company\u2019s financial position at a specific date according to the **accounting equation: Assets = Liabilities + Stockholders\u2019 Equity**. *Assets* are resources expected to benefit future operations, *liabilities* are obligations owed to creditors, and *stockholders\u2019 equity* reflects owners\u2019 residual claims. Sequential examples\u2014from issuing stock and borrowing funds to purchasing equipment, prepaying rent, and buying supplies on account\u2014demonstrate how each transaction upholds the balance in the accounting equation while reflecting real business activity.\n\n**(Word count: 386)**",
+  "refined_summary": "The opening lecture of *Principles of Accounting* introduces financial accounting as both a measurement system and a communication framework\u2014the language of business. Accounting translates a company\u2019s operational activities, successes, and risks into structured financial information used to make informed decisions. Its two essential functions are **recordkeeping**, which identifies, measures, and records economic events in monetary terms, and **communication**, which reports that information externally through standardized financial statements.\n\nFinancial information serves multiple users. **Investors** assess management performance and financial health; **creditors** and **suppliers** evaluate repayment ability and credit terms; **managers** and **boards of directors** gauge operations and strategic direction. Other stakeholders\u2014**employees**, **customers**, **regulators**, and **analysts**\u2014also rely on accounting data to judge a company\u2019s reliability and stability.\n\nFinancial accounting captures three kinds of business activity: **financing** (transactions with investors and creditors, such as stock issuance or loans), **investing** (acquiring or disposing of productive resources like buildings or equipment), and **operating** (day\u2011to\u2011day production, marketing, and sales). These activities culminate in four core financial statements: the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**.\n\nThe reporting process follows **Generally Accepted Accounting Principles (GAAP)**\u2014rules established by the **Financial Accounting Standards Board (FASB)** under the oversight of the **Securities and Exchange Commission (SEC)**, which requires public companies to submit periodic reports: audited annual **10\u2011K** filings, unaudited interim **10\u2011Q** reports, and event\u2011driven **8\u2011K** disclosures. Globally, the **International Accounting Standards Board (IASB)** issues **IFRS** standards. Independent **auditors** enhance credibility by verifying GAAP compliance and issuing opinions\u2014unqualified, unqualified with emphasis, qualified, or adverse\u2014on whether statements are fairly presented.\n\nThe lecture emphasizes the **balance sheet**, which reports a company\u2019s financial position at a specific date using the equation **Assets = Liabilities + Stockholders\u2019 Equity**. **Assets** are resources with future benefits, **liabilities** are obligations to creditors, and **stockholders\u2019 equity** represents owners\u2019 residual claims. Through the *Klein, Inc.* example, students saw how issuing stock, borrowing funds, and making purchases all have **dual effects**\u2014every transaction affects at least two accounts but the equation always remains balanced. This demonstration underscores how financial accounting systematically measures, records, and communicates the results of business decisions.  \n\n(Approx. 383 words)",
   "signals": {
-    "length_error": 0.03142857142857143,
+    "length_error": 0.008571428571428572,
     "section_coverage_pct": 0.7978723404255319,
-    "glossary_recall": 0.65,
-    "suspected_hallucination_rate": 0.14285714285714285,
-    "meteor": 0.3175864195778883
+    "glossary_recall": 0.625,
+    "suspected_hallucination_rate": 0.29411764705882354,
+    "meteor": 0.29143911402770317
   },
   "rubric": {
     "coverage": 4,
@@ -15,37 +15,37 @@
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "Clearly explains the dual role of accounting as 'recordkeeping' and 'communication,' directly reflecting the slide language 'identify, measure, and record economic events' and 'provide information to decision makers.'",
-      "Accurately summarizes the example transactions in the Klein, Inc. segment to illustrate how the accounting equation ('Assets = Liabilities + Stockholders\u2019 Equity') remains balanced."
+      "Captures the dual functions of accounting\u2014recordkeeping and communication\u2014consistent with the slide language ('identify, measure, and record economic events' and 'provide information to decision makers').",
+      "Summarizes the Klein, Inc. example effectively to illustrate the accounting equation and dual\u2011effect principle ('If Total Assets increase then either Liabilities or Stockholders\u2019 Equity MUST increase by the SAME amount')."
     ],
     "two_issues": [
-      "The summary omits course\u2011management details from the syllabus slides (grading composition, exam weighting, participation expectations) that are part of the 'About this class' and 'How to Succeed' business context.",
-      "It does not mention the reporting frequency or filing categories of financial statements (10\u2011K, 10\u2011Q, 8\u2011K) shown on 'Accounting Functions' slide 9, which are important to the business application of financial reporting."
+      "The summary omits several key course\u2011level and administrative details shown in the slides\u2014such as the grading breakdown, quiz schedule, and how participation contributes to success\u2014reducing completeness relative to the lecture\u2019s actual first\u2011week goals.",
+      "It slightly overgeneralizes the role of GAAP and FASB oversight; slides explicitly note that the SEC 'delegates responsibility to FASB' but 'has the power to force changes,' so the student should clarify that the SEC retains ultimate authority rather than implying formal subordination."
     ],
     "faithfulness_evidence": [
-      "Slide phrase: 'Two primary functions \u2013 Recordkeeping of a company\u2019s operations\u2026 Communication \u2013 Provide information to decision makers (external parties)'",
-      "Slide phrase: 'The Accounting Equation\u2026 If Total Assets increase then either Liabilities or Stockholders\u2019 Equity must increase by the same amount.'"
+      "Slide 20: 'Two primary functions: 1. Recordkeeping... 2. Communication... Provide information to decision makers (external parties)'",
+      "Slide 17: 'If Total Assets increase then either Liabilities or Stockholders\u2019 Equity MUST increase by the SAME amount... Each transaction has a dual effect.'"
     ],
     "detected_domain": "business"
   },
   "agreement": {
-    "agreement_1to5": 3,
+    "agreement_1to5": 2,
     "missing_key_points": [
-      "Explanation of why accounting exists due to complexity of economic activity and the need for structured reporting based on judgment and consistent principles",
-      "Detailed linkage among the four financial statements, including how net income connects to retained earnings and equity and how cash flows tie balance sheets together",
-      "Emphasis that the statements form an interconnected system rather than standalone reports"
+      "Did not explain how the four financial statements are interconnected, particularly how net income links income statement, equity statement, and balance sheet.",
+      "Omitted explanation of how the statement of cash flows reconciles changes in cash through operating, investing, and financing activities.",
+      "Did not mention the lecture\u2019s focus on conceptual understanding before mechanical details."
     ],
     "added_inaccuracies": [
-      "Introduction of topics like GAAP, SEC, FASB, IASB, IFRS, and audit opinions not covered in the reference week",
-      "Inclusion of extensive list of external users and business activity categories not mentioned in the reference material"
+      "Added detailed content about GAAP, FASB, SEC filings, IFRS, and audit opinions that were not referenced in the original lecture.",
+      "Introduced illustrative example 'Klein, Inc.' and dual effects explanation not found in the reference material."
     ]
   },
   "comprehensive_scoring": {
-    "final_score": 0.6635172839155776,
+    "final_score": 0.6182878228055407,
     "layer_scores": {
       "domain_rubric": 0.8,
-      "nlp_agreement": 0.6,
-      "semantic_similarity": 0.3175864195778883
+      "nlp_agreement": 0.4,
+      "semantic_similarity": 0.29143911402770317
     },
     "layer_weights": {
       "domain_rubric": 0.6,
@@ -69,49 +69,49 @@
     }
   },
   "hybrid_scoring": {
-    "comprehensive_score": 0.6635172839155776,
-    "manual_weighted_score": 0.5326828006333028,
+    "comprehensive_score": 0.6182878228055407,
+    "manual_weighted_score": 0.45524880656465394,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.6242669389308951,
-    "hallucination_rate": 0.14285714285714285,
-    "hallucination_damping_factor": 0.9785714285714285,
-    "scorer_disagreement_delta": 0.13083448328227487
+    "blended_score_pre_damping": 0.5693761179332746,
+    "hallucination_rate": 0.29411764705882354,
+    "hallucination_damping_factor": 0.9558823529411765,
+    "scorer_disagreement_delta": 0.1630390162408868
   },
-  "final_score_0to1": 0.6108897902395188,
+  "final_score_0to1": 0.5442565833185713,
   "lecture_title": "lecture1",
   "refinement_metadata": {
     "iterations_completed": 4,
     "final_avg_score": 4.4,
-    "final_word_count": 361,
-    "stopping_reason": "borderline: moderate quality with stability - quality 0.731 >= 0.680; quality span 0.0108 <= 0.0200; length_error: 0.0029 variance | section_coverage_pct: 0.0291 variance | glossary_recall: 0.0192 variance | suspected_hallucination_rate: 0.0179 variance",
+    "final_word_count": 347,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1889 < 0.0200, recall_improvement -0.0385 < 0.0200, score_gain -0.0289 < 0.0150",
     "lever_history": [
       {
-        "coverage": 4.4,
-        "faithfulness": 4.5,
-        "organization": 4.3,
-        "clarity": 4.2,
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.4,
+        "clarity": 4.3,
         "style": 4.1
       },
       {
         "coverage": 4.6,
         "faithfulness": 4.4,
         "organization": 4.5,
-        "clarity": 4.2,
-        "style": 4.3
-      },
-      {
-        "coverage": 4.5,
-        "faithfulness": 4.4,
-        "organization": 4.6,
         "clarity": 4.3,
-        "style": 4.4
+        "style": 4.2
       },
       {
         "coverage": 4.6,
         "faithfulness": 4.5,
+        "organization": 4.7,
+        "clarity": 4.4,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.6,
         "organization": 4.4,
         "clarity": 4.3,
         "style": 4.2
@@ -119,19 +119,19 @@
     ],
     "quality_history": [
       0.7315331411954533,
-      0.7369798055858546,
-      0.7416898055858546,
-      0.7308530092463743
+      0.7415123983588354,
+      0.7593396722205725,
+      0.7126209271392198
     ],
     "target_words": 350,
     "final_rubric": {
-      "coverage": 4.6,
-      "faithfulness": 4.5,
+      "coverage": 4.5,
+      "faithfulness": 4.6,
       "organization": 4.4,
       "clarity": 4.3,
       "style": 4.2
     },
-    "final_agreement": 0.3175864195778883,
-    "final_quality_score": 0.7308530092463743
+    "final_agreement": 0.29143911402770317,
+    "final_quality_score": 0.7126209271392198
   }
 }

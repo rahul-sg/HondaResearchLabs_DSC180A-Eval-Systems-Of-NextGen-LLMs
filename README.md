@@ -4,13 +4,34 @@
 
 This repository implements an end-to-end pipeline for generating, refining, and evaluating large-language-model (LLM) summaries of university lecture slides.
 
+Our capstone goal is to study how next-generation LLM systems can be evaluated and improved in a way that is reproducible, domain-aware, and practically useful for educational content. Instead of relying on a single metric or fixed iteration schedule, this project combines deterministic signals, LLM rubric judging, pairwise preference testing, and hybrid final scoring to better capture summary quality. The pipeline is designed for research and applied benchmarking: it records full intermediate artifacts, exposes stopping behavior, and supports cross-domain comparison across multiple UCSD lecture datasets.
+
 Given a lecture PDF, the system:
 1. Generates an initial summary (`S0`)
 2. Iteratively refines it with lever-based guidance
 3. Evaluates quality using deterministic signals + LLM judges
 4. Produces reproducible artifacts (`iter_*.txt`, `final.txt`, `result.json`, pairwise outputs)
 
----
+## Quick Start
+
+```bash
+# 1) Create environment
+conda env create -f environment.yml
+conda activate dsc180a-eval
+
+# 2) Set API key
+echo "OPENAI_API_KEY=your_key_here" > .env
+
+# 3) Run one lecture
+python -m src.experiments.run_eval lecture1
+```
+
+Then review generated artifacts in:
+
+```
+data/summaries/refined_iterations/lecture1/
+example_run/lecture1/
+```
 
 ## Key Innovations
 
@@ -19,8 +40,6 @@ Given a lecture PDF, the system:
 - **Hybrid Final Scoring**: combines comprehensive layered score with explicit weighted score
 - **Trend-Aware Stopping**: decision-table stopping (`pass`, `borderline`, `stalled`) with plateau detection
 - **Research-Grade Outputs**: full metadata and intermediate traces for reproducibility
-
----
 
 ## Dependencies
 
@@ -36,8 +55,6 @@ This project uses packages listed in `environment.yml` and `requirements.txt`, i
 - numpy / scipy / scikit-learn / matplotlib
 
 > **NLTK resources:** On first run, the pipeline auto-downloads `punkt`, `punkt_tab`, `omw-1.4`, and `wordnet`. Ensure internet access for the initial execution.
-
----
 
 ## Project Structure
 
@@ -81,19 +98,21 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 └── README.md
 ```
 
----
+## Paper
+
+Our Quarter 1 Report/Paper and Quarter 2 Project Proposal are listed under the `papers/Q1/` and `papers/Q2/` folders.
 
 ## Environment Setup
 
 ### Option A: Start-Up Script (recommended)
 
-#### Mac/Linux (bash)
+**Mac/Linux (bash)**
 ```bash
 chmod +x startup.sh
 source startup.sh
 ```
 
-#### Windows (PowerShell)
+**Windows (PowerShell)**
 ```powershell
 powershell -ExecutionPolicy Bypass -File startup.ps1
 ```
@@ -116,8 +135,6 @@ Deactivate environment:
 ```bash
 conda deactivate
 ```
-
----
 
 ## Running Evaluation
 
@@ -158,8 +175,6 @@ data/summaries/refined_iterations/lecture1/
 ```
 
 `iter_X` count varies depending on stopping behavior.
-
----
 
 ## Current Pipeline (What Happens Internally)
 
@@ -203,14 +218,12 @@ S = 0.7C + 0.3M
 $$
 
 $$
-	ext{final\_score} = S\cdot(1 - 0.15\cdot\text{hallucination})
+S_{final} = S(1 - 0.15h)
 $$
 
 `result.json` also logs both component scores and disagreement diagnostics.
 
----
-
-## Example Sample Run (TA Requirement)
+## Example Sample Run
 
 A complete sample run is provided in:
 
@@ -226,9 +239,7 @@ example_run/lecture1/
     s0_summary.txt
 ```
 
-This directory is intended for quick demonstration and grading verification.
-
----
+This directory is intended for quick demonstration.
 
 ## Result Schema (`result.json`)
 
@@ -248,8 +259,6 @@ lecture_title
 
 Notable metadata fields include stopping reason, iteration history, lever history, and quality trajectory.
 
----
-
 ## Dashboards
 
 Run after generating evaluation outputs.
@@ -268,8 +277,6 @@ streamlit run src/visualization/interactive_dashboard.py
 
 Includes summary trends, rubric visuals, signal diagnostics, agreement metrics, and full-text iteration views.
 
----
-
 ## Provided Dataset Coverage
 
 The repository includes multiple lecture/reference pairs across domains (business, humanities, social sciences, computer science, and psychology) under:
@@ -279,19 +286,71 @@ The repository includes multiple lecture/reference pairs across domains (busines
 - `data/summaries/model_s0/lectureN.txt`
 - `data/summaries/refined_iterations/lectureN/`
 
----
+### Example Test Data
+
+We have provided basic test results within the following domains:
+
+- `data/summaries/refined_iterations/lecture1/` - UCSD MGT 45 (Financial & Managerial Accounting) [Dr. Andreya Pérez Silva] - Week 1 Slides
+- `data/summaries/refined_iterations/lecture2/` - UCSD MGT 45 (Financial & Managerial Accounting) [Dr. Andreya Pérez Silva] - Week 2 Slides
+- `data/summaries/refined_iterations/lecture3/` - UCSD LATI 10 (Reading North by South: Latin American Studies and the US Liberation Movements) [Dr. Amy Kennemore] - Week 3 Slides
+- `data/summaries/refined_iterations/lecture4/` - UCSD ANTH 2 (Human Origins) [Maria Carolina Marchetto, PhD] - Week 2 Slides
+- `data/summaries/refined_iterations/lecture5/` - UCSD EDS/SOCI 117 (Language, Culture, and Education) [Gabrielle Jones, Ph.D.] - Week 2 Wednesday Slides
+- `data/summaries/refined_iterations/lecture6/` - UCSD DSC 100 (Introduction to Data Management) [Babak Salimi] - Week 3 Slides
+- `data/summaries/refined_iterations/lecture7/` - UCSD COGS 14A (Intro to Research Methods) [Sarah C. Creel] - Week 5 Slides
+
+The LLM-generated initial summaries for each test set are stored here:
+
+```
+data/summaries/model_s0/lecture1.txt
+data/summaries/model_s0/lecture2.txt
+data/summaries/model_s0/lecture3.txt
+data/summaries/model_s0/lecture4.txt
+data/summaries/model_s0/lecture5.txt
+data/summaries/model_s0/lecture6.txt
+data/summaries/model_s0/lecture7.txt
+```
+
+And the human-written reference summaries for each test set are stored here:
+
+```
+data/references/lecture1_reference.txt
+data/references/lecture2_reference.txt
+data/references/lecture3_reference.txt
+data/references/lecture4_reference.txt
+data/references/lecture5_reference.txt
+data/references/lecture6_reference.txt
+data/references/lecture7_reference.txt
+```
+
+Note on pipeline evolution: the project originally emphasized human-reference-based comparison more heavily. The current hybrid pipeline has evolved to rely on multi-signal and model-judge evaluation, so references are no longer the sole requirement for assessing quality. Reference files are still included for compatibility, benchmarking continuity, and additional diagnostics (for example, agreement and METEOR when enabled).
 
 ## Adding Your Own Lecture
 
-1. Add `data/slides/lectureN.pdf`
-2. Add `data/references/lectureN_reference.txt` (recommended ~250–300 words)
-3. Run:
+To evaluate a new lecture end-to-end with the current CLI pipeline:
+
+1. Add your slide deck as `data/slides/lectureN.pdf` (for the next available `N`).
+2. Add a reference summary as `data/references/lectureN_reference.txt`.
+    - The hybrid pipeline does not rely only on reference matching, but the current `run_eval` workflow still uses references for agreement/METEOR and richer diagnostics.
+    - A concise, high-quality reference (roughly 250–300 words) is sufficient.
+3. Run the evaluation:
 
 ```bash
 python -m src.experiments.run_eval lectureN
 ```
 
----
+4. Review outputs in:
+
+```
+data/summaries/refined_iterations/lectureN/
+```
+
+5. (Optional) Copy artifacts into:
+
+```
+example_run/lectureN/
+```
+
+for presentation or grading demos.
 
 ## Future Directions
 
@@ -301,21 +360,19 @@ python -m src.experiments.run_eval lectureN
 - Scale to larger lecture corpora and cross-institution studies
 - Support human-in-the-loop editing workflows
 
----
+## Authors
 
-## 👥 Authors
+- Rahul Sengupta
+- Akshay Medidi
+- Zeyu (Edward) Qi
+- Zachary Thomason
 
-#### Rahul Sengupta
-#### Akshay Medidi
-#### Zeyu (Edward) Qi
-#### Zachary Thomason
+## Mentors
 
-## 👥 Mentors
+- Rajeev Chhajer
+- Ryan Lingo
 
-#### Rajeev Chhajer
-#### Ryan Lingo
-
-## 📜 License
+## License
 
 This project was developed for the UC San Diego DSC180 Capstone (2025–2026 academic year).
 
