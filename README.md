@@ -419,5 +419,5 @@ This project was developed for the UC San Diego DSC180 Capstone (2025–2026 aca
 
 <p>
     <img src="assets/99p-logo.png" alt="99P Labs Logo" width="130" />
-    <img src="assets/hdsi-white.png" alt="HDSI Logo" width="240" style="margin-left: 24px; vertical-align: 28px;" />
+    <img src="assets/hdsi-white.png" alt="HDSI Logo" width="240" style="margin-left: 24px; margin-top: -14px;" />
 </p>
