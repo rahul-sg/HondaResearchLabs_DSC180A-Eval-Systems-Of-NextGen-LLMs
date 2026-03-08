@@ -1,20 +1,15 @@
-This lecture strengthened understanding of how financial statements, the accounting equation, and double-entry mechanics integrate within the Principles of Accounting framework. It began by emphasizing that accounting translates complex economic activity into information through judgment and critical thinking. A quick Week 1 refresher reviewed the four interrelated financial statements—balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows—as a communication system reflecting both a company’s position at specific dates and its performance over a fiscal period. The statements connect through retained earnings: revenues and expenses generate net income, which increases or decreases stockholders’ equity and links one balance sheet to the next.
+This Week 2 lecture builds on the financial‑accounting framework introduced earlier by explaining how business activities are translated into financial statements through the double‑entry system. Economic activity is complex and uncertain, so accounting requires both structured methods and professional judgment when recording and interpreting events.  
 
-The session expanded the accounting equation from its basic form,  
-**Assets = Liabilities + Shareholders’ Equity**,  
-to an analytical version that highlights period changes:  
-**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues – Expenses – Dividends)**.  
-This formulation shows how income, losses, and distributions drive equity and maintain balance across financial statements.
+The class began by linking the four financial statements—balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows. The balance sheet reports assets, liabilities, and equity at a point in time, while the other three describe changes over a period that explain movements between two balance‑sheet dates. Net income increases stockholders’ equity, and net loss decreases it, because revenues raise and expenses reduce retained earnings.  
 
-The lecture then detailed double-entry accounting as the system ensuring that every transaction affects at least two accounts and that total debits always equal total credits. Debits increase assets, expenses, and dividends, while credits increase liabilities, contributed capital, and revenues. The T‑account was introduced to visualize these dual effects, with no negative numbers used—only debits and credits that must balance. Stepwise examples illustrated this symmetry:  
-• Borrowing $100,000 from a bank → Debit Cash $100,000; Credit Notes Payable $100,000.  
-• Purchasing equipment for $60,000 cash → Debit Equipment $60,000; Credit Cash $60,000.  
-• Buying inventory for $15,000 on account → Debit Inventory $15,000; Credit Trade Payable $15,000.  
-• Paying a supplier $8,000 reduces both Cash and Trade Payable by that amount.  
-• Prepaying a $600 insurance policy → Debit Prepaid Insurance $600; Credit Cash $600.  
-• Issuing 10,000 shares for $100,000 → Debit Cash $100,000; Credit Common Stock $100,000.  
-Ending balances confirmed across T‑accounts—e.g., Cash $131,400 and Trade Payable $7,000—demonstrated that debits equaled credits and that closing balances become the next period’s beginning amounts, ensuring continuity.
+Slides then unpack how the accounting equation expands step by step. Starting from **Assets = Liabilities + Stockholders’ Equity**, equity is split into **contributed capital** and **retained earnings**. Retained earnings evolve as beginning balance + net income − dividends, showing how performance and distributions affect equity. The final expansion substitutes net income with **revenues − expenses**, yielding  
+**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues − Expenses − Dividends)**.  
+This progression makes explicit how income‑statement activities drive balance‑sheet changes and reinforces that the equation must always balance.  
 
-Finally, the accounting process was summarized in three steps: (1) analyze each transaction, (2) record the debits and credits as journal entries, and (3) post to ledger accounts to determine ending balances. The DEALOR cue—Dividends, Expenses, Assets (Debit); Liabilities, Owners’ Equity, Revenue (Credit)—was reinforced to recall normal account sides. Together, these elements maintain the core equality **Assets = Liabilities + Equity**, the foundation of financial reporting integrity.  
+Double‑entry mechanics implement this balance mathematically. Every economic event has two sides—a give and a take—recorded as debits and credits across at least two accounts. Debits increase assets and decrease liabilities and equity; credits do the opposite. No negative numbers are used because direction is conveyed through debit or credit labeling. Debits must always equal credits, preserving **A = L + SE**.  
 
-(≈398 words)
+Illustrative transactions mirror full slide examples: borrowing $100,000 from a bank, purchasing $60,000 equipment for cash, buying $15,000 inventory on account, paying $8,000 of that payable, paying $600 for prepaid insurance, and issuing $100,000 of common stock. T‑accounts summarize these cumulative effects, producing ending balances such as cash $131,400 and trade payable $7,000. These carry into the balance sheet and become next period’s starting points.  
+
+The lecture concluded with the accounting process and support tools. Transactions are (1) analyzed, (2) recorded as journal entries—listing debits first and credits indented—and (3) posted to T‑accounts within the ledger to compute ending balances. The DEALOR mnemonic (Dividends, Expenses, Assets, Liabilities, Owners’ equity, Revenue) reinforces normal debit or credit orientation. Together, these rules ensure each entry communicates judgment‑based economic reality while keeping **Debits = Credits = A = L + SE**.  
+
+≈400 words

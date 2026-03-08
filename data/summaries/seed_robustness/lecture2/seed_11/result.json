@@ -1,10 +1,10 @@
 {
-  "refined_summary": "This lecture revisits the financial accounting framework from Week\u202f1 and develops the mechanics of **double\u2011entry recordkeeping**. It begins by noting that economic activity is complex, requiring judgment and critical thinking. The four primary financial statements\u2014the **balance sheet**, **income statement**, **statement of stockholders\u2019 equity**, and **statement of cash flows**\u2014work together to communicate how a company\u2019s resources, obligations, and results evolve. The balance sheet reports assets, liabilities, and equity at a point in time, while the income, equity, and cash\u2011flow statements describe performance across a fiscal period. The lecture highlights their interconnection: net income from the income statement increases stockholders\u2019 equity, the equity statement reflects this change, and the cash\u2011flow statement explains variations in cash between consecutive balance\u2011sheet dates.  \n\nThe **accounting equation** expands from its basic form (Assets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity) to identify components of equity\u2014**contributed capital** and **retained earnings**\u2014and to show temporal flow:  \nAssets\u202f=\u202fLiabilities\u202f+\u202fContributed\u202fCapital\u202f+\u202fRetained\u202fEarnings\u202f(beginning\u202f+\u202fRevenues\u202f\u2212\u202fExpenses\u202f\u2212\u202fDividends).  \nThis formulation connects revenues and expenses to net income, which then alters retained earnings and total equity.  \n\n**Double\u2011entry accounting** ensures each economic event affects at least two accounts so that the equation remains balanced. A **debit** increases assets and decreases liabilities or equity, while a **credit** does the opposite. Every transaction must contain at least one debit and one credit, no negative numbers are used, and total debits must equal total credits. Through numerical examples\u2014borrowing\u202f$100\u202f000 from a bank, purchasing\u202f$60\u202f000 of equipment for cash, buying\u202f$15\u202f000 of inventory on account, paying\u202f$8\u202f000 to a supplier, prepaying\u202f$600 for insurance, and issuing\u202f10\u202f000 shares for\u202f$100\u202f000\u2014students trace how these entries flow through T\u2011accounts. Each T\u2011account follows the relationship **BB\u202f+\u202fincreases\u202f\u2212\u202fdecreases\u202f=\u202fEB**, illustrating how ending balances carry forward as beginning balances in the next period.  \n\nThe lecture then introduces **journalization**, demonstrating how transactions are first analyzed, then recorded as journal entries (debits listed first, credits indented), and finally **posted to the ledger** as T\u2011accounts to compute balances. The mnemonic **DEALOR** (Dividends, Expenses, and Assets\u202f\u2192\u202fdebits; Liabilities, Owners\u2019\u202fequity, and Revenue\u202f\u2192\u202fcredits) summarizes account behavior. Applying \u201c**Debits\u202f=\u202fCredits**\u201d throughout preserves the accounting equation\u2019s integrity and ties all financial statements within a coherent reporting framework.  (\u2248395\u202fwords)",
+  "refined_summary": "This lecture builds on the financial accounting framework by showing how the four financial statements connect and how double-entry recording preserves the equality of Assets = Liabilities + Stockholders\u2019 Equity. Accounting is presented as a system for interpreting complex economic activity through judgment and structured communication. The Balance Sheet reports assets, liabilities, and equity at a specific point in time, while the Income Statement, Statement of Stockholders\u2019 Equity, and Statement of Cash Flows cover activity over a fiscal period. Together, they reveal changes between beginning and ending balance sheets: net income increases equity, net loss reduces it, and revenues and expenses drive these changes through retained earnings.\n\nThe accounting equation is expanded to show that Stockholders\u2019 Equity includes contributed capital and retained earnings. Retained earnings evolve across periods as: beginning balance + net income \u2013 dividends, or equivalently, beginning retained earnings + revenues \u2013 expenses \u2013 dividends = ending retained earnings. This structure clarifies how profitability and distributions affect financial position over time.\n\nThe lecture then introduces the double-entry framework used to record transactions. Each economic event has two sides\u2014a give and a take\u2014and affects at least two accounts within the accounting equation. Debits and credits indicate direction: debits increase assets (and decrease liabilities or equity), while credits increase liabilities and equity (and decrease assets). All transactions must include at least one debit and one credit, with debits equaling credits and no negative numbers used. Sequential examples\u2014borrowing funds, purchasing equipment or inventory, paying suppliers, prepaying insurance, and issuing stock\u2014illustrate how entries update T\u2011accounts. The general form \u201cBeginning Balance + increases \u2013 decreases = Ending Balance\u201d determines each account\u2019s ending value, which appears on the balance sheet and becomes the next period\u2019s beginning balance, maintaining continuity between cycles.\n\nSlides introduce the \u201cSuper\u202fT\u2011account,\u201d aligning all account categories\u2014Assets, Liabilities, Contributed Capital, Retained Earnings, Revenues, Expenses, and Dividends\u2014on one framework to display their debit (Dr) and credit (Cr) orientations. The mnemonic DEALOR (Dividends, Expenses, Assets = normal Debit; Liabilities, Owners\u2019 Equity, Revenues = normal Credit) summarizes these relationships. Later slides show how to record journal entries: list debit accounts and amounts first, indent and list credit accounts second, and ensure total debits equal total credits. The lecture concludes with the accounting process: analyze transactions, record them in journals, post to T\u2011accounts, and confirm that Debits\u202f=\u202fCredits maintains the fundamental equation A\u202f=\u202fL\u202f+\u202fSE.\n\n*(397\u202fwords)*",
   "signals": {
-    "length_error": 0.08,
-    "section_coverage_pct": 0.9649122807017544,
-    "glossary_recall": 0.5952380952380952,
-    "suspected_hallucination_rate": 0.125
+    "length_error": 0.12857142857142856,
+    "section_coverage_pct": 0.8421052631578947,
+    "glossary_recall": 0.6190476190476191,
+    "suspected_hallucination_rate": 0.2222222222222222
   },
   "rubric": {
     "coverage": 5,
@@ -14,16 +14,16 @@
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "Comprehensively connects double-entry mechanics with the accounting equation and financial statement linkages, reflecting the lecture\u2019s structure across slides 6\u201320 and 5\u201311.",
-      "Effectively summarizes applied transaction examples (bank loan, equipment purchase, prepaid insurance, etc.) which align with slides 20\u201326 and reinforces how ending balances roll into the next period."
+      "The summary clearly captures the sequential development from the financial statement linkages to the logic of double-entry accounting, closely matching the lecture\u2019s progression from Slides 6\u20138 through Slides 10\u201311 and then into transaction analysis.",
+      "It accurately conveys how debits and credits maintain balance in the accounting equation and includes domain-appropriate terms such as 'Super\u202fT\u2011account' and the mnemonic 'DEALOR', which directly appear in Slides 11\u201312."
     ],
     "two_issues": [
-      "The summary omits explicit reference to the transition from T-accounts to journal entries (slides 3-1 to 3-10) as a key procedural stage in the accounting process.",
-      "It slightly overgeneralizes the \u2018judgment and critical thinking\u2019 aspect from slide\u202f4 without clarifying that this comment framed the importance of professional discretion in recording economic activity, not a substantive methodological focus."
+      "The summary omits mention of how journal entries transition into ledger postings with explicit slide sequencing (Slides 3\u201110 through 3\u201111), which is part of the stated learning process 'Analyze \u2192 Record \u2192 Post'.",
+      "It slightly over-interprets accounting as 'a system for interpreting complex economic activity through judgment and structured communication'; while Slides 4 and 5 mention judgment and communication, they do not frame accounting as interpretive in this narrative sense, introducing a minor inference beyond lecture evidence."
     ],
     "faithfulness_evidence": [
-      "Slide\u202f11: \u2018Net Income\u202f=\u202f\u2191SE; Net Loss\u202f=\u202f\u2193SE\u2019 confirms the summary\u2019s correct depiction of links among statements.",
-      "Slide\u202f15: \u2018Every transaction will affect at least one of these classes: A,\u202fL,\u202for\u202fSE\u2026The two sides of a transaction must balance\u2019 supports the summary\u2019s emphasis on debit\u2011credit parity."
+      "Slide 15: 'Every economic event has two sides, a give and a take...The two sides of a transaction must balance.'",
+      "Slide 11 (Key Takeaways): 'Debits = credits maintains the balance sheet equation, A = L + SE.'"
     ],
     "detected_domain": "business"
   },
@@ -65,12 +65,12 @@
   },
   "hybrid_scoring": {
     "comprehensive_score": 0.8666666666666667,
-    "manual_weighted_score": 0.8863157894736843,
+    "manual_weighted_score": 0.8617543859649123,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.872561403508772,
+    "blended_score_pre_damping": 0.8651929824561404,
     "hallucination_policy": {
       "scoring_policy": "tuned",
       "damping_alpha": 0.05,
@@ -80,22 +80,22 @@
       "min_damping_factor": 0.75,
       "max_damping_factor": 1.0
     },
-    "hallucination_rate": 0.125,
-    "raw_damping_factor": 0.9940625,
-    "hallucination_damping_factor": 0.9940625,
-    "scorer_disagreement_delta": 0.019649122807017583,
-    "raw_quality_score": 0.872561403508772,
-    "risk_adjusted_score": 0.8673805701754386
+    "hallucination_rate": 0.2222222222222222,
+    "raw_damping_factor": 0.9894444444444445,
+    "hallucination_damping_factor": 0.9894444444444445,
+    "scorer_disagreement_delta": 0.0049122807017544234,
+    "raw_quality_score": 0.8651929824561404,
+    "risk_adjusted_score": 0.8560603898635478
   },
   "leaderboard_scores": {
-    "raw_quality_score": 0.872561403508772,
-    "risk_adjusted_score": 0.8673805701754386
+    "raw_quality_score": 0.8651929824561404,
+    "risk_adjusted_score": 0.8560603898635478
   },
   "iteration_score_table": [
     {
       "iteration": 1,
-      "avg_rubric_score": 4.34,
-      "quality_score": 0.8466136949152542,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8560216949152544,
       "word_count": 300,
       "change_magnitude": 0.0,
       "hallucination_rate": 0.13333333333333333,
@@ -105,64 +105,64 @@
     {
       "iteration": 2,
       "avg_rubric_score": 4.4,
-      "quality_score": 0.8837237288135594,
-      "word_count": 381,
-      "change_magnitude": 0.5860805860805861,
-      "hallucination_rate": 0.125,
-      "coverage": 0.9830508474576272,
-      "glossary_recall": 0.6458333333333334
+      "quality_score": 0.8450440677966103,
+      "word_count": 370,
+      "change_magnitude": 0.5038759689922481,
+      "hallucination_rate": 0.16666666666666666,
+      "coverage": 0.8135593220338984,
+      "glossary_recall": 0.625
     },
     {
       "iteration": 3,
-      "avg_rubric_score": 4.4,
-      "quality_score": 0.8854508474576273,
-      "word_count": 405,
-      "change_magnitude": 0.44569288389513106,
-      "hallucination_rate": 0.0625,
-      "coverage": 0.9491525423728814,
-      "glossary_recall": 0.5625
+      "avg_rubric_score": 4.3,
+      "quality_score": 0.8318610169491526,
+      "word_count": 407,
+      "change_magnitude": 0.46153846153846156,
+      "hallucination_rate": 0.25,
+      "coverage": 0.8813559322033898,
+      "glossary_recall": 0.6041666666666666
     },
     {
       "iteration": 4,
       "avg_rubric_score": 4.46,
-      "quality_score": 0.8983188983050848,
-      "word_count": 378,
-      "change_magnitude": 0.3921568627450981,
-      "hallucination_rate": 0.0625,
-      "coverage": 0.9661016949152542,
+      "quality_score": 0.85693197740113,
+      "word_count": 395,
+      "change_magnitude": 0.4981684981684982,
+      "hallucination_rate": 0.2222222222222222,
+      "coverage": 0.864406779661017,
       "glossary_recall": 0.5625
     }
   ],
-  "final_score_0to1": 0.8673805701754386,
+  "final_score_0to1": 0.8560603898635478,
   "pairwise_selection_enabled": true,
   "lecture_title": "lecture2",
   "refinement_metadata": {
     "iterations_completed": 4,
     "final_avg_score": 4.46,
-    "final_word_count": 378,
-    "stopping_reason": "pass: high quality plateau - quality 0.898 >= 0.740; quality span 0.0146 <= 0.0200",
+    "final_word_count": 395,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0556 < 0.0200, recall_improvement -0.0625 < 0.0200, score_gain 0.0119 < 0.0150",
     "pairwise_selection_enabled": true,
     "lever_history": [
       {
         "coverage": 4.5,
-        "faithfulness": 4.3,
-        "organization": 4.2,
+        "faithfulness": 4.2,
+        "organization": 4.6,
         "clarity": 4.4,
         "style": 4.3
       },
       {
-        "coverage": 4.6,
+        "coverage": 4.5,
         "faithfulness": 4.3,
-        "organization": 4.5,
-        "clarity": 4.2,
-        "style": 4.4
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.2
       },
       {
-        "coverage": 4.5,
-        "faithfulness": 4.6,
+        "coverage": 4.4,
+        "faithfulness": 4.5,
         "organization": 4.3,
         "clarity": 4.2,
-        "style": 4.4
+        "style": 4.1
       },
       {
         "coverage": 4.5,
@@ -173,16 +173,16 @@
       }
     ],
     "quality_history": [
-      0.8466136949152542,
-      0.8837237288135594,
-      0.8854508474576273,
-      0.8983188983050848
+      0.8560216949152544,
+      0.8450440677966103,
+      0.8318610169491526,
+      0.85693197740113
     ],
     "iteration_metrics": [
       {
         "iteration": 1,
-        "avg_rubric_score": 4.34,
-        "quality_score": 0.8466136949152542,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8560216949152544,
         "word_count": 300,
         "change_magnitude": 0.0,
         "signals": {
@@ -193,8 +193,8 @@
         },
         "rubric": {
           "coverage": 4.5,
-          "faithfulness": 4.3,
-          "organization": 4.2,
+          "faithfulness": 4.2,
+          "organization": 4.6,
           "clarity": 4.4,
           "style": 4.3
         }
@@ -202,54 +202,54 @@
       {
         "iteration": 2,
         "avg_rubric_score": 4.4,
-        "quality_score": 0.8837237288135594,
-        "word_count": 381,
-        "change_magnitude": 0.5860805860805861,
+        "quality_score": 0.8450440677966103,
+        "word_count": 370,
+        "change_magnitude": 0.5038759689922481,
         "signals": {
-          "length_error": 0.08857142857142856,
-          "section_coverage_pct": 0.9830508474576272,
-          "glossary_recall": 0.6458333333333334,
-          "suspected_hallucination_rate": 0.125
+          "length_error": 0.05714285714285714,
+          "section_coverage_pct": 0.8135593220338984,
+          "glossary_recall": 0.625,
+          "suspected_hallucination_rate": 0.16666666666666666
         },
         "rubric": {
-          "coverage": 4.6,
+          "coverage": 4.5,
           "faithfulness": 4.3,
-          "organization": 4.5,
-          "clarity": 4.2,
-          "style": 4.4
+          "organization": 4.6,
+          "clarity": 4.4,
+          "style": 4.2
         }
       },
       {
         "iteration": 3,
-        "avg_rubric_score": 4.4,
-        "quality_score": 0.8854508474576273,
-        "word_count": 405,
-        "change_magnitude": 0.44569288389513106,
+        "avg_rubric_score": 4.3,
+        "quality_score": 0.8318610169491526,
+        "word_count": 407,
+        "change_magnitude": 0.46153846153846156,
         "signals": {
-          "length_error": 0.15714285714285714,
-          "section_coverage_pct": 0.9491525423728814,
-          "glossary_recall": 0.5625,
-          "suspected_hallucination_rate": 0.0625
+          "length_error": 0.16285714285714287,
+          "section_coverage_pct": 0.8813559322033898,
+          "glossary_recall": 0.6041666666666666,
+          "suspected_hallucination_rate": 0.25
         },
         "rubric": {
-          "coverage": 4.5,
-          "faithfulness": 4.6,
+          "coverage": 4.4,
+          "faithfulness": 4.5,
           "organization": 4.3,
           "clarity": 4.2,
-          "style": 4.4
+          "style": 4.1
         }
       },
       {
         "iteration": 4,
         "avg_rubric_score": 4.46,
-        "quality_score": 0.8983188983050848,
-        "word_count": 378,
-        "change_magnitude": 0.3921568627450981,
+        "quality_score": 0.85693197740113,
+        "word_count": 395,
+        "change_magnitude": 0.4981684981684982,
         "signals": {
-          "length_error": 0.08,
-          "section_coverage_pct": 0.9661016949152542,
+          "length_error": 0.12857142857142856,
+          "section_coverage_pct": 0.864406779661017,
           "glossary_recall": 0.5625,
-          "suspected_hallucination_rate": 0.0625
+          "suspected_hallucination_rate": 0.2222222222222222
         },
         "rubric": {
           "coverage": 4.5,
@@ -268,6 +268,6 @@
       "clarity": 4.4,
       "style": 4.5
     },
-    "final_quality_score": 0.8983188983050848
+    "final_quality_score": 0.85693197740113
   }
 }

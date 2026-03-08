@@ -236,6 +236,8 @@ This avoids both premature stopping and endless loops.
 At finalization, the pipeline applies a **best-of-last-k** safeguard (`k=3`)
 and keeps the highest-quality state among the last evaluated iterations,
 which helps reduce end-of-run noise from a single weak final rewrite.
+This selection is recorded in `refinement_metadata.stopping_reason`
+as `final_selection: best_of_last_3 (...)` when triggered.
 
 ### 3) Evaluation Layers
 - **Domain-aware rubric** (coverage, faithfulness, organization, clarity, style)
