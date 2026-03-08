@@ -413,12 +413,6 @@ Optional flags:
 ```bash
 # Disable cohort insights panel
 python -m src.visualization.dashboard lecture1 --no-cohort
-
-# Enable semantic drift embedding plot (slower, API cost)
-python -m src.visualization.dashboard lecture1 --drift
-
-# Render merged single figure (default uses split windows)
-python -m src.visualization.dashboard lecture1 --merged
 ```
 
 ### Interactive Streamlit dashboard
