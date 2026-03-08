@@ -1,0 +1,311 @@
+{
+  "refined_summary": "This lecture introduced **within-subjects designs**, contrasting them with **between-groups designs**. In a between-groups design, each participant is tested in only one condition, so individual differences add nuisance variability (\u201cnoise\u201d) that can obscure real effects. In a within-subjects design, each participant experiences all conditions and is compared to themselves across those conditions. This approach removes much of the participant-related noise, yields a more powerful test, and requires far fewer participants for the same number of data points per condition.\n\nSeveral forms of within-subjects designs were discussed. A **pretest\u2013posttest design** measures participants before and after an intervention. A **repeated-measures design** tests several conditions\u2014such as different stimulus levels\u2014within one session. A **longitudinal design** measures participants over longer time spans to track change. These designs share the advantages of efficiency and reduced variability. The dyslexia **letter-spacing study** illustrated how a within-subjects approach lets each child\u2019s reading performance under spaced and regular text be directly compared. Similarly, the **accent comprehension example** with 4\u2011 and 7\u2011year\u2011olds demonstrated testing multiple conditions within the same participants.\n\nThe lecture emphasized that within-subjects designs are often \u201cjust good experimental design,\u201d but they introduce potential challenges. **Demand characteristics** can arise when participants become aware of the manipulation. **Carryover effects** may occur if one condition influences performance in another\u2014through **fatigue** or **practice**. Broader time-related threats include **history effects** (external events like exams or major news), **maturation effects** (changes due to age or time rather than the intervention), and **testing effects** (improvements from repeated exposure to test materials).\n\n**Order effects** occur when condition sequence itself affects results. These are commonly addressed through **counterbalancing**\u2014varying the order of conditions across participants. In **complete within-subjects designs**, every possible order is used. The **ABBA design** (for two conditions) controls for slow practice effects, while **block randomization** (for three or more conditions) randomizes sequences of all conditions once each. When full counterbalancing is impractical, **incomplete designs** like **random order with rotation** or the **Latin-square design** ensure that each condition appears equally often in each position and follows every other condition equally often. In cognitive science, researchers sometimes intermix trials to cancel out order effects, reserving counterbalancing for tasks where mixing would confuse participants or when each trial is long. Some manipulations\u2014like taking a drug or learning a skill\u2014cannot be undone, setting clear **limits to counterbalancing**.\n\n*(\u2248400 words)*",
+  "signals": {
+    "length_error": 0.08285714285714285,
+    "section_coverage_pct": 1.0,
+    "glossary_recall": 0.4166666666666667,
+    "suspected_hallucination_rate": 0.5217391304347826
+  },
+  "rubric": {
+    "coverage": 5,
+    "faithfulness": 5,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "The summary clearly distinguishes between between-subjects and within-subjects designs using the same conceptual framing as in the slides ('compare each person to themselves'), and accurately outlines benefits such as reduced noise and greater efficiency.",
+      "It faithfully recounts key methodological challenges\u2014demand characteristics, carryover, history, maturation, testing, and order effects\u2014and accurately ties these to counterbalancing solutions like ABBA and Latin-square designs."
+    ],
+    "two_issues": [
+      "The summary slightly overstates generality of the examples: the dyslexia spacing study appears to have been posed as a question about whether it is within or between, but the summary asserts it 'illustrated' a within-subject design, which the slide does not explicitly confirm.",
+      "While the summary mentions 'intermixing trials to cancel out order effects,' it omits the caution that counterbalancing is used instead when few items or longer trials are present ('Few items, or each item is really long'), reducing methodological nuance."
+    ],
+    "faithfulness_evidence": [
+      "Slide 3: 'Compare each participant TO THEMSELF in other conditions \u2013 Removes (at least some) participant-related noise'",
+      "Slide 20: 'Random order with rotation \u2013 Ppt 1: CEDAB \u2026 (N of participants has to be multiple of # of conditions)'"
+    ],
+    "detected_domain": "natural_sciences"
+  },
+  "agreement": {
+    "used": false,
+    "agreement_1to5": 0,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "reference_metrics_used": false,
+  "comprehensive_scoring": {
+    "final_score": 0.95,
+    "mode": "reference_free",
+    "layer_scores": {
+      "domain_rubric": 0.95,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
+    },
+    "layer_weights": {
+      "domain_rubric": 1.0,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
+    },
+    "rubric_breakdown": {
+      "coverage": 5,
+      "faithfulness": 5,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "natural_sciences",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.95,
+    "manual_weighted_score": 0.8030981781497217,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.9059294534449165,
+    "hallucination_policy": {
+      "scoring_policy": "legacy",
+      "damping_alpha": 0.15,
+      "subtractive_beta": 0.1,
+      "domain_alpha_multiplier": 1.05,
+      "effective_alpha": 0.1575,
+      "min_damping_factor": 0.75,
+      "max_damping_factor": 1.0
+    },
+    "hallucination_rate": 0.5217391304347826,
+    "raw_damping_factor": 0.9178260869565218,
+    "hallucination_damping_factor": 0.9178260869565218,
+    "scorer_disagreement_delta": 0.14690182185027822,
+    "raw_quality_score": 0.9059294534449165,
+    "risk_adjusted_score": 0.8314856853140081
+  },
+  "leaderboard_scores": {
+    "raw_quality_score": 0.9059294534449165,
+    "risk_adjusted_score": 0.8314856853140081
+  },
+  "iteration_score_table": [
+    {
+      "iteration": 1,
+      "avg_rubric_score": 4.5,
+      "quality_score": 0.8149207161125321,
+      "word_count": 286,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.5294117647058824,
+      "coverage": 0.8260869565217391,
+      "glossary_recall": 0.4375
+    },
+    {
+      "iteration": 2,
+      "avg_rubric_score": 4.5,
+      "quality_score": 0.7966956521739131,
+      "word_count": 375,
+      "change_magnitude": 0.5173611111111112,
+      "hallucination_rate": 0.6666666666666666,
+      "coverage": 0.8260869565217391,
+      "glossary_recall": 0.4583333333333333
+    },
+    {
+      "iteration": 3,
+      "avg_rubric_score": 4.56,
+      "quality_score": 0.8141243478260869,
+      "word_count": 389,
+      "change_magnitude": 0.5514018691588785,
+      "hallucination_rate": 0.5416666666666666,
+      "coverage": 0.782608695652174,
+      "glossary_recall": 0.4375
+    },
+    {
+      "iteration": 4,
+      "avg_rubric_score": 4.46,
+      "quality_score": 0.8180555009451796,
+      "word_count": 379,
+      "change_magnitude": 0.48039215686274506,
+      "hallucination_rate": 0.5217391304347826,
+      "coverage": 0.8695652173913043,
+      "glossary_recall": 0.4166666666666667
+    },
+    {
+      "iteration": 5,
+      "avg_rubric_score": 4.5200000000000005,
+      "quality_score": 0.7993993194706995,
+      "word_count": 394,
+      "change_magnitude": 0.46843853820598,
+      "hallucination_rate": 0.6086956521739131,
+      "coverage": 0.782608695652174,
+      "glossary_recall": 0.375
+    }
+  ],
+  "final_score_0to1": 0.8314856853140081,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture7",
+  "refinement_metadata": {
+    "iterations_completed": 5,
+    "final_avg_score": 4.5200000000000005,
+    "final_word_count": 379,
+    "stopping_reason": "pass: high quality plateau - quality 0.799 >= 0.740; quality span 0.0187 <= 0.0200 | final_selection: best_of_last_3 (iter 4, quality=0.818)",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.6,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.6
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.5
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.7,
+        "style": 4.4
+      }
+    ],
+    "quality_history": [
+      0.8149207161125321,
+      0.7966956521739131,
+      0.8141243478260869,
+      0.8180555009451796,
+      0.7993993194706995
+    ],
+    "iteration_metrics": [
+      {
+        "iteration": 1,
+        "avg_rubric_score": 4.5,
+        "quality_score": 0.8149207161125321,
+        "word_count": 286,
+        "change_magnitude": 0.0,
+        "signals": {
+          "length_error": 0.18285714285714286,
+          "section_coverage_pct": 0.8260869565217391,
+          "glossary_recall": 0.4375,
+          "suspected_hallucination_rate": 0.5294117647058824
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.5,
+          "clarity": 4.6,
+          "style": 4.4
+        }
+      },
+      {
+        "iteration": 2,
+        "avg_rubric_score": 4.5,
+        "quality_score": 0.7966956521739131,
+        "word_count": 375,
+        "change_magnitude": 0.5173611111111112,
+        "signals": {
+          "length_error": 0.07142857142857142,
+          "section_coverage_pct": 0.8260869565217391,
+          "glossary_recall": 0.4583333333333333,
+          "suspected_hallucination_rate": 0.6666666666666666
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.7,
+          "clarity": 4.5,
+          "style": 4.3
+        }
+      },
+      {
+        "iteration": 3,
+        "avg_rubric_score": 4.56,
+        "quality_score": 0.8141243478260869,
+        "word_count": 389,
+        "change_magnitude": 0.5514018691588785,
+        "signals": {
+          "length_error": 0.11142857142857143,
+          "section_coverage_pct": 0.782608695652174,
+          "glossary_recall": 0.4375,
+          "suspected_hallucination_rate": 0.5416666666666666
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.7,
+          "clarity": 4.5,
+          "style": 4.6
+        }
+      },
+      {
+        "iteration": 4,
+        "avg_rubric_score": 4.46,
+        "quality_score": 0.8180555009451796,
+        "word_count": 379,
+        "change_magnitude": 0.48039215686274506,
+        "signals": {
+          "length_error": 0.08285714285714285,
+          "section_coverage_pct": 0.8695652173913043,
+          "glossary_recall": 0.4166666666666667,
+          "suspected_hallucination_rate": 0.5217391304347826
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.3,
+          "organization": 4.6,
+          "clarity": 4.4,
+          "style": 4.5
+        }
+      },
+      {
+        "iteration": 5,
+        "avg_rubric_score": 4.5200000000000005,
+        "quality_score": 0.7993993194706995,
+        "word_count": 394,
+        "change_magnitude": 0.46843853820598,
+        "signals": {
+          "length_error": 0.12571428571428572,
+          "section_coverage_pct": 0.782608695652174,
+          "glossary_recall": 0.375,
+          "suspected_hallucination_rate": 0.6086956521739131
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.5,
+          "clarity": 4.7,
+          "style": 4.4
+        }
+      }
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.5,
+      "clarity": 4.7,
+      "style": 4.4
+    },
+    "final_quality_score": 0.7993993194706995
+  }
+}

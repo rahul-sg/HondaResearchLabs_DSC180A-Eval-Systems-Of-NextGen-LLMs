@@ -1,0 +1,311 @@
+{
+  "refined_summary": "The Week\u202f1 lecture of *Principles of Accounting* introduces the core purpose, structure, and foundational concepts of **financial accounting**. Accounting is presented as the **language of business**, used to tell a company\u2019s economic story through measurable data that convey its successes, challenges, and financial position. It serves two key functions: **recordkeeping**, which identifies, measures, and records transactions in monetary terms, and **communication**, which reports that information to external decision\u2011makers through standardized financial statements.  \n\nAccounting information supports a broad audience. **Investors** and **creditors** assess management performance and a company\u2019s ability to meet obligations, while **suppliers**, **management**, and **boards of directors** use reports for evaluating operations, strategy, and financial policy. Additional users include **employees** gauging job security, **customers** judging reliability, and other stakeholders such as analysts, regulators, and competitors.  \n\nThe lecture explains that financial accounting measures and reports three types of business activities: **financing** (transactions with investors and lenders), **investing** (acquiring or disposing of resources for operations), and **operating** (day\u2011to\u2011day production, marketing, and sales). These activities are communicated through four primary **financial statements**\u2014the **Balance Sheet**, **Income Statement**, **Statement of Stockholders\u2019\u202fEquity**, and **Statement of Cash\u202fFlows**\u2014which appear in reports such as the annual **10\u2011K**, quarterly **10\u2011Q**, and event\u2011driven **8\u2011K** filings.  \n\nAll reporting follows **Generally Accepted Accounting Principles\u202f(GAAP)** to ensure comparability and consistency. The **Securities and Exchange Commission\u202f(SEC)** oversees public company reporting and delegates standard\u2011setting authority to the **Financial Accounting Standards Board\u202f(FASB)**. Internationally, the **International Accounting Standards Board\u202f(IASB)** issues **IFRS**. Independent **auditors**, required for publicly traded firms, examine statements for adherence to GAAP and issue opinions\u2014unqualified, qualified, or adverse\u2014on their accuracy.  \n\nThe session concludes with the **Balance\u202fSheet**, which presents a company\u2019s financial position at a particular date. It must always satisfy the **accounting equation: Assets\u202f=\u202fLiabilities\u202f+\u202fStockholders\u2019\u202fEquity**. **Assets** are resources providing future economic benefit, **liabilities** are obligations owed to creditors, and **equity** represents owners\u2019 residual claims. Through the *Klein\u202fInc.* examples\u2014raising capital from investors, borrowing from a bank, acquiring equipment, prepaying rent, and purchasing supplies on account\u2014students see how each transaction affects at least two accounts yet keeps the equation balanced.  \n\nThis lecture establishes the conceptual and mechanical framework of financial accounting that underpins future topics such as double\u2011entry recording, the accounting cycle, and financial statement preparation.  \n\n*(\u2248\u202f395\u202fwords)*",
+  "signals": {
+    "length_error": 0.07142857142857142,
+    "section_coverage_pct": 0.8617021276595744,
+    "glossary_recall": 0.675,
+    "suspected_hallucination_rate": 0.2777777777777778
+  },
+  "rubric": {
+    "coverage": 4,
+    "faithfulness": 4,
+    "organization": 5,
+    "clarity": 4,
+    "style": 4,
+    "overall_1to10": 9,
+    "two_strengths": [
+      "Comprehensively summarizes the lecture\u2019s main business concepts\u2014functions of accounting, key users, core statements, and the balance sheet equation\u2014with solid linkage to the slides such as 'Accounting is the language of business' and 'Assets = Liabilities + Stockholders\u2019 Equity.'",
+      "Explains the Klein Inc. example effectively, showing how financing, investing, and operating activities affect the accounting equation, a central instructional focus in the lecture."
+    ],
+    "two_issues": [
+      "The summary omits the course\u2011management and grading details from slides\u202f12\u201316 (textbook, grading weights, participation expectations), which, though administrative, form part of the stated lecture content under 'How to Succeed in this Class.'",
+      "The discussion of auditor opinions merges 'unqualified with explanatory' and 'qualified/adverse' into a single line without distinguishing the explanatory note category, slightly reducing faithfulness to slide\u202f7\u2019s four\u2011opinion structure."
+    ],
+    "faithfulness_evidence": [
+      "\"Two primary functions: Recordkeeping ... and Communication\" (Chunk\u202f1\u202f\u2022\u202fSlide\u202f20) supports the summary\u2019s two\u2011function framing.",
+      "\"The Accounting Equation \u2013 Must always be balanced ... Each transaction has a dual effect\" (Chunk\u202f2\u202f\u2022\u202fSlide\u202f17) confirms the description of the Klein\u202fInc. example maintaining balance."
+    ],
+    "detected_domain": "business"
+  },
+  "agreement": {
+    "used": false,
+    "agreement_1to5": 0,
+    "missing_key_points": [],
+    "added_inaccuracies": []
+  },
+  "reference_metrics_used": false,
+  "comprehensive_scoring": {
+    "final_score": 0.8333333333333334,
+    "mode": "reference_free",
+    "layer_scores": {
+      "domain_rubric": 0.8333333333333334,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
+    },
+    "layer_weights": {
+      "domain_rubric": 1.0,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
+    },
+    "rubric_breakdown": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    },
+    "detected_domain": "business",
+    "rubric_weights": {
+      "coverage": 1.0,
+      "faithfulness": 2.5,
+      "organization": 1.0,
+      "clarity": 1.0,
+      "style": 0.5
+    }
+  },
+  "hybrid_scoring": {
+    "comprehensive_score": 0.8333333333333334,
+    "manual_weighted_score": 0.8390070921985816,
+    "blend_weights": {
+      "comprehensive": 0.7,
+      "manual": 0.3
+    },
+    "blended_score_pre_damping": 0.8350354609929078,
+    "hallucination_policy": {
+      "scoring_policy": "tuned",
+      "damping_alpha": 0.05,
+      "subtractive_beta": 0.0,
+      "domain_alpha_multiplier": 0.95,
+      "effective_alpha": 0.0475,
+      "min_damping_factor": 0.75,
+      "max_damping_factor": 1.0
+    },
+    "hallucination_rate": 0.2777777777777778,
+    "raw_damping_factor": 0.9868055555555556,
+    "hallucination_damping_factor": 0.9868055555555556,
+    "scorer_disagreement_delta": 0.005673758865248235,
+    "raw_quality_score": 0.8350354609929078,
+    "risk_adjusted_score": 0.8240176319936959
+  },
+  "leaderboard_scores": {
+    "raw_quality_score": 0.8350354609929078,
+    "risk_adjusted_score": 0.8240176319936959
+  },
+  "iteration_score_table": [
+    {
+      "iteration": 1,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.855182374906647,
+      "word_count": 319,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.07692307692307693,
+      "coverage": 0.8058252427184466,
+      "glossary_recall": 0.6538461538461539
+    },
+    {
+      "iteration": 2,
+      "avg_rubric_score": 4.44,
+      "quality_score": 0.8286366712898754,
+      "word_count": 371,
+      "change_magnitude": 0.5156794425087108,
+      "hallucination_rate": 0.2857142857142857,
+      "coverage": 0.7766990291262136,
+      "glossary_recall": 0.5961538461538461
+    },
+    {
+      "iteration": 3,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8451325242718448,
+      "word_count": 372,
+      "change_magnitude": 0.4852459016393442,
+      "hallucination_rate": 0.125,
+      "coverage": 0.7864077669902912,
+      "glossary_recall": 0.5576923076923077
+    },
+    {
+      "iteration": 4,
+      "avg_rubric_score": 4.56,
+      "quality_score": 0.8685809708737864,
+      "word_count": 375,
+      "change_magnitude": 0.45065789473684215,
+      "hallucination_rate": 0.2222222222222222,
+      "coverage": 0.8446601941747572,
+      "glossary_recall": 0.6153846153846154
+    },
+    {
+      "iteration": 5,
+      "avg_rubric_score": 4.5,
+      "quality_score": 0.8518932038834952,
+      "word_count": 379,
+      "change_magnitude": 0.35593220338983056,
+      "hallucination_rate": 0.2777777777777778,
+      "coverage": 0.8446601941747572,
+      "glossary_recall": 0.5769230769230769
+    }
+  ],
+  "final_score_0to1": 0.8240176319936959,
+  "pairwise_selection_enabled": true,
+  "lecture_title": "lecture1",
+  "refinement_metadata": {
+    "iterations_completed": 5,
+    "final_avg_score": 4.5,
+    "final_word_count": 375,
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1528 < 0.0200, recall_improvement 0.0192 < 0.0200, score_gain 0.0068 < 0.0150 | final_selection: best_of_last_3 (iter 4, quality=0.869)",
+    "pairwise_selection_enabled": true,
+    "lever_history": [
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.3
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
+        "style": 4.6
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.6,
+        "style": 4.4
+      }
+    ],
+    "quality_history": [
+      0.855182374906647,
+      0.8286366712898754,
+      0.8451325242718448,
+      0.8685809708737864,
+      0.8518932038834952
+    ],
+    "iteration_metrics": [
+      {
+        "iteration": 1,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.855182374906647,
+        "word_count": 319,
+        "change_magnitude": 0.0,
+        "signals": {
+          "length_error": 0.08857142857142856,
+          "section_coverage_pct": 0.8058252427184466,
+          "glossary_recall": 0.6538461538461539,
+          "suspected_hallucination_rate": 0.07692307692307693
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.2,
+          "organization": 4.6,
+          "clarity": 4.4,
+          "style": 4.3
+        }
+      },
+      {
+        "iteration": 2,
+        "avg_rubric_score": 4.44,
+        "quality_score": 0.8286366712898754,
+        "word_count": 371,
+        "change_magnitude": 0.5156794425087108,
+        "signals": {
+          "length_error": 0.06,
+          "section_coverage_pct": 0.7766990291262136,
+          "glossary_recall": 0.5961538461538461,
+          "suspected_hallucination_rate": 0.2857142857142857
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.5,
+          "clarity": 4.3,
+          "style": 4.4
+        }
+      },
+      {
+        "iteration": 3,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8451325242718448,
+        "word_count": 372,
+        "change_magnitude": 0.4852459016393442,
+        "signals": {
+          "length_error": 0.06285714285714286,
+          "section_coverage_pct": 0.7864077669902912,
+          "glossary_recall": 0.5576923076923077,
+          "suspected_hallucination_rate": 0.125
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.2,
+          "organization": 4.6,
+          "clarity": 4.4,
+          "style": 4.3
+        }
+      },
+      {
+        "iteration": 4,
+        "avg_rubric_score": 4.56,
+        "quality_score": 0.8685809708737864,
+        "word_count": 375,
+        "change_magnitude": 0.45065789473684215,
+        "signals": {
+          "length_error": 0.07142857142857142,
+          "section_coverage_pct": 0.8446601941747572,
+          "glossary_recall": 0.6153846153846154,
+          "suspected_hallucination_rate": 0.2222222222222222
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.7,
+          "clarity": 4.5,
+          "style": 4.6
+        }
+      },
+      {
+        "iteration": 5,
+        "avg_rubric_score": 4.5,
+        "quality_score": 0.8518932038834952,
+        "word_count": 379,
+        "change_magnitude": 0.35593220338983056,
+        "signals": {
+          "length_error": 0.08285714285714285,
+          "section_coverage_pct": 0.8446601941747572,
+          "glossary_recall": 0.5769230769230769,
+          "suspected_hallucination_rate": 0.2777777777777778
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.5,
+          "clarity": 4.6,
+          "style": 4.4
+        }
+      }
+    ],
+    "target_words": 350,
+    "final_rubric": {
+      "coverage": 4.6,
+      "faithfulness": 4.4,
+      "organization": 4.5,
+      "clarity": 4.6,
+      "style": 4.4
+    },
+    "final_quality_score": 0.8518932038834952
+  }
+}

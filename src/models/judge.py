@@ -5,7 +5,7 @@ import re
 
 from src.models.llm_client import call_llm, parse_json_or_throw, LLMConfig
 from src.utils.chunking import slides_to_text
-from src.evaluation.NormalSchema import get_domain_schema
+from src.evaluation.NormalSchema import get_domain_schema, get_all_domains
 
 
 #prompts
@@ -129,30 +129,90 @@ Return ONLY JSON:
 def detect_domain(slides: List[Dict], cfg: LLMConfig) -> str:
     """Detect the academic domain from lecture slides."""
     slide_text = slides_to_text(slides)
-
-    # Simple keyword-based detection first
     text_lower = slide_text.lower()
+    tokens = set(re.findall(r"[a-z_]+", text_lower))
 
-    # Domain keywords
-    domain_keywords = {
-        "math": ["theorem", "proof", "equation", "mathematical", "calculus", "algebra", "geometry", "statistics", "probability"],
-        "humanities": ["literature", "philosophy", "history", "art", "culture", "society", "politics", "ethics", "theory"],
-        "natural_sciences": ["biology", "chemistry", "physics", "experiment", "hypothesis", "scientific method", "molecular", "cellular"],
-        "business": ["economics", "finance", "marketing", "management", "strategy", "market", "profit", "revenue", "corporate"]
+    # Domain signals: phrase matches get higher weight than single token matches.
+    phrase_signals = {
+        "math": [
+            "bayes theorem", "markov chain", "linear algebra", "proof by", "convex optimization",
+            "eigenvalue", "eigenvector", "gradient descent", "probability distribution"
+        ],
+        "humanities": [
+            "critical theory", "historical context", "close reading", "cultural analysis", "primary source",
+            "interpretive framework", "rhetorical analysis"
+        ],
+        "natural_sciences": [
+            "scientific method", "controlled experiment", "cell membrane", "molecular biology", "chemical reaction",
+            "data collection", "independent variable", "dependent variable"
+        ],
+        "engineering": [
+            "software architecture", "system design", "database schema", "query optimization", "distributed systems",
+            "network protocol", "operating system", "machine learning", "neural network", "sql query",
+            "relational database", "transaction isolation", "index scan"
+        ],
+        "social_sciences": [
+            "causal inference", "survey design", "public policy", "social behavior", "regression analysis",
+            "treatment effect", "sampling bias", "observational study"
+        ],
+        "business": [
+            "market share", "customer segment", "business model", "competitive advantage", "return on investment",
+            "supply chain", "go to market", "unit economics"
+        ],
     }
 
-    domain_scores = {}
-    for domain, keywords in domain_keywords.items():
-        score = sum(1 for keyword in keywords if keyword in text_lower)
-        domain_scores[domain] = score
+    token_signals = {
+        "math": {
+            "theorem", "proof", "equation", "calculus", "algebra", "geometry", "probability",
+            "stochastic", "derivative", "integral", "matrix", "optimization"
+        },
+        "humanities": {
+            "literature", "philosophy", "history", "art", "culture", "ethics", "narrative", "hermeneutics"
+        },
+        "natural_sciences": {
+            "biology", "chemistry", "physics", "experiment", "hypothesis", "molecular", "cellular", "ecosystem",
+            "genetic", "thermodynamics"
+        },
+        "engineering": {
+            "algorithm", "algorithms", "sql", "database", "schema", "compiler", "runtime", "latency",
+            "throughput", "api", "inference", "pipeline", "model", "models", "programming", "software",
+            "hardware", "optimization", "query", "normalization", "index", "join", "transaction"
+        },
+        "social_sciences": {
+            "sociology", "psychology", "econometrics", "demographics", "survey", "policy", "behavior", "inequality",
+            "institutions", "causal"
+        },
+        "business": {
+            "finance", "marketing", "management", "strategy", "market", "revenue", "profit", "corporate",
+            "valuation", "pricing", "operations"
+        },
+    }
 
-    # Return domain with highest score, default to "humanities" if tie
-    max_score = max(domain_scores.values())
-    if max_score == 0:
-        return "humanities"  # default
+    available_domains = get_all_domains()
+    domain_scores = {domain: 0 for domain in available_domains}
 
-    candidates = [d for d, s in domain_scores.items() if s == max_score]
-    return candidates[0]  # take first if tie
+    for domain in available_domains:
+        phrase_hits = sum(1 for phrase in phrase_signals.get(domain, []) if phrase in text_lower)
+        token_hits = len(tokens.intersection(token_signals.get(domain, set())))
+        domain_scores[domain] = (2 * phrase_hits) + token_hits
+
+    max_score = max(domain_scores.values()) if domain_scores else 0
+    if max_score <= 0:
+        if any(sig in text_lower for sig in ["sql", "database", "query", "algorithm", "runtime", "code"]):
+            return "engineering" if "engineering" in available_domains else (available_domains[0] if available_domains else "humanities")
+        return "humanities" if "humanities" in available_domains else (available_domains[0] if available_domains else "humanities")
+
+    tied = [domain for domain, score in domain_scores.items() if score == max_score]
+    if len(tied) == 1:
+        return tied[0]
+
+    # Domain-priority tie break favors more technical signal first for LLM/SQL-heavy lectures.
+    tie_break_priority = ["engineering", "natural_sciences", "math", "social_sciences", "business", "humanities"]
+    for preferred in tie_break_priority:
+        if preferred in tied:
+            return preferred
+
+    return tied[0]
 
 
 def judge_rubric(slides: List[Dict], summary: str, cfg: LLMConfig, use_domain_aware: bool = True) -> Dict[str, Any]:

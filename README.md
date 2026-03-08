@@ -95,11 +95,15 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │   │   └── scoring.py
 │   ├── experiments/
 │   │   ├── bare_bones_judge_experiment.py
+│   │   ├── build_human_calibration_dataset.py
 │   │   ├── compare_models.py
+│   │   ├── multi_seed_robustness.py
 │   │   ├── pairwise_experiment.py
+│   │   ├── policy_ablation_experiment.py
 │   │   ├── refine_demo.py
 │   │   ├── run_eval.py
-│   │   └── sanity_checks.py
+│   │   ├── sanity_checks.py
+│   │   └── tune_hallucination_penalty.py
 │   ├── models/
 │   │   ├── judge.py
 │   │   ├── lever_based_refinement.py
@@ -165,12 +169,24 @@ conda deactivate
 python -m src.experiments.run_eval lecture1
 ```
 
+This command is unchanged from earlier versions. It now defaults to `hallucination_policy=tuned` internally.
+
+Optional explicit policy examples:
+
+```bash
+# Explicit tuned (same behavior as default)
+python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 tuned
+
+# Legacy scoring behavior
+python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 legacy
+```
+
 ### Full CLI signature
 
 ```bash
 python -m src.experiments.run_eval \
     lecture1 [force_regen] [use_lever_based] [min_avg_score] \
-    [min_change_threshold] [max_iterations] [min_iterations] [min_agreement]
+    [min_change_threshold] [max_iterations] [min_iterations] [min_agreement] [hallucination_policy]
 ```
 
 Parameters:
@@ -182,6 +198,9 @@ Parameters:
 - `max_iterations`: optional int, default `12`
 - `min_iterations`: optional int, default `4`
 - `min_agreement`: optional float, default `0.7` (**legacy/compat parameter**)
+- `hallucination_policy`: optional (`tuned`/`legacy`), default `tuned`
+
+Note: CLI arguments are positional. If you want to set `hallucination_policy` explicitly, pass preceding arguments as shown in the examples above.
 
 `run_eval` works without `data/references/lectureN_reference.txt` in default reference-free mode.
 
@@ -214,6 +233,10 @@ The lever-based controller uses a decision table with minimum-iteration enforcem
 
 This avoids both premature stopping and endless loops.
 
+At finalization, the pipeline applies a **best-of-last-k** safeguard (`k=3`)
+and keeps the highest-quality state among the last evaluated iterations,
+which helps reduce end-of-run noise from a single weak final rewrite.
+
 ### 3) Evaluation Layers
 - **Domain-aware rubric** (coverage, faithfulness, organization, clarity, style)
 - **Deterministic signals** (`length_error`, `section_coverage_pct`, `glossary_recall`, `suspected_hallucination_rate`)
@@ -230,20 +253,49 @@ $$
 Manual weighted score (explicit baseline):
 
 $$
-M = (0.8 \cdot base + 0.2 \cdot coverage) - 0.1 \cdot 2^{hallucination}
+M = (0.8 \cdot base + 0.2 \cdot coverage) - \beta \cdot 2^{h}
 $$
 
-Balanced hybrid final score:
+Raw quality (pre-risk):
 
 $$
-S = 0.7C + 0.3M
+Q_{raw} = 0.7C + 0.3M
+$$
+
+Domain-aware damping coefficient:
+
+$$
+\alpha_{eff} = \alpha \cdot m_{domain}
+$$
+
+Raw damping and capped damping:
+
+$$
+d_{raw} = 1 - \alpha_{eff} \cdot h
 $$
 
 $$
-S_{final} = S(1 - 0.15h)
+d = \mathrm{clip}(d_{raw}, d_{min}, d_{max}), \quad d_{min}=0.75,\ d_{max}=1.0
 $$
 
-`result.json` also logs both component scores and disagreement diagnostics.
+Risk-adjusted final score:
+
+$$
+Q_{risk} = Q_{raw} \cdot d
+$$
+
+Stored final score:
+
+$$
+final\_score\_{0to1} = Q_{risk}
+$$
+
+Where:
+- `tuned` policy default: `\alpha=0.05`, `\beta=0.0`
+- `legacy` policy: `\alpha=0.15`, `\beta=0.10`
+- stricter domain multipliers are applied for technical domains (e.g., engineering/math)
+
+`result.json` logs both leaderboard scores (`raw_quality_score`, `risk_adjusted_score`) plus full policy metadata.
 
 ## Example Sample Run
 
@@ -274,6 +326,8 @@ rubric
 agreement
 comprehensive_scoring
 hybrid_scoring
+leaderboard_scores
+iteration_score_table
 refinement_metadata
 final_score_0to1
 lecture_title
@@ -282,6 +336,49 @@ lecture_title
 `agreement` is retained for compatibility and is marked unused in reference-free mode.
 
 Notable metadata fields include stopping reason, iteration history, lever history, and quality trajectory.
+
+`iteration_score_table` provides a compact per-iteration trace for plotting/reporting
+(rubric average, quality score, word count, change magnitude, and key signals).
+
+## Additional Experiments
+
+These experiments are LLM-call heavy and can take a while to complete.
+
+Typical wall-clock estimates on this project setup:
+- Single lecture experiment run: ~5–12 minutes
+- `policy_ablation_experiment all` (7 lectures): ~20–45 minutes
+- `multi_seed_robustness all` with seeds `11,22,33` (21 total runs): ~25–60 minutes
+- Under API latency spikes/rate limits, full runs can take up to ~90 minutes
+
+Tip: for faster iteration, start with one lecture (e.g., `lecture6`) before launching `all`.
+
+### Multi-seed robustness (mean/std)
+
+```bash
+# all lectures, default seeds 11,22,33
+python -m src.experiments.multi_seed_robustness all
+
+# one lecture, custom seeds
+python -m src.experiments.multi_seed_robustness lecture6 11,22,33
+```
+
+Outputs:
+- `outputs/seed_robustness/multi_seed_summary.json`
+- `outputs/seed_robustness/multi_seed_summary.txt`
+
+### Tuned vs legacy policy ablation
+
+```bash
+# all lectures
+python -m src.experiments.policy_ablation_experiment all
+
+# single lecture
+python -m src.experiments.policy_ablation_experiment lecture6
+```
+
+Outputs:
+- `outputs/policy_ablation/tuned_vs_legacy_summary.json`
+- `outputs/policy_ablation/tuned_vs_legacy_summary.txt`
 
 ## Dashboards
 

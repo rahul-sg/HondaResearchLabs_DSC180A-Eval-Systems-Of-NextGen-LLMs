@@ -1,0 +1,20 @@
+This lecture strengthened understanding of how financial statements, the accounting equation, and double-entry mechanics integrate within the Principles of Accounting framework. It began by emphasizing that accounting translates complex economic activity into information through judgment and critical thinking. A quick Week 1 refresher reviewed the four interrelated financial statements—balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows—as a communication system reflecting both a company’s position at specific dates and its performance over a fiscal period. The statements connect through retained earnings: revenues and expenses generate net income, which increases or decreases stockholders’ equity and links one balance sheet to the next.
+
+The session expanded the accounting equation from its basic form,  
+**Assets = Liabilities + Shareholders’ Equity**,  
+to an analytical version that highlights period changes:  
+**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues – Expenses – Dividends)**.  
+This formulation shows how income, losses, and distributions drive equity and maintain balance across financial statements.
+
+The lecture then detailed double-entry accounting as the system ensuring that every transaction affects at least two accounts and that total debits always equal total credits. Debits increase assets, expenses, and dividends, while credits increase liabilities, contributed capital, and revenues. The T‑account was introduced to visualize these dual effects, with no negative numbers used—only debits and credits that must balance. Stepwise examples illustrated this symmetry:  
+• Borrowing $100,000 from a bank → Debit Cash $100,000; Credit Notes Payable $100,000.  
+• Purchasing equipment for $60,000 cash → Debit Equipment $60,000; Credit Cash $60,000.  
+• Buying inventory for $15,000 on account → Debit Inventory $15,000; Credit Trade Payable $15,000.  
+• Paying a supplier $8,000 reduces both Cash and Trade Payable by that amount.  
+• Prepaying a $600 insurance policy → Debit Prepaid Insurance $600; Credit Cash $600.  
+• Issuing 10,000 shares for $100,000 → Debit Cash $100,000; Credit Common Stock $100,000.  
+Ending balances confirmed across T‑accounts—e.g., Cash $131,400 and Trade Payable $7,000—demonstrated that debits equaled credits and that closing balances become the next period’s beginning amounts, ensuring continuity.
+
+Finally, the accounting process was summarized in three steps: (1) analyze each transaction, (2) record the debits and credits as journal entries, and (3) post to ledger accounts to determine ending balances. The DEALOR cue—Dividends, Expenses, Assets (Debit); Liabilities, Owners’ Equity, Revenue (Credit)—was reinforced to recall normal account sides. Together, these elements maintain the core equality **Assets = Liabilities + Equity**, the foundation of financial reporting integrity.  
+
+(≈398 words)

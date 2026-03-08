@@ -58,10 +58,31 @@ def main():
     else:
         min_agreement = 0.7
 
+    if len(sys.argv) > 9:
+        hallucination_policy = sys.argv[9].strip().lower()
+    else:
+        hallucination_policy = "tuned"
+
+    if hallucination_policy == "tuned":
+        hallucination_damping_alpha = 0.05
+        hallucination_subtractive_beta = 0.0
+    elif hallucination_policy == "legacy":
+        hallucination_damping_alpha = 0.15
+        hallucination_subtractive_beta = 0.10
+    else:
+        hallucination_policy = "tuned"
+        hallucination_damping_alpha = 0.05
+        hallucination_subtractive_beta = 0.0
+
     print(f"\nLecture selected: {lecture_id}")
     print(f"Force regenerate S0: {force_regen}")
     print(f"Lever-based refinement: {use_lever_based}")
     print(f"Stopping params -> min_avg_score: {min_avg_score}, min_change_threshold: {min_change_threshold}, max_iters: {max_iterations}, min_iters: {min_iterations}, min_agreement(legacy): {min_agreement}")
+    print(
+        "Hallucination policy -> "
+        f"{hallucination_policy} "
+        f"(alpha={hallucination_damping_alpha}, beta={hallucination_subtractive_beta})"
+    )
 
     #paths
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"
@@ -160,6 +181,9 @@ def main():
         max_iterations=max_iterations,  # Safety limit
         min_iterations=min_iterations,
         min_agreement=min_agreement,
+        scoring_policy=hallucination_policy,
+        hallucination_damping_alpha=hallucination_damping_alpha,
+        hallucination_subtractive_beta=hallucination_subtractive_beta,
     )
 
     print("\nRunning pairwise comparison (GPT-5 S0 vs Refined)...")
@@ -188,6 +212,10 @@ def main():
     #print final results
     print("\n===== FINAL EVALUATION RESULT =====")
     print("Final Score (0–1):", result["final_score_0to1"])
+    if "leaderboard_scores" in result:
+        leaderboard = result["leaderboard_scores"]
+        print("Raw Quality Score:", leaderboard.get("raw_quality_score"))
+        print("Risk-Adjusted Score:", leaderboard.get("risk_adjusted_score"))
 
     # Show comprehensive scoring breakdown
     if "comprehensive_scoring" in result:

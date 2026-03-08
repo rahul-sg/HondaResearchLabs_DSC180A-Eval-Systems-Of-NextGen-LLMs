@@ -362,6 +362,18 @@
 # Python helper functions
 import json
 
+
+def get_all_domains() -> list[str]:
+  """Return all supported schema domains for domain-aware evaluation."""
+  return [
+    "math",
+    "humanities",
+    "natural_sciences",
+    "engineering",
+    "social_sciences",
+    "business",
+  ]
+
 def get_domain_schema(domain: str) -> dict:
     """Return the evaluation schema for a specific academic domain.
 

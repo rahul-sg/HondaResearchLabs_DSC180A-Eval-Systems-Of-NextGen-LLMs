@@ -248,6 +248,7 @@ def iterative_refinement_lever_based(
     min_iterations: int = 4,
     min_agreement: float = 0.7,
     use_pairwise: bool = True,
+    select_best_recent_k: int = 3,
 ) -> Tuple[str, Dict]:
     """
     Iterative refinement with lever-based guidance and domain-agnostic stopping.
@@ -268,6 +269,8 @@ def iterative_refinement_lever_based(
         max_iterations: Safety limit on iterations (default 12)
         min_iterations: Must run at least this many iterations (default 4)
         min_agreement: Legacy/compat parameter retained for controller configuration
+        select_best_recent_k: Choose final output as best quality among the
+            last K evaluated states (default 3) to reduce end-of-run noise.
     
     Returns:
         (final_summary, refinement_metadata)
@@ -304,6 +307,7 @@ def iterative_refinement_lever_based(
     all_lever_history = []
     all_signals_history = []
     all_quality_history = []
+    iteration_metrics = []
     stopping_reason = ""
 
     while iteration < max_iterations:
@@ -342,6 +346,18 @@ def iterative_refinement_lever_based(
 
         all_signals_history.append(signals)
         all_quality_history.append(quality_score)
+        iteration_metrics.append(
+            {
+                "iteration": iteration,
+                "summary": current_summary,
+                "avg_rubric_score": avg_score,
+                "quality_score": quality_score,
+                "word_count": word_count,
+                "change_magnitude": change_magnitude,
+                "signals": signals,
+                "rubric": rubric,
+            }
+        )
 
         # Create state object
         state = RefinementState(
@@ -401,6 +417,17 @@ def iterative_refinement_lever_based(
         if save_callback:
             save_callback(iteration, current_summary)
 
+    if iteration_metrics and select_best_recent_k > 1:
+        k = min(select_best_recent_k, len(iteration_metrics))
+        recent = iteration_metrics[-k:]
+        best_recent = max(recent, key=lambda x: x.get("quality_score", 0.0))
+        if best_recent["summary"] != current_summary:
+            current_summary = best_recent["summary"]
+            stopping_reason = (
+                f"{stopping_reason} | final_selection: best_of_last_{k} "
+                f"(iter {best_recent['iteration']}, quality={best_recent['quality_score']:.3f})"
+            ).strip(" |")
+
     # Create metadata
     metadata = {
         "iterations_completed": iteration,
@@ -410,6 +437,18 @@ def iterative_refinement_lever_based(
         "pairwise_selection_enabled": use_pairwise,
         "lever_history": all_lever_history,
         "quality_history": all_quality_history,
+        "iteration_metrics": [
+            {
+                "iteration": m["iteration"],
+                "avg_rubric_score": m["avg_rubric_score"],
+                "quality_score": m["quality_score"],
+                "word_count": m["word_count"],
+                "change_magnitude": m["change_magnitude"],
+                "signals": m["signals"],
+                "rubric": m["rubric"],
+            }
+            for m in iteration_metrics
+        ],
         "target_words": target_words,
         "final_rubric": rubric,
         "final_quality_score": all_quality_history[-1] if all_quality_history else 0.0,
