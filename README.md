@@ -24,6 +24,9 @@ echo "OPENAI_API_KEY=your_key_here" > .env
 
 # 3) Run one lecture
 python -m src.experiments.run_eval lecture1
+
+# 4) Run all lectures
+python -m src.experiments.run_eval all
 ```
 
 No human reference file is required for the default pipeline mode.
@@ -86,6 +89,11 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │   ├── lecture2/
 │   ├── ...
 │   └── lecture7/                      # Sample run artifacts for demo use
+├── outputs/
+│   ├── hallucination_tuning/          # Penalty tuning experiment artifacts
+│   ├── pairwise_overall_winners.log   # Canonical pairwise winner log
+│   ├── policy_ablation/               # Tuned vs legacy aggregate summaries
+│   └── seed_robustness/               # Multi-seed aggregate summaries
 ├── dev_notes/                         # Development notes and archived test scripts
 ├── src/
 │   ├── evaluation/
@@ -100,6 +108,7 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │   │   ├── multi_seed_robustness.py
 │   │   ├── pairwise_experiment.py
 │   │   ├── policy_ablation_experiment.py
+│   │   ├── prepare_faithfulness_labeling_set.py
 │   │   ├── refine_demo.py
 │   │   ├── run_eval.py
 │   │   ├── sanity_checks.py
@@ -167,9 +176,12 @@ conda deactivate
 
 ```bash
 python -m src.experiments.run_eval lecture1
+
+# Run every lecture discovered from data/slides/lecture*.pdf
+python -m src.experiments.run_eval all
 ```
 
-This command is unchanged from earlier versions. It now defaults to `hallucination_policy=tuned` internally.
+`run_eval` supports both single-lecture (`lectureN`) and all-lecture (`all`) execution, and defaults to `hallucination_policy=tuned`.
 
 Optional explicit policy examples:
 
@@ -185,20 +197,20 @@ python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 legacy
 
 ```bash
 python -m src.experiments.run_eval \
-    lecture1 [force_regen] [use_lever_based] [min_avg_score] \
+    lecture1|all [force_regen] [use_lever_based] [min_avg_score] \
     [min_change_threshold] [max_iterations] [min_iterations] [min_agreement] [hallucination_policy]
 ```
 
 Parameters:
-- `lecture1`: lecture id (`lectureN`)
-- `force_regen`: optional (`yes`/`no`), default `no`
-- `use_lever_based`: optional (`yes`/`no`), default `yes`
-- `min_avg_score`: optional float, default `4.0`
-- `min_change_threshold`: optional float, default `0.03`
-- `max_iterations`: optional int, default `12`
-- `min_iterations`: optional int, default `4`
-- `min_agreement`: optional float, default `0.7` (**legacy/compat parameter**)
-- `hallucination_policy`: optional (`tuned`/`legacy`), default `tuned`
+- `lecture1|all`: single lecture id (`lectureN`) or `all` to run all discovered lectures (scope of run)
+- `force_regen`: optional (`yes`/`no`), default `no` (regenerate `S0` even if it exists)
+- `use_lever_based`: optional (`yes`/`no`), default `yes` (enable lever-guided refinement/stopping)
+- `min_avg_score`: optional float, default `4.0` (target rubric average for passing quality)
+- `min_change_threshold`: optional float, default `0.03` (minimum iteration improvement to count as progress)
+- `max_iterations`: optional int, default `12` (hard cap on refinement loop)
+- `min_iterations`: optional int, default `4` (minimum loop count before early-stop checks)
+- `min_agreement`: optional float, default `0.7` (**legacy/compat parameter**; retained for older workflows)
+- `hallucination_policy`: optional (`tuned`/`legacy`), default `tuned` (risk penalty profile)
 
 Note: CLI arguments are positional. If you want to set `hallucination_policy` explicitly, pass preceding arguments as shown in the examples above.
 
@@ -464,6 +476,10 @@ data/references/lecture7_reference.txt
 
 Note on pipeline evolution: the initial/legacy workflow emphasized human-reference-driven evaluation. The current default pipeline is reference-free and uses multi-signal + model-judge evaluation (deterministic signals, rubric judging, pairwise preference, and hybrid scoring). Human reference files are retained only for continuity and optional legacy diagnostics.
 
+## Known Limitations
+
+The hallucination signal can be conservative for some lecture styles (for example SQL-heavy technical slides or humanities narratives), which may slightly over-penalize otherwise acceptable summaries. In practice, risk-adjusted scoring, trend-aware stopping, and multi-seed robustness checks help reduce instability from this effect.
+
 ## Adding Your Own Lecture
 
 To evaluate a new lecture end-to-end with the current CLI pipeline:
@@ -474,6 +490,9 @@ To evaluate a new lecture end-to-end with the current CLI pipeline:
 
 ```bash
 python -m src.experiments.run_eval lectureN
+
+# or run all available lectures
+python -m src.experiments.run_eval all
 ```
 
 4. Review outputs in:

@@ -1,29 +1,29 @@
 {
-  "refined_summary": "This lecture examined **nested and subqueries in SQL**, their various forms, logical interpretations, and implications for optimization and query monotonicity. Building on prior topics such as projections, selections, joins, and aggregates, it introduced how queries can contain other queries and how nesting affects both expressiveness and efficiency.\n\nA **subquery** is a query embedded within another and can appear in the **SELECT**, **FROM**, or **WHERE** clauses. A **nested query** often refers to a subquery correlated with its parent, meaning it depends on outer query values. Although SQL allows such constructs, the lecture\u2019s rule of thumb (Slide\u202f3) stressed: *avoid nested queries when possible\u2014but sometimes it is impossible.* Subqueries can return a single value or an entire relation. When equivalent results can be obtained through simple joins or grouping, **subquery unnesting** (rewriting them as joins) improves clarity and performance.\n\nExamples in **SELECT clause** subqueries included finding each actor\u2019s movie genre, counting how many actors appear per movie, or computing the average salary for movies rated above nine. Paired queries demonstrated that such subqueries are frequently equivalent to join\u2011based formulations, though outer joins may alter equivalence. In the **FROM clause**, subqueries can act as temporary tables or **common table expressions (CTEs)**, supporting cleaner logic refactoring, as shown in filtering movies by rating ranges.\n\nThe **WHERE clause** cases introduced **quantifiers**. Using `EXISTS` or `IN` implements **existential quantifiers** (\u201cthere exists\u201d) to check for the presence or membership of related tuples and can generally be replaced with join formulations. In contrast, **universal quantifiers** (\u201cfor all\u201d) are trickier because SQL lacks direct syntax. The lecture illustrated how to handle them indirectly\u2014for example, selecting actors who only acted in action movies or movies whose actors all earn above\u202f$100\u202fK\u2014by combining `NOT IN`, `NOT EXISTS`, or multi\u2011step exclusion logic. Certain universal\u2011form queries (e.g., `$100\u202fK\u202f<\u202fALL\u202f(...)`) were noted as **not supported in SQLite**, underscoring limitations of real systems.\n\nFinally, the lecture connected these ideas to **query monotonicity**. A **monotone query** (without negation, aggregates, or universal conditions) never loses results when data is added and can therefore be unnested safely. **Non\u2011monotone queries**, which include negation or universal quantification, cannot be unnested this way. This conceptual link between logic, optimization, and expressiveness concluded the discussion of nested SQL queries.  \n\n*(~400\u202fwords)*",
+  "refined_summary": "This lecture focused on **nested SQL queries**\u2014queries that include other queries\u2014and how their structure, logical role, and monotonicity determine whether they can be simplified or must remain nested. It built on prior topics such as projections, selections, joins, aggregation, grouping, and modification statements.\n\nA **subquery** may return either a single value or a full relation, and it can appear in a **SELECT**, **FROM**, or **WHERE** clause. The slides established a practical rule: *avoid nested queries when possible*, though in some cases they are necessary. The lecture repeatedly demonstrated **subquery unnesting**, showing equivalent join-based forms that produce the same results.\n\nIn the **SELECT clause**, subqueries were used to compute attributes such as a movie\u2019s genre or the average salary of its actors. These were examples of **correlated subqueries**, where the inner query references values from the outer one. Equivalent JOIN versions were shown side-by-side to emphasize that an unnested query can yield identical results\u2014though cases involving outer joins or NULLs require care.\n\nSubqueries in the **FROM clause** illustrated how intermediate results can be expressed as derived tables or **common table expressions**, effectively refactoring a query without changing its output.\n\nThe **WHERE clause** introduced **logical quantifiers**. Using **EXISTS** or **IN**, SQL expresses **existential quantification**\u2014whether at least one related record satisfies a condition. These predicates correspond directly to join semantics and can often be unnested. In contrast, **universal quantifiers** (\u201cfor all\u201d) require indirect construction. The lecture walked through a two-step pattern to find actors who acted only in action movies: (1) identify actors linked to any non\u2011action movie, and (2) select those **not** in that set. This logic was extended to queries such as retrieving movies where **all** actors earn over $100K, implemented with **NOT EXISTS** or **<\u202fALL** forms.\n\nThe closing section connected subqueries to **monotonicity**. A query is **monotone** if adding tuples to input relations cannot remove results from the output. A proof sketch using nested\u2011loop semantics showed that simple SELECT\u2011FROM\u2011WHERE queries without aggregates or subqueries are monotone. **Monotone queries can be unnested**, while **non\u2011monotone queries**\u2014those involving negation, universal quantifiers, or aggregates\u2014cannot. This explains why some nested queries are inherently required for correct SQL behavior.  \n\n*(Approx.\u202f395\u202fwords)*",
   "signals": {
-    "length_error": 0.06571428571428571,
-    "section_coverage_pct": 0.9696969696969697,
-    "glossary_recall": 0.5806451612903226,
-    "suspected_hallucination_rate": 0.5263157894736842
+    "length_error": 0.02,
+    "section_coverage_pct": 0.9393939393939394,
+    "glossary_recall": 0.5483870967741935,
+    "suspected_hallucination_rate": 0.6363636363636364
   },
   "rubric": {
     "coverage": 5,
     "faithfulness": 4,
-    "organization": 4,
+    "organization": 5,
     "clarity": 4,
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "The summary clearly traces the lecture\u2019s three-part structure\u2014subqueries in SELECT, FROM, and WHERE\u2014matching the lecture\u2019s logical progression from syntax to semantics to optimization.",
-      "It correctly captures the concluding conceptual link between query monotonicity and unnesting limitations, explicitly echoing Slide\u202f34\u2019s point that non-monotone queries cannot be unnested."
+      "Accurately distinguishes between existential and universal quantifiers, reflecting Slide 17\u2019s statement that 'Join queries essentially evaluate the presence of existential quantifiers... universal quantifiers pose a challenge.'",
+      "Clearly summarizes the monotonicity argument and its connection to unnesting, aligning with the theorem on Slide 33: 'If Q is a SELECT-FROM-WHERE query that does not have subqueries... then it is monotone.'"
     ],
     "two_issues": [
-      "The summary slightly overstates the general safety of subquery unnesting by implying it always 'improves clarity and performance'; the slides (e.g., Slide\u202f10) question equivalence across different join types\u2014this nuance should be spelled out.",
-      "There is an omission of the lecture\u2019s concrete demonstration of monotone vs. non-monotone behavior (Slides\u202f28\u201332), where example tables illustrated how adding tuples changes results; the summary only refers to the theorem at the end."
+      "The summary asserts that 'cases involving outer joins or NULLs require care' without direct textual grounding in the slides; the equivalence questions on Slide 10 raise that issue implicitly but not explicitly in terms of NULL semantics.",
+      "The discussion of the 'two-step pattern' for universal quantifiers is moderately simplified and omits the intermediate example on Slide 19 showing Step 1 (non-action movies) and Step 2 (excluding them), which should be explicitly tied to those queries for stronger justification."
     ],
     "faithfulness_evidence": [
-      "Slide\u202f3: \u201cRule of thumb: avoid nested queries when possible \u2013 But sometimes it\u2019s impossible, as we will see\u201d supports the summary\u2019s discussion of when nesting is necessary.",
-      "Slide\u202f34: \u201cIf a query is non-monotone, it implies that a nested query can NOT be unnested\u201d aligns with the summary\u2019s statement that non-monotone queries cannot be unnested safely."
+      "Slide 3 states 'Rule of thumb: avoid nested queries when possible \u2013 but sometimes it\u2019s impossible, as we will see,' which the summary correctly incorporates.",
+      "Slide 34 emphasizes 'If a query is non-monotone, it implies that a nested query cannot be unnested,' faithfully mirrored in the conclusion that non-monotone queries inherently require nesting."
     ],
     "detected_domain": "engineering"
   },
@@ -35,10 +35,10 @@
   },
   "reference_metrics_used": false,
   "comprehensive_scoring": {
-    "final_score": 0.8333333333333334,
+    "final_score": 0.8666666666666667,
     "mode": "reference_free",
     "layer_scores": {
-      "domain_rubric": 0.8333333333333334,
+      "domain_rubric": 0.8666666666666667,
       "nlp_agreement": 0.0,
       "semantic_similarity": 0.0
     },
@@ -50,7 +50,7 @@
     "rubric_breakdown": {
       "coverage": 5,
       "faithfulness": 4,
-      "organization": 4,
+      "organization": 5,
       "clarity": 4,
       "style": 4
     },
@@ -64,13 +64,13 @@
     }
   },
   "hybrid_scoring": {
-    "comprehensive_score": 0.8333333333333334,
-    "manual_weighted_score": 0.8606060606060607,
+    "comprehensive_score": 0.8666666666666667,
+    "manual_weighted_score": 0.8812121212121212,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.8415151515151515,
+    "blended_score_pre_damping": 0.871030303030303,
     "hallucination_policy": {
       "scoring_policy": "tuned",
       "damping_alpha": 0.05,
@@ -80,16 +80,16 @@
       "min_damping_factor": 0.75,
       "max_damping_factor": 1.0
     },
-    "hallucination_rate": 0.5263157894736842,
-    "raw_damping_factor": 0.9697368421052631,
-    "hallucination_damping_factor": 0.9697368421052631,
-    "scorer_disagreement_delta": 0.027272727272727337,
-    "raw_quality_score": 0.8415151515151515,
-    "risk_adjusted_score": 0.8160482456140351
+    "hallucination_rate": 0.6363636363636364,
+    "raw_damping_factor": 0.9634090909090909,
+    "hallucination_damping_factor": 0.9634090909090909,
+    "scorer_disagreement_delta": 0.014545454545454528,
+    "raw_quality_score": 0.871030303030303,
+    "risk_adjusted_score": 0.8391585123966943
   },
   "leaderboard_scores": {
-    "raw_quality_score": 0.8415151515151515,
-    "risk_adjusted_score": 0.8160482456140351
+    "raw_quality_score": 0.871030303030303,
+    "risk_adjusted_score": 0.8391585123966943
   },
   "iteration_score_table": [
     {
@@ -104,43 +104,53 @@
     },
     {
       "iteration": 2,
-      "avg_rubric_score": 4.4,
-      "quality_score": 0.827049441786284,
-      "word_count": 373,
-      "change_magnitude": 0.5950704225352113,
-      "hallucination_rate": 0.5263157894736842,
-      "coverage": 0.9696969696969697,
+      "avg_rubric_score": 4.319999999999999,
+      "quality_score": 0.7786126406926406,
+      "word_count": 378,
+      "change_magnitude": 0.6438356164383562,
+      "hallucination_rate": 0.7619047619047619,
+      "coverage": 0.9393939393939394,
       "glossary_recall": 0.5806451612903226
     },
     {
       "iteration": 3,
-      "avg_rubric_score": 4.34,
-      "quality_score": 0.8121960173160173,
-      "word_count": 383,
-      "change_magnitude": 0.5374592833876222,
-      "hallucination_rate": 0.5714285714285714,
-      "coverage": 0.9696969696969697,
+      "avg_rubric_score": 4.319999999999999,
+      "quality_score": 0.7786126406926406,
+      "word_count": 378,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.7619047619047619,
+      "coverage": 0.9393939393939394,
       "glossary_recall": 0.5806451612903226
     },
     {
       "iteration": 4,
-      "avg_rubric_score": 4.4,
-      "quality_score": 0.8183493112947661,
-      "word_count": 400,
-      "change_magnitude": 0.4539249146757679,
-      "hallucination_rate": 0.5909090909090909,
-      "coverage": 0.9696969696969697,
-      "glossary_recall": 0.6129032258064516
+      "avg_rubric_score": 4.38,
+      "quality_score": 0.8038503581267218,
+      "word_count": 357,
+      "change_magnitude": 0.5154639175257731,
+      "hallucination_rate": 0.6363636363636364,
+      "coverage": 0.9393939393939394,
+      "glossary_recall": 0.5483870967741935
+    },
+    {
+      "iteration": 5,
+      "avg_rubric_score": 4.38,
+      "quality_score": 0.8038503581267218,
+      "word_count": 357,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.6363636363636364,
+      "coverage": 0.9393939393939394,
+      "glossary_recall": 0.5483870967741935
     }
   ],
-  "final_score_0to1": 0.8160482456140351,
+  "final_score_0to1": 0.8391585123966943,
   "pairwise_selection_enabled": true,
   "lecture_title": "lecture6",
   "refinement_metadata": {
-    "iterations_completed": 4,
-    "final_avg_score": 4.4,
-    "final_word_count": 373,
-    "stopping_reason": "pass: high quality plateau - quality 0.818 >= 0.740; quality span 0.0149 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.827)",
+    "iterations_completed": 5,
+    "final_avg_score": 4.38,
+    "final_word_count": 357,
+    "stopping_reason": "converged: change magnitude 0.0000 <= threshold 0.0300",
     "pairwise_selection_enabled": true,
     "lever_history": [
       {
@@ -152,31 +162,39 @@
       },
       {
         "coverage": 4.6,
-        "faithfulness": 4.5,
-        "organization": 4.4,
-        "clarity": 4.3,
-        "style": 4.2
-      },
-      {
-        "coverage": 4.5,
-        "faithfulness": 4.6,
-        "organization": 4.4,
+        "faithfulness": 4.3,
+        "organization": 4.5,
         "clarity": 4.2,
         "style": 4.0
       },
       {
         "coverage": 4.6,
-        "faithfulness": 4.4,
+        "faithfulness": 4.3,
         "organization": 4.5,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.6,
+        "organization": 4.4,
         "clarity": 4.3,
-        "style": 4.2
+        "style": 4.1
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.6,
+        "organization": 4.4,
+        "clarity": 4.3,
+        "style": 4.1
       }
     ],
     "quality_history": [
       0.7848533333333333,
-      0.827049441786284,
-      0.8121960173160173,
-      0.8183493112947661
+      0.7786126406926406,
+      0.7786126406926406,
+      0.8038503581267218,
+      0.8038503581267218
     ],
     "iteration_metrics": [
       {
@@ -201,73 +219,93 @@
       },
       {
         "iteration": 2,
-        "avg_rubric_score": 4.4,
-        "quality_score": 0.827049441786284,
-        "word_count": 373,
-        "change_magnitude": 0.5950704225352113,
+        "avg_rubric_score": 4.319999999999999,
+        "quality_score": 0.7786126406926406,
+        "word_count": 378,
+        "change_magnitude": 0.6438356164383562,
         "signals": {
-          "length_error": 0.06571428571428571,
-          "section_coverage_pct": 0.9696969696969697,
+          "length_error": 0.08,
+          "section_coverage_pct": 0.9393939393939394,
           "glossary_recall": 0.5806451612903226,
-          "suspected_hallucination_rate": 0.5263157894736842
+          "suspected_hallucination_rate": 0.7619047619047619
         },
         "rubric": {
           "coverage": 4.6,
-          "faithfulness": 4.5,
-          "organization": 4.4,
-          "clarity": 4.3,
-          "style": 4.2
+          "faithfulness": 4.3,
+          "organization": 4.5,
+          "clarity": 4.2,
+          "style": 4.0
         }
       },
       {
         "iteration": 3,
-        "avg_rubric_score": 4.34,
-        "quality_score": 0.8121960173160173,
-        "word_count": 383,
-        "change_magnitude": 0.5374592833876222,
+        "avg_rubric_score": 4.319999999999999,
+        "quality_score": 0.7786126406926406,
+        "word_count": 378,
+        "change_magnitude": 0.0,
         "signals": {
-          "length_error": 0.09428571428571429,
-          "section_coverage_pct": 0.9696969696969697,
+          "length_error": 0.08,
+          "section_coverage_pct": 0.9393939393939394,
           "glossary_recall": 0.5806451612903226,
-          "suspected_hallucination_rate": 0.5714285714285714
+          "suspected_hallucination_rate": 0.7619047619047619
         },
         "rubric": {
-          "coverage": 4.5,
-          "faithfulness": 4.6,
-          "organization": 4.4,
+          "coverage": 4.6,
+          "faithfulness": 4.3,
+          "organization": 4.5,
           "clarity": 4.2,
           "style": 4.0
         }
       },
       {
         "iteration": 4,
-        "avg_rubric_score": 4.4,
-        "quality_score": 0.8183493112947661,
-        "word_count": 400,
-        "change_magnitude": 0.4539249146757679,
+        "avg_rubric_score": 4.38,
+        "quality_score": 0.8038503581267218,
+        "word_count": 357,
+        "change_magnitude": 0.5154639175257731,
         "signals": {
-          "length_error": 0.14285714285714285,
-          "section_coverage_pct": 0.9696969696969697,
-          "glossary_recall": 0.6129032258064516,
-          "suspected_hallucination_rate": 0.5909090909090909
+          "length_error": 0.02,
+          "section_coverage_pct": 0.9393939393939394,
+          "glossary_recall": 0.5483870967741935,
+          "suspected_hallucination_rate": 0.6363636363636364
         },
         "rubric": {
-          "coverage": 4.6,
-          "faithfulness": 4.4,
-          "organization": 4.5,
+          "coverage": 4.5,
+          "faithfulness": 4.6,
+          "organization": 4.4,
           "clarity": 4.3,
-          "style": 4.2
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 5,
+        "avg_rubric_score": 4.38,
+        "quality_score": 0.8038503581267218,
+        "word_count": 357,
+        "change_magnitude": 0.0,
+        "signals": {
+          "length_error": 0.02,
+          "section_coverage_pct": 0.9393939393939394,
+          "glossary_recall": 0.5483870967741935,
+          "suspected_hallucination_rate": 0.6363636363636364
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.6,
+          "organization": 4.4,
+          "clarity": 4.3,
+          "style": 4.1
         }
       }
     ],
     "target_words": 350,
     "final_rubric": {
-      "coverage": 4.6,
-      "faithfulness": 4.4,
-      "organization": 4.5,
+      "coverage": 4.5,
+      "faithfulness": 4.6,
+      "organization": 4.4,
       "clarity": 4.3,
-      "style": 4.2
+      "style": 4.1
     },
-    "final_quality_score": 0.8183493112947661
+    "final_quality_score": 0.8038503581267218
   }
 }

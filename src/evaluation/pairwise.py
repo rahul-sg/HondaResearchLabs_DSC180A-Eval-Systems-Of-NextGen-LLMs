@@ -1,5 +1,6 @@
 from typing import Dict, Any, List
 import random
+from pathlib import Path
 
 from src.models.judge import pairwise_judge_ensemble
 
@@ -61,9 +62,13 @@ def round_robin_pairwise(
     overall_text = summaries[overall_winner]
     print(f"Overall winner: {overall_text[:60]}")
     output = f"Overall winner: {overall_text}"
+    repo_root = Path(__file__).resolve().parents[2]
+    out_dir = repo_root / "outputs"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / "pairwise_overall_winners.log"
 
-    with open("output.txt", "a", encoding="utf-8") as f:
-        f.write(output)
+    with open(out_path, "a", encoding="utf-8") as f:
+        f.write(output + "\n")
 
 
     return {

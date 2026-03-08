@@ -1,0 +1,14 @@
+MULTI-SEED ROBUSTNESS SUMMARY
+Seeds: [11, 22, 33]
+Lectures: 7
+Grand mean final score: 0.8452
+Grand std across lectures: 0.0173
+
+Per lecture:
+- lecture1: final=0.8272±0.0028, raw=0.8346±0.0011, risk=0.8272±0.0028, iters=4.00
+- lecture2: final=0.8713±0.0165, raw=0.8809±0.0173, risk=0.8713±0.0165, iters=4.33
+- lecture3: final=0.8251±0.0134, raw=0.8514±0.0140, risk=0.8251±0.0134, iters=4.33
+- lecture4: final=0.8462±0.0131, raw=0.8557±0.0139, risk=0.8462±0.0131, iters=5.00
+- lecture5: final=0.8345±0.0154, raw=0.8520±0.0162, risk=0.8345±0.0154, iters=6.33
+- lecture6: final=0.8431±0.0038, raw=0.8735±0.0017, risk=0.8431±0.0038, iters=4.33
+- lecture7: final=0.8692±0.0060, raw=0.8981±0.0049, risk=0.8692±0.0060, iters=4.00

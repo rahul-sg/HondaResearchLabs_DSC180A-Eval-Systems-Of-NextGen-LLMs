@@ -1,0 +1,902 @@
+[
+  {
+    "sample_id": "lecture1::s0",
+    "lecture_id": "lecture1",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 4.5,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.8038297872340427,
+    "hallucination_rate": 0.07692307692307693,
+    "section_coverage_pct": 0.8191489361702128,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture2::s0",
+    "lecture_id": "lecture2",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 4.4,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8385964912280702,
+    "hallucination_rate": 0.13333333333333333,
+    "section_coverage_pct": 0.8596491228070176,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::s0",
+    "lecture_id": "lecture3",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 2.5,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8095238095238096,
+    "hallucination_rate": 0.7272727272727273,
+    "section_coverage_pct": 0.7142857142857143,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::s0",
+    "lecture_id": "lecture4",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 3.7,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8666666666666667,
+    "manual_base_without_penalty": 0.8552380952380952,
+    "hallucination_rate": 0.375,
+    "section_coverage_pct": 0.8095238095238095,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::s0",
+    "lecture_id": "lecture5",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 3.2,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8607843137254902,
+    "hallucination_rate": 0.5625,
+    "section_coverage_pct": 0.9705882352941176,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture6::s0",
+    "lecture_id": "lecture6",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 2.5,
+    "detected_domain": "engineering",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8545454545454546,
+    "hallucination_rate": 0.8,
+    "section_coverage_pct": 0.9393939393939394,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture7::s0",
+    "lecture_id": "lecture7",
+    "source": "model_s0",
+    "human_faithfulness_1to5": 3.0,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8666666666666667,
+    "manual_base_without_penalty": 0.8733333333333334,
+    "hallucination_rate": 0.5882352941176471,
+    "section_coverage_pct": 0.9,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture1::final",
+    "lecture_id": "lecture1",
+    "source": "refined_final",
+    "human_faithfulness_1to5": 3.9,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8833333333333333,
+    "manual_base_without_penalty": 0.8795744680851065,
+    "hallucination_rate": 0.29411764705882354,
+    "section_coverage_pct": 0.7978723404255319,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 5
+    }
+  },
+  {
+    "sample_id": "lecture1::variant_truncate_head_60pct",
+    "lecture_id": "lecture1",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 4.0,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7740425531914895,
+    "hallucination_rate": 0.2,
+    "section_coverage_pct": 0.6702127659574468,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture1::variant_drop_middle_30pct",
+    "lecture_id": "lecture1",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.7,
+    "detected_domain": "business",
+    "comprehensive_score": 0.75,
+    "manual_base_without_penalty": 0.644113475177305,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.2872340425531915,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 3,
+      "clarity": 4,
+      "style": 3
+    }
+  },
+  {
+    "sample_id": "lecture1::variant_word_truncate_75pct",
+    "lecture_id": "lecture1",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 4.4,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7804255319148937,
+    "hallucination_rate": 0.08333333333333333,
+    "section_coverage_pct": 0.7021276595744681,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture1::iter_1",
+    "lecture_id": "lecture1",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 4.3,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8304964539007094,
+    "hallucination_rate": 0.15789473684210525,
+    "section_coverage_pct": 0.8191489361702128,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture1::iter_2",
+    "lecture_id": "lecture1",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 4.2,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8368794326241136,
+    "hallucination_rate": 0.21052631578947367,
+    "section_coverage_pct": 0.851063829787234,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture2::final",
+    "lecture_id": "lecture2",
+    "source": "refined_final",
+    "human_faithfulness_1to5": 4.3,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8596491228070177,
+    "hallucination_rate": 0.21052631578947367,
+    "section_coverage_pct": 0.9649122807017544,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture2::variant_truncate_head_60pct",
+    "lecture_id": "lecture2",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 4.1,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7873684210526317,
+    "hallucination_rate": 0.18181818181818182,
+    "section_coverage_pct": 0.7368421052631579,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture2::variant_drop_middle_30pct",
+    "lecture_id": "lecture2",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.8,
+    "detected_domain": "business",
+    "comprehensive_score": 0.5166666666666667,
+    "manual_base_without_penalty": 0.4968421052631579,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.3508771929824561,
+    "raw_rubric": {
+      "coverage": 3,
+      "faithfulness": 2,
+      "organization": 3,
+      "clarity": 3,
+      "style": 3
+    }
+  },
+  {
+    "sample_id": "lecture2::variant_word_truncate_75pct",
+    "lecture_id": "lecture2",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 4.3,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.832982456140351,
+    "hallucination_rate": 0.2,
+    "section_coverage_pct": 0.9649122807017544,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture2::iter_1",
+    "lecture_id": "lecture2",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 4.1,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8631578947368421,
+    "hallucination_rate": 0.26666666666666666,
+    "section_coverage_pct": 0.9824561403508771,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture2::iter_2",
+    "lecture_id": "lecture2",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 4.3,
+    "detected_domain": "business",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8596491228070177,
+    "hallucination_rate": 0.2,
+    "section_coverage_pct": 0.9649122807017544,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::final",
+    "lecture_id": "lecture3",
+    "source": "refined_final",
+    "human_faithfulness_1to5": 2.2,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8666666666666667,
+    "manual_base_without_penalty": 0.8433333333333334,
+    "hallucination_rate": 0.85,
+    "section_coverage_pct": 0.75,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::variant_truncate_head_60pct",
+    "lecture_id": "lecture3",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 2.1,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7685714285714287,
+    "hallucination_rate": 0.8333333333333334,
+    "section_coverage_pct": 0.6428571428571429,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::variant_drop_middle_30pct",
+    "lecture_id": "lecture3",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.1,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7114285714285715,
+    "hallucination_rate": 0.75,
+    "section_coverage_pct": 0.35714285714285715,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::variant_word_truncate_75pct",
+    "lecture_id": "lecture3",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 2.1,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7685714285714287,
+    "hallucination_rate": 0.8461538461538461,
+    "section_coverage_pct": 0.6428571428571429,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::iter_1",
+    "lecture_id": "lecture3",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 2.4,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8452380952380953,
+    "hallucination_rate": 0.8235294117647058,
+    "section_coverage_pct": 0.8928571428571429,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture3::iter_2",
+    "lecture_id": "lecture3",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 2.6,
+    "detected_domain": "humanities",
+    "comprehensive_score": 0.8666666666666667,
+    "manual_base_without_penalty": 0.8504761904761905,
+    "hallucination_rate": 0.7222222222222222,
+    "section_coverage_pct": 0.7857142857142857,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::final",
+    "lecture_id": "lecture4",
+    "source": "refined_final",
+    "human_faithfulness_1to5": 4.0,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8380952380952382,
+    "hallucination_rate": 0.2777777777777778,
+    "section_coverage_pct": 0.8571428571428571,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::variant_truncate_head_60pct",
+    "lecture_id": "lecture4",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 3.5,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.782857142857143,
+    "hallucination_rate": 0.4,
+    "section_coverage_pct": 0.7142857142857143,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::variant_drop_middle_30pct",
+    "lecture_id": "lecture4",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.8,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7114285714285715,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.35714285714285715,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::variant_word_truncate_75pct",
+    "lecture_id": "lecture4",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 3.8,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7876190476190478,
+    "hallucination_rate": 0.3076923076923077,
+    "section_coverage_pct": 0.7380952380952381,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::iter_1",
+    "lecture_id": "lecture4",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 4.1,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8285714285714286,
+    "hallucination_rate": 0.2222222222222222,
+    "section_coverage_pct": 0.8095238095238095,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture4::iter_2",
+    "lecture_id": "lecture4",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.7,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8333333333333335,
+    "hallucination_rate": 0.35294117647058826,
+    "section_coverage_pct": 0.8333333333333334,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::final",
+    "lecture_id": "lecture5",
+    "source": "refined_final",
+    "human_faithfulness_1to5": 3.3,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8078431372549021,
+    "hallucination_rate": 0.45,
+    "section_coverage_pct": 0.7058823529411765,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::variant_truncate_head_60pct",
+    "lecture_id": "lecture5",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 3.1,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7752941176470589,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.6764705882352942,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::variant_drop_middle_30pct",
+    "lecture_id": "lecture5",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.9,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.6666666666666666,
+    "manual_base_without_penalty": 0.6215686274509804,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.4411764705882353,
+    "raw_rubric": {
+      "coverage": 3,
+      "faithfulness": 3,
+      "organization": 4,
+      "clarity": 4,
+      "style": 3
+    }
+  },
+  {
+    "sample_id": "lecture5::variant_word_truncate_75pct",
+    "lecture_id": "lecture5",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 2.9,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7752941176470589,
+    "hallucination_rate": 0.5714285714285714,
+    "section_coverage_pct": 0.6764705882352942,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_1",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 2.8,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.8341176470588236,
+    "hallucination_rate": 0.7,
+    "section_coverage_pct": 0.9705882352941176,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_2",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.1,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8137254901960785,
+    "hallucination_rate": 0.5294117647058824,
+    "section_coverage_pct": 0.7352941176470589,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_3",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.4,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8607843137254902,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.9705882352941176,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_4",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.4,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8607843137254902,
+    "hallucination_rate": 0.5,
+    "section_coverage_pct": 0.9705882352941176,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_5",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.5,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8607843137254902,
+    "hallucination_rate": 0.47368421052631576,
+    "section_coverage_pct": 0.9705882352941176,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_6",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.7,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7870588235294119,
+    "hallucination_rate": 0.3333333333333333,
+    "section_coverage_pct": 0.7352941176470589,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture5::iter_7",
+    "lecture_id": "lecture5",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 2.8,
+    "detected_domain": "social_sciences",
+    "comprehensive_score": 0.9,
+    "manual_base_without_penalty": 0.8670588235294119,
+    "hallucination_rate": 0.631578947368421,
+    "section_coverage_pct": 0.7352941176470589,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 5,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture6::variant_truncate_head_60pct",
+    "lecture_id": "lecture6",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 2.2,
+    "detected_domain": "engineering",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.821818181818182,
+    "hallucination_rate": 0.8888888888888888,
+    "section_coverage_pct": 0.9090909090909091,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture6::variant_drop_middle_30pct",
+    "lecture_id": "lecture6",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.3,
+    "detected_domain": "engineering",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.7551515151515154,
+    "hallucination_rate": 0.75,
+    "section_coverage_pct": 0.5757575757575758,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture6::variant_word_truncate_75pct",
+    "lecture_id": "lecture6",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 2.6,
+    "detected_domain": "engineering",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.827878787878788,
+    "hallucination_rate": 0.75,
+    "section_coverage_pct": 0.9393939393939394,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture7::final",
+    "lecture_id": "lecture7",
+    "source": "refined_final",
+    "human_faithfulness_1to5": 3.2,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8333333333333334,
+    "manual_base_without_penalty": 0.8666666666666667,
+    "hallucination_rate": 0.5714285714285714,
+    "section_coverage_pct": 1.0,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture7::variant_truncate_head_60pct",
+    "lecture_id": "lecture7",
+    "source": "variant_truncate_head_60pct",
+    "human_faithfulness_1to5": 2.7,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.8000000000000002,
+    "hallucination_rate": 0.6666666666666666,
+    "section_coverage_pct": 0.8,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture7::variant_drop_middle_30pct",
+    "lecture_id": "lecture7",
+    "source": "variant_drop_middle_30pct",
+    "human_faithfulness_1to5": 2.3,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.5833333333333334,
+    "manual_base_without_penalty": 0.6,
+    "hallucination_rate": 0.75,
+    "section_coverage_pct": 0.6,
+    "raw_rubric": {
+      "coverage": 3,
+      "faithfulness": 3,
+      "organization": 2,
+      "clarity": 3,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture7::variant_word_truncate_75pct",
+    "lecture_id": "lecture7",
+    "source": "variant_word_truncate_75pct",
+    "human_faithfulness_1to5": 3.0,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.8,
+    "manual_base_without_penalty": 0.8100000000000002,
+    "hallucination_rate": 0.5714285714285714,
+    "section_coverage_pct": 0.85,
+    "raw_rubric": {
+      "coverage": 4,
+      "faithfulness": 4,
+      "organization": 4,
+      "clarity": 4,
+      "style": 4
+    }
+  },
+  {
+    "sample_id": "lecture7::iter_1",
+    "lecture_id": "lecture7",
+    "source": "refined_iteration",
+    "human_faithfulness_1to5": 3.1,
+    "detected_domain": "natural_sciences",
+    "comprehensive_score": 0.9,
+    "manual_base_without_penalty": 0.9000000000000001,
+    "hallucination_rate": 0.5789473684210527,
+    "section_coverage_pct": 0.9,
+    "raw_rubric": {
+      "coverage": 5,
+      "faithfulness": 4,
+      "organization": 5,
+      "clarity": 5,
+      "style": 4
+    }
+  }
+]

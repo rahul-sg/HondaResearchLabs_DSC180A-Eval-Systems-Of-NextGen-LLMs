@@ -1,0 +1,322 @@
+{
+  "overall": {
+    "num_lectures": 7,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "grand_mean_final_score": 0.8452277400754609,
+    "grand_std_across_lectures": 0.017338951224099588
+  },
+  "per_lecture": [
+    {
+      "lecture_id": "lecture1",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8243265169424745,
+          "raw_quality_score": 0.8331205673758866,
+          "risk_adjusted_score": 0.8243265169424745,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.830 >= 0.740; quality span 0.0177 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.847)"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.8310690425531915,
+          "raw_quality_score": 0.8350354609929078,
+          "risk_adjusted_score": 0.8310690425531915,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.848 >= 0.740; quality span 0.0135 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.862)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.8263338756779308,
+          "raw_quality_score": 0.8356737588652483,
+          "risk_adjusted_score": 0.8263338756779308,
+          "iterations_completed": 4,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1250 < 0.0200, recall_improvement -0.0192 < 0.0200, score_gain -0.0169 < 0.0150 | final_selection: best_of_last_3 (iter 3, quality=0.857)"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8272431450578656,
+        "std_final_score": 0.002826716706328954,
+        "mean_raw_quality_score": 0.8346099290780142,
+        "std_raw_quality_score": 0.0010848977688495325,
+        "mean_risk_adjusted_score": 0.8272431450578656,
+        "std_risk_adjusted_score": 0.002826716706328954,
+        "mean_iterations": 4
+      }
+    },
+    {
+      "lecture_id": "lecture2",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8560603898635478,
+          "raw_quality_score": 0.8651929824561404,
+          "risk_adjusted_score": 0.8560603898635478,
+          "iterations_completed": 4,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0556 < 0.0200, recall_improvement -0.0625 < 0.0200, score_gain 0.0119 < 0.0150"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.8942011184210528,
+          "raw_quality_score": 0.9049473684210527,
+          "risk_adjusted_score": 0.8942011184210528,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.872 >= 0.740; quality span 0.0187 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.891)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.8635512585812358,
+          "raw_quality_score": 0.872561403508772,
+          "risk_adjusted_score": 0.8635512585812358,
+          "iterations_completed": 5,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1200 < 0.0200, recall_improvement -0.1250 < 0.0200, score_gain -0.0359 < 0.0150 | final_selection: best_of_last_3 (iter 4, quality=0.889)"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8712709222886121,
+        "std_final_score": 0.016499973728071115,
+        "mean_raw_quality_score": 0.8809005847953217,
+        "std_raw_quality_score": 0.017267681937833273,
+        "mean_risk_adjusted_score": 0.8712709222886121,
+        "std_risk_adjusted_score": 0.016499973728071115,
+        "mean_iterations": 4.333333333333333
+      }
+    },
+    {
+      "lecture_id": "lecture3",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8297195238095237,
+          "raw_quality_score": 0.8553809523809524,
+          "risk_adjusted_score": 0.8297195238095237,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.767 >= 0.740; quality span 0.0049 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.768)"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.8385839775910365,
+          "raw_quality_score": 0.8660952380952381,
+          "risk_adjusted_score": 0.8385839775910365,
+          "iterations_completed": 5,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement 0.0000 < 0.0200, recall_improvement 0.0098 < 0.0200, score_gain -0.0199 < 0.0150 | final_selection: best_of_last_3 (iter 4, quality=0.789)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.8068598958333334,
+          "raw_quality_score": 0.8326190476190476,
+          "risk_adjusted_score": 0.8068598958333334,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.778 >= 0.740; quality span 0.0014 <= 0.0200"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8250544657446313,
+        "std_final_score": 0.013364789957296307,
+        "mean_raw_quality_score": 0.8513650793650793,
+        "std_raw_quality_score": 0.013958492260012906,
+        "mean_risk_adjusted_score": 0.8250544657446313,
+        "std_risk_adjusted_score": 0.013364789957296307,
+        "mean_iterations": 4.333333333333333
+      }
+    },
+    {
+      "lecture_id": "lecture4",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8606920595238096,
+          "raw_quality_score": 0.8675238095238096,
+          "risk_adjusted_score": 0.8606920595238096,
+          "iterations_completed": 7,
+          "stopping_reason": "pass: high quality plateau - quality 0.860 >= 0.740; quality span 0.0042 <= 0.0200 | final_selection: best_of_last_3 (iter 5, quality=0.865)"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.8288738095238095,
+          "raw_quality_score": 0.8361904761904763,
+          "risk_adjusted_score": 0.8288738095238095,
+          "iterations_completed": 4,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0316 < 0.0200, recall_improvement -0.0370 < 0.0200, score_gain 0.0043 < 0.0150 | final_selection: best_of_last_3 (iter 3, quality=0.859)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.8489265162907268,
+          "raw_quality_score": 0.8632380952380952,
+          "risk_adjusted_score": 0.8489265162907268,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.846 >= 0.740; quality span 0.0198 <= 0.0200 | final_selection: best_of_last_3 (iter 3, quality=0.851)"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8461641284461153,
+        "std_final_score": 0.013135786950633976,
+        "mean_raw_quality_score": 0.8556507936507937,
+        "std_raw_quality_score": 0.013871308601496971,
+        "mean_risk_adjusted_score": 0.8461641284461153,
+        "std_risk_adjusted_score": 0.013135786950633976,
+        "mean_iterations": 5
+      }
+    },
+    {
+      "lecture_id": "lecture5",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8255789473684212,
+          "raw_quality_score": 0.8433333333333334,
+          "risk_adjusted_score": 0.8255789473684212,
+          "iterations_completed": 6,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0702 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain -0.0739 < 0.0150 | final_selection: best_of_last_3 (iter 4, quality=0.863)"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.8562526315789475,
+          "raw_quality_score": 0.8746666666666667,
+          "risk_adjusted_score": 0.8562526315789475,
+          "iterations_completed": 6,
+          "stopping_reason": "pass: high quality plateau - quality 0.841 >= 0.740; quality span 0.0198 <= 0.0200 | final_selection: best_of_last_3 (iter 4, quality=0.856)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.821744008714597,
+          "raw_quality_score": 0.8380392156862746,
+          "risk_adjusted_score": 0.821744008714597,
+          "iterations_completed": 7,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1667 < 0.0200, recall_improvement 0.0133 < 0.0200, score_gain -0.0126 < 0.0150 | final_selection: best_of_last_3 (iter 5, quality=0.861)"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8345251958873219,
+        "std_final_score": 0.015443181557350664,
+        "mean_raw_quality_score": 0.8520130718954249,
+        "std_raw_quality_score": 0.016163661661474905,
+        "mean_risk_adjusted_score": 0.8345251958873219,
+        "std_risk_adjusted_score": 0.015443181557350664,
+        "mean_iterations": 6.333333333333333
+      }
+    },
+    {
+      "lecture_id": "lecture6",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8481964912280702,
+          "raw_quality_score": 0.8746666666666667,
+          "risk_adjusted_score": 0.8481964912280702,
+          "iterations_completed": 4,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1100 < 0.0200, recall_improvement -0.0323 < 0.0200, score_gain -0.0234 < 0.0150 | final_selection: best_of_last_3 (iter 2, quality=0.836)"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.841976,
+          "raw_quality_score": 0.8746666666666667,
+          "risk_adjusted_score": 0.841976,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.810 >= 0.740; quality span 0.0115 <= 0.0200 | final_selection: best_of_last_3 (iter 3, quality=0.822)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.8391585123966943,
+          "raw_quality_score": 0.871030303030303,
+          "risk_adjusted_score": 0.8391585123966943,
+          "iterations_completed": 5,
+          "stopping_reason": "converged: change magnitude 0.0000 <= threshold 0.0300"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8431103345415881,
+        "std_final_score": 0.0037759150306718,
+        "mean_raw_quality_score": 0.8734545454545455,
+        "std_raw_quality_score": 0.0017141982574219443,
+        "mean_risk_adjusted_score": 0.8431103345415881,
+        "std_risk_adjusted_score": 0.0037759150306718,
+        "mean_iterations": 4.333333333333333
+      }
+    },
+    {
+      "lecture_id": "lecture7",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "runs": [
+        {
+          "seed": 11,
+          "final_score_0to1": 0.8609165833333333,
+          "raw_quality_score": 0.8913333333333333,
+          "risk_adjusted_score": 0.8609165833333333,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.813 >= 0.740; quality span 0.0098 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.823)"
+        },
+        {
+          "seed": 22,
+          "final_score_0to1": 0.8722058823529412,
+          "raw_quality_score": 0.9,
+          "risk_adjusted_score": 0.8722058823529412,
+          "iterations_completed": 4,
+          "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0358 < 0.0200, recall_improvement -0.0208 < 0.0200, score_gain -0.0303 < 0.0150 | final_selection: best_of_last_3 (iter 2, quality=0.818)"
+        },
+        {
+          "seed": 33,
+          "final_score_0to1": 0.8745555,
+          "raw_quality_score": 0.903,
+          "risk_adjusted_score": 0.8745555,
+          "iterations_completed": 4,
+          "stopping_reason": "pass: high quality plateau - quality 0.821 >= 0.740; quality span 0.0189 <= 0.0200"
+        }
+      ],
+      "summary": {
+        "num_runs": 3,
+        "mean_final_score": 0.8692259885620915,
+        "std_final_score": 0.005953421269243878,
+        "mean_raw_quality_score": 0.8981111111111111,
+        "std_raw_quality_score": 0.004946628731011591,
+        "mean_risk_adjusted_score": 0.8692259885620915,
+        "std_risk_adjusted_score": 0.005953421269243878,
+        "mean_iterations": 4
+      }
+    }
+  ]
+}

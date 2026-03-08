@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 from pathlib import Path
 from dotenv import load_dotenv
 import json
@@ -83,6 +84,42 @@ def main():
         f"{hallucination_policy} "
         f"(alpha={hallucination_damping_alpha}, beta={hallucination_subtractive_beta})"
     )
+
+    if lecture_id.lower() == "all":
+        slides_dir = ROOT / "data" / "slides"
+        lecture_ids = sorted(p.stem for p in slides_dir.glob("lecture*.pdf"))
+        if not lecture_ids:
+            raise FileNotFoundError(f"No lecture PDFs found in {slides_dir}")
+
+        failed = []
+        for lid in lecture_ids:
+            print(f"\n[RUN_EVAL ALL] Running {lid}...")
+            cmd = [
+                sys.executable,
+                "-m",
+                "src.experiments.run_eval",
+                lid,
+                force_regen,
+                "yes" if use_lever_based else "no",
+                str(min_avg_score),
+                str(min_change_threshold),
+                str(max_iterations),
+                str(min_iterations),
+                str(min_agreement),
+                hallucination_policy,
+            ]
+            result = subprocess.run(cmd)
+            if result.returncode != 0:
+                failed.append((lid, result.returncode))
+
+        if failed:
+            print("\n[RUN_EVAL ALL] Failures:")
+            for lid, code in failed:
+                print(f"- {lid}: exit code {code}")
+            raise SystemExit(1)
+
+        print(f"\n[RUN_EVAL ALL] Completed {len(lecture_ids)} lectures successfully.")
+        return
 
     #paths
     SLIDES_PATH = f"data/slides/{lecture_id}.pdf"

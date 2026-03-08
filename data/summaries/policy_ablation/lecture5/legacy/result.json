@@ -1,29 +1,29 @@
 {
-  "refined_summary": "This lecture examined how race, law, culture, and schooling intersect to shape identity and social organization. It opened by asking students to reflect on how institutional labeling\u2014by teachers, counselors, or administrators\u2014can influence self\u2011perception and motivation. Overcoming the common fear or silence surrounding discussions of race requires courage to confront how formative experiences shape individual and societal views.  \n\nThe lecture emphasized that race is not biologically determined but socially constructed through historical, political, and economic processes. As Sonia\u202fNieto notes, society classifies people by visible and invisible traits, attaching stereotypes and unequal value to those classifications. The *RACE: Are We So Different?* project illustrates that scientific evidence refutes biological notions of race, showing instead how racial \u201ccommon sense\u201d is learned.  \n\nLaw plays a powerful role in constructing racial meaning. Ian\u202fHaney\u202fL\u00f3pez\u2019s analysis showed that law operates both as coercion\u2014through immigration restrictions, naturalization rules, and bans on interracial marriage\u2014and as ideology, persuading citizens that racial hierarchy is natural rather than human\u2011made. Court cases involving Armenians, Japanese, and Mexicans reveal how whiteness and citizenship were legally defined and selectively granted. James\u202fBaldwin\u2019s observation that \u201cno one was white before coming to America\u201d underscores how whiteness was built through exclusion and access to privilege. The shifting race categories in the U.S.\u202fCensus and evolving racial labels highlight how language tracks social and political priorities over time.  \n\nThe second half focused on culture. Drawing on Nieto, culture was defined as an ever\u2011changing set of values, traditions, relationships, and worldviews created and reshaped by human groups. It is learned\u2014not genetic\u2014dynamic, and hybrid, with each person navigating multiple cultural influences such as family, peers, class, religion, media, and geography.  \n\nSchools themselves are cultural systems. Their physical environments, rules, student tracking, and academic opportunities reflect deep cultural beliefs. A key assumption in U.S.\u202fschooling is that ability varies among students, is relatively fixed, and can be accurately measured\u2014a hierarchy that shapes expectations of who is \u201csmart\u201d or \u201cbad.\u201d Such institutional beliefs affect students\u2019 sense of belonging, learning, and future aspirations.  \n\nOverall, the lecture linked the social construction of race and culture to the ways law, language, and education reproduce inequality while also offering spaces for reflection and change.  \n\n(Word count: 395)",
+  "refined_summary": "The lecture explored how race and culture are socially constructed through societal, legal, and educational systems rather than biologically determined. Drawing on **Sonia\u202fNieto**, it explained that people are categorized by visible and invisible traits that lead to stereotypes and unequal treatment. Students were prompted to reflect on how labeling by teachers or counselors affected their motivation, self\u2011image, and sense of capability. The section on **Silence, Fear, and Denial** emphasized the common avoidance of discussions about race and urged courage in recognizing how upbringing shapes our views.  \n\nThe lecture affirmed that race has no biological foundation; it becomes \u201ccommon sense\u201d through historical and political processes that redefine categories for economic or social ends. The *RACE:\u202fAre\u202fWe\u202fSo\u202fDifferent?* project illustrated scientific evidence dismantling racial myths. **Ian\u202fHaney\u202fLopez** described how law constructs racial meaning in two ways: as **coercion**, legal rules have historically set physical and social boundaries\u2014through immigration, naturalization, and marriage laws that defined who could belong; and as **ideology**, law legitimates these divisions by portraying them as natural, reinforced by race\u2011neutral practices in criminal justice, schooling, or media. Examples included Armenian, Japanese, and Mexican legal cases showing how courts determined racial eligibility for citizenship. Changing **Census** categories and bans on interracial marriage, overturned only in\u202f1967, further demonstrated how institutions formalized racial identity. **James\u202fBaldwin\u2019s** observation that whiteness itself was created through coercion illustrated the historical production of racial hierarchies rather than serving as a central argument.  \n\nThe second half focused on **culture**. Nieto defined it as dynamic and learned\u2014values, traditions, and worldviews formed and transformed through history, language, class, and religion. Culture is multifaceted and hybrid; everyone has culture, and people actively select or reject elements in context. **Culturally mediating factors** such as family, peers, class, gender, religion, community, language, and media influence cultural identities. The lecture also introduced alternative ways to view culture\u2014as **values** (guiding behavior), **frames** (interpretive lenses), and **repertoires** (strategies for action)\u2014highlighting how these shape both individual choices and institutional norms. Schools were analyzed as cultural systems whose physical settings, tracking practices, and program opportunities reveal underlying beliefs that ability is fixed and hierarchies are natural. These assumptions influence how students define being \u201csmart\u201d or \u201cbad,\u201d affecting participation, learning, and future aspirations.  \n\n(\u2248394\u202fwords)",
   "signals": {
-    "length_error": 0.04,
-    "section_coverage_pct": 0.7352941176470589,
-    "glossary_recall": 0.4794520547945205,
-    "suspected_hallucination_rate": 0.42857142857142855
+    "length_error": 0.06,
+    "section_coverage_pct": 0.9705882352941176,
+    "glossary_recall": 0.5616438356164384,
+    "suspected_hallucination_rate": 0.2222222222222222
   },
   "rubric": {
-    "coverage": 5,
+    "coverage": 4,
     "faithfulness": 4,
     "organization": 4,
     "clarity": 4,
     "style": 4,
-    "overall_1to10": 9,
+    "overall_1to10": 8,
     "two_strengths": [
-      "The summary accurately identifies the lecture\u2019s through-line connecting race, law, culture, and schooling, preserving the argument that both race and culture are socially constructed rather than biological.",
-      "It clearly captures key lecture evidence, such as referencing the 'RACE: Are We So Different?' project and Ian Haney L\u00f3pez\u2019s distinction between law as coercion and ideology, showing interpretive understanding of how legal institutions shape racial categories."
+      "Comprehensive linkage between major lecture parts\u2014race, law, and culture\u2014showing how conceptual threads (social construction, institutional influence) run throughout.",
+      "Accurately conveys Ian\u202fHaney\u202fLopez\u2019s distinction between law as 'coercion' and law as 'ideology', and integrates the school culture discussion to demonstrate institutional reproduction of inequality."
     ],
     "two_issues": [
-      "While generally faithful, the summary modestly overgeneralizes when stating that the lecture linked 'law, language, and education [as] reproducing inequality'\u2014the slides emphasize this pattern but also encourage individual reflection and courage ('Silence or denial are common, but not the answer'), which the summary glosses over.",
-      "The treatment of school culture is compressed: slides 10\u201314 detail multiple structural and cultural dimensions of schooling (e.g., routines, grouping, resources) that are only briefly acknowledged, which weakens coverage of this applied section."
+      "The summary underplays the reflective element in early slides\u2014specifically slide\u202f3 ('Did those labels influence how you saw yourself?')\u2014which was meant to ground abstract theory in students\u2019 personal experiences, not just to 'prompt reflection'.",
+      "The account of Baldwin\u2019s quote ('illustrated the historical production of racial hierarchies rather than serving as a central argument') adds interpretive language not stated on slides; needs explicit tie to slide\u202f13\u2019s framing of whiteness as 'law as coercion'."
     ],
     "faithfulness_evidence": [
-      "Slide 5: 'Widely accepted... that race is not biologically determined.' \u2013 accurately reflected in the summary\u2019s phrase 'race is not biologically determined but socially constructed through historical, political, and economic processes.'",
-      "Slide 10: 'Law as coercion...' and Slide 2 (Chunk 2): 'Law as ideology...' \u2013 faithfully summarized as 'law operates both as coercion... and as ideology, persuading citizens that racial hierarchy is natural rather than human-made.'"
+      "Slide\u202f5 explicitly states: 'race is not biologically determined... political struggles have led to redefining categories,' which the summary reproduces accurately.",
+      "Slide\u202f10 notes: 'Law influences what we look like, the meanings ascribed to our looks, and the material reality that confirms the meanings'\u2014appropriately represented in the summary\u2019s explanation of law constructing racial meaning."
     ],
     "detected_domain": "social_sciences"
   },
@@ -35,10 +35,10 @@
   },
   "reference_metrics_used": false,
   "comprehensive_scoring": {
-    "final_score": 0.8333333333333334,
+    "final_score": 0.8,
     "mode": "reference_free",
     "layer_scores": {
-      "domain_rubric": 0.8333333333333334,
+      "domain_rubric": 0.8,
       "nlp_agreement": 0.0,
       "semantic_similarity": 0.0
     },
@@ -48,7 +48,7 @@
       "semantic_similarity": 0.0
     },
     "rubric_breakdown": {
-      "coverage": 5,
+      "coverage": 4,
       "faithfulness": 4,
       "organization": 4,
       "clarity": 4,
@@ -64,13 +64,13 @@
     }
   },
   "hybrid_scoring": {
-    "comprehensive_score": 0.8333333333333334,
-    "manual_weighted_score": 0.6791354709328429,
+    "comprehensive_score": 0.8,
+    "manual_weighted_score": 0.717464743101212,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.7870739746131863,
+    "blended_score_pre_damping": 0.7752394229303635,
     "hallucination_policy": {
       "scoring_policy": "legacy",
       "damping_alpha": 0.15,
@@ -80,22 +80,22 @@
       "min_damping_factor": 0.75,
       "max_damping_factor": 1.0
     },
-    "hallucination_rate": 0.42857142857142855,
-    "raw_damping_factor": 0.9357142857142857,
-    "hallucination_damping_factor": 0.9357142857142857,
-    "scorer_disagreement_delta": 0.1541978624004905,
-    "raw_quality_score": 0.7870739746131863,
-    "risk_adjusted_score": 0.7364763619594814
+    "hallucination_rate": 0.2222222222222222,
+    "raw_damping_factor": 0.9666666666666667,
+    "hallucination_damping_factor": 0.9666666666666667,
+    "scorer_disagreement_delta": 0.08253525689878805,
+    "raw_quality_score": 0.7752394229303635,
+    "risk_adjusted_score": 0.7493981088326848
   },
   "leaderboard_scores": {
-    "raw_quality_score": 0.7870739746131863,
-    "risk_adjusted_score": 0.7364763619594814
+    "raw_quality_score": 0.7752394229303635,
+    "risk_adjusted_score": 0.7493981088326848
   },
   "iteration_score_table": [
     {
       "iteration": 1,
-      "avg_rubric_score": 4.4,
-      "quality_score": 0.8178263513513516,
+      "avg_rubric_score": 4.3,
+      "quality_score": 0.8031763513513513,
       "word_count": 306,
       "change_magnitude": 0.0,
       "hallucination_rate": 0.5625,
@@ -104,45 +104,126 @@
     },
     {
       "iteration": 2,
-      "avg_rubric_score": 4.4,
-      "quality_score": 0.805422393822394,
-      "word_count": 364,
-      "change_magnitude": 0.6167664670658682,
-      "hallucination_rate": 0.42857142857142855,
-      "coverage": 0.7837837837837838,
-      "glossary_recall": 0.49333333333333335
+      "avg_rubric_score": 4.28,
+      "quality_score": 0.755978810810811,
+      "word_count": 360,
+      "change_magnitude": 0.6146788990825688,
+      "hallucination_rate": 0.6,
+      "coverage": 0.7297297297297297,
+      "glossary_recall": 0.4666666666666667
     },
     {
       "iteration": 3,
-      "avg_rubric_score": 4.42,
-      "quality_score": 0.802971573926868,
-      "word_count": 400,
-      "change_magnitude": 0.5300859598853869,
-      "hallucination_rate": 0.47058823529411764,
-      "coverage": 0.7837837837837838,
-      "glossary_recall": 0.5466666666666666
+      "avg_rubric_score": 4.32,
+      "quality_score": 0.7604025945945947,
+      "word_count": 372,
+      "change_magnitude": 0.48348348348348347,
+      "hallucination_rate": 0.65,
+      "coverage": 0.7567567567567568,
+      "glossary_recall": 0.52
     },
     {
       "iteration": 4,
-      "avg_rubric_score": 4.319999999999999,
-      "quality_score": 0.7618028108108107,
-      "word_count": 397,
-      "change_magnitude": 0.5855614973262032,
-      "hallucination_rate": 0.6,
-      "coverage": 0.7297297297297297,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8105459459459461,
+      "word_count": 368,
+      "change_magnitude": 0.578512396694215,
+      "hallucination_rate": 0.3888888888888889,
+      "coverage": 0.7837837837837838,
+      "glossary_recall": 0.5333333333333333
+    },
+    {
+      "iteration": 5,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8148347083926033,
+      "word_count": 371,
+      "change_magnitude": 0.5786516853932584,
+      "hallucination_rate": 0.3157894736842105,
+      "coverage": 0.7567567567567568,
+      "glossary_recall": 0.5466666666666666
+    },
+    {
+      "iteration": 6,
+      "avg_rubric_score": 4.28,
+      "quality_score": 0.8314276167076168,
+      "word_count": 390,
+      "change_magnitude": 0.509915014164306,
+      "hallucination_rate": 0.36363636363636365,
+      "coverage": 0.972972972972973,
+      "glossary_recall": 0.56
+    },
+    {
+      "iteration": 7,
+      "avg_rubric_score": 4.26,
+      "quality_score": 0.835316,
+      "word_count": 408,
+      "change_magnitude": 0.4917127071823204,
+      "hallucination_rate": 0.35,
+      "coverage": 1.0,
+      "glossary_recall": 0.5333333333333333
+    },
+    {
+      "iteration": 8,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8611531531531533,
+      "word_count": 372,
+      "change_magnitude": 0.5484764542936288,
+      "hallucination_rate": 0.2777777777777778,
+      "coverage": 0.972972972972973,
+      "glossary_recall": 0.5466666666666666
+    },
+    {
+      "iteration": 9,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8560295874822192,
+      "word_count": 396,
+      "change_magnitude": 0.514367816091954,
+      "hallucination_rate": 0.3157894736842105,
+      "coverage": 0.972972972972973,
       "glossary_recall": 0.49333333333333335
+    },
+    {
+      "iteration": 10,
+      "avg_rubric_score": 4.340000000000001,
+      "quality_score": 0.87204,
+      "word_count": 371,
+      "change_magnitude": 0.5439093484419264,
+      "hallucination_rate": 0.16666666666666666,
+      "coverage": 1.0,
+      "glossary_recall": 0.56
     }
   ],
-  "final_score_0to1": 0.7364763619594814,
+  "final_score_0to1": 0.7493981088326848,
   "pairwise_selection_enabled": true,
   "lecture_title": "lecture5",
   "refinement_metadata": {
-    "iterations_completed": 4,
-    "final_avg_score": 4.319999999999999,
-    "final_word_count": 364,
-    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1714 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain -0.0436 < 0.0150 | final_selection: best_of_last_3 (iter 2, quality=0.805)",
+    "iterations_completed": 10,
+    "final_avg_score": 4.340000000000001,
+    "final_word_count": 371,
+    "stopping_reason": "pass: high quality plateau - quality 0.872 >= 0.740; quality span 0.0160 <= 0.0200",
     "pairwise_selection_enabled": true,
     "lever_history": [
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.2,
+        "style": 4.0
+      },
       {
         "coverage": 4.5,
         "faithfulness": 4.2,
@@ -152,37 +233,64 @@
       },
       {
         "coverage": 4.5,
-        "faithfulness": 4.2,
+        "faithfulness": 4.3,
         "organization": 4.6,
         "clarity": 4.4,
-        "style": 4.3
-      },
-      {
-        "coverage": 4.6,
-        "faithfulness": 4.3,
-        "organization": 4.5,
-        "clarity": 4.4,
-        "style": 4.3
+        "style": 4.2
       },
       {
         "coverage": 4.5,
-        "faithfulness": 4.2,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.2,
+        "style": 4.0
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.5,
+        "organization": 4.3,
+        "clarity": 4.0,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.4,
         "organization": 4.6,
         "clarity": 4.3,
-        "style": 4.0
+        "style": 4.2
+      },
+      {
+        "coverage": 4.5,
+        "faithfulness": 4.3,
+        "organization": 4.6,
+        "clarity": 4.2,
+        "style": 4.1
       }
     ],
     "quality_history": [
-      0.8178263513513516,
-      0.805422393822394,
-      0.802971573926868,
-      0.7618028108108107
+      0.8031763513513513,
+      0.755978810810811,
+      0.7604025945945947,
+      0.8105459459459461,
+      0.8148347083926033,
+      0.8314276167076168,
+      0.835316,
+      0.8611531531531533,
+      0.8560295874822192,
+      0.87204
     ],
     "iteration_metrics": [
       {
         "iteration": 1,
-        "avg_rubric_score": 4.4,
-        "quality_score": 0.8178263513513516,
+        "avg_rubric_score": 4.3,
+        "quality_score": 0.8031763513513513,
         "word_count": 306,
         "change_magnitude": 0.0,
         "signals": {
@@ -190,6 +298,66 @@
           "section_coverage_pct": 0.9459459459459459,
           "glossary_recall": 0.48,
           "suspected_hallucination_rate": 0.5625
+        },
+        "rubric": {
+          "coverage": 4.4,
+          "faithfulness": 4.2,
+          "organization": 4.5,
+          "clarity": 4.3,
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 2,
+        "avg_rubric_score": 4.28,
+        "quality_score": 0.755978810810811,
+        "word_count": 360,
+        "change_magnitude": 0.6146788990825688,
+        "signals": {
+          "length_error": 0.02857142857142857,
+          "section_coverage_pct": 0.7297297297297297,
+          "glossary_recall": 0.4666666666666667,
+          "suspected_hallucination_rate": 0.6
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.3,
+          "organization": 4.4,
+          "clarity": 4.2,
+          "style": 4.0
+        }
+      },
+      {
+        "iteration": 3,
+        "avg_rubric_score": 4.32,
+        "quality_score": 0.7604025945945947,
+        "word_count": 372,
+        "change_magnitude": 0.48348348348348347,
+        "signals": {
+          "length_error": 0.06285714285714286,
+          "section_coverage_pct": 0.7567567567567568,
+          "glossary_recall": 0.52,
+          "suspected_hallucination_rate": 0.65
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.3,
+          "organization": 4.6,
+          "clarity": 4.2,
+          "style": 4.0
+        }
+      },
+      {
+        "iteration": 4,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8105459459459461,
+        "word_count": 368,
+        "change_magnitude": 0.578512396694215,
+        "signals": {
+          "length_error": 0.05142857142857143,
+          "section_coverage_pct": 0.7837837837837838,
+          "glossary_recall": 0.5333333333333333,
+          "suspected_hallucination_rate": 0.3888888888888889
         },
         "rubric": {
           "coverage": 4.5,
@@ -200,74 +368,134 @@
         }
       },
       {
-        "iteration": 2,
+        "iteration": 5,
         "avg_rubric_score": 4.4,
-        "quality_score": 0.805422393822394,
-        "word_count": 364,
-        "change_magnitude": 0.6167664670658682,
+        "quality_score": 0.8148347083926033,
+        "word_count": 371,
+        "change_magnitude": 0.5786516853932584,
         "signals": {
-          "length_error": 0.04,
-          "section_coverage_pct": 0.7837837837837838,
-          "glossary_recall": 0.49333333333333335,
-          "suspected_hallucination_rate": 0.42857142857142855
+          "length_error": 0.06,
+          "section_coverage_pct": 0.7567567567567568,
+          "glossary_recall": 0.5466666666666666,
+          "suspected_hallucination_rate": 0.3157894736842105
         },
         "rubric": {
           "coverage": 4.5,
-          "faithfulness": 4.2,
+          "faithfulness": 4.3,
           "organization": 4.6,
           "clarity": 4.4,
-          "style": 4.3
+          "style": 4.2
         }
       },
       {
-        "iteration": 3,
-        "avg_rubric_score": 4.42,
-        "quality_score": 0.802971573926868,
-        "word_count": 400,
-        "change_magnitude": 0.5300859598853869,
+        "iteration": 6,
+        "avg_rubric_score": 4.28,
+        "quality_score": 0.8314276167076168,
+        "word_count": 390,
+        "change_magnitude": 0.509915014164306,
         "signals": {
-          "length_error": 0.14285714285714285,
-          "section_coverage_pct": 0.7837837837837838,
-          "glossary_recall": 0.5466666666666666,
-          "suspected_hallucination_rate": 0.47058823529411764
-        },
-        "rubric": {
-          "coverage": 4.6,
-          "faithfulness": 4.3,
-          "organization": 4.5,
-          "clarity": 4.4,
-          "style": 4.3
-        }
-      },
-      {
-        "iteration": 4,
-        "avg_rubric_score": 4.319999999999999,
-        "quality_score": 0.7618028108108107,
-        "word_count": 397,
-        "change_magnitude": 0.5855614973262032,
-        "signals": {
-          "length_error": 0.13428571428571429,
-          "section_coverage_pct": 0.7297297297297297,
-          "glossary_recall": 0.49333333333333335,
-          "suspected_hallucination_rate": 0.6
+          "length_error": 0.11428571428571428,
+          "section_coverage_pct": 0.972972972972973,
+          "glossary_recall": 0.56,
+          "suspected_hallucination_rate": 0.36363636363636365
         },
         "rubric": {
           "coverage": 4.5,
-          "faithfulness": 4.2,
+          "faithfulness": 4.3,
+          "organization": 4.4,
+          "clarity": 4.2,
+          "style": 4.0
+        }
+      },
+      {
+        "iteration": 7,
+        "avg_rubric_score": 4.26,
+        "quality_score": 0.835316,
+        "word_count": 408,
+        "change_magnitude": 0.4917127071823204,
+        "signals": {
+          "length_error": 0.1657142857142857,
+          "section_coverage_pct": 1.0,
+          "glossary_recall": 0.5333333333333333,
+          "suspected_hallucination_rate": 0.35
+        },
+        "rubric": {
+          "coverage": 4.4,
+          "faithfulness": 4.5,
+          "organization": 4.3,
+          "clarity": 4.0,
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 8,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8611531531531533,
+        "word_count": 372,
+        "change_magnitude": 0.5484764542936288,
+        "signals": {
+          "length_error": 0.06285714285714286,
+          "section_coverage_pct": 0.972972972972973,
+          "glossary_recall": 0.5466666666666666,
+          "suspected_hallucination_rate": 0.2777777777777778
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.3,
+          "organization": 4.6,
+          "clarity": 4.4,
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 9,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8560295874822192,
+        "word_count": 396,
+        "change_magnitude": 0.514367816091954,
+        "signals": {
+          "length_error": 0.13142857142857142,
+          "section_coverage_pct": 0.972972972972973,
+          "glossary_recall": 0.49333333333333335,
+          "suspected_hallucination_rate": 0.3157894736842105
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.4,
           "organization": 4.6,
           "clarity": 4.3,
-          "style": 4.0
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 10,
+        "avg_rubric_score": 4.340000000000001,
+        "quality_score": 0.87204,
+        "word_count": 371,
+        "change_magnitude": 0.5439093484419264,
+        "signals": {
+          "length_error": 0.06,
+          "section_coverage_pct": 1.0,
+          "glossary_recall": 0.56,
+          "suspected_hallucination_rate": 0.16666666666666666
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.3,
+          "organization": 4.6,
+          "clarity": 4.2,
+          "style": 4.1
         }
       }
     ],
     "target_words": 350,
     "final_rubric": {
       "coverage": 4.5,
-      "faithfulness": 4.2,
+      "faithfulness": 4.3,
       "organization": 4.6,
-      "clarity": 4.3,
-      "style": 4.0
+      "clarity": 4.2,
+      "style": 4.1
     },
-    "final_quality_score": 0.7618028108108107
+    "final_quality_score": 0.87204
   }
 }

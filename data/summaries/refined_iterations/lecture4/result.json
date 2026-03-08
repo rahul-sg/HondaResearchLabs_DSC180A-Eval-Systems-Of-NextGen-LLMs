@@ -1,58 +1,60 @@
 {
-  "refined_summary": "The lecture traced the development of ideas linking natural selection, heredity, and modern genetics. Evolution was defined as the change in allele frequencies within a population over time, with Darwin\u2019s three postulates outlining its mechanism: organisms struggle for existence, they vary in traits affecting survival and reproduction, and these traits are heritable. Darwin recognized the central role of variation but could not explain how it arose, persisted, or produced new forms. Examples such as domesticated dogs, pigeons, and plants illustrated artificial selection\u2014rapid evolutionary change achieved through human choice\u2014while the evolution of the minnow\u2019s placenta-like structure and the gradual formation of the eye showed that evolutionary rates can vary dramatically.\n\nMendel\u2019s experiments with pea plants (1856\u20131863) demonstrated particulate inheritance: discrete hereditary factors passed from each parent maintain variation rather than blending. He defined genes (now known as sections of DNA) with alternative forms called alleles, distinguished between genotype and phenotype, and identified dominant and recessive allele expression. These patterns were later modeled using event diagrams and Punnett squares to predict offspring ratios.\n\nThe rediscovery of Mendel\u2019s work around 1900 connected genetics with cell biology. Walther Flemming observed chromatin and mitosis, while Walter Sutton and Theodor Boveri, working independently on grasshoppers and roundworms, showed that hereditary material resides on chromosomes\u2014forming the Chromosome Theory of Inheritance. Humans have 46 chromosomes (23 homologous pairs), including 22 somatic pairs and one pair of sex chromosomes. Understanding how chromosomes behave during cell division clarified the mechanisms of inheritance. Mitosis produces identical diploid cells for growth, whereas meiosis generates haploid gametes, halving the chromosome number to preserve the species total after fertilization. Meiosis introduces variation through mutation, recombination, and independent assortment. Crossing over creates new gene combinations, and the recombination rate measures how frequently such exchanges occur.\n\nThe discovery of DNA\u2019s double-helix structure by James Watson and Francis Crick in 1953, based on Rosalind Franklin\u2019s x\u2011ray work, explained the molecular basis of heredity. DNA\u2019s sugar\u2011phosphate backbone and paired bases (A\u2013T, C\u2013G) allow replication and protein coding, linking structure to function. Some DNA sequences form genes, while mitochondrial DNA\u2014shorter, maternally inherited, and nonrecombining\u2014traces lineage back to \u201cMitochondrial Eve,\u201d the most recent matrilineal ancestor of humans about 100,000\u2013200,000 years ago in Africa.  \n\n(393 words)",
+  "refined_summary": "This lecture examined how natural selection and genetic inheritance together explain evolutionary change. Evolution was defined as the change in allele frequencies within a population over time, reflecting Darwin\u2019s postulates that organisms struggle for existence, vary in traits affecting survival and reproduction, and pass those traits to offspring. Darwin\u2019s main difficulty was explaining how variation arises and persists when natural selection seems to remove it. Evidence from artificial selection showed that targeted breeding by humans could produce rapid changes in a few generations, as seen in domesticated dogs and pigeons. Examples such as placental evolution in minnows and the gradual 1% steps in eye evolution illustrated that evolutionary change can occur both rapidly and incrementally.\n\nGregor Mendel\u2019s 19th\u2011century experiments with pea plants established the particulate theory of inheritance\u2014traits are controlled by discrete \u201cparticles\u201d inherited from each parent, maintaining variation rather than blending it. His work later linked to cell structures observed by Walther Flemming, who described chromatin and mitosis, and to the Chromosome Theory of Inheritance proposed by Sutton and Boveri, showing that genes reside on chromosomes passed from parents to offspring.\n\nCell division through mitosis produces identical diploid somatic cells, while meiosis forms haploid gametes. Variation arises through mutation, recombination, and independent assortment during meiosis. Mendel\u2019s principles distinguish genotype (genetic makeup) from phenotype (observable traits), and show how dominant alleles mask recessive ones. Crosses of heterozygotes\u2014illustrated with Punnett squares and event trees\u2014demonstrate predictable ratios of inherited traits. Linkage and recombination further explain that genes on different chromosomes assort independently, while genes located near each other may segregate together; the recombination rate (r) quantifies the frequency of crossing\u2011over events.\n\nThe discovery of DNA\u2019s double\u2011helix structure by James Watson and Francis Crick in 1953, based on Rosalind Franklin\u2019s x\u2011ray data, clarified how DNA\u2019s structure relates to genetic function. DNA consists of a sugar\u2011phosphate backbone and nucleotide base pairs: adenine with thymine, cytosine with guanine. Genes are functional segments of this molecule, with human DNA containing about 20,000\u201325,000 genes. Mitochondrial DNA (mtDNA)\u2014inherited only maternally and coding for 37 genes\u2014has been key in tracing evolutionary relationships. Analyses of mtDNA have identified \u201cMitochondrial Eve,\u201d the most recent common matrilineal ancestor of all humans, living roughly 100,000\u2013200,000 years ago in East Africa.  \n\n(Word count: 400)",
   "signals": {
-    "length_error": 0.04285714285714286,
-    "section_coverage_pct": 0.8571428571428571,
-    "glossary_recall": 0.6296296296296297,
-    "suspected_hallucination_rate": 0.2777777777777778,
-    "meteor": 0.46166807200393495
+    "length_error": 0.05714285714285714,
+    "section_coverage_pct": 0.8095238095238095,
+    "glossary_recall": 0.6666666666666666,
+    "suspected_hallucination_rate": 0.1111111111111111
   },
   "rubric": {
-    "coverage": 4,
+    "coverage": 5,
     "faithfulness": 4,
     "organization": 5,
     "clarity": 4,
     "style": 4,
-    "overall_1to10": 8,
+    "overall_1to10": 9,
     "two_strengths": [
-      "The summary accurately follows the lecture\u2019s chronological structure from Darwin\u2019s postulates through Mendel, the Chromosome Theory, and modern DNA discoveries, showing clear continuity in argument from variation to molecular inheritance.",
-      "It correctly integrates examples mentioned on slides\u2014such as dogs, pigeons, and minnows\u2014to illustrate differences in evolutionary rate and connect abstract ideas to concrete evidence."
+      "The summary accurately integrates Mendel\u2019s particulate inheritance with Darwinian principles, as supported by the slides stating '\u201cparticles\u201d inherited from each parent \u2022 maintains variation.'",
+      "It correctly captures the transition from Mendel and Flemming to the Chromosome Theory of Inheritance ('Genetic material that is passed from parent to child is in the chromosomes')."
     ],
     "two_issues": [
-      "The section on molecular genetics slightly over\u2011interprets slide 34 by adding 'protein coding' and 'linking structure to function' as an explanatory claim that the slide only gestures toward ('Understanding structure helps understand function'); this phrasing implies more detail than presented.",
-      "While the lecture primarily describes biological mechanisms, the summary misses the interpretive lens or stakes implied in humanities contexts\u2014no reflection on how these scientific frameworks shaped conceptions of human identity or historical thought, which would deepen analysis."
+      "The discussion of 'Rates of Evolutionary Change' underrepresents the evidence from the slides\u2014no quantitative mention of '1% change' or '1 million years' in eye evolution, which weakens coverage of evolutionary mechanisms.",
+      "The section on DNA applications lacks detail on the 'Molecular Clock' concept from the slides\u2014there is only passing mention of timing divergence but not that it is based on 'neutral sites not subject to selection.'"
     ],
     "faithfulness_evidence": [
-      "Slide 2 explicitly defines evolution as 'the change in allele frequencies that occurs over time within a population,' which the summary reproduces exactly.",
-      "Slide 34 notes 'Understanding structure helps understand function' and mentions 'Replication' and 'Code for protein formation,' supporting but not fully elaborating the molecular interpretation given in the summary."
+      "Slide quote: 'Evolution is the change in allele frequencies that occurs over time within a population.'",
+      "Slide quote: 'Chromosome Theory of Inheritance \u2013 Genetic material that is passed from parent to child is in the chromosomes.'"
     ],
-    "detected_domain": "humanities"
+    "detected_domain": "natural_sciences"
   },
   "agreement": {
-    "agreement_1to5": 5,
+    "used": false,
+    "agreement_1to5": 0,
     "missing_key_points": [],
     "added_inaccuracies": []
   },
+  "reference_metrics_used": false,
   "comprehensive_scoring": {
-    "final_score": 0.792333614400787,
+    "final_score": 0.8666666666666667,
+    "mode": "reference_free",
     "layer_scores": {
-      "domain_rubric": 0.8333333333333334,
-      "nlp_agreement": 1.0,
-      "semantic_similarity": 0.46166807200393495
+      "domain_rubric": 0.8666666666666667,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
     },
     "layer_weights": {
-      "domain_rubric": 0.6,
-      "nlp_agreement": 0.2,
-      "semantic_similarity": 0.2
+      "domain_rubric": 1.0,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
     },
     "rubric_breakdown": {
-      "coverage": 4,
+      "coverage": 5,
       "faithfulness": 4,
       "organization": 5,
       "clarity": 4,
       "style": 4
     },
-    "detected_domain": "humanities",
+    "detected_domain": "natural_sciences",
     "rubric_weights": {
       "coverage": 1.0,
       "faithfulness": 2.5,
@@ -62,69 +64,210 @@
     }
   },
   "hybrid_scoring": {
-    "comprehensive_score": 0.792333614400787,
-    "manual_weighted_score": 0.692529579148004,
+    "comprehensive_score": 0.8666666666666667,
+    "manual_weighted_score": 0.8552380952380952,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.762392403824952,
-    "hallucination_rate": 0.2777777777777778,
-    "hallucination_damping_factor": 0.9583333333333334,
-    "scorer_disagreement_delta": 0.09980403525278303
+    "blended_score_pre_damping": 0.8632380952380952,
+    "hallucination_policy": {
+      "scoring_policy": "tuned",
+      "damping_alpha": 0.05,
+      "subtractive_beta": 0.0,
+      "domain_alpha_multiplier": 1.05,
+      "effective_alpha": 0.052500000000000005,
+      "min_damping_factor": 0.75,
+      "max_damping_factor": 1.0
+    },
+    "hallucination_rate": 0.1111111111111111,
+    "raw_damping_factor": 0.9941666666666666,
+    "hallucination_damping_factor": 0.9941666666666666,
+    "scorer_disagreement_delta": 0.011428571428571455,
+    "raw_quality_score": 0.8632380952380952,
+    "risk_adjusted_score": 0.8582025396825397
   },
-  "final_score_0to1": 0.730626053665579,
+  "leaderboard_scores": {
+    "raw_quality_score": 0.8632380952380952,
+    "risk_adjusted_score": 0.8582025396825397
+  },
+  "iteration_score_table": [
+    {
+      "iteration": 1,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8231215909090911,
+      "word_count": 306,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.375,
+      "coverage": 0.8409090909090909,
+      "glossary_recall": 0.6481481481481481
+    },
+    {
+      "iteration": 2,
+      "avg_rubric_score": 4.34,
+      "quality_score": 0.8437357575757576,
+      "word_count": 370,
+      "change_magnitude": 0.5393939393939393,
+      "hallucination_rate": 0.1111111111111111,
+      "coverage": 0.8181818181818182,
+      "glossary_recall": 0.6666666666666666
+    },
+    {
+      "iteration": 3,
+      "avg_rubric_score": 4.32,
+      "quality_score": 0.8291912727272729,
+      "word_count": 379,
+      "change_magnitude": 0.4065281899109793,
+      "hallucination_rate": 0.2,
+      "coverage": 0.8181818181818182,
+      "glossary_recall": 0.6666666666666666
+    },
+    {
+      "iteration": 4,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.8351000000000003,
+      "word_count": 382,
+      "change_magnitude": 0.3724340175953079,
+      "hallucination_rate": 0.25,
+      "coverage": 0.8181818181818182,
+      "glossary_recall": 0.6666666666666666
+    }
+  ],
+  "final_score_0to1": 0.8582025396825397,
+  "pairwise_selection_enabled": true,
   "lecture_title": "lecture4",
   "refinement_metadata": {
     "iterations_completed": 4,
-    "final_avg_score": 4.3,
-    "final_word_count": 365,
-    "stopping_reason": "pass: high quality plateau - quality 0.749 >= 0.740; quality span 0.0096 <= 0.0200",
+    "final_avg_score": 4.4,
+    "final_word_count": 370,
+    "stopping_reason": "pass: high quality plateau - quality 0.835 >= 0.740; quality span 0.0145 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.844)",
+    "pairwise_selection_enabled": true,
     "lever_history": [
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.2
+      },
       {
         "coverage": 4.5,
         "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
         "organization": 4.6,
-        "clarity": 4.4,
+        "clarity": 4.3,
         "style": 4.1
       },
       {
-        "coverage": 4.6,
-        "faithfulness": 4.3,
-        "organization": 4.5,
-        "clarity": 4.2,
-        "style": 4.0
-      },
-      {
-        "coverage": 4.6,
-        "faithfulness": 4.3,
-        "organization": 4.5,
-        "clarity": 4.2,
-        "style": 4.0
-      },
-      {
         "coverage": 4.5,
-        "faithfulness": 4.1,
-        "organization": 4.6,
-        "clarity": 4.3,
-        "style": 4.0
+        "faithfulness": 4.6,
+        "organization": 4.4,
+        "clarity": 4.2,
+        "style": 4.3
       }
     ],
     "quality_history": [
-      0.7412383714929371,
-      0.7408475500527683,
-      0.7389409039389387,
-      0.7485166834977239
+      0.8231215909090911,
+      0.8437357575757576,
+      0.8291912727272729,
+      0.8351000000000003
+    ],
+    "iteration_metrics": [
+      {
+        "iteration": 1,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8231215909090911,
+        "word_count": 306,
+        "change_magnitude": 0.0,
+        "signals": {
+          "length_error": 0.12571428571428572,
+          "section_coverage_pct": 0.8409090909090909,
+          "glossary_recall": 0.6481481481481481,
+          "suspected_hallucination_rate": 0.375
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.5,
+          "clarity": 4.3,
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 2,
+        "avg_rubric_score": 4.34,
+        "quality_score": 0.8437357575757576,
+        "word_count": 370,
+        "change_magnitude": 0.5393939393939393,
+        "signals": {
+          "length_error": 0.05714285714285714,
+          "section_coverage_pct": 0.8181818181818182,
+          "glossary_recall": 0.6666666666666666,
+          "suspected_hallucination_rate": 0.1111111111111111
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.2,
+          "organization": 4.5,
+          "clarity": 4.3,
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 3,
+        "avg_rubric_score": 4.32,
+        "quality_score": 0.8291912727272729,
+        "word_count": 379,
+        "change_magnitude": 0.4065281899109793,
+        "signals": {
+          "length_error": 0.08285714285714285,
+          "section_coverage_pct": 0.8181818181818182,
+          "glossary_recall": 0.6666666666666666,
+          "suspected_hallucination_rate": 0.2
+        },
+        "rubric": {
+          "coverage": 4.4,
+          "faithfulness": 4.2,
+          "organization": 4.6,
+          "clarity": 4.3,
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 4,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.8351000000000003,
+        "word_count": 382,
+        "change_magnitude": 0.3724340175953079,
+        "signals": {
+          "length_error": 0.09142857142857143,
+          "section_coverage_pct": 0.8181818181818182,
+          "glossary_recall": 0.6666666666666666,
+          "suspected_hallucination_rate": 0.25
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.6,
+          "organization": 4.4,
+          "clarity": 4.2,
+          "style": 4.3
+        }
+      }
     ],
     "target_words": 350,
     "final_rubric": {
       "coverage": 4.5,
-      "faithfulness": 4.1,
-      "organization": 4.6,
-      "clarity": 4.3,
-      "style": 4.0
+      "faithfulness": 4.6,
+      "organization": 4.4,
+      "clarity": 4.2,
+      "style": 4.3
     },
-    "final_agreement": 0.46166807200393495,
-    "final_quality_score": 0.7485166834977239
+    "final_quality_score": 0.8351000000000003
   }
 }

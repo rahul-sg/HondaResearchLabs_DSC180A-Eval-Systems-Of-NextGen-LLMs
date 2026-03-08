@@ -1,0 +1,17 @@
+TUNED VS LEGACY POLICY ABLATION
+Lectures evaluated: 7
+Avg tuned score:  0.8379
+Avg legacy score: 0.7618
+Avg delta (tuned - legacy): +0.0761
+Tuned better: 7
+Legacy better: 0
+Ties: 0
+
+Per lecture:
+- lecture1: tuned=0.8535, legacy=0.7652, delta=+0.0883
+- lecture2: tuned=0.8661, legacy=0.8278, delta=+0.0383
+- lecture3: tuned=0.8027, legacy=0.7373, delta=+0.0654
+- lecture4: tuned=0.8226, legacy=0.7993, delta=+0.0233
+- lecture5: tuned=0.7938, legacy=0.7494, delta=+0.0444
+- lecture6: tuned=0.8420, legacy=0.7287, delta=+0.1132
+- lecture7: tuned=0.8849, legacy=0.7249, delta=+0.1600

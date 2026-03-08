@@ -1,11 +1,10 @@
 {
-  "refined_summary": "This lecture deepens the study of An\u00edbal\u202fQuijano\u2019s concept of the **coloniality of power** as a framework for understanding how colonial domination continues to structure race, labor, knowledge, and identity in modern Latin America. A Peruvian sociologist, Quijano\u2019s intellectual trajectory\u2014from dependency theory and political economy to decolonial thought\u2014charts how the global capitalist order and its epistemologies originate in colonial relations of domination. His work situates economics, culture, and knowledge as interlocking dimensions of power rather than separate historical stages.\n\nWithin the **Modernity/Coloniality/Decoloniality (MCD) project**, the lecture explains that modernity and coloniality were co\u2011constituted. Western modernity was built through conquest and resource extraction, while its narratives silenced other histories. *Coloniality* refers to the ongoing logic that privileges Eurocentric modes of thinking and obscures Indigenous and Afro\u2011descendant worldviews. *Decoloniality* aims to center those suppressed epistemologies and plural modernities, rejecting the assumption of a single Western path to progress.\n\nQuijano\u2019s first key point, **coloniality of power**, identifies two intertwined processes in the making of \u201cAmerica\u201d: the construction of racial difference between conquerors and conquered, and the establishment of new labor systems\u2014slavery, encomienda, and mita\u2014that organized production for global markets. This racialized division of labor became the foundation of global capitalism and dependency, channeling resources and privileges toward Europe while subordinating colonized peoples and nations.\n\nHis second point, **Eurocentrism**, challenges the notion that Europe\u2019s dominance was inevitable. Enlightenment and capitalist ideologies promoted linear hierarchies\u2014\u201cFirst\u201d versus \u201cThird\u202fWorld,\u201d \u201cdeveloped\u201d versus \u201cunderdeveloped\u201d\u2014that portrayed European history as universal. The lecture connects this critique to Stuart\u202fHall\u2019s \u201cWest and the\u202fRest\u201d discourse and to cultural examples such as *Roma*\u202f(2018), which exposes how colonial hierarchies of race and labor persist in the present.\n\nThe third theme links **Eurocentrism to Latin American national identity**. Rebecca\u202fEarle\u2019s research shows how early elites adopted *Indianesque nationalism* to celebrate an idealized Indigenous past while sustaining exclusion. Later, *mestizaje* ideology proclaimed racial harmony but reinforced whitened norms and social hierarchy.  \n\nFinally, the lecture highlights a **crisis of the European perspective on knowledge**\u2014a move from homogeneous, linear histories toward recognition of heterogeneity and discontinuity. This shift opens space for decolonial thinking that values diverse histories and local forms of knowledge. For\u202fQuijano, decoloniality means freeing ourselves from the Eurocentric mirror to imagine ourselves and the world anew.  \n\n(Approx.\u202f392\u202fwords)",
+  "refined_summary": "This lecture examines An\u00edbal\u202fQuijano\u2019s concept of the **coloniality of power**, showing how the intertwined histories of race, labor, knowledge, and modernity continue to organize social life in Latin America. A Peruvian sociologist, Quijano\u2019s work evolved from **dependency theory** and political economy toward questions of **culture, identity, and epistemology**, forming part of the **Modernity/Coloniality/Decoloniality (MCD) project** alongside scholars such as Arturo\u202fEscobar, Walter\u202fMignolo, and Catherine\u202fWalsh.  \n\nThe lecture outlines three interlinked dimensions\u2014**modernity**, **coloniality**, and **decoloniality**. Modernity is reframed as a historically contingent outcome rather than a self\u2011generated Western achievement. **Coloniality** names the persistent logic of colonial domination through Eurocentric ways of knowing that marginalize non\u2011Western epistemologies. **Decoloniality** seeks to center Indigenous and other suppressed worldviews, emphasizing plural modernities and alternative forms of knowledge.  \n\nQuijano identifies two founding processes in the **colonization of the Americas**: first, the partition of humanity into the \u201cWest\u201d (conquerors) and the \u201cRest\u201d (conquered); second, the creation of racialized structures of labor control\u2014slavery, the **encomienda**, and the **mita**\u2014that supported the first global capitalist system. In this configuration, race became a mental category of modernity linking bodily difference to economic exploitation.  \n\n**Eurocentrism**, described as the Eurocentrification of world capitalism, universalized European experience and portrayed other regions as \u201cunderdeveloped.\u201d This ideology reinforced global hierarchies through binaries such as \u201cdeveloped/underdeveloped\u201d and \u201cFirst\u202fWorld/Third\u202fWorld.\u201d The lecture extends this critique to **post\u2011independence governance**, questioning how democracy, development, and national identity in Latin America remain shaped by Eurocentric standards of progress.  \n\nSubsequent discussion of **heterogeneity and discontinuity** (Slide\u202f2.7) challenges European linear models of history. Non\u2011Western frameworks such as the **Aymara concept of\u202f*pachakuti*** express cyclical, locally grounded transformations. Historian **Rebecca\u202fEarle\u2019s** analysis of *Indianesque\u202fnationalism* illustrates how early nation\u2011builders idealized an Indigenous past while excluding living Indigenous peoples, and how the ideology of **mestizaje** fostered myths of racial harmony that masked enduring inequalities.  \n\nThe lecture closes by foregrounding **Quijano\u2019s call for decoloniality**\u2014to free ourselves from the Eurocentric mirror that distorts collective self\u2011understanding and to continue exploring, through assigned media and class discussion, how colonial patterns of power and knowledge might be dismantled.  \n\n**(\u2248390\u202fwords)**",
   "signals": {
-    "length_error": 0.07428571428571429,
-    "section_coverage_pct": 0.75,
-    "glossary_recall": 0.4943820224719101,
-    "suspected_hallucination_rate": 0.85,
-    "meteor": 0.39099011355449953
+    "length_error": 0.017142857142857144,
+    "section_coverage_pct": 0.7857142857142857,
+    "glossary_recall": 0.5730337078651685,
+    "suspected_hallucination_rate": 0.6428571428571429
   },
   "rubric": {
     "coverage": 5,
@@ -15,35 +14,38 @@
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
-      "The summary accurately integrates all three core points\u2014Coloniality of Power, Eurocentrism, and Eurocentrism and Latin American national identity\u2014reflecting the lecture\u2019s main argumentative progression.",
-      "It successfully conveys the co\u2011constitution of modernity and coloniality and the MCD project\u2019s decolonial direction, clearly tied to slides such as 'MODERNITY / COLONIALITY / DECOLONIALITY (MCD PROJECT)' and 'KEY THEMES'."
+      "The summary effectively articulates the lecture\u2019s central thesis\u2014how Quijano\u2019s notion of \u2018coloniality of power\u2019 links race, labor, knowledge, and modernity\u2014as captured in Slide\u202f8\u2019s list of \u2018overlapping processes of colonialism and its legacies\u2019.",
+      "It integrates the lecture\u2019s structure, clearly marking the three-part Modernity/Coloniality/Decoloniality framework and connecting this to concrete historical examples such as the encomienda and the mita systems (Slide\u202f13)."
     ],
     "two_issues": [
-      "The summary condenses too neatly some critical slide distinctions\u2014for example, it blurs 'Eurocentrism' as both Point 2 and as the focus of 'Eurocentrism and historical experience in Latin America'; it could explicitly mark this as the lecture\u2019s third analytical turn rather than merging them.",
-      "While the summary alludes to the 'crisis of the European perspective of knowledge,' it doesn\u2019t give concrete illustrations (e.g., 'Aymara notions of the pachakuti' on slide 7) that show how heterogeneity and discontinuity are grounded in non\u2011Western epistemologies."
+      "The summary slightly overstates the lecture\u2019s emphasis on epistemology by implying an equal focus across all three MCD components, while the slides devote much greater detail to \u2018coloniality\u2019 and \u2018Eurocentrism\u2019; this risks inflating the balance of themes.",
+      "It omits any explicit discussion of the portfolio/application component (Slides\u202f9\u201310), which demonstrates pedagogical contextualization of theory\u2014an important humanities element connecting theory to interpretive practice."
     ],
     "faithfulness_evidence": [
-      "Slide\u202f11 explicitly defines Quijano\u2019s 'Two historical processes'\u2014the constitution of differences between conquerors ('West') and conquered ('Rest') and the constitution of new structures of labor control\u2014which the summary reproduces accurately.",
-      "Slide\u202f19 quotes Quijano: 'it is time\u2026to free ourselves from the Eurocentric mirror,' which is faithfully paraphrased in the summary\u2019s concluding line about 'freeing ourselves from the Eurocentric mirror to imagine ourselves and the world anew.'"
+      "Slide\u202f11 identifies the two processes\u2014\u2018constitution of differences\u2019 and \u2018new structures of labor control\u2019\u2014that the summary accurately reproduces.",
+      "Slide\u202f19 quotes Quijano\u2019s call \u2018to free ourselves from the Eurocentric mirror,\u2019 which the summary faithfully paraphrases as the concluding gesture toward decoloniality."
     ],
     "detected_domain": "humanities"
   },
   "agreement": {
-    "agreement_1to5": 5,
+    "used": false,
+    "agreement_1to5": 0,
     "missing_key_points": [],
     "added_inaccuracies": []
   },
+  "reference_metrics_used": false,
   "comprehensive_scoring": {
-    "final_score": 0.7981980227108999,
+    "final_score": 0.8666666666666667,
+    "mode": "reference_free",
     "layer_scores": {
       "domain_rubric": 0.8666666666666667,
-      "nlp_agreement": 1.0,
-      "semantic_similarity": 0.39099011355449953
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
     },
     "layer_weights": {
-      "domain_rubric": 0.6,
-      "nlp_agreement": 0.2,
-      "semantic_similarity": 0.2
+      "domain_rubric": 1.0,
+      "nlp_agreement": 0.0,
+      "semantic_similarity": 0.0
     },
     "rubric_breakdown": {
       "coverage": 5,
@@ -62,69 +64,324 @@
     }
   },
   "hybrid_scoring": {
-    "comprehensive_score": 0.7981980227108999,
-    "manual_weighted_score": 0.6079479301887338,
+    "comprehensive_score": 0.8666666666666667,
+    "manual_weighted_score": 0.8504761904761905,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.7411229949542499,
-    "hallucination_rate": 0.85,
-    "hallucination_damping_factor": 0.8725,
-    "scorer_disagreement_delta": 0.19025009252216607
+    "blended_score_pre_damping": 0.8618095238095238,
+    "hallucination_policy": {
+      "scoring_policy": "tuned",
+      "damping_alpha": 0.05,
+      "subtractive_beta": 0.0,
+      "domain_alpha_multiplier": 0.9,
+      "effective_alpha": 0.045000000000000005,
+      "min_damping_factor": 0.75,
+      "max_damping_factor": 1.0
+    },
+    "hallucination_rate": 0.6428571428571429,
+    "raw_damping_factor": 0.9710714285714286,
+    "hallucination_damping_factor": 0.9710714285714286,
+    "scorer_disagreement_delta": 0.0161904761904762,
+    "raw_quality_score": 0.8618095238095238,
+    "risk_adjusted_score": 0.8368786054421768
   },
-  "final_score_0to1": 0.6466298130975832,
+  "leaderboard_scores": {
+    "raw_quality_score": 0.8618095238095238,
+    "risk_adjusted_score": 0.8368786054421768
+  },
+  "iteration_score_table": [
+    {
+      "iteration": 1,
+      "avg_rubric_score": 4.339999999999999,
+      "quality_score": 0.7536334986225894,
+      "word_count": 288,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.7272727272727273,
+      "coverage": 0.7575757575757576,
+      "glossary_recall": 0.46078431372549017
+    },
+    {
+      "iteration": 2,
+      "avg_rubric_score": 4.3999999999999995,
+      "quality_score": 0.7614084848484848,
+      "word_count": 367,
+      "change_magnitude": 0.6327868852459017,
+      "hallucination_rate": 0.7333333333333333,
+      "coverage": 0.7575757575757576,
+      "glossary_recall": 0.49019607843137253
+    },
+    {
+      "iteration": 3,
+      "avg_rubric_score": 4.4,
+      "quality_score": 0.744298181818182,
+      "word_count": 352,
+      "change_magnitude": 0.5254777070063694,
+      "hallucination_rate": 0.8666666666666667,
+      "coverage": 0.7575757575757576,
+      "glossary_recall": 0.49019607843137253
+    },
+    {
+      "iteration": 4,
+      "avg_rubric_score": 4.220000000000001,
+      "quality_score": 0.7391806060606062,
+      "word_count": 368,
+      "change_magnitude": 0.5709969788519638,
+      "hallucination_rate": 0.7058823529411765,
+      "coverage": 0.7575757575757576,
+      "glossary_recall": 0.5
+    },
+    {
+      "iteration": 5,
+      "avg_rubric_score": 4.4399999999999995,
+      "quality_score": 0.7667119191919191,
+      "word_count": 373,
+      "change_magnitude": 0.5269461077844311,
+      "hallucination_rate": 0.7777777777777778,
+      "coverage": 0.7878787878787878,
+      "glossary_recall": 0.5294117647058824
+    },
+    {
+      "iteration": 6,
+      "avg_rubric_score": 4.339999999999999,
+      "quality_score": 0.7695513636363636,
+      "word_count": 353,
+      "change_magnitude": 0.5680473372781065,
+      "hallucination_rate": 0.6875,
+      "coverage": 0.8181818181818182,
+      "glossary_recall": 0.4803921568627451
+    },
+    {
+      "iteration": 7,
+      "avg_rubric_score": 4.32,
+      "quality_score": 0.7815646753246754,
+      "word_count": 344,
+      "change_magnitude": 0.5789473684210527,
+      "hallucination_rate": 0.5714285714285714,
+      "coverage": 0.8181818181818182,
+      "glossary_recall": 0.5686274509803921
+    }
+  ],
+  "final_score_0to1": 0.8368786054421768,
+  "pairwise_selection_enabled": true,
   "lecture_title": "lecture3",
   "refinement_metadata": {
-    "iterations_completed": 4,
+    "iterations_completed": 7,
     "final_avg_score": 4.32,
-    "final_word_count": 376,
-    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0853 < 0.0200, recall_improvement -0.0294 < 0.0200, score_gain -0.0355 < 0.0150",
+    "final_word_count": 344,
+    "stopping_reason": "pass: high quality plateau - quality 0.782 >= 0.740; quality span 0.0149 <= 0.0200",
+    "pairwise_selection_enabled": true,
     "lever_history": [
       {
-        "coverage": 4.4,
+        "coverage": 4.5,
         "faithfulness": 4.2,
-        "organization": 4.5,
+        "organization": 4.6,
         "clarity": 4.3,
-        "style": 4.0
+        "style": 4.1
       },
       {
-        "coverage": 4.5,
-        "faithfulness": 4.2,
-        "organization": 4.6,
-        "clarity": 4.4,
-        "style": 4.3
-      },
-      {
-        "coverage": 4.5,
-        "faithfulness": 4.2,
-        "organization": 4.6,
-        "clarity": 4.4,
-        "style": 4.3
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.4,
+        "clarity": 4.5,
+        "style": 4.2
       },
       {
         "coverage": 4.5,
         "faithfulness": 4.3,
         "organization": 4.6,
+        "clarity": 4.4,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.3,
+        "faithfulness": 4.2,
+        "organization": 4.5,
+        "clarity": 4.0,
+        "style": 4.1
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.3,
+        "style": 4.2
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.3,
+        "organization": 4.5,
         "clarity": 4.2,
-        "style": 4.0
+        "style": 4.1
+      },
+      {
+        "coverage": 4.4,
+        "faithfulness": 4.2,
+        "organization": 4.6,
+        "clarity": 4.3,
+        "style": 4.1
       }
     ],
     "quality_history": [
-      0.6631052441693244,
-      0.6881816068139249,
-      0.6794881923794841,
-      0.65272874451223
+      0.7536334986225894,
+      0.7614084848484848,
+      0.744298181818182,
+      0.7391806060606062,
+      0.7667119191919191,
+      0.7695513636363636,
+      0.7815646753246754
+    ],
+    "iteration_metrics": [
+      {
+        "iteration": 1,
+        "avg_rubric_score": 4.339999999999999,
+        "quality_score": 0.7536334986225894,
+        "word_count": 288,
+        "change_magnitude": 0.0,
+        "signals": {
+          "length_error": 0.17714285714285713,
+          "section_coverage_pct": 0.7575757575757576,
+          "glossary_recall": 0.46078431372549017,
+          "suspected_hallucination_rate": 0.7272727272727273
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.2,
+          "organization": 4.6,
+          "clarity": 4.3,
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 2,
+        "avg_rubric_score": 4.3999999999999995,
+        "quality_score": 0.7614084848484848,
+        "word_count": 367,
+        "change_magnitude": 0.6327868852459017,
+        "signals": {
+          "length_error": 0.04857142857142857,
+          "section_coverage_pct": 0.7575757575757576,
+          "glossary_recall": 0.49019607843137253,
+          "suspected_hallucination_rate": 0.7333333333333333
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.3,
+          "organization": 4.4,
+          "clarity": 4.5,
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 3,
+        "avg_rubric_score": 4.4,
+        "quality_score": 0.744298181818182,
+        "word_count": 352,
+        "change_magnitude": 0.5254777070063694,
+        "signals": {
+          "length_error": 0.005714285714285714,
+          "section_coverage_pct": 0.7575757575757576,
+          "glossary_recall": 0.49019607843137253,
+          "suspected_hallucination_rate": 0.8666666666666667
+        },
+        "rubric": {
+          "coverage": 4.5,
+          "faithfulness": 4.3,
+          "organization": 4.6,
+          "clarity": 4.4,
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 4,
+        "avg_rubric_score": 4.220000000000001,
+        "quality_score": 0.7391806060606062,
+        "word_count": 368,
+        "change_magnitude": 0.5709969788519638,
+        "signals": {
+          "length_error": 0.05142857142857143,
+          "section_coverage_pct": 0.7575757575757576,
+          "glossary_recall": 0.5,
+          "suspected_hallucination_rate": 0.7058823529411765
+        },
+        "rubric": {
+          "coverage": 4.3,
+          "faithfulness": 4.2,
+          "organization": 4.5,
+          "clarity": 4.0,
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 5,
+        "avg_rubric_score": 4.4399999999999995,
+        "quality_score": 0.7667119191919191,
+        "word_count": 373,
+        "change_magnitude": 0.5269461077844311,
+        "signals": {
+          "length_error": 0.06571428571428571,
+          "section_coverage_pct": 0.7878787878787878,
+          "glossary_recall": 0.5294117647058824,
+          "suspected_hallucination_rate": 0.7777777777777778
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.7,
+          "clarity": 4.3,
+          "style": 4.2
+        }
+      },
+      {
+        "iteration": 6,
+        "avg_rubric_score": 4.339999999999999,
+        "quality_score": 0.7695513636363636,
+        "word_count": 353,
+        "change_magnitude": 0.5680473372781065,
+        "signals": {
+          "length_error": 0.008571428571428572,
+          "section_coverage_pct": 0.8181818181818182,
+          "glossary_recall": 0.4803921568627451,
+          "suspected_hallucination_rate": 0.6875
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.3,
+          "organization": 4.5,
+          "clarity": 4.2,
+          "style": 4.1
+        }
+      },
+      {
+        "iteration": 7,
+        "avg_rubric_score": 4.32,
+        "quality_score": 0.7815646753246754,
+        "word_count": 344,
+        "change_magnitude": 0.5789473684210527,
+        "signals": {
+          "length_error": 0.017142857142857144,
+          "section_coverage_pct": 0.8181818181818182,
+          "glossary_recall": 0.5686274509803921,
+          "suspected_hallucination_rate": 0.5714285714285714
+        },
+        "rubric": {
+          "coverage": 4.4,
+          "faithfulness": 4.2,
+          "organization": 4.6,
+          "clarity": 4.3,
+          "style": 4.1
+        }
+      }
     ],
     "target_words": 350,
     "final_rubric": {
-      "coverage": 4.5,
-      "faithfulness": 4.3,
+      "coverage": 4.4,
+      "faithfulness": 4.2,
       "organization": 4.6,
-      "clarity": 4.2,
-      "style": 4.0
+      "clarity": 4.3,
+      "style": 4.1
     },
-    "final_agreement": 0.39099011355449953,
-    "final_quality_score": 0.65272874451223
+    "final_quality_score": 0.7815646753246754
   }
 }

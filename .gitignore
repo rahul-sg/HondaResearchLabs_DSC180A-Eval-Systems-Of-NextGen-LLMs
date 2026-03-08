@@ -33,6 +33,7 @@ Thumbs.db
 # --------------------------------------
 logs/
 *.log
+!outputs/pairwise_overall_winners.log
 
 # LLM iteration outputs
 iteration_logs/
@@ -42,7 +43,6 @@ iter_*.txt
 tmp/
 cache/
 results/
-outputs/
 
 # --------------------------------------
 # Project-specific
@@ -57,6 +57,9 @@ data/slides/*.json
 experiments/*.json
 experiments/*.txt
 experiments/*.csv
+
+# Transient root log artifact from shell redirection/manual runs
+output.txt
 
 # --------------------------------------
 # Python packaging

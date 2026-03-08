@@ -1,0 +1,137 @@
+{
+  "num_lectures": 7,
+  "avg_tuned_score": 0.8379396312233708,
+  "avg_legacy_score": 0.7618056669230314,
+  "avg_delta_tuned_minus_legacy": 0.07613396430033936,
+  "tuned_better_count": 7,
+  "legacy_better_count": 0,
+  "tie_count": 0,
+  "per_lecture": [
+    {
+      "lecture_id": "lecture1",
+      "tuned": {
+        "final_score_0to1": 0.8535086325354609,
+        "raw_quality_score": 0.8663687943262411,
+        "risk_adjusted_score": 0.8535086325354609,
+        "iterations_completed": 4,
+        "stopping_reason": "pass: high quality plateau - quality 0.832 >= 0.740; quality span 0.0125 <= 0.0200 | final_selection: best_of_last_3 (iter 3, quality=0.844)"
+      },
+      "legacy": {
+        "final_score_0to1": 0.7652127334505259,
+        "raw_quality_score": 0.7967507853714803,
+        "risk_adjusted_score": 0.7652127334505259,
+        "iterations_completed": 6,
+        "stopping_reason": "pass: high quality plateau - quality 0.853 >= 0.740; quality span 0.0184 <= 0.0200 | final_selection: best_of_last_3 (iter 4, quality=0.859)"
+      },
+      "delta_tuned_minus_legacy": 0.08829589908493507
+    },
+    {
+      "lecture_id": "lecture2",
+      "tuned": {
+        "final_score_0to1": 0.8661092067124333,
+        "raw_quality_score": 0.8715087719298246,
+        "risk_adjusted_score": 0.8661092067124333,
+        "iterations_completed": 5,
+        "stopping_reason": "pass: strict thresholds met and quality high - signals: length_error 0.114 <= 0.12 AND coverage 0.881 >= 0.88 AND recall 0.625 >= 0.62 AND hallucination 0.294 < 0.48 (strict phase, iter 5) | quality 0.844 >= 0.740 | final_selection: best_of_last_3 (iter 4, quality=0.911)"
+      },
+      "legacy": {
+        "final_score_0to1": 0.8277735086773358,
+        "raw_quality_score": 0.8568450367085176,
+        "risk_adjusted_score": 0.8277735086773358,
+        "iterations_completed": 7,
+        "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0476 < 0.0200, recall_improvement -0.1042 < 0.0200, score_gain -0.0218 < 0.0150 | final_selection: best_of_last_3 (iter 5, quality=0.881)"
+      },
+      "delta_tuned_minus_legacy": 0.03833569803509751
+    },
+    {
+      "lecture_id": "lecture3",
+      "tuned": {
+        "final_score_0to1": 0.8027067708333334,
+        "raw_quality_score": 0.8283333333333334,
+        "risk_adjusted_score": 0.8027067708333334,
+        "iterations_completed": 4,
+        "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0493 < 0.0200, recall_improvement 0.0196 < 0.0200, score_gain -0.0064 < 0.0150 | final_selection: best_of_last_3 (iter 2, quality=0.773)"
+      },
+      "legacy": {
+        "final_score_0to1": 0.7373458031440447,
+        "raw_quality_score": 0.818363821469528,
+        "risk_adjusted_score": 0.7373458031440447,
+        "iterations_completed": 4,
+        "stopping_reason": "pass: high quality plateau - quality 0.797 >= 0.740; quality span 0.0189 <= 0.0200"
+      },
+      "delta_tuned_minus_legacy": 0.06536096768928867
+    },
+    {
+      "lecture_id": "lecture4",
+      "tuned": {
+        "final_score_0to1": 0.8225882936507938,
+        "raw_quality_score": 0.8347619047619048,
+        "risk_adjusted_score": 0.8225882936507938,
+        "iterations_completed": 4,
+        "stopping_reason": "pass: high quality plateau - quality 0.851 >= 0.740; quality span 0.0116 <= 0.0200"
+      },
+      "legacy": {
+        "final_score_0to1": 0.7992537462090333,
+        "raw_quality_score": 0.8282422240508118,
+        "risk_adjusted_score": 0.7992537462090333,
+        "iterations_completed": 6,
+        "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0131 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain -0.0278 < 0.0150 | final_selection: best_of_last_3 (iter 4, quality=0.871)"
+      },
+      "delta_tuned_minus_legacy": 0.023334547441760445
+    },
+    {
+      "lecture_id": "lecture5",
+      "tuned": {
+        "final_score_0to1": 0.7937614379084968,
+        "raw_quality_score": 0.8049411764705883,
+        "risk_adjusted_score": 0.7937614379084968,
+        "iterations_completed": 4,
+        "stopping_reason": "stalled: trend plateaued - halluc_improvement 0.0079 < 0.0200, recall_improvement -0.0400 < 0.0200, score_gain -0.0091 < 0.0150 | final_selection: best_of_last_3 (iter 3, quality=0.862)"
+      },
+      "legacy": {
+        "final_score_0to1": 0.7493981088326848,
+        "raw_quality_score": 0.7752394229303635,
+        "risk_adjusted_score": 0.7493981088326848,
+        "iterations_completed": 10,
+        "stopping_reason": "pass: high quality plateau - quality 0.872 >= 0.740; quality span 0.0160 <= 0.0200"
+      },
+      "delta_tuned_minus_legacy": 0.044363329075812086
+    },
+    {
+      "lecture_id": "lecture6",
+      "tuned": {
+        "final_score_0to1": 0.8419630769230769,
+        "raw_quality_score": 0.8728484848484849,
+        "risk_adjusted_score": 0.8419630769230769,
+        "iterations_completed": 4,
+        "stopping_reason": "pass: high quality plateau - quality 0.810 >= 0.740; quality span 0.0169 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.827)"
+      },
+      "legacy": {
+        "final_score_0to1": 0.7287163202520625,
+        "raw_quality_score": 0.8234082714712571,
+        "risk_adjusted_score": 0.7287163202520625,
+        "iterations_completed": 4,
+        "stopping_reason": "pass: high quality plateau - quality 0.814 >= 0.740; quality span 0.0081 <= 0.0200"
+      },
+      "delta_tuned_minus_legacy": 0.11324675667101447
+    },
+    {
+      "lecture_id": "lecture7",
+      "tuned": {
+        "final_score_0to1": 0.8849400000000001,
+        "raw_quality_score": 0.903,
+        "risk_adjusted_score": 0.8849400000000001,
+        "iterations_completed": 9,
+        "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1214 < 0.0200, recall_improvement -0.1042 < 0.0200, score_gain -0.0332 < 0.0150 | final_selection: best_of_last_3 (iter 7, quality=0.845)"
+      },
+      "legacy": {
+        "final_score_0to1": 0.7249394478955328,
+        "raw_quality_score": 0.8237948271540145,
+        "risk_adjusted_score": 0.7249394478955328,
+        "iterations_completed": 4,
+        "stopping_reason": "pass: high quality plateau - quality 0.805 >= 0.740; quality span 0.0100 <= 0.0200 | final_selection: best_of_last_3 (iter 2, quality=0.810)"
+      },
+      "delta_tuned_minus_legacy": 0.1600005521044673
+    }
+  ]
+}

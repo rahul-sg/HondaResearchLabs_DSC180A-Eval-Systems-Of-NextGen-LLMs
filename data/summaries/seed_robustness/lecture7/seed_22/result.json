@@ -10,20 +10,20 @@
     "coverage": 5,
     "faithfulness": 4,
     "organization": 5,
-    "clarity": 4,
+    "clarity": 5,
     "style": 4,
     "overall_1to10": 9,
     "two_strengths": [
       "The summary correctly distinguishes between between-groups and within-subjects designs, noting that within-subjects 'compare each person to themselves,' which directly mirrors the phrasing on Slide 2.",
-      "It accurately explains counterbalancing methods such as ABBA, block randomization, and Latin-square designs, matching slides 18\u201320 and 2:1 without distortion."
+      "It accurately explains counterbalancing methods such as ABBA, block randomization, and Latin-square designs, matching slides 18\u2013Chunk2 Slide 1."
     ],
     "two_issues": [
-      "The summary omits that block randomization is described as suitable only when conditions are 'REALLY short' (Slide 18), an important limitation affecting design feasibility.",
-      "While it lists carryover effects, it compresses several distinct concerns (history, maturation, testing effects) into one paragraph, losing the explicit causal distinctions made on Slides 9\u201311."
+      "The summary omits explicit mention that within-subjects designs are 'an elegant way to reduce nuisance variability' (Slide 3), which was a key conceptual motivation emphasized in class.",
+      "While it summarizes carryover effects and order effects well, it compresses distinctions like 'history is confounded with the manipulation' (Slide 9) and does not address that pretest-posttest control groups can estimate maturation rates (Slide 10)."
     ],
     "faithfulness_evidence": [
-      "Slide 3 explicitly states that within-subjects 'remove (at least some) participant-related noise,' which the summary renders accurately.",
-      "Slide 18 specifies that ABBA 'controls for practice effects\u2014if effects linear/slow,' yet this nuance is unstated in the summary, showing slight under-specification."
+      "From Slide 3: 'Compare each participant TO THEMSELF in other conditions \u2013 removes (at least some) participant-related noise.'",
+      "From Slide 9: 'History is confounded with the manipulation,' highlighting a specific risk that was paraphrased rather than fully conveyed."
     ],
     "detected_domain": "natural_sciences"
   },
@@ -35,10 +35,10 @@
   },
   "reference_metrics_used": false,
   "comprehensive_scoring": {
-    "final_score": 0.8666666666666667,
+    "final_score": 0.9,
     "mode": "reference_free",
     "layer_scores": {
-      "domain_rubric": 0.8666666666666667,
+      "domain_rubric": 0.9,
       "nlp_agreement": 0.0,
       "semantic_similarity": 0.0
     },
@@ -51,7 +51,7 @@
       "coverage": 5,
       "faithfulness": 4,
       "organization": 5,
-      "clarity": 4,
+      "clarity": 5,
       "style": 4
     },
     "detected_domain": "natural_sciences",
@@ -64,13 +64,13 @@
     }
   },
   "hybrid_scoring": {
-    "comprehensive_score": 0.8666666666666667,
-    "manual_weighted_score": 0.8733333333333334,
+    "comprehensive_score": 0.9,
+    "manual_weighted_score": 0.9000000000000001,
     "blend_weights": {
       "comprehensive": 0.7,
       "manual": 0.3
     },
-    "blended_score_pre_damping": 0.8686666666666667,
+    "blended_score_pre_damping": 0.9,
     "hallucination_policy": {
       "scoring_policy": "tuned",
       "damping_alpha": 0.05,
@@ -83,27 +83,17 @@
     "hallucination_rate": 0.5882352941176471,
     "raw_damping_factor": 0.9691176470588235,
     "hallucination_damping_factor": 0.9691176470588235,
-    "scorer_disagreement_delta": 0.00666666666666671,
-    "raw_quality_score": 0.8686666666666667,
-    "risk_adjusted_score": 0.8418401960784314
+    "scorer_disagreement_delta": 1.1102230246251565e-16,
+    "raw_quality_score": 0.9,
+    "risk_adjusted_score": 0.8722058823529412
   },
   "leaderboard_scores": {
-    "raw_quality_score": 0.8686666666666667,
-    "risk_adjusted_score": 0.8418401960784314
+    "raw_quality_score": 0.9,
+    "risk_adjusted_score": 0.8722058823529412
   },
   "iteration_score_table": [
     {
       "iteration": 1,
-      "avg_rubric_score": 4.5200000000000005,
-      "quality_score": 0.8178665984654734,
-      "word_count": 286,
-      "change_magnitude": 0.0,
-      "hallucination_rate": 0.5294117647058824,
-      "coverage": 0.8260869565217391,
-      "glossary_recall": 0.4375
-    },
-    {
-      "iteration": 2,
       "avg_rubric_score": 4.58,
       "quality_score": 0.8267042455242969,
       "word_count": 286,
@@ -113,43 +103,46 @@
       "glossary_recall": 0.4375
     },
     {
+      "iteration": 2,
+      "avg_rubric_score": 4.5200000000000005,
+      "quality_score": 0.8178665984654734,
+      "word_count": 286,
+      "change_magnitude": 0.0,
+      "hallucination_rate": 0.5294117647058824,
+      "coverage": 0.8260869565217391,
+      "glossary_recall": 0.4375
+    },
+    {
       "iteration": 3,
       "avg_rubric_score": 4.56,
-      "quality_score": 0.7989440993788821,
-      "word_count": 385,
-      "change_magnitude": 0.47916666666666663,
-      "hallucination_rate": 0.7142857142857143,
-      "coverage": 0.8260869565217391,
-      "glossary_recall": 0.4583333333333333
+      "quality_score": 0.7936568620037807,
+      "word_count": 387,
+      "change_magnitude": 0.5709677419354839,
+      "hallucination_rate": 0.6956521739130435,
+      "coverage": 0.782608695652174,
+      "glossary_recall": 0.375
     },
     {
       "iteration": 4,
-      "avg_rubric_score": 4.500000000000001,
-      "quality_score": 0.8123478260869568,
-      "word_count": 365,
-      "change_magnitude": 0.5317220543806647,
-      "hallucination_rate": 0.6666666666666666,
-      "coverage": 0.9130434782608695,
-      "glossary_recall": 0.4375
+      "avg_rubric_score": 4.3999999999999995,
+      "quality_score": 0.787564461247637,
+      "word_count": 374,
+      "change_magnitude": 0.3866666666666667,
+      "hallucination_rate": 0.5652173913043478,
+      "coverage": 0.782608695652174,
+      "glossary_recall": 0.4166666666666667
     }
   ],
-  "final_score_0to1": 0.8418401960784314,
+  "final_score_0to1": 0.8722058823529412,
   "pairwise_selection_enabled": true,
   "lecture_title": "lecture7",
   "refinement_metadata": {
     "iterations_completed": 4,
-    "final_avg_score": 4.500000000000001,
+    "final_avg_score": 4.3999999999999995,
     "final_word_count": 286,
-    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.1373 < 0.0200, recall_improvement 0.0000 < 0.0200, score_gain -0.0144 < 0.0150 | final_selection: best_of_last_3 (iter 2, quality=0.827)",
+    "stopping_reason": "stalled: trend plateaued - halluc_improvement -0.0358 < 0.0200, recall_improvement -0.0208 < 0.0200, score_gain -0.0303 < 0.0150 | final_selection: best_of_last_3 (iter 2, quality=0.818)",
     "pairwise_selection_enabled": true,
     "lever_history": [
-      {
-        "coverage": 4.6,
-        "faithfulness": 4.4,
-        "organization": 4.7,
-        "clarity": 4.5,
-        "style": 4.4
-      },
       {
         "coverage": 4.6,
         "faithfulness": 4.5,
@@ -162,45 +155,32 @@
         "faithfulness": 4.4,
         "organization": 4.7,
         "clarity": 4.5,
+        "style": 4.4
+      },
+      {
+        "coverage": 4.6,
+        "faithfulness": 4.4,
+        "organization": 4.7,
+        "clarity": 4.5,
         "style": 4.6
       },
       {
         "coverage": 4.6,
-        "faithfulness": 4.5,
-        "organization": 4.7,
+        "faithfulness": 4.3,
+        "organization": 4.5,
         "clarity": 4.4,
-        "style": 4.3
+        "style": 4.2
       }
     ],
     "quality_history": [
-      0.8178665984654734,
       0.8267042455242969,
-      0.7989440993788821,
-      0.8123478260869568
+      0.8178665984654734,
+      0.7936568620037807,
+      0.787564461247637
     ],
     "iteration_metrics": [
       {
         "iteration": 1,
-        "avg_rubric_score": 4.5200000000000005,
-        "quality_score": 0.8178665984654734,
-        "word_count": 286,
-        "change_magnitude": 0.0,
-        "signals": {
-          "length_error": 0.18285714285714286,
-          "section_coverage_pct": 0.8260869565217391,
-          "glossary_recall": 0.4375,
-          "suspected_hallucination_rate": 0.5294117647058824
-        },
-        "rubric": {
-          "coverage": 4.6,
-          "faithfulness": 4.4,
-          "organization": 4.7,
-          "clarity": 4.5,
-          "style": 4.4
-        }
-      },
-      {
-        "iteration": 2,
         "avg_rubric_score": 4.58,
         "quality_score": 0.8267042455242969,
         "word_count": 286,
@@ -220,16 +200,36 @@
         }
       },
       {
+        "iteration": 2,
+        "avg_rubric_score": 4.5200000000000005,
+        "quality_score": 0.8178665984654734,
+        "word_count": 286,
+        "change_magnitude": 0.0,
+        "signals": {
+          "length_error": 0.18285714285714286,
+          "section_coverage_pct": 0.8260869565217391,
+          "glossary_recall": 0.4375,
+          "suspected_hallucination_rate": 0.5294117647058824
+        },
+        "rubric": {
+          "coverage": 4.6,
+          "faithfulness": 4.4,
+          "organization": 4.7,
+          "clarity": 4.5,
+          "style": 4.4
+        }
+      },
+      {
         "iteration": 3,
         "avg_rubric_score": 4.56,
-        "quality_score": 0.7989440993788821,
-        "word_count": 385,
-        "change_magnitude": 0.47916666666666663,
+        "quality_score": 0.7936568620037807,
+        "word_count": 387,
+        "change_magnitude": 0.5709677419354839,
         "signals": {
-          "length_error": 0.1,
-          "section_coverage_pct": 0.8260869565217391,
-          "glossary_recall": 0.4583333333333333,
-          "suspected_hallucination_rate": 0.7142857142857143
+          "length_error": 0.10571428571428572,
+          "section_coverage_pct": 0.782608695652174,
+          "glossary_recall": 0.375,
+          "suspected_hallucination_rate": 0.6956521739130435
         },
         "rubric": {
           "coverage": 4.6,
@@ -241,33 +241,33 @@
       },
       {
         "iteration": 4,
-        "avg_rubric_score": 4.500000000000001,
-        "quality_score": 0.8123478260869568,
-        "word_count": 365,
-        "change_magnitude": 0.5317220543806647,
+        "avg_rubric_score": 4.3999999999999995,
+        "quality_score": 0.787564461247637,
+        "word_count": 374,
+        "change_magnitude": 0.3866666666666667,
         "signals": {
-          "length_error": 0.04285714285714286,
-          "section_coverage_pct": 0.9130434782608695,
-          "glossary_recall": 0.4375,
-          "suspected_hallucination_rate": 0.6666666666666666
+          "length_error": 0.06857142857142857,
+          "section_coverage_pct": 0.782608695652174,
+          "glossary_recall": 0.4166666666666667,
+          "suspected_hallucination_rate": 0.5652173913043478
         },
         "rubric": {
           "coverage": 4.6,
-          "faithfulness": 4.5,
-          "organization": 4.7,
+          "faithfulness": 4.3,
+          "organization": 4.5,
           "clarity": 4.4,
-          "style": 4.3
+          "style": 4.2
         }
       }
     ],
     "target_words": 350,
     "final_rubric": {
       "coverage": 4.6,
-      "faithfulness": 4.5,
-      "organization": 4.7,
+      "faithfulness": 4.3,
+      "organization": 4.5,
       "clarity": 4.4,
-      "style": 4.3
+      "style": 4.2
     },
-    "final_quality_score": 0.8123478260869568
+    "final_quality_score": 0.787564461247637
   }
 }

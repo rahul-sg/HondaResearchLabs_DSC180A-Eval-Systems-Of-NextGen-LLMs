@@ -1,0 +1,154 @@
+{
+  "n_samples": 50,
+  "n_lectures": 7,
+  "n_human_labeled_samples": 50,
+  "using_human_labels": true,
+  "lecture_ids": [
+    "lecture1",
+    "lecture2",
+    "lecture3",
+    "lecture4",
+    "lecture5",
+    "lecture6",
+    "lecture7"
+  ],
+  "current_policy": {
+    "alpha": 0.15,
+    "beta": 0.1,
+    "objective": 0.751838242982149,
+    "mean_final_score": 0.7096831278779637,
+    "mean_penalty": 0.05566228693784629,
+    "spearman_vs_comprehensive": 0.6976826035478696,
+    "spearman_vs_faithfulness": 0.8077214837356088,
+    "spearman_vs_hallucination": -0.691923932483935,
+    "using_human_labels": true
+  },
+  "recommended_policy": {
+    "alpha": 0.2,
+    "beta": 0.125,
+    "objective": 0.7634092244807779,
+    "mean_final_score": 0.6815997094380273,
+    "mean_penalty": 0.07309748156814812,
+    "spearman_vs_comprehensive": 0.607274480896866,
+    "spearman_vs_faithfulness": 0.8692104294946615,
+    "spearman_vs_hallucination": -0.77505294279696,
+    "using_human_labels": true
+  },
+  "recommendation": {
+    "recommended_alpha": 0.2,
+    "recommended_beta": 0.125,
+    "rationale": "Maximizes objective using human faithfulness labels."
+  },
+  "top_10_policies": [
+    {
+      "alpha": 0.2,
+      "beta": 0.125,
+      "objective": 0.7634092244807779,
+      "mean_final_score": 0.6815997094380273,
+      "mean_penalty": 0.07309748156814812,
+      "spearman_vs_comprehensive": 0.607274480896866,
+      "spearman_vs_faithfulness": 0.8692104294946615,
+      "spearman_vs_hallucination": -0.77505294279696,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.125,
+      "objective": 0.7625234778624961,
+      "mean_final_score": 0.663407239585004,
+      "mean_penalty": 0.09128995142117138,
+      "spearman_vs_comprehensive": 0.5681846078321423,
+      "spearman_vs_faithfulness": 0.8863734894133338,
+      "spearman_vs_hallucination": -0.8031474694305287,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.025,
+      "objective": 0.7621900709829259,
+      "mean_final_score": 0.7004118022433897,
+      "mean_penalty": 0.0968782840013242,
+      "spearman_vs_comprehensive": 0.5905947706624419,
+      "spearman_vs_faithfulness": 0.8751718284580099,
+      "spearman_vs_hallucination": -0.7859732468137752,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.05,
+      "objective": 0.7621608187889204,
+      "mean_final_score": 0.6911606615787933,
+      "mean_penalty": 0.095481200856286,
+      "spearman_vs_comprehensive": 0.579850172045175,
+      "spearman_vs_faithfulness": 0.88055631784426,
+      "spearman_vs_hallucination": -0.7929006643398607,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.0,
+      "objective": 0.7621467746233879,
+      "mean_final_score": 0.7096629429079861,
+      "mean_penalty": 0.09827536714636241,
+      "spearman_vs_comprehensive": 0.5905947706624419,
+      "spearman_vs_faithfulness": 0.8751718284580099,
+      "spearman_vs_hallucination": -0.7856846044168551,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.1,
+      "objective": 0.7620350683552186,
+      "mean_final_score": 0.6911290322320149,
+      "mean_penalty": 0.07421638258379507,
+      "spearman_vs_comprehensive": 0.6231867198014851,
+      "spearman_vs_faithfulness": 0.8593068150878086,
+      "spearman_vs_hallucination": -0.7617753925386297,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.1,
+      "objective": 0.7620147283795895,
+      "mean_final_score": 0.6726583802496005,
+      "mean_penalty": 0.0926870345662096,
+      "spearman_vs_comprehensive": 0.5692590676938689,
+      "spearman_vs_faithfulness": 0.8852677460572288,
+      "spearman_vs_hallucination": -0.8009345443874737,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.075,
+      "objective": 0.7620089378096006,
+      "mean_final_score": 0.6819095209141969,
+      "mean_penalty": 0.09408411771124779,
+      "spearman_vs_comprehensive": 0.5756034973535885,
+      "spearman_vs_faithfulness": 0.8821428191812801,
+      "spearman_vs_hallucination": -0.7965086943013635,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.075,
+      "objective": 0.7602207685889123,
+      "mean_final_score": 0.7006583550260026,
+      "mean_penalty": 0.075335283599442,
+      "spearman_vs_comprehensive": 0.6342894717059944,
+      "spearman_vs_faithfulness": 0.8506050956332437,
+      "spearman_vs_hallucination": -0.7527793711679492,
+      "using_human_labels": true
+    },
+    {
+      "alpha": 0.2,
+      "beta": 0.05,
+      "objective": 0.7597274391906637,
+      "mean_final_score": 0.7101876778199904,
+      "mean_penalty": 0.07645418461508896,
+      "spearman_vs_comprehensive": 0.6374616865358541,
+      "spearman_vs_faithfulness": 0.8482493815267593,
+      "spearman_vs_hallucination": -0.7499410542649004,
+      "using_human_labels": true
+    }
+  ]
+}
