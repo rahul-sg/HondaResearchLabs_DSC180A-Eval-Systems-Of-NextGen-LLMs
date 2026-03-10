@@ -121,7 +121,8 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 │   │   └── summarizer.py
 │   ├── utils/
 │   └── visualization/
-├── papers/
+├── artifacts/
+│   ├── DSC180_FINAL_POSTER.pdf
 │   ├── Q1/
 │   └── Q2/
 ├── .env.example
@@ -134,7 +135,8 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 
 ## Paper
 
-Our Quarter 1 report and Quarter 2 proposal are listed under `papers/Q1/` and `papers/Q2/`.
+Our Quarter 1 report and Quarter 2 proposal are listed under `artifacts/Q1/` and `artifacts/Q2/`.
+The final poster is available at `artifacts/DSC180_FINAL_POSTER.pdf`.
 
 ## Environment Setup
 
