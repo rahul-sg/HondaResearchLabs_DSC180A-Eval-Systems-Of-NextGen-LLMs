@@ -1,0 +1,14 @@
+This lecture examined **nested SQL queries**, explaining how subqueries function within the **SELECT**, **FROM**, and **WHERE** clauses, how they can sometimes be transformed through *unnesting*, and how their behavior connects to logical quantifiers and **query monotonicity**. Building on prior SQL features such as joins, grouping, and aggregates, it defined a *subquery* as a query embedded within another that can return either a single value or a relation. Subqueries are useful when a condition depends on a table that must first be computed, but the rule of thumb is to *avoid nested queries when possible*—though some cannot be avoided.
+
+In the **SELECT clause**, the lecture showed correlated subqueries that return values such as each actor’s movie genre, the average salary of actors in movies rated above 9, or the count of actors per movie. Many can be replaced by join‑based formulations using `GROUP BY`; this *unnesting* produces equivalent results when join semantics remain the same. However, slides cautioned that different join types (e.g., `LEFT OUTER JOIN`) may alter equivalence when null‑preserving behavior is required.
+
+Subqueries in the **FROM clause** act as derived relations or *common table expressions (CTEs)*. The example filtered first for movies with ratings > 8, stored the result under an alias or CTE, and then applied a second filter for ratings < 9. Such *subquery refactoring* improves readability and is non‑correlated, yielding results equivalent to a direct query.
+
+The **WHERE clause** examples introduced logical **quantifiers**. *Existential quantifiers*—expressed with `EXISTS` or `IN`—check whether at least one matching tuple exists and can generally be rewritten as joins. *Universal quantifiers* express “for all” conditions indirectly. The slides highlighted a **two‑step reasoning process** for “actors who only acted in Action movies”:  
+(1) identify actors linked to *non‑Action* movies;  
+(2) select those *not* in that set.  
+Other patterns, like `NOT EXISTS`, achieve the same logic. Another query found movies where *all actors* earned > $100K, using `< ALL` or `NOT EXISTS` forms, while another counted actors who appeared in *at most two* Action films to illustrate numeric conditions within subqueries.
+
+Finally, the lecture connected quantifiers to **query monotonicity**. A basic SELECT‑FROM‑WHERE query without subqueries or aggregates is **monotone**—adding input tuples cannot remove results. Monotonic queries can be safely unnested. Queries involving negation, universal quantifiers, or aggregates are **non‑monotone**, meaning new data may retract results, and thus their nested forms cannot always be simplified.
+
+(Word count: 398)

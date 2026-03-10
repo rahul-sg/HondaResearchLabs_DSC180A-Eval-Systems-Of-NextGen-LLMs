@@ -1,0 +1,20 @@
+Week 1 of *Principles of Accounting* introduces the purpose and framework of financial accounting—the process of recording business transactions and communicating results through financial statements. Accounting is presented as the “language of business,” telling a company’s financial story of successes, challenges, and risks. The two primary functions are **recordkeeping**, which identifies, measures, and records economic events in value terms, and **communication**, which provides this information to external decision makers.  
+
+Key **users of financial information** include investors evaluating performance, creditors and suppliers assessing repayment ability or reliability, management and boards monitoring operations, and other groups such as employees, customers, analysts, and regulators.  
+
+Financial accounting measures three main **business activities**:  
+1. **Financing** – transactions with investors and creditors (e.g., issuing stock, borrowing from a bank),  
+2. **Investing** – acquiring and disposing of productive resources such as buildings or equipment, and  
+3. **Operating** – day‑to‑day transactions related to producing and selling goods or services.  
+
+Information from these activities is communicated through four **financial statements**: the balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows. The reporting process follows **Generally Accepted Accounting Principles (GAAP)**, which ensure standardized and comparable information. The **SEC** oversees reporting by public companies and delegates standard‑setting authority to the **FASB**; internationally, the **IASB** issues IFRS.  
+
+**Auditors**, as independent professionals, assess whether financial statements comply with GAAP and are free from material misstatements. They issue one of four opinions—unqualified, unqualified with explanatory paragraph, qualified, or adverse—providing credibility for users.  
+
+The lecture emphasizes the **balance sheet**, which reports a company’s financial position at a specific date and must satisfy the **accounting equation**:  
+**Assets = Liabilities + Stockholders’ Equity.**  
+Assets are resources that provide future economic benefit (e.g., cash, equipment, land, supplies, inventory, patents). Liabilities are obligations owed to creditors (e.g., payables). Stockholders’ equity represents owners’ residual claims, such as common stock.  
+
+Through examples like issuing shares, borrowing funds, purchasing equipment, prepaying rent, and buying supplies on account, students see how each transaction affects accounts while keeping the equation balanced. These foundation concepts demonstrate how financial information is generated, structured, and used to support informed business decision‑making.  
+
+*(Approx. 398 words)*

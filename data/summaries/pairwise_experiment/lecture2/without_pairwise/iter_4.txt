@@ -1,0 +1,15 @@
+This lecture deepens the foundations of accounting by explaining how financial statements integrate through the double‑entry recording process and the expanded accounting equation. It begins by emphasizing that **economic activity is complex**, so **accounting requires judgment and critical thinking**—not just mechanical recording. Effective financial communication depends on preparing statements that reflect both position and performance.  
+
+The four core statements—the **balance sheet**, **income statement**, **statement of stockholders’ equity**, and **statement of cash flows**—work together to portray a company’s financial reality. The balance sheet reports assets, liabilities, and equity **at a point in time** (beginning and end of a fiscal year), while the income, equity, and cash flow statements describe **flows over a period**. Changes in revenues and expenses determine **net income**, which increases retained earnings and equity; a **net loss** reduces them. Thus, income statement results link directly to the balance sheet through retained earnings.  
+
+The **expanded accounting equation** unifies these relationships:  
+**Assets = Liabilities + Contributed Capital + Beginning Retained Earnings + Revenues – Expenses – Dividends.**  
+This framework shows how operating results and dividend distributions modify retained earnings and thereby total shareholders’ equity.  
+
+In the **double‑entry system**, every economic event has two sides—**a give and a take**—and affects at least two accounts within assets, liabilities, or equity. Debits (left) increase assets and expenses but decrease liabilities and equity; credits (right) do the opposite. Each transaction must include at least one debit and one credit, and **debits must always equal credits**, ensuring the accounting equation remains balanced. No negative numbers are used; all balances are expressed as positive debit or credit amounts.  
+
+Sequential examples illustrate the mechanics: obtaining a bank loan increases both cash and notes payable; purchasing equipment reduces cash but adds equipment; acquiring inventory on account raises both inventory and a payable; paying a supplier reduces cash and liabilities; paying insurance converts cash into a prepaid asset; and issuing stock increases both cash and contributed capital. Each event updates the **T‑accounts**, whose calculated **ending balances appear on the balance sheet** and then **become the next period’s beginning balances**, maintaining continuity across fiscal periods.  
+
+Finally, the lecture summarizes the accounting process: **(1)** analyze each transaction, **(2)** record it as a journal entry, and **(3)** post it to the ledger’s T‑accounts to find ending balances. The **Super T‑account** and **DEALOR** rule (Dividends, Expenses, Assets = Debit; Liabilities, Owners’ Equity, Revenue = Credit) reinforce how **balanced debits and credits preserve the integrity of financial reporting**.  
+
+*(Approx. 395 words)*

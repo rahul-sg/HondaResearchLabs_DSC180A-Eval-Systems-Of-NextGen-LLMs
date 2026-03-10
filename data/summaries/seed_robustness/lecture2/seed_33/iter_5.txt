@@ -1,0 +1,15 @@
+This lecture advanced the study of accounting as the structured translation of complex economic activity into clear financial communication. Building on Week 1’s framework, it reinforced that financial statements are interrelated reports reflecting a company’s performance and position. The four core statements—the balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows—work together: the balance sheet captures assets, liabilities, and equity at specific points in time, while the other statements explain changes over the fiscal period. Through retained earnings, revenues and expenses determine net income, which increases or decreases stockholders’ equity and thereby connects successive balance sheets.  
+
+The session revisited the **accounting equation**, expanding it step by step from  
+**Assets = Liabilities + Shareholders’ Equity**  
+to include contributed capital and the flow within retained earnings:  
+**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues – Expenses – Dividends)**.  
+This formulation shows how earnings and distributions shape equity while preserving balance between a firm’s resources and claims.
+
+A major focus was the **double-entry system**, which ensures that all economic events are recorded through equal debits and credits. Each transaction has two sides—a give and a take—and affects at least one of the elements (A, L, or SE). Debits normally increase assets, expenses, and dividends; credits increase liabilities, contributed capital, and revenues. Negative numbers are never used, and every transaction must balance: **Debits = Credits**.
+
+Step-by-step numeric examples illustrated the mechanics. Borrowing $100,000 from a bank increased both cash and notes payable; purchasing equipment for $60,000 cash exchanged one asset for another; acquiring $15,000 of inventory on account created a liability; paying $8,000 to suppliers reduced both cash and accounts payable; prepaying $600 for insurance converted cash to another asset; and issuing 10,000 shares for $100,000 raised cash and common stock equally. These examples demonstrated that every entry keeps **A = L + SE** intact.  
+
+The lecture then connected records to the accounting process: **(1) analyze** each transaction, **(2) journalize** it by listing debits first and indenting credits, and **(3) post** to T‑accounts to determine ending balances. Ending balances appear on the current balance sheet and become the beginning balances of the next period, maintaining continuity. The mnemonic **DEALOR**—Dividends, Expenses, Assets (debit); Liabilities, Owners’ Equity, Revenue (credit)—summarized normal account sides. Collectively, these steps form a disciplined system that transforms business events into balanced, connected financial statements.  
+
+(≈398 words)

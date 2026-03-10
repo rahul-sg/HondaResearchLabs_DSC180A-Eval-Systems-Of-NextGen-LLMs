@@ -1,0 +1,13 @@
+This lecture extends Week 1’s foundation by connecting the financial accounting framework to the mechanics of double‑entry recordkeeping and the expanded accounting equation. It begins by emphasizing that although economic activity is complex, accounting provides a structured, judgment‑based system for representing that activity consistently.  
+
+The first section reviews the **financial statements** as communication tools. The balance sheet reports assets, liabilities, and stockholders’ equity at two points in time—the beginning and end of the fiscal period—while the income statement, statement of stockholders’ equity, and statement of cash flows explain changes that occur during the year. The statements are interrelated: revenues and expenses determine net income, which increases or decreases retained earnings; dividends reduce retained earnings; and the statement of cash flows explains changes in cash between consecutive balance sheets. These links show how changes in performance accounts flow into equity and connect all four statements.  
+
+Next, the lecture **expands the accounting equation** from A = L + SE to A = L + Contributed Capital + Retained Earnings, then breaks retained earnings into its components—beginning balance + net income − dividends—and finally expresses net income as revenues − expenses. This evolution yields  
+A = L + Contributed Capital + Beginning Retained Earnings + Revenues − Expenses − Dividends,  
+illustrating how income‑statement elements drive equity changes over time.  
+
+The lecture then develops **double‑entry accounting**, where every transaction has dual effects—a give and a take—and total debits must always equal total credits, with **no negative numbers allowed**. Debits increase assets and decrease liabilities and equity, while credits have the opposite effect. Detailed examples trace six transactions: securing a bank loan, purchasing equipment and inventory, paying part of an account payable, purchasing insurance, and issuing stock. Each is recorded using T‑accounts to demonstrate that every entry balances. The slides also show how account updates yield ending balances that become the **beginning balances for the next period**, reinforcing the continuity that supports the broader accounting cycle.  
+
+Finally, the lecture outlines the **recording process**—analyze each event, record a journal entry (debits listed first, credits indented), then post to the ledger to determine account balances. The mnemonic **DEALOR** (Dividends, Expenses, Assets → Debits; Liabilities, Owners’ Equity, Revenues → Credits) summarizes normal balances, ensuring that Debits = Credits and preserving the fundamental relationship A = L + SE.  
+
+*(≈397 words)*

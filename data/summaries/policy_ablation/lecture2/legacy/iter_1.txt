@@ -1,0 +1,12 @@
+This lecture deepens the foundation of financial accounting by showing how financial statements connect and how transactions are recorded through the double-entry framework. It begins by emphasizing that accounting involves judgment in capturing complex economic activity. Financial reporting is described as a communication process, structured through four interrelated statements: the balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows. The balance sheet reports resources and obligations at a point in time, while the income statement, equity statement, and cash flow statement report activities over a fiscal period. Together, they explain changes between two balance sheet dates. The lecture highlights that net income increases stockholders’ equity, while losses, expenses, and dividends reduce it, and that revenues raise equity by contributing to retained earnings.  
+
+The accounting equation—Assets = Liabilities + Stockholders’ Equity—serves as the central link across these statements. The lecture expands this equation step-by-step to show how equity evolves:  
+Assets = Liabilities + Contributed Capital + Retained Earnings (Beginning of Period + Net Income – Dividends) and then substitutes Net Income = Revenues – Expenses to produce the full expanded form:  
+Assets = Liabilities + Contributed Capital + Retained Earnings (Beginning of Period + Revenues – Expenses – Dividends).  
+This sequential derivation reveals how operational results and distributions shape equity across periods.  
+
+Building on that foundation, the lecture develops double-entry accounting. Every economic event affects at least two accounts, and the accounting equation must always balance. Debits increase assets while decreasing liabilities and equity; credits have the opposite effect. Each transaction must include at least one debit and one credit, and debits must equal credits—upholding A = L + SE. Practice examples illustrate this process: borrowing funds, purchasing equipment or inventory, paying suppliers, prepaying insurance, and issuing shares. Ending balances in T-accounts (calculated as Beginning Balance + increases – decreases) appear on the balance sheet and become the next period’s beginning balances.  
+
+The lecture closes by outlining the recording sequence—**analyze the transaction, record in the journal, and post to the ledger**—and by reinforcing that the equality of debits and credits preserves both the accounting equation and the integrity of financial statements.  
+
+**Word Count: 395**

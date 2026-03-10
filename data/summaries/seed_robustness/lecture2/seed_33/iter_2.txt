@@ -1,0 +1,13 @@
+This lecture builds on Week 1’s foundation by showing how financial statements connect and how double‑entry accounting captures those links in measurable form. Accounting translates complex economic events into structured financial information, requiring judgment and critical thinking.  
+
+The four core financial statements—the balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows—communicate a company’s financial condition and performance. The balance sheet reports assets, liabilities, and stockholders’ equity at specific points in time; the other statements describe changes over a fiscal period that explain differences between two balance‑sheet dates. Net income increases stockholders’ equity while a net loss reduces it, because revenues raise retained earnings and expenses lower them.  
+
+The accounting equation is then expanded step by step. Starting from **Assets = Liabilities + Stockholders’ Equity**, equity is divided into contributed capital and retained earnings. Retained earnings evolve as the beginning balance plus net income minus dividends, and net income itself equals revenues minus expenses. This expanded form links operational results with financial position and remains the foundation for all recordkeeping.  
+
+Double‑entry mechanics formalize this balance. Every transaction has two sides—a give and a take—and affects at least one account within assets, liabilities, or equity. Each entry must contain at least one debit and one credit; debits equal credits, ensuring the accounting equation stays balanced. Debits increase assets and decrease liabilities and equity, while credits have the opposite effect. No negative numbers are used—credit and debit labels capture direction instead.  
+
+Slides illustrate these principles through transactions: borrowing $100,000 from a bank, buying $60,000 of equipment for cash, purchasing $15,000 of inventory on account, paying an $8,000 supplier balance, paying $600 cash for prepaid insurance, and issuing $100,000 of common stock. Calculated T‑account balances (for example, ending cash = $131,400 and trade payable = $7,000) flow directly into the balance sheet and become the next period’s beginning balances. The DEALOR mnemonic (Dividends, Expenses, Assets, Liabilities, Owners’ equity, Revenue) helps track normal debit or credit behavior.  
+
+Finally, the lecture outlines the recording process: (1) analyze each transaction, (2) record debits and credits as journal entries, and (3) post them to the ledger using T‑accounts to determine ending balances. This sequence maintains **Debits = Credits = A = L + SE**, preserving accuracy and consistency across financial statements.  
+
+(≈380 words)

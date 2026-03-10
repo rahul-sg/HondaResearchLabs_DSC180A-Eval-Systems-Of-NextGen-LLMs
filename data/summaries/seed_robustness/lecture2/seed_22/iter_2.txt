@@ -1,0 +1,14 @@
+This lecture builds on Week 1’s foundation by linking the financial accounting framework to the mechanics of **double‑entry recording**. It begins by emphasizing that real‑world economic activity is complex and that accounting requires critical thinking and structured judgment when recognizing and classifying events.  
+
+The first section reviews the **four financial statements** as the central means of communicating performance and position. The **balance sheet** presents assets, liabilities, and equity at a specific point in time, while the **income statement**, **statement of stockholders’ equity**, and **statement of cash flows** summarize activity across a fiscal period. These reports are interdependent: income or loss from the income statement changes retained earnings within equity; the statement of cash flows explains shifts in cash between two balance‑sheet dates; and the equity statement details owners’ investments and distributions. Revenues increase and expenses decrease stockholders’ equity, so **net income raises retained earnings**, while **net loss reduces it**.  
+
+The lecture then expands the **accounting equation**—  
+**Assets = Liabilities + Contributed Capital + Retained Earnings (Beginning of Period + Revenues – Expenses – Dividends)**—showing how equity evolves through business activities. This forms the logic of **double‑entry accounting**, where every transaction has two sides and must preserve balance: **Debits = Credits**. Debits increase assets (and also expenses or dividends) and decrease liabilities or equity, whereas credits do the opposite.  
+
+Through step‑by‑step examples—borrowing **$100,000** from a bank, purchasing **$60,000** of equipment with cash, buying **$15,000** of inventory on account, paying **$8,000** to a supplier, prepaying **$600** for insurance, and issuing **10,000 shares for $100,000**—students see how each event affects multiple accounts. T‑accounts demonstrate that all transactions remain balanced, and computed ending balances become the beginning balances of the next period. A summary equation captures this process: **Beginning Balance + Increases – Decreases = Ending Balance**.  
+
+To support application, the session introduces the **DEALOR** mnemonic—**Dividends, Expenses, Assets (increase with Debits)** and **Liabilities, Owners’ Equity, Revenue (increase with Credits)**—and the procedural sequence of **Analyze → Record → Post**, reinforcing that every journal entry must have at least one debit and one credit.  
+
+In conclusion, maintaining **Debits = Credits** not only ensures numerical accuracy but also preserves the fundamental balance‑sheet equation **A = L + SE**, linking detailed transaction recording to the integrity of the financial statements.  
+
+(≈395 words)

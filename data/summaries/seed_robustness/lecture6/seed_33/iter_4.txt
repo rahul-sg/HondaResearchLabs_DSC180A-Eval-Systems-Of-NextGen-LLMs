@@ -1,0 +1,13 @@
+This lecture focused on **nested SQL queries**—queries that include other queries—and how their structure, logical role, and monotonicity determine whether they can be simplified or must remain nested. It built on prior topics such as projections, selections, joins, aggregation, grouping, and modification statements.
+
+A **subquery** may return either a single value or a full relation, and it can appear in a **SELECT**, **FROM**, or **WHERE** clause. The slides established a practical rule: *avoid nested queries when possible*, though in some cases they are necessary. The lecture repeatedly demonstrated **subquery unnesting**, showing equivalent join-based forms that produce the same results.
+
+In the **SELECT clause**, subqueries were used to compute attributes such as a movie’s genre or the average salary of its actors. These were examples of **correlated subqueries**, where the inner query references values from the outer one. Equivalent JOIN versions were shown side-by-side to emphasize that an unnested query can yield identical results—though cases involving outer joins or NULLs require care.
+
+Subqueries in the **FROM clause** illustrated how intermediate results can be expressed as derived tables or **common table expressions**, effectively refactoring a query without changing its output.
+
+The **WHERE clause** introduced **logical quantifiers**. Using **EXISTS** or **IN**, SQL expresses **existential quantification**—whether at least one related record satisfies a condition. These predicates correspond directly to join semantics and can often be unnested. In contrast, **universal quantifiers** (“for all”) require indirect construction. The lecture walked through a two-step pattern to find actors who acted only in action movies: (1) identify actors linked to any non‑action movie, and (2) select those **not** in that set. This logic was extended to queries such as retrieving movies where **all** actors earn over $100K, implemented with **NOT EXISTS** or **< ALL** forms.
+
+The closing section connected subqueries to **monotonicity**. A query is **monotone** if adding tuples to input relations cannot remove results from the output. A proof sketch using nested‑loop semantics showed that simple SELECT‑FROM‑WHERE queries without aggregates or subqueries are monotone. **Monotone queries can be unnested**, while **non‑monotone queries**—those involving negation, universal quantifiers, or aggregates—cannot. This explains why some nested queries are inherently required for correct SQL behavior.  
+
+*(Approx. 395 words)*

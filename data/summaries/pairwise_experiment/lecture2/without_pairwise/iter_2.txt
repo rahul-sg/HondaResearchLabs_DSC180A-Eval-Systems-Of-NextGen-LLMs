@@ -1,0 +1,15 @@
+This lecture deepens the foundation of accounting by showing how financial statements interconnect and how double-entry recordkeeping maintains those links. It begins by emphasizing that because economic activity is complex, accounting demands critical judgment and systematic communication through financial statements.  
+
+The four primary statements—the balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows—operate as a unified reporting system. The balance sheet presents resources and claims at specific points in time (beginning and end of a period), while the income, equity, and cash flow statements describe performance and changes during the fiscal year. Net income increases stockholders’ equity; a net loss decreases it. Revenues raise equity, expenses lower it, and the effects flow through retained earnings, connecting the statements across periods.  
+
+The lecture then expands the accounting equation from **Assets = Liabilities + Shareholders’ Equity** to show how equity evolves:  
+**Assets = Liabilities + Contributed Capital + Beginning Retained Earnings + Revenues – Expenses – Dividends.**  
+This version highlights how business activities—earning revenue, incurring expenses, and distributing dividends—affect both the balance sheet and income statement while preserving equality.  
+
+Building on this structure, the concept of **double-entry accounting** is introduced. Every economic event has two sides—a give and a take—and must be recorded in at least two accounts so the accounting equation always balances. Debits (left side) increase assets and expenses but decrease liabilities and equity; credits (right side) have the opposite effect. Every transaction must include at least one debit and one credit, and **no negative numbers are used**—this rule ensures that total debits always equal total credits.  
+
+Examples such as bank loans, equipment purchases, inventory transactions, insurance payments, and stock issuance illustrate how accounts respond to each transaction. The **Super T‑account** and **DEALOR mnemonic** (Dividends, Expenses, Assets = Debit; Liabilities, Owners’ Equity, Revenue = Credit) support recall of these debit‑credit rules. Ending balances derived from T‑accounts feed directly into the balance sheet and become the next period’s beginning balances.  
+
+Finally, the lecture outlines the accounting process: analyze each transaction, record it in journal entries, and post those entries to the ledger’s T‑accounts, where balances are aggregated. The core principle—that **debits equal credits**—upholds the integrity and internal consistency of the financial reporting system.  
+
+*(Approx. 384 words)*

@@ -1,0 +1,17 @@
+The Week 1 lecture of *Principles of Accounting* introduces financial accounting as the **language of business**, the system that records a company’s economic activities and communicates them to decision‑makers. Accounting tells a firm’s financial story—its performance, risks, and opportunities—so that users can make informed judgments.  
+
+The lecture presents two central **functions** of accounting.  
+1. **Recordkeeping** identifies, measures, and documents business events in value terms, forming a systematic record of a company’s operations.  
+2. **Communication** transforms this information into standardized financial statements used by external and internal stakeholders.  
+
+The primary **users of financial information** include investors assessing management performance and firm value; creditors evaluating repayment ability; suppliers setting credit terms; management and boards overseeing operations and strategy; employees gauging job stability; and customers, regulators, and analysts judging reliability and overall financial condition.  
+
+Financial accounting captures three categories of activity: **financing** (transactions with investors and lenders that provide capital), **investing** (acquiring or selling productive resources such as equipment or land), and **operating** (core activities of producing and selling goods or services). Their results appear in four fundamental **financial statements**—the balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows—each providing a different view of company performance and position.  
+
+Reporting follows **Generally Accepted Accounting Principles (GAAP)**, which establish consistent rules for recognizing and presenting transactions. The **Securities and Exchange Commission (SEC)** oversees accounting and reporting for publicly traded firms and delegates standard‑setting to the independent **Financial Accounting Standards Board (FASB)**. Globally, comparable guidance is issued by the **International Accounting Standards Board (IASB)** under **IFRS**. Public firms file periodic reports: annual audited 10‑K statements, unaudited quarterly 10‑Q reports, and 8‑K filings for significant events.  
+
+Independent **auditors**, required by the SEC for public companies, evaluate whether financial statements conform to GAAP and are free of material misstatements. They issue one of four opinions—unqualified, unqualified with explanatory paragraph, qualified, or adverse—adding credibility for decision‑makers.  
+
+The lecture concludes with the **balance sheet**, a snapshot of financial position expressed by the **accounting equation (Assets = Liabilities + Stockholders’ Equity)**. Assets represent resources providing future benefits; liabilities reflect obligations; and equity denotes the owners’ residual interest. Step‑by‑step examples show how transactions such as issuing stock, borrowing funds, purchasing equipment, prepaying rent, or buying supplies on credit each affect multiple accounts while keeping the equation balanced.  
+
+*(Word count: 394)*

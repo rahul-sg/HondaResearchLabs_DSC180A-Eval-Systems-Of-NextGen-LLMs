@@ -1,0 +1,21 @@
+This Week 2 lecture continues the introduction to financial accounting by showing how business transactions are captured through the double‑entry system and connected across financial statements. Because economic activity is complex, accounting requires analysis, judgment, and critical thinking when representing those activities.  
+
+The class first revisited the financial statements as a communication system. The **balance sheet** presents assets, liabilities, and equity at a specific point in time, while the **income statement**, **statement of stockholders’ equity**, and **statement of cash flows** describe changes over a period between two balance‑sheet dates. Net income increases stockholders’ equity, and a net loss decreases it; revenues raise equity, and expenses reduce it through retained earnings.  
+
+Slides then expanded the **accounting equation**. Starting from  
+**Assets = Liabilities + Stockholders’ Equity**,  
+equity divides into **contributed capital** and **retained earnings**. Retained earnings equal the beginning balance + net income − dividends, and replacing net income with revenues − expenses produces  
+**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues − Expenses − Dividends)**.  
+This sequence clarifies how performance and distributions link income‑statement results to balance‑sheet values and ensures the equation remains balanced.  
+
+The lecture then introduced **double‑entry accounting**, which maintains that balance numerically. Every economic event has two sides—a give and a take—recorded as equal debits and credits that affect at least two accounts within assets, liabilities, or equity. Debits increase assets and decrease liabilities and equity; credits have the opposite effect. Transactions never use negative numbers, and total debits must equal total credits in all entries.  
+
+Illustrations showed how this rule operates through a series of transactions: borrowing from a bank, purchasing equipment and inventory, paying a supplier, prepaying insurance, and issuing common stock. Each transaction demonstrated the balancing effect on the accounting equation and the corresponding T‑account entries. Ending balances from these T‑accounts appear on the balance sheet and become the next period’s opening balances.  
+
+Finally, students followed the procedural flow:  
+1. Analyze transactions.  
+2. Record them as **journal entries**—listing debits first and indenting credits.  
+3. Post journal entries to **T‑accounts (ledger)** to determine ending balances.  
+The mnemonic **DEALOR** (Dividends, Expenses, Assets, Liabilities, Owners’ equity, Revenues) helps recall normal debit‑ or credit‑side orientation. Together, these conventions preserve the fundamental equality **Debits = Credits = Assets = Liabilities + Stockholders’ Equity**.  
+
+≈390 words

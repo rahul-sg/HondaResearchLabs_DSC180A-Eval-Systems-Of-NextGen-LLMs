@@ -1,0 +1,15 @@
+This lecture examined **nested SQL queries (subqueries)**—queries embedded within other queries—and their relationship to unnesting, logical quantifiers, and query monotonicity. Building on core SQL operations (projection, selection, joins, aggregates, grouping, and modifications), subqueries were defined as expressions used when a condition depends on data that must itself be computed. They can appear in the **SELECT**, **FROM**, or **WHERE** clauses.  
+
+A recurring guideline was **“avoid nested queries when possible”**, since evaluating a subquery for each outer tuple is inefficient. **Subquery unnesting** replaces such nested forms with equivalent join or GROUP BY queries that SQL engines can optimize more effectively. For instance, instead of computing a movie’s genre or an actor’s average salary via correlated subqueries, equivalent results can be derived from join‑based queries.  
+
+However, Slide 10 demonstrated that not all forms are exactly equivalent. Three versions of the “average salary for high‑rated movies” query—one with a correlated subquery, one with an INNER JOIN, and one with a LEFT OUTER JOIN—highlighted subtle differences: outer joins preserve unmatched movies with NULL values, while inner joins omit them. Thus, unnesting preserves correctness only when join semantics align.  
+
+When used in the **FROM clause**, a subquery behaves like a temporary relation (a **derived table**) whose result can also be defined via **Common Table Expressions (CTEs)** for modular query design.  
+
+In the **WHERE clause**, subqueries introduced **logical quantifiers**.  
+- **Existential quantifiers**—implemented with EXISTS or IN—test whether related tuples exist, expressing conditions such as finding actors who appeared in Sci‑Fi movies. These can often be rewritten as joins.  
+- **Universal quantifiers** express “for all” conditions and are harder to represent in SQL. They rely on negation to filter counterexamples, such as retrieving actors who acted only in action movies or movies where all actors earned more than $100K. Since these involve NOT IN or NOT EXISTS, they typically require nesting.  
+
+The lecture concluded with the concept of **monotone versus non‑monotone queries**. The **Monotone Query Theorem** stated that a SELECT‑FROM‑WHERE query without subqueries or aggregates is monotone—adding tuples to input relations will never remove output tuples. Slide 33’s nested‑loop proof illustrated that each additional tuple can only add potential results, never invalidate existing ones. Slide 34 then contrasted this with **non‑monotone queries**, which include negation, universal quantifiers, or aggregates, and therefore **cannot be safely unnested**.  
+
+*(~370 words)*

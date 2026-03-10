@@ -1,0 +1,13 @@
+This lecture explored **nested SQL queries** and how they relate to **query monotonicity**. Building on prior SQL topics—projections, selections, joins, grouping, and aggregation—it showed that while subqueries expand expressive power, they can reduce efficiency. A guiding rule is to **avoid nested queries when possible**, though some cases require them.
+
+**Subqueries in the SELECT clause** were discussed first. Such queries may return single values or full relations and can be **correlated**, referencing attributes from the outer query. Examples included retrieving each actor’s movie genre, counting actors per movie, and computing average salaries for high‑rated movies. These were compared with equivalent **join‑based** forms, illustrating **subquery unnesting**, where nested structures are replaced by joins or groupings for efficiency. The slides cautioned that not all rewrites are fully equivalent—differences in join types, such as **left outer joins**, can alter results for movies lacking matched records.
+
+**Subqueries in the FROM clause** act as derived tables or temporary “views.” One example selected movies with ratings greater than 8 and then filtered those below 9. This could be expressed through a **common table expression (CTE)** or simplified into a single unnested query. Such refactoring increases readability and reveals how nested filters can be collapsed without semantic loss.
+
+**Subqueries in the WHERE clause** illustrated logical quantifiers. Using **EXISTS** or **IN** encodes *existential quantification* (“there exists”), as in queries returning actors who appeared in a Sci‑Fi film. These are typically interchangeable with equivalent joins. By contrast, **universal quantifiers** (“for all”) are harder to express. To list actors who acted **only in action movies**, the slides outlined a two‑step approach:  
+1. Identify actors appearing in *non‑action* films.  
+2. Select all others not in that set.  
+While conceptually straightforward, the slides noted that handling `NOT IN` can be error‑prone (e.g., nulls). Related patterns included finding movies whose actors all earned over \$100K, which used `ALL` or `NOT EXISTS`; the former was specifically marked as **not supported in SQLite**.
+
+Finally, the lecture introduced **monotone and non‑monotone queries**. A query is *monotone* if adding tuples to its input cannot remove results. Simple SELECT‑FROM‑WHERE queries without aggregates or subqueries are monotone and can be safely unnested. Queries using negation, universal quantification, or aggregation are **non‑monotone**, meaning they cannot be reliably flattened—an essential insight for both correctness and optimization.  
+(≈390 words)

@@ -1,0 +1,17 @@
+This lecture extends Week 1’s foundation by connecting the **financial accounting framework** to the **mechanics of double‑entry recording**. It begins by emphasizing that economic activity is complex and that accounting demands judgment and critical thinking to translate those activities into structured financial information.  
+
+The first segment revisits the **four financial statements** as the core of communication: the **balance sheet** reports resources and obligations at a point in time (beginning and end of year), while the **income statement**, **statement of stockholders’ equity**, and **statement of cash flows** summarize performance over a fiscal period. Slides explicitly show their temporal linkage—period of time versus points in time—demonstrating how results flow across reports. Net income increases stockholders’ equity, and net loss decreases it; revenues raise and expenses lower retained earnings. These interactions illustrate that financial statements are interconnected, reflecting the same underlying accounting equation.  
+
+Building on this, the lecture expands the **accounting equation** from  
+**Assets = Liabilities + Shareholders’ Equity**  
+to  
+**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues – Expenses – Dividends)**.  
+This detailed form makes clear how income and distributions modify equity. The principle underpins **double‑entry accounting**, in which every transaction affects at least two accounts and must preserve balance: **Debits = Credits**.  
+
+Through numerical illustrations—borrowing **$100,000** from a bank, purchasing **$60,000** equipment with cash, buying **$15,000** inventory on account, paying a supplier **$8,000**, prepaying **$600** insurance, and issuing **10,000 shares for $100,000**—students trace debits and credits across **T‑accounts**. Ending balances feed into the next period’s beginning balances following the rule **Beginning Balance + Increases – Decreases = Ending Balance**. The lecture also features a **Super T‑account**, which integrates assets, liabilities, contributed capital, revenues, and expenses into one visual scheme, illustrating that each side of the equation moves in opposite directions but remains balanced.  
+
+A mnemonic, **DEALOR**—**Dividends, Expenses, Assets** (increase with Debits) and **Liabilities, Owners’ Equity, Revenue** (increase with Credits)—provides a quick orientation. The accounting process follows three steps: **Analyze → Record → Post**, progressing from transactions to journal entries and finally to aggregated ledger balances.  
+
+Ultimately, maintaining **Debits = Credits** sustains the fundamental equation **A = L + SE**, ensuring that every recorded event coherently links transaction detail to a company’s financial statements.  
+
+(≈395 words)

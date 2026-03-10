@@ -1,0 +1,18 @@
+This lecture reinforces core accounting principles by connecting financial statements to the double‑entry recording system. It begins with the idea that economic activity is complex and requires judgment as well as systematic recording. Accounting serves as a means of communicating how businesses create and use resources through four interrelated financial statements: the balance sheet (a snapshot at specific dates) and three period‑based reports—the income statement, statement of stockholders’ equity, and statement of cash flows. Together, they show how results across time explain changes between two balance‑sheet dates. Revenues and net income increase stockholders’ equity, while expenses and net losses reduce it; these flows link the income statement to retained earnings, and retained earnings connect successive balance sheets.
+
+The **accounting equation**—*Assets = Liabilities + Shareholders’ Equity*—is expanded to reveal the composition of equity: contributed capital plus retained earnings. Retained earnings progress over time through  
+*Beginning balance + Revenues – Expenses – Dividends = Ending balance.*  
+This form clarifies how income generation and dividend distributions reshape equity while preserving the equation’s balance.
+
+In the **double‑entry framework**, every transaction has two sides—a “give” and a “take.” Each event affects at least two accounts (assets, liabilities, or equity) and must keep total debits equal to total credits. Debits increase assets, expenses, and dividends, whereas credits increase liabilities, contributed capital, and revenues. The mnemonic **DEALOR** summarizes normal balances: Dividends, Expenses, and Assets are Debit; Liabilities, Owners’ Equity, and Revenues are Credit. No negative numbers are used, and *Debits = Credits* sustains *A = L + SE.*
+
+Illustrative entries follow this rule: receiving a bank loan raises both cash and notes payable; purchasing equipment or inventory reclassifies assets or creates payables; paying suppliers or insurance decreases cash and records either liability reduction or prepaid expense; and issuing shares increases both cash and common stock. These examples show that total accounts remain balanced after each event.
+
+The lecture then formalizes these steps:  
+1. **Analyze** each transaction.  
+2. **Record** it as a journal entry listing debits first, credits indented.  
+3. **Post** journal entries to the ledger (T‑accounts) to determine account totals and ending balances.  
+
+Ending balances at period‑end become beginning balances for the next cycle. This closed loop of analysis, journalizing, and posting ensures accurate measurement and the enduring equality of *Assets = Liabilities + Stockholders’ Equity.*
+
+(Word count: 396)

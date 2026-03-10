@@ -1,0 +1,14 @@
+The lecture examined **within-subjects designs** as an alternative to between-groups methods. In a between-groups design, each participant contributes data to only one condition, so individual differences add nuisance variability and can obscure true effects—requiring larger samples. A within-subjects design instead has every participant complete all conditions, allowing comparison of each person to themselves. This approach reduces participant-related noise, increases statistical power, and achieves the same number of data points with fewer participants.
+
+Specific forms of within-subjects designs include the **pretest–posttest design** (two conditions measured before and after an intervention), the **repeated-measures design** (two or more conditions within a session, such as varying stimulus levels), and the **longitudinal design** (tracking participants across multiple time points). These designs are efficient but can introduce new sources of bias. The lecture emphasized several potential issues:  
+- **Demand characteristics**, in which participants aware of the study’s structure may infer its purpose.  
+- **Carryover effects**, when performance in one condition influences another. Slide examples highlighted a **fatigue effect** (doing worse later from tiredness or boredom) and a **practice effect** (doing better later because of warming up or task familiarity).  
+Additional concerns include **history effects** (outside events that coincide with testing), **maturation effects** (natural developmental or aging changes mistaken for treatment effects), and **testing effects** (performance changes from repeated assessments).
+
+Empirical examples—such as children’s accent comprehension and spaced text improving reading in dyslexia—illustrated how to classify experiments as within- or between-subjects.
+
+The lecture next considered **order effects**, where the sequence of conditions alters outcomes. Two remedies were offered: use a between-subjects design or employ **counterbalancing** to distribute order effects evenly. **Complete within-subjects designs** expose each participant to all possible condition orders, such as an **ABBA design** for two conditions (controlling gradual practice effects) or **block randomization** for three or more (feasible only when tasks are very short). When full counterbalancing is impractical, **incomplete designs** are used, including **random order with rotation** and **Latin-square designs**, which ensure each condition appears equally often in each position and follows every other condition.
+
+Finally, the lecture noted that counterbalancing has limits: some manipulations—like taking a drug, learning a strategy, or donating once—cannot simply be undone.  
+
+**(354 words)**

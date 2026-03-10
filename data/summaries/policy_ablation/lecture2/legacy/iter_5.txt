@@ -1,0 +1,21 @@
+This lecture extends the foundations of financial accounting by linking the four financial statements to the double‑entry system and the expanded accounting equation that keeps them in balance. It begins by noting that **economic activity is complex**, so accounting must apply **judgment and critical thinking** when representing transactions—reminding students that professional reasoning underlies all financial reporting.  
+
+Financial accounting serves as a **communication system** through four interrelated statements: the **Balance Sheet**, **Income Statement**, **Statement of Stockholders’ Equity**, and **Statement of Cash Flows**. The Balance Sheet summarizes assets, liabilities, and equity **at a point in time**, while the other statements explain **changes during a fiscal period**. The Income Statement details revenues and expenses that shape net income; the Statement of Stockholders’ Equity shows changes in paid‑in capital and retained earnings; and the Statement of Cash Flows explains movements in cash between the beginning and end of the period. The slides emphasize that **financial statements do not exist in isolation**—each one connects the others across reporting periods. Revenues and net income increase stockholders’ equity, whereas expenses, losses, and dividends reduce it.  
+
+The central **accounting equation** expresses these relationships:  
+*Assets = Liabilities + Stockholders’ Equity.*  
+Slides expand this to show how equity evolves:  
+*Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Net Income – Dividends),*  
+and, substituting *Net Income = Revenues – Expenses,* demonstrate how operational performance links to financial position over time.  
+
+The lecture then develops **double‑entry recordkeeping**, showing that every economic event has two sides—a give and a take—and must keep the accounting equation balanced. Each transaction affects at least two accounts: **Debits** (left) increase assets and decrease liabilities and equity, while **Credits** (right) decrease assets and increase liabilities and equity. Debits must equal credits, and no negative numbers are used.  
+
+Worked examples illustrate this dual effect: a **$100,000** bank loan raises both Cash and Notes Payable; buying **$60,000** of equipment for cash reallocates assets; **$15,000** of inventory on account adds both Inventory and Payables; paying **$8,000** reduces that liability; a **$600** prepaid insurance purchase converts cash into an asset; and issuing shares for **$100,000** increases Cash and Common Stock. Ending **T‑account** balances—calculated as *Beginning + increases – decreases*—form the Balance Sheet and become the next period’s opening balances.  
+
+Finally, the lecture outlines the **recording cycle**:  
+1. Analyze each transaction.  
+2. Record debits and credits as journal entries.  
+3. Post entries to the ledger (T‑accounts) to determine balances.  
+This process preserves the balance **A = L + SE.**  
+
+**Word count: 397**

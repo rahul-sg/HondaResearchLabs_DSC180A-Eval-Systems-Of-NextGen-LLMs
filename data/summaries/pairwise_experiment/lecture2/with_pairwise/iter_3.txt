@@ -1,0 +1,20 @@
+This lecture reinforces fundamental accounting concepts by linking financial statements to double‑entry mechanics. It begins with the idea that economic activity is complex, so accounting requires both judgment and systematic recording to portray business events accurately. Companies communicate performance through four connected reports: the balance sheet (a snapshot at specific dates) and three period‑based statements—the income statement, statement of stockholders’ equity, and statement of cash flows. The slides emphasize how these reports interact: revenues and net income increase stockholders’ equity, while expenses and net losses reduce it. Thus, results from the income statement flow into retained earnings on the equity statement, which in turn links successive balance sheets.
+
+The **accounting equation**, *Assets = Liabilities + Shareholders’ Equity*, is expanded to show equity as contributed capital plus retained earnings. Retained earnings evolve through time:  
+*Beginning Retained Earnings + Revenues – Expenses – Dividends = Ending Retained Earnings.*  
+Expressed fully, the equation becomes *Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues – Expenses – Dividends)*. This expanded view illustrates how each type of transaction changes equity and sustains the balance‑sheet relationship. The lecture highlights continuity by showing that ending balances from one period’s T‑accounts become beginning balances for the next period.
+
+The double‑entry framework captures this relationship for every transaction: each event has a “give” and a “take,” always affecting at least two account classes—assets, liabilities, or equity. Debits record increases in assets, expenses, and dividends; credits record increases in liabilities, contributed capital, and revenues. The mnemonic **DEALOR** (Dividends, Expenses, Assets = Debit; Liabilities, Owners’ Equity, Revenues = Credit) summarizes normal balances. Equal debits and credits maintain the accounting equation (*Debits = Credits*).
+
+Quantitative examples show the mechanics in practice:  
+– Receiving a **$100,000 bank loan** increases cash (Dr) and notes payable (Cr).  
+– Buying **equipment for $60,000 cash** transfers value between two asset accounts.  
+– Acquiring **inventory on account** creates both an asset and a payable.  
+– Paying **$8,000** toward that payable reduces cash and liability.  
+– Paying **$600 for one year’s insurance** creates a prepaid asset.  
+– Issuing **10,000 shares for $100,000** raises contributed capital.  
+T‑account examples show how these entries accumulate, with ending balances such as *Cash = $131,400* and *Trade Payable = $7,000* demonstrating balance.  
+
+Finally, the lecture summarizes the process: (1) analyze the transaction, (2) journalize debits and credits, and (3) post to the ledger to find account totals. Throughout, maintaining *Debits = Credits* ensures accuracy, continuity, and the enduring equality of *A = L + SE*.  
+
+(Word count: 395)

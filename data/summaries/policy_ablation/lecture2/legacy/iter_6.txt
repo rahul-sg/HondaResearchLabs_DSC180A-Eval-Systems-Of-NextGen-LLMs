@@ -1,0 +1,22 @@
+This lecture deepens the foundations of financial accounting by connecting the four financial statements, the expanded accounting equation, and the double‑entry system that keeps all records balanced. It opens by stressing that **economic activity is complex**, so **accounting requires judgment and critical thinking** when capturing business events.  
+
+Financial accounting functions as a **communication system** through four linked reports: the **Balance Sheet**, **Income Statement**, **Statement of Stockholders’ Equity**, and **Statement of Cash Flows**. The Balance Sheet shows assets, liabilities, and equity **at a point in time**, while the other statements describe **changes over a fiscal period**. The slides highlight that these statements are interdependent—information flows from one to another across periods. Revenues and net income increase stockholders’ equity, while expenses, losses, and dividends decrease it.  
+
+The **accounting equation** reflects these connections:  
+*Assets = Liabilities + Stockholders’ Equity.*  
+It is expanded to show how equity evolves:  
+*Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Net Income – Dividends),*  
+and further to *Net Income = Revenues – Expenses*. This formulation links operating results to financial position over time.  
+
+The lecture then develops **double‑entry recordkeeping**, where every transaction has dual effects—a give and a take—that must maintain balance in the equation. **Debits (Dr)** are recorded on the left and increase assets while decreasing liabilities and equity; **Credits (Cr)** appear on the right and have the opposite effect. Each event affects at least two accounts, uses no negative numbers, and must satisfy **Debits = Credits**.  
+
+Illustrative transactions show these relationships: a **$100,000** bank loan raises both Cash and Notes Payable; buying **$60,000** of equipment exchanges one asset for another; **$15,000** of inventory on account adds both Inventory and Payables; paying **$8,000** reduces that liability; purchasing **$600** of prepaid insurance converts cash into an asset; and issuing stock for **$100,000** increases Cash and Common Stock. **T‑accounts** represent these effects, with ending balances computed as *Beginning + increases – decreases* and carried forward to the next period’s opening balances.  
+
+Slides also introduce visual aids reinforcing debit‑credit logic: the **Super T‑account**, summarizing how each account type increases or decreases, and the **DEALOR mnemonic** (Dividends, Expenses, Assets = Debit; Liabilities, Owners’ Equity, Revenue = Credit).  
+
+Finally, the accounting process is summarized:  
+1. Analyze each transaction.  
+2. Record debits and credits as journal entries.  
+3. Post entries to ledger (T‑accounts) to find account balances—ensuring that **A = L + SE** always holds.  
+
+**Word count: 392**

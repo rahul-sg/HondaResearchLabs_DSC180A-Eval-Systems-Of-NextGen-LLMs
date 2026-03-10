@@ -1,0 +1,15 @@
+This lecture extends the foundations of accounting by showing how financial statements connect through the double‑entry recording process. It opens with the principle that because economic activity is complex, accounting requires judgment and clear communication of information through a coordinated set of financial statements.  
+
+The **balance sheet**, **income statement**, **statement of stockholders’ equity**, and **statement of cash flows** together communicate a company’s position and performance. The balance sheet reports assets, liabilities, and equity at specific points in time (beginning and end of the period), while the other statements describe flows during the fiscal year. Net income raises stockholders’ equity via retained earnings, and net loss lowers it. Revenues increase equity, expenses reduce it, and these changes link the income statement to the balance sheet across periods.  
+
+The accounting equation evolves as the lecture progresses:  
+**Assets = Liabilities + Contributed Capital + Beginning Retained Earnings + Revenues – Expenses – Dividends.**  
+This expanded view reveals how revenues, expenses, and dividends change retained earnings and, therefore, total equity, connecting performance and financial position within one consistent framework.  
+
+Double‑entry accounting ensures this equality. Every economic event has two sides—a give and a take—and affects at least two accounts within assets, liabilities, or equity. Debits (left) increase assets and expenses and decrease liabilities and equity; credits (right) do the opposite. Because no negative numbers are used, each transaction must include at least one debit and one credit so that **total debits always equal total credits**, preserving the balance sheet equation.  
+
+A sequential set of examples demonstrates how these rules are applied: a bank loan increases both cash and notes payable; purchasing equipment decreases cash but increases equipment; buying inventory on account adds inventory and a payable; payments to suppliers and insurance premiums decrease cash while reducing liabilities or creating a prepaid asset; and issuing stock increases both cash and contributed capital. Each entry updates the T‑accounts, whose ending balances represent the balances on the balance sheet and become the next period’s beginning amounts.  
+
+Finally, the lecture outlines the accounting process: **(1)** analyze each transaction, **(2)** record it as a journal entry, and **(3)** post entries to the ledger’s T‑accounts to aggregate ending balances. The **Super T‑account** and **DEALOR mnemonic** (Dividends, Expenses, Assets = Debit; Liabilities, Owners’ Equity, Revenue = Credit) reinforce rules ensuring that **debits equal credits**, maintaining internal consistency across the entire financial reporting system.  
+
+*(Approx. 395 words)*

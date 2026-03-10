@@ -1,0 +1,26 @@
+This lecture extends the foundations of financial accounting by linking the four financial statements to the double‑entry recording framework and the expanded accounting equation that keeps them in balance. It begins by noting that because economic activity is complex, accounting requires **judgment and critical thinking** to interpret and record events appropriately.  
+
+Financial accounting serves as a system of **communication** through four interrelated reports: the **Balance Sheet**, **Income Statement**, **Statement of Stockholders’ Equity**, and **Statement of Cash Flows**. The Balance Sheet presents assets, liabilities, and equity **at a point in time**, while the other statements describe **flows over a fiscal period**. Together they show how the company’s position changes between two balance‑sheet dates. The lecture emphasizes that the **Statement of Stockholders’ Equity** explains changes in equity and the **Statement of Cash Flows** explains changes in cash—therefore connecting the beginning and ending balance sheets. Revenues increase stockholders’ equity, while expenses, losses, and dividends reduce it.  
+
+The **accounting equation** provides the unifying structure:  
+*Assets = Liabilities + Stockholders’ Equity.*  
+Slides expand this to show how equity evolves:  
+*Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Net Income – Dividends).*  
+Replacing net income with *Revenues – Expenses* yields  
+*Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues – Expenses – Dividends).*  
+This step‑by‑step expansion clarifies how operating results and distributions explain equity changes across periods.  
+
+The lecture then develops the **double‑entry system**, in which every economic event has two sides—a give and a take—affecting at least two accounts. Debits and credits are recording tools that ensure the accounting equation remains balanced:  
+- **Debits** increase assets and decrease liabilities and equity.  
+- **Credits** decrease assets and increase liabilities and equity.  
+Each transaction must include at least one debit and one credit, and total debits must always equal total credits (*A = L + SE*).  
+
+Illustrative transactions—borrowing from a bank, purchasing equipment and inventory, paying suppliers, prepaying insurance, and issuing shares—demonstrate how entries accumulate in **T‑accounts**, where *Beginning Balance + increases – decreases = Ending Balance*. These ending balances appear on the balance sheet and become the next period’s opening balances.  
+
+Finally, the lecture summarizes the **recording process**:  
+1. Analyze transactions,  
+2. Record debits and credits as journal entries, and  
+3. Post entries to the ledger (T‑accounts).  
+This flow ensures that double‑entry recording maintains both the accounting equation and the integrity of financial statements.  
+
+**Word count: 383**

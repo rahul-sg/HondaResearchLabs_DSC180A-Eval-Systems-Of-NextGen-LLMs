@@ -1,0 +1,17 @@
+This lecture builds on the foundations of financial accounting by linking financial statements to the underlying recording system and expanding the accounting equation that keeps them in balance. It begins by stressing that because economic activity is complex, accounting requires professional judgment and critical thinking to represent transactions faithfully.  
+
+Financial accounting is presented as a means of **communicating** a company’s performance and position through four linked statements: the **Balance Sheet**, **Income Statement**, **Statement of Stockholders’ Equity**, and **Statement of Cash Flows**. The balance sheet reports assets, liabilities, and equity at a point in time, while the other statements describe flows during a fiscal period. Combined, they explain the changes between two balance sheet dates. Net income raises stockholders’ equity through retained earnings; losses, expenses, or dividends reduce it; and revenues increase it.  
+
+The **accounting equation**—*Assets = Liabilities + Stockholders’ Equity*—connects all statements. Slides expand it stepwise:  
+*Assets = Liabilities + Contributed Capital + Retained Earnings (Beginning of Period + Net Income – Dividends)*,  
+and after substituting *Net Income = Revenues – Expenses*, it becomes  
+*Assets = Liabilities + Contributed Capital + Retained Earnings (Beginning of Period + Revenues – Expenses – Dividends)*.  
+This progression shows how revenues, expenses, and dividends collectively explain changes in equity across periods.  
+
+The lecture then focuses on **double-entry accounting**, which captures every economic event as a balanced transaction. Each event has a give and a take affecting at least two accounts within Assets, Liabilities, or Equity. Debits increase assets (and decrease liabilities and equity); credits do the opposite. Every transaction must contain at least one debit and one credit, and total debits must always equal total credits—maintaining the equality *A = L + SE*.  
+
+Practical examples demonstrate this logic: borrowing $100,000 from a bank, purchasing equipment and inventory, paying suppliers, prepaying insurance, and issuing stock. Students calculate ending balances in T‑accounts using *Beginning Balance + increases – decreases = Ending Balance*, showing how these totals transfer to the balance sheet and become the next period’s opening balances.  
+
+Finally, the lecture introduces the **recording process**: analyze each transaction, record it as a journal entry, and post entries to ledger (T‑accounts). This journal‑to‑ledger demonstration highlights how debits and credits flow through the system, ensuring both the accounting equation and financial statements remain internally consistent.  
+
+**Word count: 389**

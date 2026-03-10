@@ -1,0 +1,15 @@
+This lecture introduces *within‑subjects designs* as an alternative to between‑groups designs for reducing nuisance variability. In a between‑groups design, different participants are assigned to separate conditions, and individual differences contribute additional noise. In a within‑subjects design, every participant experiences all conditions, enabling comparisons of each person to themselves across those conditions. This approach removes much of the variability due to participant differences, increases statistical power, and allows researchers to obtain the same number of observations with fewer participants.
+
+Several common formats illustrate this logic.  
+- **Pretest–posttest designs** expose each participant to both a pretest and a posttest, usually separated by an intervention.  
+- **Repeated‑measures designs** include two or more conditions—such as varying levels of task difficulty—to assess how performance changes across manipulations.  
+- **Longitudinal designs** measure participants repeatedly over time to capture developmental trends, though they can require extended data collection.  
+These designs are efficient and powerful because they reduce noise within participants.
+
+However, presenting all conditions to the same participants can introduce confounds. *Demand characteristics* may allow participants to infer the manipulation, and *carryover effects* can make one condition influence another through fatigue or practice. Additional concerns include the *history effect* (events occurring during the study), *maturation effect* (changes due to time or growth rather than intervention), and *testing effect* (familiarity with a repeated measure). The slides explicitly advise adding a control group in pretest–posttest designs to estimate maturation‑related change independently of the treatment.
+
+Because the order of conditions can bias results, researchers apply *counterbalancing*. Complete counterbalancing exposes each participant to all possible condition orders. Examples include the **ABBA design** for two conditions—controlling gradual practice effects—and **block randomization** for three or more, which randomizes all possible condition sequences. When complete counterbalancing is too large, *incomplete designs* like **random rotation** or a **Latin‑square** ensure that each condition appears equally often in each position and follows every other condition equally frequently.
+
+In cognitive‑science experiments with many short trials and noisy dependent variables, randomly intermixing conditions can itself counterbalance order effects; structured counterbalancing is preferred when intermixing would confuse participants or items are few and lengthy. Some manipulations remain inherently non‑reversible—once participants have taken a drug or learned a memory strategy, subsequent conditions cannot undo those effects.  
+
+(391 words)

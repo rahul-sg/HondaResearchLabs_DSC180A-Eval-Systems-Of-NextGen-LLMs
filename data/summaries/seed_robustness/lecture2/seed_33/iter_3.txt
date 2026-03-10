@@ -1,0 +1,15 @@
+This Week 2 lecture builds on the financial‑accounting framework introduced earlier by explaining how business activities are translated into financial statements through the double‑entry system. Economic activity is complex and uncertain, so accounting requires both structured methods and professional judgment when recording and interpreting events.  
+
+The class began by linking the four financial statements—balance sheet, income statement, statement of stockholders’ equity, and statement of cash flows. The balance sheet reports assets, liabilities, and equity at a point in time, while the other three describe changes over a period that explain movements between two balance‑sheet dates. Net income increases stockholders’ equity, and net loss decreases it, because revenues raise and expenses reduce retained earnings.  
+
+Slides then unpack how the accounting equation expands step by step. Starting from **Assets = Liabilities + Stockholders’ Equity**, equity is split into **contributed capital** and **retained earnings**. Retained earnings evolve as beginning balance + net income − dividends, showing how performance and distributions affect equity. The final expansion substitutes net income with **revenues − expenses**, yielding  
+**Assets = Liabilities + Contributed Capital + (Beginning Retained Earnings + Revenues − Expenses − Dividends)**.  
+This progression makes explicit how income‑statement activities drive balance‑sheet changes and reinforces that the equation must always balance.  
+
+Double‑entry mechanics implement this balance mathematically. Every economic event has two sides—a give and a take—recorded as debits and credits across at least two accounts. Debits increase assets and decrease liabilities and equity; credits do the opposite. No negative numbers are used because direction is conveyed through debit or credit labeling. Debits must always equal credits, preserving **A = L + SE**.  
+
+Illustrative transactions mirror full slide examples: borrowing $100,000 from a bank, purchasing $60,000 equipment for cash, buying $15,000 inventory on account, paying $8,000 of that payable, paying $600 for prepaid insurance, and issuing $100,000 of common stock. T‑accounts summarize these cumulative effects, producing ending balances such as cash $131,400 and trade payable $7,000. These carry into the balance sheet and become next period’s starting points.  
+
+The lecture concluded with the accounting process and support tools. Transactions are (1) analyzed, (2) recorded as journal entries—listing debits first and credits indented—and (3) posted to T‑accounts within the ledger to compute ending balances. The DEALOR mnemonic (Dividends, Expenses, Assets, Liabilities, Owners’ equity, Revenue) reinforces normal debit or credit orientation. Together, these rules ensure each entry communicates judgment‑based economic reality while keeping **Debits = Credits = A = L + SE**.  
+
+≈400 words

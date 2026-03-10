@@ -37,7 +37,6 @@ logs/
 
 # LLM iteration outputs
 iteration_logs/
-iter_*.txt
 
 # Temporary evaluation outputs
 tmp/
