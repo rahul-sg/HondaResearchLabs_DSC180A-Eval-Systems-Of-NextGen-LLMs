@@ -26,7 +26,7 @@ Our capstone goal is to study how next-generation LLM systems can be evaluated a
 
 ## Headline Outcomes
 
-- Across the 7-lecture benchmark, the current pipeline consistently improves quality while preserving stable behavior across seeds.
+- Grand mean final score of **0.845** across 7 lectures and 3 seeds, with `tuned` policy outperforming `legacy` on all 7 lectures (avg **+0.076**).
 - For detailed, reproducible metrics (policy ablations, robustness summaries, and human-calibration results), see **Results Summary** and **Human Evaluation** below.
 
 Given a lecture PDF, the system:
