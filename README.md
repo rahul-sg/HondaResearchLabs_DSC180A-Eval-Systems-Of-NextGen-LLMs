@@ -4,7 +4,7 @@
 
 **Final Poster (PDF):** [DSC180 Final Poster](artifacts/DSC180_FINAL_POSTER.pdf)
 
-**Final Paper (PDF):** [Iterative Refinement for Next-Gen LLMs](artifacts/Q2/Iterative_Refinement_NextGen_LLMs.pdf?raw=1)
+**Final Paper (PDF):** [Iterative Refinement for Next-Gen LLMs](artifacts/Q2/Iterative_Refinement_NextGen_LLMs.pdf)
 
 This repository implements an end-to-end pipeline for generating, refining, and evaluating large-language-model (LLM) summaries of university lecture slides.
 
