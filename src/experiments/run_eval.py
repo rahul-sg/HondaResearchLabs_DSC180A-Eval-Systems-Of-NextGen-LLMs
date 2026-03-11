@@ -64,16 +64,34 @@ def main():
     else:
         hallucination_policy = "tuned"
 
+    if len(sys.argv) > 10:
+        hallucination_alpha_override = float(sys.argv[10])
+    else:
+        hallucination_alpha_override = None
+
+    if len(sys.argv) > 11:
+        hallucination_beta_override = float(sys.argv[11])
+    else:
+        hallucination_beta_override = None
+
     if hallucination_policy == "tuned":
         hallucination_damping_alpha = 0.05
         hallucination_subtractive_beta = 0.0
     elif hallucination_policy == "legacy":
         hallucination_damping_alpha = 0.15
         hallucination_subtractive_beta = 0.10
+    elif hallucination_policy == "human_tuned":
+        hallucination_damping_alpha = 0.20
+        hallucination_subtractive_beta = 0.125
     else:
         hallucination_policy = "tuned"
         hallucination_damping_alpha = 0.05
         hallucination_subtractive_beta = 0.0
+
+    if hallucination_alpha_override is not None:
+        hallucination_damping_alpha = hallucination_alpha_override
+    if hallucination_beta_override is not None:
+        hallucination_subtractive_beta = hallucination_beta_override
 
     print(f"\nLecture selected: {lecture_id}")
     print(f"Force regenerate S0: {force_regen}")
@@ -84,6 +102,8 @@ def main():
         f"{hallucination_policy} "
         f"(alpha={hallucination_damping_alpha}, beta={hallucination_subtractive_beta})"
     )
+    if hallucination_alpha_override is not None or hallucination_beta_override is not None:
+        print("Hallucination override source: CLI alpha/beta override")
 
     if lecture_id.lower() == "all":
         slides_dir = ROOT / "data" / "slides"
@@ -108,6 +128,10 @@ def main():
                 str(min_agreement),
                 hallucination_policy,
             ]
+            if hallucination_alpha_override is not None:
+                cmd.append(str(hallucination_alpha_override))
+            if hallucination_beta_override is not None:
+                cmd.append(str(hallucination_beta_override))
             result = subprocess.run(cmd)
             if result.returncode != 0:
                 failed.append((lid, result.returncode))

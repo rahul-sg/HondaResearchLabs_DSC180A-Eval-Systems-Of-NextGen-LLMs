@@ -2,15 +2,46 @@
 
 **Capstone Project | UC San Diego | Spring 2026**
 
+**Final Poster (PDF):** [DSC180 Final Poster](artifacts/DSC180_FINAL_POSTER.pdf)
+
+**Final Paper (PDF):** [Iterative Refinement for Next-Gen LLMs](artifacts/Q2/Iterative_Refinement_NextGen_LLMs.pdf)
+
 This repository implements an end-to-end pipeline for generating, refining, and evaluating large-language-model (LLM) summaries of university lecture slides.
 
 Our capstone goal is to study how next-generation LLM systems can be evaluated and improved in a way that is reproducible, domain-aware, and practically useful for educational content. Instead of relying on a single metric or fixed iteration schedule, this project combines deterministic signals, LLM rubric judging, pairwise preference testing, and hybrid final scoring to better capture summary quality. The pipeline is designed for research and applied benchmarking: it records full intermediate artifacts, exposes stopping behavior, and supports cross-domain comparison across multiple UCSD lecture datasets.
+
+## Table of Contents
+
+- [Headline Outcomes](#headline-outcomes)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Running Evaluation](#running-evaluation)
+- [Current Pipeline (What Happens Internally)](#current-pipeline-what-happens-internally)
+- [Results Summary](#results-summary)
+- [Human Evaluation](#human-evaluation)
+- [Dashboards](#dashboards)
+- [Known Limitations](#known-limitations)
+- [Adding Your Own Lecture](#adding-your-own-lecture)
+- [Authors](#authors)
+
+## Headline Outcomes
+
+- Across the 7-lecture benchmark, the current pipeline consistently improves quality while preserving stable behavior across seeds.
+- For detailed, reproducible metrics (policy ablations, robustness summaries, and human-calibration results), see **Results Summary** and **Human Evaluation** below.
 
 Given a lecture PDF, the system:
 1. Generates an initial summary (`S0`)
 2. Iteratively refines it with lever-based guidance
 3. Evaluates quality using deterministic signals + LLM judges
 4. Produces reproducible artifacts (`iter_*.txt`, `final.txt`, `result.json`, pairwise outputs)
+
+While this repository uses lecture PDFs as the benchmark input format, the pipeline architecture is domain-agnostic: the same workflow can be applied to dense technical document sets where reliable distillation is required.
+
+## Industry Relevance (Honda)
+
+- Honda needs to process large volumes of technical documentation, safety manuals, engineering specifications, and research reports; this pipeline generalizes to any domain where dense text needs to be distilled reliably.
+- The domain-aware rubric judging is directly applicable to technical domains Honda cares about: if lecture PDFs are replaced with automotive engineering documents, the evaluation framework still applies.
+- Hallucination detection and risk-adjusted scoring are especially relevant for safety-critical settings where fabricated content can create downstream risk.
 
 ## Quick Start
 
@@ -29,6 +60,8 @@ python -m src.experiments.run_eval lecture1
 python -m src.experiments.run_eval all
 ```
 
+Typical runtime: ~1–4 minutes for a single lecture run (longer under API latency/rate limits).
+
 No human reference file is required for the default pipeline mode.
 
 Then review generated artifacts in:
@@ -45,6 +78,7 @@ example_run/lecture1/
 - **Hybrid Final Scoring**: combines comprehensive layered score with explicit weighted score
 - **Trend-Aware Stopping**: decision-table stopping (`pass`, `borderline`, `stalled`) with plateau detection
 - **Research-Grade Outputs**: full metadata and intermediate traces for reproducibility
+
 
 ## Dependencies
 
@@ -133,11 +167,6 @@ HondaResearchLabs_DSC180A-Eval-Systems-Of-NextGen-LLMs/
 └── README.md
 ```
 
-## Paper
-
-Our Quarter 1 report and Quarter 2 proposal are listed under `artifacts/Q1/` and `artifacts/Q2/`.
-The final poster is available at `artifacts/DSC180_FINAL_POSTER.pdf`.
-
 ## Environment Setup
 
 ### Option A: Start-Up Script (recommended)
@@ -193,6 +222,12 @@ python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 tuned
 
 # Legacy scoring behavior
 python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 legacy
+
+# Human-calibrated policy preset
+python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 human_tuned
+
+# Calibrated override (human-tuned values) without editing code
+python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 tuned 0.20 0.125
 ```
 
 ### Full CLI signature
@@ -200,7 +235,8 @@ python -m src.experiments.run_eval lecture1 no yes 4.0 0.03 12 4 0.7 legacy
 ```bash
 python -m src.experiments.run_eval \
     lecture1|all [force_regen] [use_lever_based] [min_avg_score] \
-    [min_change_threshold] [max_iterations] [min_iterations] [min_agreement] [hallucination_policy]
+    [min_change_threshold] [max_iterations] [min_iterations] [min_agreement] \
+    [hallucination_policy] [hallucination_alpha] [hallucination_beta]
 ```
 
 Parameters:
@@ -212,9 +248,11 @@ Parameters:
 - `max_iterations`: optional int, default `12` (hard cap on refinement loop)
 - `min_iterations`: optional int, default `4` (minimum loop count before early-stop checks)
 - `min_agreement`: optional float, default `0.7` (**legacy/compat parameter**; retained for older workflows)
-- `hallucination_policy`: optional (`tuned`/`legacy`), default `tuned` (risk penalty profile)
+- `hallucination_policy`: optional (`tuned`/`legacy`/`human_tuned`), default `tuned` (risk penalty profile)
+- `hallucination_alpha`: optional float, default from selected policy (overrides damping alpha if provided)
+- `hallucination_beta`: optional float, default from selected policy (overrides subtractive beta if provided)
 
-Note: CLI arguments are positional. If you want to set `hallucination_policy` explicitly, pass preceding arguments as shown in the examples above.
+Note: CLI arguments are positional. If you set `hallucination_alpha`/`hallucination_beta`, pass preceding arguments as shown in the examples above.
 
 `run_eval` works without `data/references/lectureN_reference.txt` in default reference-free mode.
 
@@ -307,11 +345,39 @@ final\_score\_{0to1} = Q_{risk}
 $$
 
 Where:
-- `tuned` policy default: `\alpha=0.05`, `\beta=0.0`
-- `legacy` policy: `\alpha=0.15`, `\beta=0.10`
+- `tuned` policy default: $\alpha=0.05$, $\beta=0.0$
+- `legacy` policy: $\alpha=0.15$, $\beta=0.10$
+- `human_tuned` policy: $\alpha=0.20$, $\beta=0.125$
 - stricter domain multipliers are applied for technical domains (e.g., engineering/math)
 
+Note: these are the runtime defaults used by `run_eval` unless overridden by CLI arguments.
+
 `result.json` logs both leaderboard scores (`raw_quality_score`, `risk_adjusted_score`) plus full policy metadata.
+
+## Human Evaluation
+
+We use a human-labeled faithfulness calibration workflow to validate and tune the hallucination-risk policy.
+
+### Workflow
+- Generate candidate summaries for annotation: `python -m src.experiments.prepare_faithfulness_labeling_set`
+- Fill `human_faithfulness_1to5` in `outputs/hallucination_tuning/human_labeling_candidates.jsonl`
+- Build scored calibration dataset: `python -m src.experiments.build_human_calibration_dataset`
+- Tune policy on labeled data: `python -m src.experiments.tune_hallucination_penalty outputs/hallucination_tuning/human_calibration_dataset.json`
+
+### Current Checked-in Calibration (from `outputs/hallucination_tuning/report.json`)
+- Labeled samples: **50**
+- Lectures covered: **7** (`lecture1`–`lecture7`)
+- Correlation under calibration baseline policy (`alpha=0.15`, `beta=0.10`):
+    - Spearman(final vs comprehensive): **0.698**
+    - Spearman(final vs human faithfulness): **0.808**
+    - Spearman(final vs hallucination): **-0.692** (more negative is better)
+- Best policy on this labeled set: **`alpha=0.20`, `beta=0.125`**
+- Runtime note: the current `run_eval` default remains `tuned` (`alpha=0.05`, `beta=0.0`); use CLI overrides if you want to run with the calibration-recommended values.
+
+### Artifacts
+- Raw annotation rows: `outputs/hallucination_tuning/human_labeling_candidates.jsonl`
+- Built calibration dataset: `outputs/hallucination_tuning/human_calibration_dataset.json`
+- Tuning report: `outputs/hallucination_tuning/report.json`
 
 ## Example Sample Run
 
@@ -356,12 +422,31 @@ Notable metadata fields include stopping reason, iteration history, lever histor
 `iteration_score_table` provides a compact per-iteration trace for plotting/reporting
 (rubric average, quality score, word count, change magnitude, and key signals).
 
+## Results Summary
+
+The following summary is based on checked-in aggregate artifacts under `outputs/`.
+
+| Category | Finding |
+|---|---|
+| Tuned vs Legacy | `tuned` is better on **7/7** lectures; average delta **+0.076** final score. |
+| Robustness | Across seeds `11,22,33`, grand mean final score is **0.845** with std **0.017**. |
+| Hardest lecture (seed-mean) | `lecture3` has the lowest mean final score (**0.825**), aligning with theory-heavy humanities difficulty. |
+| Strongest lectures (seed-mean) | `lecture2` (**0.871**) and `lecture7` (**0.869**) are the highest. |
+| Largest policy gains | Biggest `tuned - legacy` improvements are `lecture7` (**+0.160**) and `lecture6` (**+0.113**). |
+
+Primary sources:
+- `outputs/policy_ablation/tuned_vs_legacy_summary.json`
+- `outputs/seed_robustness/multi_seed_summary.json`
+- `outputs/hallucination_tuning/report.json`
+
+For calibration-specific details, see the **Human Evaluation** section above.
+
 ## Additional Experiments
 
 These experiments are LLM-call heavy and can take a while to complete.
 
 Typical wall-clock estimates on this project setup:
-- Single lecture experiment run: ~5–12 minutes
+- Single lecture experiment run: ~1–4 minutes
 - `policy_ablation_experiment all` (7 lectures): ~20–45 minutes
 - `multi_seed_robustness all` with seeds `11,22,33` (21 total runs): ~25–60 minutes
 - Under API latency spikes/rate limits, full runs can take up to ~90 minutes
@@ -424,6 +509,10 @@ streamlit run src/visualization/interactive_dashboard.py
 ```
 
 Includes summary trends, rubric visuals, score-component diagnostics, stop-state diagnostics, cohort insights (`example_run`), and full-text iteration views.
+
+Dashboard preview:
+
+<img src="assets/streamlit_example.png" alt="Interactive dashboard preview" width="760" />
 
 ## Provided Dataset Coverage
 

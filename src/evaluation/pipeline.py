@@ -60,8 +60,9 @@ def evaluate_summary(
         min_agreement: Legacy/compat parameter retained for CLI compatibility
         use_pairwise_selection: Whether to use pairwise judge selection at each
                        refinement step (default True)
-        scoring_policy: Scoring profile. "tuned" uses lighter single-penalty,
-                "legacy" preserves previous dual-penalty behavior.
+        scoring_policy: Scoring profile. "tuned" uses lighter penalties,
+            "legacy" preserves previous dual-penalty behavior,
+            and "human_tuned" uses calibration-derived settings.
         hallucination_damping_alpha: Optional override for multiplicative damping
                 coefficient alpha in final score term (1 - alpha * H).
         hallucination_subtractive_beta: Optional override for subtractive penalty
@@ -165,12 +166,15 @@ def evaluate_summary(
 
     detected_domain = comprehensive_result.get("detected_domain", "humanities")
 
-    if scoring_policy not in {"legacy", "tuned"}:
+    if scoring_policy not in {"legacy", "tuned", "human_tuned"}:
         scoring_policy = "tuned"
 
     if scoring_policy == "legacy":
         default_alpha = 0.15
         default_beta = 0.10
+    elif scoring_policy == "human_tuned":
+        default_alpha = 0.20
+        default_beta = 0.125
     else:
         default_alpha = 0.05
         default_beta = 0.0
